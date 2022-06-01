@@ -1,0 +1,7 @@
+{
+  "name": "ona-angular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
