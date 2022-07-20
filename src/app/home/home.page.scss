@@ -1,33 +1,32 @@
 #container {
-//   text-align: center;
+    //   text-align: center;
 
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   top: 50%;
-//   transform: translateY(-50%);
+    //   position: absolute;
+    //   left: 0;
+    //   right: 0;
+    //   top: 50%;
+    //   transform: translateY(-50%);
 }
 
 #container strong {
-  font-size: 20px;
-  line-height: 26px;
+    font-size: 20px;
+    line-height: 26px;
 }
 
 #container p {
-  font-size: 16px;
-  line-height: 22px;
+    font-size: 16px;
+    line-height: 22px;
 
-  color: #8c8c8c;
+    color: #8c8c8c;
 
-  margin: 0;
+    margin: 0;
 }
 
 #container a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 // from style.css
-
 * {
     box-sizing: border-box;
 }
@@ -160,37 +159,6 @@ nav {
 }
 
 // end style.css
-
-#scrolly {
-    position: relative;
-}
-
-article {
-    position: relative;
-    padding: 0 1rem;
-    margin: 0 auto;
-    width: 33%;
-}
-
-.step {
-    margin: 2rem auto 4rem auto;
-    background-color: #3b3b3b;
-    color: #fff;
-}
-
-.step.is-active {
-    background-color: goldenrod;
-    color: #3b3b3b;
-}
-
-.step p {
-    text-align: center;
-    padding: 1rem;
-    font-size: 1.5rem;
-}
-
-
-
 #scrolly {
     position: relative;
     display: -webkit-box;
@@ -222,6 +190,11 @@ figure {
     transform: translate3d(0, 0, 0);
     background-color: #8a8a8a;
     z-index: 0;
+    color: white;
+
+    p {
+        color: white;
+    }
 }
 
 figure p {
@@ -257,4 +230,67 @@ figure p {
     text-align: center;
     padding: 1rem;
     font-size: 1.5rem;
+}
+
+#scrolly_overlay {
+    position: relative;
+    background-color: #f3f3f3;
+    padding: 1rem;
+
+
+    article {
+        position: relative;
+        padding: 0;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+
+    figure {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        background-color: #8a8a8a;
+        z-index: 0;
+    }
+
+    figure p {
+        text-align: center;
+        padding: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 8rem;
+        font-weight: 900;
+        color: #fff;
+    }
+
+    .step {
+        margin: 0 auto 2rem auto;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .step:last-child {
+        margin-bottom: 0;
+    }
+
+    .step.is-active p {
+        background-color: goldenrod;
+        color: #3b3b3b;
+    }
+
+    .step p {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.5rem;
+        background-color: #3b3b3b;
+    }
 }
