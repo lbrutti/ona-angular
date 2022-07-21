@@ -1,22 +1,15 @@
-
-    <ion-header [translucent]="true">
-        <ion-toolbar>
-            <ion-title>
-                Blank
-            </ion-title>
-        </ion-toolbar>
-    </ion-header>
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Blank
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
 
 
 
 <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-    </ion-header>
-
-    <div id="container"> -->
+    <div id="container">
 
         <!-- sticky side -->
         <main>
@@ -28,6 +21,7 @@
             </section>
 
             <section id="scrolly">
+                <!-- scrolling side -->
                 <article>
                     <div class="step" data-step="1">
                         <p>STEP 1</p>
@@ -43,12 +37,14 @@
                     </div>
                 </article>
 
+                <!-- stick figure -->
                 <figure>
                     <p>0</p>
                 </figure>
             </section>
 
-            <section>
+            <!-- non scrolly content -->
+            <section class="no_scrolly">
                 <div>
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
@@ -105,10 +101,12 @@
             </section>
 
             <section id="scrolly_overlay">
+                <!-- background content -->
                 <figure>
                     <p>0</p>
                 </figure>
 
+                <!-- foreground master content -->
                 <article>
                     <div class="step" data-step="1">
                         <p>STEP 1</p>

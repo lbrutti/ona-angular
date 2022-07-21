@@ -14,20 +14,21 @@ export class HomePage implements AfterViewInit {
     ngAfterViewInit(): void {
         // using d3 for convenience
         var main = d3.select("main");
+        
+        //sticky side
         var scrolly = main.select("#scrolly");
         var figure = scrolly.select("figure");
         var article = scrolly.select("article");
         var step = article.selectAll(".step");
 
-        // initialize the scrollama
-        var scroller = scrollama() as any;
-
-
+        //overlay
         var scrollyOverlay = main.select("#scrolly_overlay");
         var figureOverlay = scrollyOverlay.select("figure");
         var articleOverlay = scrollyOverlay.select("article");
         var stepOverlay = articleOverlay.selectAll(".step");
 
+        // initialize the scrollama
+        var scroller = scrollama() as any;
         var scrollerOverlay = scrollama() as any;
 
         // generic window resize listener event
