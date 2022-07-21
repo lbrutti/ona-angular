@@ -1,20 +1,133 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Blank
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+<ion-content [fullscreen]="true">
+    <div id="container">
+
+        <!-- sticky side -->
+        <main>
+            <section id="intro">
+                <h1 class="intro__hed">Sticky Side Example</h1>
+                <p class="intro__dek">
+                    Start scrolling to see how it works.
+                </p>
+            </section>
+
+            <section id="scrolly" class="scrolly scrolly-sticky-side">
+                <!-- scrolling side -->
+                <article>
+                    <div class="step" data-step="1">
+                        <p>STEP 1</p>
+                    </div>
+                    <div class="step" data-step="2">
+                        <p>STEP 2</p>
+                    </div>
+                    <div class="step" data-step="3">
+                        <p>STEP 3</p>
+                    </div>
+                    <div class="step" data-step="4">
+                        <p>STEP 4</p>
+                    </div>
+                </article>
+
+                <!-- stick figure -->
+                <figure>
+                    <p>0</p>
+                </figure>
+            </section>
+
+            <!-- non scrolly content -->
+            <section class="no_scrolly">
+                <div>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
+                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
+                        omnis.
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
+                        perspiciatis nemo totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa!
+                        Corporis, quidem praesentium. Iste, repellat quam.
+                    </p>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
+                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
+                        omnis.
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
+                        perspiciatis nemo
+                        totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa! Corporis, quidem
+                        praesentium. Iste, repellat
+                        quam.
+                    </p>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
+                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
+                        omnis.
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
+                        perspiciatis nemo
+                        totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa! Corporis, quidem
+                        praesentium. Iste, repellat
+                        quam.
+                    </p>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
+                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
+                        omnis.
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
+                        perspiciatis nemo
+                        totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa! Corporis, quidem
+                        praesentium. Iste, repellat
+                        quam.
+                    </p>
+
+                </div>
+            </section>
+
+            <section id="scrolly_overlay" class="scrolly scrolly-overlay">
+                <!-- background content -->
+                <figure>
+                    <p>0</p>
+                </figure>
+
+                <!-- foreground master content -->
+                <article>
+                    <div class="step" data-step="1">
+                        <p>STEP 1</p>
+                    </div>
+                    <div class="step" data-step="2">
+                        <p>STEP 2</p>
+                    </div>
+                    <div class="step" data-step="3">
+                        <p>STEP 3</p>
+                    </div>
+                    <div class="step" data-step="4">
+                        <p>STEP 4</p>
+                    </div>
+                </article>
+            </section>
+
+            <section id="outro"></section>
+        </main>
+
+        <div class='debug'></div>
+
+
+    </div>
 </ion-content>
