@@ -61,34 +61,38 @@
             </section>
 
             <!-- non scrolly content -->
-            <section class="scrolly">
+            <section id="outro">
                 <div [innerHTML]="'healthyRivers.outro'|transloco">
-
                 </div>
             </section>
 
-            <section id="scrolly" class="scrolly scrolly-sticky-side">
+            <section id="river_connectivities" class="scrolly scrolly-sticky-side">
 
                 <!-- stick figure -->
                 <figure>
-                    <p>0</p>
+                    <div id="longitudinal_img" class="stacked_img river_connectivity_animation" data-step="1"></div>
+                    <div id="lateral_img" class="stacked_img river_connectivity_animation" data-step="2,3"></div>
+                    <div id="vertical_img" class="stacked_img river_connectivity_animation" data-step="4"></div>
+                    <div id="temporal_img" class="stacked_img river_connectivity_animation" data-step="5"></div>
                 </figure>
                 <!-- scrolling side -->
                 <article>
                     <div class="step" data-step="1">
-                        <p>STEP 1</p>
+                        <div [innerHTML]="'connectivity.step-1'|transloco"></div>
                     </div>
                     <div class="step" data-step="2">
-                        <p>STEP 2</p>
+                        <div [innerHTML]="'connectivity.step-2'|transloco"></div>
                     </div>
                     <div class="step" data-step="3">
-                        <p>STEP 3</p>
+                        <div [innerHTML]="'connectivity.step-3'|transloco"></div>
                     </div>
                     <div class="step" data-step="4">
-                        <p>STEP 4</p>
+                        <div [innerHTML]="'connectivity.step-4'|transloco"></div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div [innerHTML]="'connectivity.step-5'|transloco"></div>
                     </div>
                 </article>
-
 
             </section>
 

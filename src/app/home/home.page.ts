@@ -11,15 +11,26 @@ export class HomePage implements AfterViewInit {
 
     constructor() { }
 
-    ngAfterViewInit(): void {
+    async ngAfterViewInit(): Promise<any> {
         // using d3 for convenience
         var main = d3.select("main");
 
         //sticky side
-        var scrolly = main.select("#scrolly");
-        var figure = scrolly.select("figure");
-        var article = scrolly.select("article");
+        var riverConnectivities = main.select("#river_connectivities");
+        var figure = riverConnectivities.select("figure");
+        var article = riverConnectivities.select("article");
         var step = article.selectAll(".step");
+
+        //load connectivity imgs
+        let lateralConnectivityImg = await d3.xml('../../assets/imgs/svg/connectivity/lateral.svg');
+        let longitudinalConnectivityImg = await d3.xml('../../assets/imgs/svg/connectivity/longitudinal.svg');
+        let temporalConnectivityImg = await d3.xml('../../assets/imgs/svg/connectivity/temporal.svg');
+        let verticalConnectivityImg = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
+        (riverConnectivities.select('#lateral_img').node() as any).append(lateralConnectivityImg.documentElement);
+        (riverConnectivities.select('#longitudinal_img').node() as any).append(longitudinalConnectivityImg.documentElement);
+        (riverConnectivities.select('#temporal_img').node() as any).append(temporalConnectivityImg.documentElement);
+        (riverConnectivities.select('#vertical_img').node() as any).append(verticalConnectivityImg.documentElement);
+
 
         //overlay
         var healthyRivers = main.select("#healthy_rivers");
@@ -28,7 +39,7 @@ export class HomePage implements AfterViewInit {
         var stepOverlay = articleOverlay.selectAll(".step");
 
         // initialize the scrollama
-        var scroller = scrollama() as any;
+        var riverConnectivityScroller = scrollama() as any;
         var healthyRiversScroller = scrollama() as any;
 
         // generic window resize listener event
@@ -50,7 +61,7 @@ export class HomePage implements AfterViewInit {
                 .style("top", figureMarginTop + "px");
 
             // 3. tell scrollama to update new element dimensions
-            scroller.resize();
+            riverConnectivityScroller.resize();
             healthyRiversScroller.resize();
         }
 
@@ -82,9 +93,9 @@ export class HomePage implements AfterViewInit {
             let maps = figureOverlay.selectAll("img");
             let currentStep = response.index + 1;
             maps.each(function () {
-                let imgStep = this.dataset.step.split(',');
-                let isActive = imgStep['0'] === 'all' || imgStep.includes(""+currentStep);
-                this.classList.toggle('active', isActive);
+                let imgStep = (this as any).dataset.step.split(',');
+                let isActive = imgStep['0'] === 'all' || imgStep.includes("" + currentStep);
+                (this as any).classList.toggle('active', isActive);
             });
         }
 
@@ -97,9 +108,9 @@ export class HomePage implements AfterViewInit {
             // 2. setup the scroller passing options
             // 		this will also initialize trigger observations
             // 3. bind scrollama event handlers (this can be chained like below)
-            scroller
+            riverConnectivityScroller
                 .setup({
-                    step: "#scrolly article .step",
+                    step: "#river_connectivities article .step",
                     offset: 0.33,
                     debug: false
                 })
@@ -112,10 +123,12 @@ export class HomePage implements AfterViewInit {
                     debug: false
                 })
                 .onStepEnter(handleStepEnterHealthyRivers);
+
+            return Promise.resolve();
         }
 
         // kick things off
-        init();
+        return init();
     }
 
 }
