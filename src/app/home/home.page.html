@@ -24,9 +24,9 @@
                 <!-- background content -->
                 <figure>
                     <img src="../../assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
-                        id="map_global_rivers_land" class="stacked_img map_global_rivers" data-step='all' />
+                        id="map_global_rivers_land" class="stacked_img map_global_rivers active" data-step='all' />
                     <img src="../../assets/imgs/svg/map_global_rivers/1.map_global_rivers_all.svg"
-                        id="map_global_rivers_all" class="stacked_img map_global_rivers" data-step='1' />
+                        id="map_global_rivers_all" class="stacked_img map_global_rivers active" data-step='1' />
                     <img src="../../assets/imgs/svg/map_global_rivers/1.map_global_rivers_not.svg"
                         id="map_global_rivers_not" class="stacked_img map_global_rivers" data-step='2,7' />
                     <img src="../../assets/imgs/svg/map_global_rivers/1.map_global_rivers_ffr.svg"
@@ -60,7 +60,19 @@
                 </article>
             </section>
 
+            <!-- non scrolly content -->
+            <section class="scrolly">
+                <div [innerHTML]="'healthyRivers.outro'|transloco">
+
+                </div>
+            </section>
+
             <section id="scrolly" class="scrolly scrolly-sticky-side">
+
+                <!-- stick figure -->
+                <figure>
+                    <p>0</p>
+                </figure>
                 <!-- scrolling side -->
                 <article>
                     <div class="step" data-step="1">
@@ -77,68 +89,10 @@
                     </div>
                 </article>
 
-                <!-- stick figure -->
-                <figure>
-                    <p>0</p>
-                </figure>
+
             </section>
 
-            <!-- non scrolly content -->
-            <section class="no_scrolly">
-                <div>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
-                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
-                        omnis.
-                    </p>
 
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
-                        perspiciatis nemo totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa!
-                        Corporis, quidem praesentium. Iste, repellat quam.
-                    </p>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
-                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
-                        omnis.
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
-                        perspiciatis nemo
-                        totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa! Corporis, quidem
-                        praesentium. Iste, repellat
-                        quam.
-                    </p>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
-                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
-                        omnis.
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
-                        perspiciatis nemo
-                        totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa! Corporis, quidem
-                        praesentium. Iste, repellat
-                        quam.
-                    </p>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta velit quisquam eveniet quis?
-                        Odit error quis tempore nemo ducimus. Pariatur ratione veniam officia culpa nam modi in ipsa ut
-                        omnis.
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi rerum et recusandae maiores
-                        perspiciatis nemo
-                        totam similique ipsam praesentium, ad sapiente, reiciendis sint ipsa! Corporis, quidem
-                        praesentium. Iste, repellat
-                        quam.
-                    </p>
-
-                </div>
-            </section>
 
 
 

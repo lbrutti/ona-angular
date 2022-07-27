@@ -86,7 +86,6 @@ export class HomePage implements AfterViewInit {
                 let isActive = imgStep['0'] === 'all' || imgStep.includes(""+currentStep);
                 this.classList.toggle('active', isActive);
             });
-            console.log(maps);
         }
 
 

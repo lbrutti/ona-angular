@@ -10,6 +10,15 @@
         "step-4": "Free-flowing rivers are clearly concentrated in a few areas,",
         "step-5": "like in the Arctic, or in the basins of the Amazon and Congo rivers.",
         "step-6": "In the rest of the world, very long free-flowing rivers are rare, if not totally absent.",
-        "step-7": "___"
+        "step-7": "___",
+        "outro": "To thrive, a river needs liberty of movement across four main dimensions: longitudinal, lateral, vertical, and temporal."
+    },
+    "connectivity": {
+        "step-1": "The longitudinal connectivity assures that fish can move upstream and downstream and that sediments and nutrients can flow freely from headwaters to the sea, feeding habitats and ecosystems throughout its course.",
+        "step-2": "Without human interventions, rivers would periodically overflow the nearby land, in a two-way exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa. This is called lateral connectivity. While we associate floods and bank erosion with their negative effects on human settlements, in fact natural-occurring inundations and sediments redistribution have plenty of beneficial effects for biodiversity and humans. Floods are vital for humans and agriculture too, as they replenish land fertility. It is no surprise that it is around places where humans first settled.",
+        "step-3": "Wetlands are key habitats sustained by such flooding processes, and they are not only ecosystems extremely rich in biodiversity, as they exchange freshwater filled with nutrients and organic matters from the river channel.",
+        "step-4":"Vertical connectivity addresses the natural connections between the atmosphere, surface, and groundwater flows. The water flowing under the riverbed is as important as the more visible surface flow: it is a key habitat for many invertebrates, it regulates the river temperature, it contributes to groundwater recharge, and much more",
+        "step-5":"River flows and dynamics also follow a pattern that develops over time. This can happen at intervals of months, years or decades, according to its natural flow regime and other factors. This is called temporal connectivity.",
+        "outro":"Free-flowing rivers are those in which all four types of connectivity are respected, and there are many potential threats to maintaining a free-flowing status from the headwaters to the outlet. For example, barriers like dams impact temporal and longitudinal connectivity, while embarkments hinder lateral connectivity. The anthropogenic sources of pressure that impact a river’s flow are many."
     }
 }
