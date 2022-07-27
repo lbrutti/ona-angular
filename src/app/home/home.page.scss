@@ -45,7 +45,7 @@
         -webkit-transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        background-color: #8a8a8a;
+        _background-color: #8a8a8a;
         z-index: 0;
 
         p {
@@ -134,4 +134,16 @@
         }
     }
 
+}
+
+#healthy_rivers {
+    .map_global_rivers {
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 500ms;
+
+        &.active {
+            opacity: 1;
+        }
+    }
 }

@@ -14,7 +14,7 @@ export class HomePage implements AfterViewInit {
     ngAfterViewInit(): void {
         // using d3 for convenience
         var main = d3.select("main");
-        
+
         //sticky side
         var scrolly = main.select("#scrolly");
         var figure = scrolly.select("figure");
@@ -22,14 +22,14 @@ export class HomePage implements AfterViewInit {
         var step = article.selectAll(".step");
 
         //overlay
-        var scrollyOverlay = main.select("#scrolly_overlay");
-        var figureOverlay = scrollyOverlay.select("figure");
-        var articleOverlay = scrollyOverlay.select("article");
+        var healthyRivers = main.select("#healthy_rivers");
+        var figureOverlay = healthyRivers.select("figure");
+        var articleOverlay = healthyRivers.select("article");
         var stepOverlay = articleOverlay.selectAll(".step");
 
         // initialize the scrollama
         var scroller = scrollama() as any;
-        var scrollerOverlay = scrollama() as any;
+        var healthyRiversScroller = scrollama() as any;
 
         // generic window resize listener event
         function handleResize() {
@@ -51,7 +51,7 @@ export class HomePage implements AfterViewInit {
 
             // 3. tell scrollama to update new element dimensions
             scroller.resize();
-            scrollerOverlay.resize();
+            healthyRiversScroller.resize();
         }
 
         // scrollama event handlers
@@ -69,7 +69,7 @@ export class HomePage implements AfterViewInit {
         }
 
         // scrollama event handlers
-        function handleStepEnterOverlay(response) {
+        function handleStepEnterHealthyRivers(response) {
             console.log(response);
             // response = { element, direction, index }
 
@@ -79,7 +79,14 @@ export class HomePage implements AfterViewInit {
             });
 
             // update graphic based on step
-            figureOverlay.select("p").text(response.index + 1);
+            let maps = figureOverlay.selectAll("img");
+            let currentStep = response.index + 1;
+            maps.each(function () {
+                let imgStep = this.dataset.step.split(',');
+                let isActive = imgStep['0'] === 'all' || imgStep.includes(""+currentStep);
+                this.classList.toggle('active', isActive);
+            });
+            console.log(maps);
         }
 
 
@@ -99,17 +106,17 @@ export class HomePage implements AfterViewInit {
                 })
                 .onStepEnter(handleStepEnter);
 
-            scrollerOverlay
+            healthyRiversScroller
                 .setup({
-                    step: "#scrolly_overlay article .step",
+                    step: "#healthy_rivers article .step",
                     offset: 0.33,
                     debug: false
                 })
-                .onStepEnter(handleStepEnterOverlay);
+                .onStepEnter(handleStepEnterHealthyRivers);
         }
 
         // kick things off
         init();
     }
- 
+
 }
