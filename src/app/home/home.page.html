@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
-            {{'general.pageTitle' | transloco}}
+            {{'pageTitle' | transloco}}
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -14,11 +14,34 @@
         <!-- sticky side -->
         <main>
             <section id="intro">
-                <h1 class="intro__hed">Sticky Side Example</h1>
-                <p class="intro__dek">
-                    Start scrolling to see how it works.
-                </p>
+                <h1 class="intro__hed">{{'introTitle'|transloco}}</h1>
+                <h4 class="intro__hed">{{'introSubtitle'|transloco}}</h4>
+                <div [innerHTML]="'introParagraphs'|transloco">
+                </div>
             </section>
+
+        <section id="scrolly_overlay" class="scrolly scrolly-overlay">
+            <!-- background content -->
+            <figure>
+                <img src="../../assets/imgs/svg/1.map_global_rivers_optimized.svg" />
+            </figure>
+        
+            <!-- foreground master content -->
+            <article>
+                <div class="step" data-step="1">
+                    <p>STEP 1</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>STEP 2</p>
+                </div>
+                <div class="step" data-step="3">
+                    <p>STEP 3</p>
+                </div>
+                <div class="step" data-step="4">
+                    <p>STEP 4</p>
+                </div>
+            </article>
+        </section>
 
             <section id="scrolly" class="scrolly scrolly-sticky-side">
                 <!-- scrolling side -->
@@ -100,28 +123,7 @@
                 </div>
             </section>
 
-            <section id="scrolly_overlay" class="scrolly scrolly-overlay">
-                <!-- background content -->
-                <figure>
-                    <p>0</p>
-                </figure>
-
-                <!-- foreground master content -->
-                <article>
-                    <div class="step" data-step="1">
-                        <p>STEP 1</p>
-                    </div>
-                    <div class="step" data-step="2">
-                        <p>STEP 2</p>
-                    </div>
-                    <div class="step" data-step="3">
-                        <p>STEP 3</p>
-                    </div>
-                    <div class="step" data-step="4">
-                        <p>STEP 4</p>
-                    </div>
-                </article>
-            </section>
+            
 
             <section id="outro"></section>
         </main>
