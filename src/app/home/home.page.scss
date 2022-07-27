@@ -147,3 +147,15 @@ section {
         }
     }
 }
+
+#river_connectivities {
+    .river_connectivity_animation {
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 500ms;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}

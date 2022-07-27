@@ -66,7 +66,7 @@ export class HomePage implements AfterViewInit {
         }
 
         // scrollama event handlers
-        function handleStepEnter(response) {
+        function handleStepEnterConntectivities(response) {
             console.log(response);
             // response = { element, direction, index }
 
@@ -76,7 +76,13 @@ export class HomePage implements AfterViewInit {
             });
 
             // update graphic based on step
-            figure.select("p").text(response.index + 1);
+            let connectivityAnimations = figure.selectAll(".river_connectivity_animation");
+            let currentStep = response.index + 1;
+            connectivityAnimations.each(function () {
+                let imgStep = (this as any).dataset.step.split(',');
+                let isActive = imgStep['0'] === 'all' || imgStep.includes("" + currentStep);
+                (this as any).classList.toggle('active', isActive);
+            });
         }
 
         // scrollama event handlers
@@ -114,7 +120,7 @@ export class HomePage implements AfterViewInit {
                     offset: 0.33,
                     debug: false
                 })
-                .onStepEnter(handleStepEnter);
+                .onStepEnter(handleStepEnterConntectivities);
 
             healthyRiversScroller
                 .setup({
