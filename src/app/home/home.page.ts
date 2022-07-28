@@ -16,7 +16,14 @@ export class HomePage implements AfterViewInit {
         // using d3 for convenience
         var main = d3.select("main");
 
-        //sticky side
+
+        //healthy river
+        var healthyRivers = main.select("#healthy_rivers");
+        var figureOverlay = healthyRivers.select("figure");
+        var articleOverlay = healthyRivers.select("article");
+        var stepOverlay = articleOverlay.selectAll(".step");
+
+        //connectivity (sticky side)
         var riverConnectivities = main.select("#river_connectivities");
         var figure = riverConnectivities.select("figure");
         var article = riverConnectivities.select("article");
@@ -33,29 +40,34 @@ export class HomePage implements AfterViewInit {
         (riverConnectivities.select('#vertical_img').node() as any).append(verticalConnectivityImg.documentElement);
 
 
-
-
-        //overlay
-        var healthyRivers = main.select("#healthy_rivers");
-        var figureOverlay = healthyRivers.select("figure");
-        var articleOverlay = healthyRivers.select("article");
-        var stepOverlay = articleOverlay.selectAll(".step");
-
-
-        //loading antropogenic threats svgs
+        //antropogenic threats svgs
 
         var threats = main.select("#anthropogenic_threats");
         var threatsFigure = threats.select("figure");
         var threatsArticle = threats.select("article");
         var threatsStep = threatsArticle.selectAll(".step");
 
-        let dams = await d3.xml('../../assets/imgs/svg/connectivity/lateral.svg');
-        let ramps = await d3.xml('../../assets/imgs/svg/connectivity/longitudinal.svg');
-        let weirs = await d3.xml('../../assets/imgs/svg/connectivity/temporal.svg');
-        let culverts = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
-        let sluices = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
-        let others = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
-        let hexbins = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
+        let dams = await d3.xml('../../assets/imgs/svg/map_eu/2.map_eu_dams.svg');
+        let ramps = await d3.xml('../../assets/imgs/svg/map_eu/2.map_eu_ramps.svg');
+        let weirs = await d3.xml('../../assets/imgs/svg/map_eu/2.map_eu_weirs.svg');
+        let culverts = await d3.xml('../../assets/imgs/svg/map_eu/2.map_eu_culverts.svg');
+        let sluices = await d3.xml('../../assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
+        let others = await d3.xml('../../assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
+        let hexbins = await d3.xml('../../assets/imgs/svg/map_eu/2.map_eu_count.svg');
+        dams.documentElement.setAttribute('width', 'auto');
+        dams.documentElement.setAttribute('height', 'auto');
+        ramps.documentElement.setAttribute('width', 'auto');
+        ramps.documentElement.setAttribute('height', 'auto');
+        weirs.documentElement.setAttribute('width', 'auto');
+        weirs.documentElement.setAttribute('height', 'auto');
+        culverts.documentElement.setAttribute('width', 'auto');
+        culverts.documentElement.setAttribute('height', 'auto');
+        sluices.documentElement.setAttribute('width', 'auto');
+        sluices.documentElement.setAttribute('height', 'auto');
+        others.documentElement.setAttribute('width', 'auto');
+        others.documentElement.setAttribute('height', 'auto');
+        hexbins.documentElement.setAttribute('width', 'auto');
+        hexbins.documentElement.setAttribute('height', 'auto');
         (threats.select('#anthropogenic_threats_dams').node() as any).append(dams.documentElement);
         (threats.select('#anthropogenic_threats_ramps').node() as any).append(ramps.documentElement);
         (threats.select('#anthropogenic_threats_weirs').node() as any).append(weirs.documentElement);
@@ -99,7 +111,7 @@ export class HomePage implements AfterViewInit {
         }
 
         // scrollama event handlers
-        function handleStepEnterConntectivities(response) {
+        function handleStepEnterConntectivities(response: any) {
             console.log(response);
             // response = { element, direction, index }
 
@@ -119,7 +131,7 @@ export class HomePage implements AfterViewInit {
         }
 
         // scrollama event handlers
-        function handleStepEnterHealthyRivers(response) {
+        function handleStepEnterHealthyRivers(response: any) {
             console.log(response);
             // response = { element, direction, index }
 
@@ -142,6 +154,15 @@ export class HomePage implements AfterViewInit {
             console.log(response);
             threatsStep.classed("is-active", function (d, i) {
                 return i === response.index;
+            });
+
+            // update graphic based on step
+            let maps = threatsFigure.selectAll(".anthropogenic_threats");
+            let currentStep = response.index + 1;
+            maps.each(function () {
+                let imgStep = (this as any).dataset.step.split(',');
+                let isActive = imgStep['0'] === 'all' || imgStep.includes("" + currentStep);
+                (this as any).classList.toggle('active', isActive);
             });
         }
 
