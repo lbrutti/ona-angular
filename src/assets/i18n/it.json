@@ -22,6 +22,24 @@
         "outro": "Free-flowing rivers are those in which all four types of connectivity are respected, and there are many potential threats to maintaining a free-flowing status from the headwaters to the outlet. For example, barriers like dams impact temporal and longitudinal connectivity, while embarkments hinder lateral connectivity. The anthropogenic sources of pressure that impact a river’s flow are many."
     },
     "anthropogenicThreats": {
-        "barrierCounterTitle": "Barrier counter"
+        "barrierCounterTitle": "Barrier counter",
+        "step-1": "Dams are the most evident example of infrastructure that inhibits rivers’ connectivity.",
+        "step-2": "In Europe alone, there’s an estimate of 2,043 large hydropower dams",
+        "step-3": "While big hydropower dams are very visible, even much smaller types of barriers can have a similar and equally strong impact on river connectivity... For example, if we include known smaller obstacles, we get a total estimate of at least...",
+        "step-4": "62,293 dams",
+        "step-5": "",
+        "step-6": "And then there are at least ",
+        "step-7": "199,744 ramps",
+        "step-8": "",
+        "step-9": "197,752 weirs",
+        "step-10": "",
+        "step-11": "112,898 culverts",
+        "step-12": "",
+        "step-13": "8,528 sluices",
+        "step-14": "",
+        "step-15": "and 59,577 other barriers",
+        "step-16": "",
+        "step-17": "",
+        "step-18": "With such numbers, it is no surprise that Europe has the most fragmented river network in the world"
     }
 }
