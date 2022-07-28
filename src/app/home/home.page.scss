@@ -176,5 +176,8 @@ section {
     #barrier_counter {
         position: sticky;
         top: 0;
+        background-color: #fefefe;
+        color: darkred;
+        z-index: 20;
     }
 }
