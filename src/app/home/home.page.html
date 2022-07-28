@@ -98,7 +98,74 @@
 
 
 
+            <section id="anthropogenic_threats" class="scrolly scrolly-overlay">
+                <!-- background content -->
+                <div id="barrier_counter">
+                    <h5>{{'anthropogenicThreats.barrierCounterTitle' | transloco}}</h5>
+                    <h5>{{barrierCount}}</h5>
+                </div>
+                <figure>
+                    <img src="../../assets/imgs/gif/dam.gif" id="anthropogenic_threats_dam_background"
+                        class="stacked_img anthropogenic_threats" data-step='1,2' />
 
+                    <img src="../../assets/imgs/svg/map_eu/2.map_eu_land.svg" id="anthropogenic_threats_land"
+                        class="stacked_img map_global_rivers active" data-step='4,5,6,7,8' />
+
+                    <div id="anthropogenic_threats_dams" class="stacked_img anthropogenic_threats" data-step='4,5'>
+                    </div>
+
+                    <div id="anthropogenic_threats_ramps" class="stacked_img anthropogenic_threats" data-step='4'></div>
+                    <img src="../../assets/imgs/png/ramp.png" id="anthropogenic_threats_ramp_background"
+                        class="stacked_img anthropogenic_threats" data-step='1,2' />
+
+                    <div id="anthropogenic_threats_weirs" class="stacked_img anthropogenic_threats" data-step='4'></div>
+                    <img src="../../assets/imgs/gif/weir.gif" id="anthropogenic_threats_weir_background"
+                        class="stacked_img anthropogenic_threats" data-step='1,2' />
+
+                    <div id="anthropogenic_threats_culverts" class="stacked_img anthropogenic_threats" data-step='4'>
+                    </div>
+                    <img src="../../assets/imgs/gif/weir.gif" id="anthropogenic_threats_weir_background"
+                        class="stacked_img anthropogenic_threats" data-step='1,2' />
+
+                    <div id="anthropogenic_threats_sluices" class="stacked_img anthropogenic_threats" data-step='4'>
+                    </div>
+                    <img src="../../assets/imgs/png/sluice.png" id="anthropogenic_threats_sluce_background"
+                        class="stacked_img anthropogenic_threats" data-step='1,2' />
+
+                    <div id="anthropogenic_threats_others" class="stacked_img anthropogenic_threats" data-step='4'>
+                    </div>
+
+                    <div id="anthropogenic_threats_hex_bin" class="stacked_img anthropogenic_threats" data-step='4'>
+                    </div>
+
+                </figure>
+
+                <!-- foreground master content -->
+                <article>
+                    <div class="step" data-step="1">
+                        <div [innerHTML]="'healthyRivers.step-1'|transloco"></div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div [innerHTML]="'healthyRivers.step-2'|transloco"></div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div [innerHTML]="'healthyRivers.step-3'|transloco"></div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div [innerHTML]="'healthyRivers.step-4'|transloco"></div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div [innerHTML]="'healthyRivers.step-5'|transloco"></div>
+                    </div>
+                    <div class="step" data-step="6">
+                        <div [innerHTML]="'healthyRivers.step-6'|transloco"></div>
+                    </div>
+                    <div class="step" data-step="7">
+                        <div [innerHTML]="'healthyRivers.step-7'|transloco"></div>
+                    </div>
+
+                </article>
+            </section>
 
             <section id="outro"></section>
         </main>

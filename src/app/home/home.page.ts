@@ -11,6 +11,7 @@ export class HomePage implements AfterViewInit {
 
     constructor() { }
 
+    barrierCount = 0;
     async ngAfterViewInit(): Promise<any> {
         // using d3 for convenience
         var main = d3.select("main");
