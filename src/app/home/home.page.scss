@@ -19,7 +19,7 @@
 }
 
 #intro {
-    background-image: url("https://lh5.googleusercontent.com/3HTAngs5GOxDVfBC3Er5YPcLYYY29NegBQ4iaqCwGWsPd9cb-tQk-DCM7LHjkM5lS1nFyGN0WzvSOe8GyySy0cp6ko6SFbmT8EwvyCwVmzDytueVy0C0VOh7KhhGtyNr_XA8IPJPlWArkYr8ArU21g");
+    background-image: url("../../assets/imgs/gif/header_background.gif");
 }
 
 .stacked_img {
@@ -158,6 +158,8 @@ section {
             opacity: 1;
         }
     }
+
+
 }
 
 #anthropogenic_threats {
@@ -169,5 +171,10 @@ section {
         &.active {
             opacity: 1;
         }
+    }
+
+    #barrier_counter {
+        position: sticky;
+        top: 0;
     }
 }
