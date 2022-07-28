@@ -33,15 +33,42 @@ export class HomePage implements AfterViewInit {
         (riverConnectivities.select('#vertical_img').node() as any).append(verticalConnectivityImg.documentElement);
 
 
+
+
         //overlay
         var healthyRivers = main.select("#healthy_rivers");
         var figureOverlay = healthyRivers.select("figure");
         var articleOverlay = healthyRivers.select("article");
         var stepOverlay = articleOverlay.selectAll(".step");
 
+
+        //loading antropogenic threats svgs
+
+        var threats = main.select("#anthropogenic_threats");
+        var threatsFigure = threats.select("figure");
+        var threatsArticle = threats.select("article");
+        var threatsStep = threatsArticle.selectAll(".step");
+
+        let dams = await d3.xml('../../assets/imgs/svg/connectivity/lateral.svg');
+        let ramps = await d3.xml('../../assets/imgs/svg/connectivity/longitudinal.svg');
+        let weirs = await d3.xml('../../assets/imgs/svg/connectivity/temporal.svg');
+        let culverts = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
+        let sluices = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
+        let others = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
+        let hexbins = await d3.xml('../../assets/imgs/svg/connectivity/vertical.svg');
+        (threats.select('#anthropogenic_threats_dams').node() as any).append(dams.documentElement);
+        (threats.select('#anthropogenic_threats_ramps').node() as any).append(ramps.documentElement);
+        (threats.select('#anthropogenic_threats_weirs').node() as any).append(weirs.documentElement);
+        (threats.select('#anthropogenic_threats_culverts').node() as any).append(culverts.documentElement);
+        (threats.select('#anthropogenic_threats_sluices').node() as any).append(sluices.documentElement);
+        (threats.select('#anthropogenic_threats_others').node() as any).append(others.documentElement);
+        (threats.select('#anthropogenic_threats_hex_bin').node() as any).append(hexbins.documentElement);
+
+
         // initialize the scrollama
         var riverConnectivityScroller = scrollama() as any;
         var healthyRiversScroller = scrollama() as any;
+        var threatsScroller = scrollama() as any;
 
         // generic window resize listener event
         function handleResize() {
@@ -49,6 +76,7 @@ export class HomePage implements AfterViewInit {
             var stepH = Math.floor(window.innerHeight * 0.75);
             step.style("height", stepH + "px");
             stepOverlay.style("height", stepH + "px");
+            threatsStep.style("height", stepH + "px")
 
             var figureHeight = window.innerHeight / 2;
             var figureMarginTop = (window.innerHeight - figureHeight) / 2;
@@ -61,9 +89,13 @@ export class HomePage implements AfterViewInit {
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
 
+            threatsFigure
+                .style("height", figureHeight + "px")
+                .style("top", figureMarginTop + "px");
             // 3. tell scrollama to update new element dimensions
             riverConnectivityScroller.resize();
             healthyRiversScroller.resize();
+            threatsScroller.resize();
         }
 
         // scrollama event handlers
@@ -106,6 +138,12 @@ export class HomePage implements AfterViewInit {
             });
         }
 
+        function handleStepEnterThreats(response: any) {
+            console.log(response);
+            threatsStep.classed("is-active", function (d, i) {
+                return i === response.index;
+            });
+        }
 
         function init() {
 
@@ -130,6 +168,14 @@ export class HomePage implements AfterViewInit {
                     debug: false
                 })
                 .onStepEnter(handleStepEnterHealthyRivers);
+
+            threatsScroller
+                .setup({
+                    step: "#anthropogenic_threats article .step",
+                    offset: 0.33,
+                    debug: false
+                })
+                .onStepEnter(handleStepEnterThreats);
 
             return Promise.resolve();
         }

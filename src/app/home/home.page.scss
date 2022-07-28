@@ -159,3 +159,15 @@ section {
         }
     }
 }
+
+#anthropogenic_threats {
+    .anthropogenic_threats {
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 500ms;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
