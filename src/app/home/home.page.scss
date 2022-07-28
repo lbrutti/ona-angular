@@ -138,6 +138,8 @@ section {
 
 #healthy_rivers {
     .map_global_rivers {
+        height: 100%;
+        width: auto;
         opacity: 0;
         transition-property: opacity;
         transition-duration: 500ms;
@@ -145,6 +147,8 @@ section {
         &.active {
             opacity: 1;
         }
+
+
     }
 }
 
@@ -164,12 +168,20 @@ section {
 
 #anthropogenic_threats {
     .anthropogenic_threats {
+        height: 100%;
+        width: auto;
         opacity: 0;
         transition-property: opacity;
         transition-duration: 500ms;
 
+
+
         &.active {
             opacity: 1;
+        }
+
+        svg {
+            height: 100%;
         }
     }
 

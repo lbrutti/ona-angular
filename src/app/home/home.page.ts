@@ -68,6 +68,15 @@ export class HomePage implements AfterViewInit {
         others.documentElement.setAttribute('height', 'auto');
         hexbins.documentElement.setAttribute('width', 'auto');
         hexbins.documentElement.setAttribute('height', 'auto');
+
+        d3.select(dams.documentElement).style('height', '100%');
+        d3.select(ramps.documentElement).style('height', '100%');
+        d3.select(weirs.documentElement).style('height', '100%');
+        d3.select(culverts.documentElement).style('height', '100%');
+        d3.select(sluices.documentElement).style('height', '100%');
+        d3.select(others.documentElement).style('height', '100%');
+        d3.select(hexbins.documentElement).style('height', '100%');
+
         (threats.select('#anthropogenic_threats_dams').node() as any).append(dams.documentElement);
         (threats.select('#anthropogenic_threats_ramps').node() as any).append(ramps.documentElement);
         (threats.select('#anthropogenic_threats_weirs').node() as any).append(weirs.documentElement);
