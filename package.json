@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "ionic build --prod -- --base-href https://lbrutti.github.io/ona/ && npx angular-cli-ghpages --dir=www"
+    "publish": "ionic build --prod -- --base-href https://lbrutti.github.io/ona-angular/ && npx angular-cli-ghpages --dir=www"
   },
   "private": true,
   "dependencies": {
