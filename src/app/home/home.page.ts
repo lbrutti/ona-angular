@@ -90,8 +90,8 @@ export class HomePage implements AfterViewInit {
             stepOverlay.style("height", stepH + "px");
             threatsStep.style("height", stepH + "px")
 
-            var figureHeight = window.innerHeight / 2;
-            var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+            var figureHeight = window.innerHeight; // / 2;
+            var figureMarginTop = 0;// (window.innerHeight - figureHeight) / 2;
 
             figure
                 .style("height", figureHeight + "px")
