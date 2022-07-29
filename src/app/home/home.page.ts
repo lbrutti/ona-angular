@@ -84,6 +84,13 @@ export class HomePage implements AfterViewInit {
         (threats.select('#anthropogenic_threats_sluices').node() as any).append(sluices.documentElement);
         (threats.select('#anthropogenic_threats_others').node() as any).append(others.documentElement);
         (threats.select('#anthropogenic_threats_hex_bin').node() as any).append(hexbins.documentElement);
+        let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path');
+        //this works only if paths are in foreground
+        hexbinsPaths.each(function () {
+            d3.select(this).on('mouseover', () => {
+                console.log('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path MOUSEOVER');
+            });
+        });
 
 
         // initialize the scrollama
