@@ -19,7 +19,7 @@
 }
 
 #intro {
-    // background-image: url("assets/imgs/gif/header_background.gif");
+    background-image: url("/assets/imgs/gif/header_background.gif");
 }
 
 .stacked_img {
@@ -178,10 +178,24 @@ section {
 
         &.active {
             opacity: 1;
+
+            &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
+                fill: #db7870;
+
+            }
         }
 
         svg {
             height: 100%;
+        }
+
+        &.transitioned {
+
+            // background-color: rgba(#ddaa00, 0.2);
+            &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
+                fill: black;
+
+            }
         }
     }
 

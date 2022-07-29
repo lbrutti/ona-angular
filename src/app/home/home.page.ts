@@ -171,9 +171,10 @@ export class HomePage implements AfterViewInit {
             maps.each(function () {
                 let activeSteps = (this as any).dataset.step.split(',');
                 let transitionStep = (this as any).dataset.transitionStep || -1;
+                let isTranstioned = currentStep >= +transitionStep;
                 let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
                 (this as any).classList.toggle('active', isActive);
-                (this as any).classList.toggle('transitioned', +transitionStep >= currentStep);
+                (this as any).classList.toggle('transitioned', isTranstioned);
             });
         }
 
