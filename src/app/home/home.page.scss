@@ -171,7 +171,7 @@ section {
         height: 100%;
         width: auto;
         opacity: 0;
-        transition-property: opacity;
+        // transition-property: opacity;
         transition-duration: 500ms;
 
 
@@ -191,9 +191,9 @@ section {
 
         &.transitioned {
 
-            // background-color: rgba(#ddaa00, 0.2);
             &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
-                fill: black;
+                fill: rgb(30, 14, 4);
+                fill-opacity:0.50;
 
             }
         }
