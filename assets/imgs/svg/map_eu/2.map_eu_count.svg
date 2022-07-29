@@ -4,7 +4,7 @@
    height="50.645565cm"
    version="1.2"
    width="60.547447cm"
-   id="svg1710605"
+   id="eu_barrier_count"
    sodipodi:docname="2.map_eu_count.svg"
    inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
    inkscape:export-filename="fiumi.png"
@@ -27,9 +27,9 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.17636168"
-     inkscape:cx="1179.3945"
-     inkscape:cy="853.35998"
+     inkscape:zoom="0.24941308"
+     inkscape:cx="1178.7674"
+     inkscape:cy="852.00022"
      inkscape:window-width="1366"
      inkscape:window-height="742"
      inkscape:window-x="0"
@@ -45,7 +45,7 @@
      fit-margin-bottom="50"
      lock-margins="false" />
   <g
-     id="Mappa 1: eu_barrier_count"
+     id="hexbins"
      inkscape:label="barrier_count"
      stroke-width="1"
      inkscape:groupmode="layer"
@@ -55,13 +55,13 @@
      stroke="#000000"
      style="display:inline"
      transform="translate(-250.04327,-295.6982)">
-    <rect
+    <!-- <rect
        y="0"
        x="0"
        height="2479.3826"
        width="3507.1265"
        id="rect424905"
-       style="fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.999751" />
+       style="fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.999751" /> -->
     <path
        d="m 1744.3755,1694.8079 14.1565,-24.5239 h 28.323 l 14.1564,24.5239 -14.1564,24.5239 h -28.323 l -14.1565,-24.5239"
        id="path424911"
