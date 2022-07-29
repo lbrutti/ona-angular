@@ -169,9 +169,11 @@ export class HomePage implements AfterViewInit {
             let maps = threatsFigure.selectAll(".anthropogenic_threats");
             let currentStep = response.index + 1;
             maps.each(function () {
-                let imgStep = (this as any).dataset.step.split(',');
-                let isActive = imgStep['0'] === 'all' || imgStep.includes("" + currentStep);
+                let activeSteps = (this as any).dataset.step.split(',');
+                let transitionStep = (this as any).dataset.transitionStep || -1;
+                let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
                 (this as any).classList.toggle('active', isActive);
+                (this as any).classList.toggle('transitioned', +transitionStep >= currentStep);
             });
         }
 
