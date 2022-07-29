@@ -30,10 +30,10 @@ export class HomePage implements AfterViewInit {
         var step = article.selectAll(".step");
 
         //load connectivity imgs
-        let lateralConnectivityImg = await d3.xml('/assets/imgs/svg/connectivity/lateral.svg');
-        let longitudinalConnectivityImg = await d3.xml('/assets/imgs/svg/connectivity/longitudinal.svg');
-        let temporalConnectivityImg = await d3.xml('/assets/imgs/svg/connectivity/temporal.svg');
-        let verticalConnectivityImg = await d3.xml('/assets/imgs/svg/connectivity/vertical.svg');
+        let lateralConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/lateral.svg');
+        let longitudinalConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/longitudinal.svg');
+        let temporalConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/temporal.svg');
+        let verticalConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/vertical.svg');
         (riverConnectivities.select('#lateral_img').node() as any).append(lateralConnectivityImg.documentElement);
         (riverConnectivities.select('#longitudinal_img').node() as any).append(longitudinalConnectivityImg.documentElement);
         (riverConnectivities.select('#temporal_img').node() as any).append(temporalConnectivityImg.documentElement);
@@ -47,13 +47,13 @@ export class HomePage implements AfterViewInit {
         var threatsArticle = threats.select("article");
         var threatsStep = threatsArticle.selectAll(".step");
 
-        let dams = await d3.xml('/assets/imgs/svg/map_eu/2.map_eu_dams.svg');
-        let ramps = await d3.xml('/assets/imgs/svg/map_eu/2.map_eu_ramps.svg');
-        let weirs = await d3.xml('/assets/imgs/svg/map_eu/2.map_eu_weirs.svg');
-        let culverts = await d3.xml('/assets/imgs/svg/map_eu/2.map_eu_culverts.svg');
-        let sluices = await d3.xml('/assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
-        let others = await d3.xml('/assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
-        let hexbins = await d3.xml('/assets/imgs/svg/map_eu/2.map_eu_count.svg');
+        let dams = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_dams.svg');
+        let ramps = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_ramps.svg');
+        let weirs = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_weirs.svg');
+        let culverts = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_culverts.svg');
+        let sluices = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
+        let others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
+        let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count.svg');
         dams.documentElement.setAttribute('width', 'auto');
         dams.documentElement.setAttribute('height', 'auto');
         ramps.documentElement.setAttribute('width', 'auto');
