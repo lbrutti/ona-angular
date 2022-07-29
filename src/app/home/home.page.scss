@@ -169,12 +169,15 @@ section {
 #anthropogenic_threats {
     .anthropogenic_threats {
         height: 100%;
-        width: auto;
+        width: 100%;
         opacity: 0;
         // transition-property: opacity;
         transition-duration: 500ms;
 
 
+        ::ng-deep svg {
+            width: 100%;
+        }
 
         &.active {
             opacity: 1;
@@ -193,7 +196,7 @@ section {
 
             &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
                 fill: rgb(30, 14, 4);
-                fill-opacity:0.50;
+                fill-opacity: 0.50;
 
             }
         }
