@@ -184,7 +184,11 @@ section {
 
             &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
                 fill: #db7870;
+            }
 
+            &#anthropogenic_threats_hex_bin::ng-deep svg path.focused {
+                stroke: black !important;
+                stroke-width: 3px !important;
             }
         }
 

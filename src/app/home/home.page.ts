@@ -87,8 +87,14 @@ export class HomePage implements AfterViewInit {
         let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path');
         //this works only if paths are in foreground
         hexbinsPaths.each(function () {
-            d3.select(this).on('mouseover', () => {
-                console.log('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path MOUSEOVER');
+            d3.select(this).on('mouseenter', function () {
+                console.log('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path MOUSEENTER');
+                d3.select(this).classed('focused', true)
+            });
+
+            d3.select(this).on('mouseleave', function () {
+                console.log('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path MOUSELEAVE');
+                d3.select(this).classed('focused', false)
             });
         });
 
@@ -178,10 +184,16 @@ export class HomePage implements AfterViewInit {
             maps.each(function () {
                 let activeSteps = (this as any).dataset.step.split(',');
                 let transitionStep = (this as any).dataset.transitionStep || -1;
-                let isTranstioned = currentStep >= +transitionStep;
                 let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
+                let isTranstioned = currentStep >= +transitionStep;
+                let isForeground = (this as any).dataset.foregroundStep == currentStep;
                 (this as any).classList.toggle('active', isActive);
                 (this as any).classList.toggle('transitioned', isTranstioned);
+                if (isForeground && isActive) {
+                    threatsFigure.style('z-index', 1000);
+                } else {
+                    threatsFigure.style('z-index', 0);
+                }
             });
         }
 

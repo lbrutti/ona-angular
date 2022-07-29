@@ -25,12 +25,12 @@
                 <figure>
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
                         id="map_global_rivers_land" class="stacked_img map_global_rivers active" data-step='all' />
-                    <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_all.svg"
-                        id="map_global_rivers_all" class="stacked_img map_global_rivers active" data-step='1' />
-                    <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_not.svg"
-                        id="map_global_rivers_not" class="stacked_img map_global_rivers" data-step='2,7' />
-                    <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_ffr.svg"
-                        id="map_global_rivers_ffr" class="stacked_img map_global_rivers" data-step='3,4,5,6,7' />
+                    <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_all.svg" id="map_global_rivers_all"
+                        class="stacked_img map_global_rivers active" data-step='1' />
+                    <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_not.svg" id="map_global_rivers_not"
+                        class="stacked_img map_global_rivers" data-step='2,7' />
+                    <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_ffr.svg" id="map_global_rivers_ffr"
+                        class="stacked_img map_global_rivers" data-step='3,4,5,6,7' />
                 </figure>
 
                 <!-- foreground master content -->
@@ -104,7 +104,7 @@
                     <h5>{{'anthropogenicThreats.barrierCounterTitle' | transloco}}</h5>
                     <h5>{{barrierCount}}</h5>
                 </div>
-                <figure>
+                <figure id="anthropogenic_threats_figure">
                     <img src="assets/imgs/gif/dam.gif" id="anthropogenic_threats_dam_background"
                         class="stacked_img anthropogenic_threats" data-step='1,2' />
 
@@ -133,13 +133,13 @@
                     </div>
 
                     <!-- al 17° step si attiva tooltip on hover ad ogni bin -->
-                    <div id="anthropogenic_threats_hex_bin" class="stacked_img anthropogenic_threats" data-step='17,18'>
+                    <div id="anthropogenic_threats_hex_bin" class="stacked_img anthropogenic_threats" data-step='17,18' data-foreground-step="17">
                     </div>
 
                 </figure>
 
                 <!-- foreground master content -->
-                <article>
+                <article id="anthropogenic_threats_article">
                     <div class="step" data-step="1">
                         <div [innerHTML]="'anthropogenicThreats.step-1'|transloco"></div>
                     </div>
