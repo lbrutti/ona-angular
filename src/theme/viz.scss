@@ -1,0 +1,21 @@
+::ng-deep .hex {
+    &[data-quantile="1"] {
+        fill: #ffd8cd
+    }
+
+    &[data-quantile="2"] {
+        fill: #e48f87
+    }
+
+    &[data-quantile="3"] {
+        fill: #b65752
+    }
+
+    &[data-quantile="4"] {
+        fill: #812a27
+    }
+
+    &[data-quantile="5"] {
+        fill: #4f0000
+    }
+}
