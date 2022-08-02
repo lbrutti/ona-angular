@@ -53,7 +53,7 @@ export class HomePage implements AfterViewInit {
         let culverts = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_culverts.svg');
         let sluices = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
         let others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
-        let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count.svg');
+        let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
         dams.documentElement.setAttribute('width', 'auto');
         dams.documentElement.setAttribute('height', 'auto');
         ramps.documentElement.setAttribute('width', 'auto');
@@ -84,11 +84,12 @@ export class HomePage implements AfterViewInit {
         (threats.select('#anthropogenic_threats_sluices').node() as any).append(sluices.documentElement);
         (threats.select('#anthropogenic_threats_others').node() as any).append(others.documentElement);
         (threats.select('#anthropogenic_threats_hex_bin').node() as any).append(hexbins.documentElement);
-        let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path');
+        let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
         //this works only if paths are in foreground
         hexbinsPaths.each(function () {
             d3.select(this).on('mouseenter', function () {
                 console.log('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path MOUSEENTER');
+                console.log((this as any).dataset.points)
                 d3.select(this).classed('focused', true)
             });
 
