@@ -88,13 +88,12 @@ export class HomePage implements AfterViewInit {
         //this works only if paths are in foreground
         hexbinsPaths.each(function () {
             d3.select(this).on('mouseenter', function () {
-                console.log('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path MOUSEENTER');
-                console.log((this as any).dataset.points)
+                let points = (this as any).dataset.points;
+                alert(`Contengo ${points} sbarramenti! buonanotte.`);
                 d3.select(this).classed('focused', true)
             });
 
             d3.select(this).on('mouseleave', function () {
-                console.log('#anthropogenic_threats_hex_bin #eu_barrier_count #hexbins path MOUSELEAVE');
                 d3.select(this).classed('focused', false)
             });
         });
