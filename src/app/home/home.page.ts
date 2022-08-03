@@ -1,14 +1,17 @@
 import { AfterViewInit, Component } from '@angular/core';
 import * as scrollama from 'scrollama';
 import * as d3 from 'd3';
+import { Platform } from '@ionic/angular';
 @Component({
     selector: 'app-home',
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
 })
 export class HomePage implements AfterViewInit {
-
-    constructor() { }
+    public sliderDirection = 'horizontal';
+    constructor(public platform: Platform) {
+        this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
+    }
 
     barrierCount = 0;
     async ngAfterViewInit(): Promise<any> {
@@ -231,7 +234,7 @@ export class HomePage implements AfterViewInit {
             return Promise.resolve();
         }
 
-        
+
 
         // kick things off
         return init();

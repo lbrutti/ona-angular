@@ -203,7 +203,13 @@
             <section id="outro">
                 <div [innerHTML]="'healthyRivers.outro'|transloco">
                 </div>
-                <img-comparison-slider>
+                <img-comparison-slider direction="vertical" *ngIf="platform.is('mobile')">
+                    <img slot="first" src="https://placeholder.pics/svg/600x300/4B691C/FFFFFF/aaaaaaaaa" />
+                    <img slot="second" src="https://placeholder.pics/svg/600x300/FFAA00/FFFFFF/BBBBBBB" />
+                </img-comparison-slider>
+
+
+                <img-comparison-slider direction="horizontal" *ngIf="platform.is('desktop')">
                     <img slot="first" src="https://placeholder.pics/svg/600x300/4B691C/FFFFFF/aaaaaaaaa" />
                     <img slot="second" src="https://placeholder.pics/svg/600x300/FFAA00/FFFFFF/BBBBBBB" />
                 </img-comparison-slider>
