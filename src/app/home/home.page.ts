@@ -1,7 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import * as scrollama from 'scrollama';
 import * as d3 from 'd3';
-
 @Component({
     selector: 'app-home',
     templateUrl: 'home.page.html',
@@ -89,7 +88,7 @@ export class HomePage implements AfterViewInit {
         hexbinsPaths.each(function () {
             d3.select(this).on('mouseenter', function () {
                 let points = (this as any).dataset.points;
-                alert(`Contengo ${points} sbarramenti! buonanotte.`);
+                // alert(`Contengo ${points} sbarramenti! buonanotte.`);
                 d3.select(this).classed('focused', true)
             });
 
@@ -231,6 +230,8 @@ export class HomePage implements AfterViewInit {
 
             return Promise.resolve();
         }
+
+        
 
         // kick things off
         return init();

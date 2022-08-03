@@ -133,7 +133,8 @@
                     </div>
 
                     <!-- al 17° step si attiva tooltip on hover ad ogni bin -->
-                    <div id="anthropogenic_threats_hex_bin" class="stacked_img anthropogenic_threats" data-step='17,18' data-foreground-step="17">
+                    <div id="anthropogenic_threats_hex_bin" class="stacked_img anthropogenic_threats" data-step='17,18'
+                        data-foreground-step="17">
                     </div>
 
                 </figure>
@@ -197,6 +198,16 @@
                 </article>
             </section>
 
+
+            <!-- non scrolly content -->
+            <section id="outro">
+                <div [innerHTML]="'healthyRivers.outro'|transloco">
+                </div>
+                <img-comparison-slider>
+                    <img slot="first" src="assets/imgs/png/ramp.png" />
+                    <img slot="second" src="assets/imgs/png/sluice.png" />
+                </img-comparison-slider>
+            </section>
             <section id="outro"></section>
         </main>
 
