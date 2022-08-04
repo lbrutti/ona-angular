@@ -170,10 +170,10 @@ section {
     .anthropogenic_threats {
 
         top: 10vh;
-        width: auto;
+        width: 100%;
+        height: calc(100% - 20vh);
         opacity: 0;
         transition-duration: 500ms;
-        height: calc(100% - 20vh);
 
         ::ng-deep svg {
             width: 100%;
