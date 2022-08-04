@@ -67,6 +67,16 @@ section {
         opacity: 0;
         transition-duration: 500ms;
         transition-property: opacity;
+        background-color: rgba(#f3f3f3, 0.5);
+        display: flex;
+
+        &.separator {
+            background-color: transparent;
+        }
+
+        div {
+            margin: auto
+        }
 
         &.is-active {
             opacity: 1;
@@ -88,11 +98,11 @@ section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    
+
     figure {
         margin: 0;
     }
-    
+
     .step {
         font-size: 2rem;
         // opacity: 1;
@@ -128,9 +138,7 @@ section {
 
 }
 
-.separator {
-    background-color: transparent;
-}
+
 
 #healthy_rivers {
     .map_global_rivers {
@@ -184,6 +192,7 @@ section {
 
             &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
                 fill: #db7870;
+                transition: fill 500ms;
             }
 
             &#anthropogenic_threats_hex_bin::ng-deep svg path.focused {

@@ -109,7 +109,7 @@ export class HomePage implements AfterViewInit {
         // generic window resize listener event
         function handleResize() {
             // 1. update height of step elements
-            var stepH = Math.floor(window.innerHeight * 0.75);
+            var stepH = Math.floor(window.innerHeight * 0.5);
             step.style("height", stepH + "px");
             stepOverlay.style("height", stepH + "px");
             threatsStep.style("height", stepH + "px")
@@ -215,7 +215,7 @@ export class HomePage implements AfterViewInit {
             riverConnectivityScroller
                 .setup({
                     step: "#river_connectivities article .step",
-                    offset: 0.33,
+                    offset: 0.5,
                     debug: false
                 })
                 .onStepEnter(handleStepEnterConntectivities)
@@ -224,7 +224,7 @@ export class HomePage implements AfterViewInit {
             healthyRiversScroller
                 .setup({
                     step: "#healthy_rivers article .step",
-                    offset: 0.75,
+                    offset: 0.5,
                     debug: false
                 })
                 .onStepEnter(handleStepEnterHealthyRivers)
@@ -233,7 +233,7 @@ export class HomePage implements AfterViewInit {
             threatsScroller
                 .setup({
                     step: "#anthropogenic_threats article .step",
-                    offset: 0.75,
+                    offset: 0.5,
                     debug: false
                 })
                 .onStepEnter(handleStepEnterThreats)
