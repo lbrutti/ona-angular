@@ -1,6 +1,7 @@
 @import '../../theme/scrolly-style.scss';
 
 @import '../../theme/viz.scss';
+
 #container strong {
     font-size: 20px;
     line-height: 26px;
@@ -35,18 +36,17 @@ section {
 
     article {
         position: relative;
-        max-width: 20rem;
+        max-width: 80vw;
     }
 
     figure {
         position: -webkit-sticky;
         position: sticky;
-        width: 100%;
-        margin: 0;
+        width: 80%;
+        margin: auto;
         -webkit-transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        _background-color: #8a8a8a;
         z-index: 0;
 
         p {
@@ -66,8 +66,15 @@ section {
 
     .step {
         margin: 0 auto 2rem auto;
-        color: #fff;
-
+        color: #3b3b3b;
+        font-size: 5rem;
+        text-align: center;
+        opacity: 0;
+        transition-duration: 500ms;
+        transition-property: opacity;
+        &.is-active{
+            opacity: 1;
+        }
         &:last-child {
             margin-bottom: 0;
         }
@@ -76,11 +83,6 @@ section {
             text-align: center;
             padding: 1rem;
             font-size: 1.5rem;
-        }
-
-        &.is-active {
-            background-color: goldenrod;
-            color: #3b3b3b;
         }
     }
 }
@@ -100,14 +102,6 @@ section {
         padding: 0 1rem;
     }
 
-    figure {
-        color: white;
-    }
-
-
-    .step {
-        background-color: #3b3b3b;
-    }
 }
 
 .scrolly-overlay {
@@ -121,15 +115,6 @@ section {
     }
 
     .step {
-        background-color: rgba(0, 0, 0, 0.1);
-
-        &.is-active {
-            p {
-                background-color: goldenrod;
-                color: #3b3b3b;
-            }
-        }
-
         p {
             background-color: #3b3b3b;
         }
@@ -137,9 +122,13 @@ section {
 
 }
 
+.separator {
+    background-color: transparent;
+}
+
 #healthy_rivers {
     .map_global_rivers {
-        height: 100%;
+        top: 10vh;
         width: auto;
         opacity: 0;
         transition-property: opacity;
@@ -169,7 +158,8 @@ section {
 
 #anthropogenic_threats {
     .anthropogenic_threats {
-        height: 100%;
+
+        top: 10vh;
         width: 100%;
         opacity: 0;
         // transition-property: opacity;

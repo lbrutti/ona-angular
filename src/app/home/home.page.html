@@ -66,7 +66,7 @@
                 </div>
             </section>
 
-            <section id="river_connectivities" class="scrolly scrolly-sticky-side">
+            <section id="river_connectivities" class="scrolly" [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
 
                 <!-- stick figure -->
                 <figure>
@@ -153,7 +153,7 @@
                     <div class="step" data-step="4">
                         <div [innerHTML]="'anthropogenicThreats.step-4'|transloco"></div>
                     </div>
-                    <div class="step" data-step="5">
+                    <div class="step separator" data-step="5">
                         <div [innerHTML]="'anthropogenicThreats.step-5'|transloco"></div>
                     </div>
                     <div class="step" data-step="6">
@@ -162,34 +162,34 @@
                     <div class="step" data-step="7">
                         <div [innerHTML]="'anthropogenicThreats.step-7'|transloco"></div>
                     </div>
-                    <div class="step" data-step="8">
+                    <div class="step separator" data-step="8">
                         <div [innerHTML]="'anthropogenicThreats.step-8'|transloco"></div>
                     </div>
                     <div class="step" data-step="9">
                         <div [innerHTML]="'anthropogenicThreats.step-9'|transloco"></div>
                     </div>
-                    <div class="step" data-step="10">
+                    <div class="step separator" data-step="10">
                         <div [innerHTML]="'anthropogenicThreats.step-10'|transloco"></div>
                     </div>
                     <div class="step" data-step="11">
                         <div [innerHTML]="'anthropogenicThreats.step-11'|transloco"></div>
                     </div>
-                    <div class="step" data-step="12">
+                    <div class="step separator" data-step="12">
                         <div [innerHTML]="'anthropogenicThreats.step-12'|transloco"></div>
                     </div>
                     <div class="step" data-step="13">
                         <div [innerHTML]="'anthropogenicThreats.step-13'|transloco"></div>
                     </div>
-                    <div class="step" data-step="14">
+                    <div class="step separator" data-step="14">
                         <div [innerHTML]="'anthropogenicThreats.step-14'|transloco"></div>
                     </div>
                     <div class="step" data-step="15">
                         <div [innerHTML]="'anthropogenicThreats.step-16'|transloco"></div>
                     </div>
-                    <div class="step" data-step="16">
+                    <div class="step separator" data-step="16">
                         <div [innerHTML]="'anthropogenicThreats.step-16'|transloco"></div>
                     </div>
-                    <div class="step" data-step="17">
+                    <div class="step separator" data-step="17">
                         <div [innerHTML]="'anthropogenicThreats.step-17'|transloco"></div>
                     </div>
                     <div class="step" data-step="18">

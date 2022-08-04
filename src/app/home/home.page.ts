@@ -102,9 +102,9 @@ export class HomePage implements AfterViewInit {
 
 
         // initialize the scrollama
-        var riverConnectivityScroller = scrollama() as any;
         var healthyRiversScroller = scrollama() as any;
         var threatsScroller = scrollama() as any;
+        var riverConnectivityScroller = scrollama() as any;
 
         // generic window resize listener event
         function handleResize() {
@@ -199,6 +199,10 @@ export class HomePage implements AfterViewInit {
             });
         }
 
+        function handleStepExit(response: any) {
+            response.element.classList.remove('is-active');
+            console.log('exit : ', response);
+        }
         function init() {
 
             // 1. force a resize on load to ensure proper dimensions are sent to scrollama
@@ -210,18 +214,20 @@ export class HomePage implements AfterViewInit {
             riverConnectivityScroller
                 .setup({
                     step: "#river_connectivities article .step",
-                    offset: 0.33,
+                    offset: 0.75,
                     debug: false
                 })
-                .onStepEnter(handleStepEnterConntectivities);
+                .onStepEnter(handleStepEnterConntectivities)
+                .onStepExit(handleStepExit);
 
             healthyRiversScroller
                 .setup({
                     step: "#healthy_rivers article .step",
-                    offset: 0.33,
+                    offset: 0.75,
                     debug: false
                 })
-                .onStepEnter(handleStepEnterHealthyRivers);
+                .onStepEnter(handleStepEnterHealthyRivers)
+                .onStepExit(handleStepExit);
 
             threatsScroller
                 .setup({
@@ -229,7 +235,8 @@ export class HomePage implements AfterViewInit {
                     offset: 0.33,
                     debug: false
                 })
-                .onStepEnter(handleStepEnterThreats);
+                .onStepEnter(handleStepEnterThreats)
+                .onStepExit(handleStepExit);
 
             return Promise.resolve();
         }
