@@ -185,9 +185,10 @@ export class HomePage implements AfterViewInit {
             let currentStep = response.index + 1;
             maps.each(function () {
                 let activeSteps = (this as any).dataset.step.split(',');
-                let transitionStep = (this as any).dataset.transitionStep || -1;
+                let transitionStep = (this as any).dataset.transitionStep || Infinity;
                 let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
-                let isTranstioned = currentStep >= +transitionStep;
+                //al 16° step la mappa torna tutta rossa
+                let isTranstioned = (currentStep !== 16) &&( currentStep >= +transitionStep);
                 let isForeground = (this as any).dataset.foregroundStep == currentStep;
                 (this as any).classList.toggle('active', isActive);
                 (this as any).classList.toggle('transitioned', isTranstioned);
