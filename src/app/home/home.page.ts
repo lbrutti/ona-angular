@@ -214,7 +214,7 @@ export class HomePage implements AfterViewInit {
             riverConnectivityScroller
                 .setup({
                     step: "#river_connectivities article .step",
-                    offset: 0.75,
+                    offset: 0.33,
                     debug: false
                 })
                 .onStepEnter(handleStepEnterConntectivities)
@@ -232,7 +232,7 @@ export class HomePage implements AfterViewInit {
             threatsScroller
                 .setup({
                     step: "#anthropogenic_threats article .step",
-                    offset: 0.33,
+                    offset: 0.75,
                     debug: false
                 })
                 .onStepEnter(handleStepEnterThreats)
