@@ -13,13 +13,50 @@
 
         <!-- sticky side -->
         <main>
-            <section id="intro">
+            <section id="header">
                 <h1 class="intro__hed">{{'introTitle'|transloco}}</h1>
                 <h4 class="intro__hed">{{'introSubtitle'|transloco}}</h4>
-                <div [innerHTML]="'introParagraphs'|transloco">
-                </div>
             </section>
 
+            <section id="intro">
+                <p>
+                    Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide
+                    range of freshwater
+                    species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which
+                    nurture flora, fauna,
+                    and human communities and protect us from floods and droughts and other natural disasters. They
+                    collect water from the
+                    atmosphere and land and replenish groundwater systems, which are key for our survival.
+                </p>
+                <p>
+
+                    To provide these essential ecosystem services, rivers must be able to flow freely, moving
+                    unobstructed in multiple
+                    directions. However, only a small fraction of the world’s rivers can still do so: a myriad of
+                    human-made works fragment,
+                    deviate, constrict, and regulate river flow, dramatically impacting natural functions and
+                    surrounding ecosystems.
+                    Understanding how rivers work, the threats they face, and the alarming consequences of altered river
+                    processes, warns us
+                    of how restoring our watercourses is not only possible, but crucial.
+                </p>
+                <p>
+
+                    Understanding how rivers should flow is crucial to comprehend their current bleak situation and
+                    alarming consequences.
+                    Restoring and protecting these natural systems is yet possible and necessary for people and nature.
+                </p>
+
+            </section>
+            <section id="breadcrumb">
+                <div>
+                    <span>Healthy Rivers</span>
+                    <span>Anthropogenic Threats</span>
+                    <span>Ecosystem Impacts</span>
+                    <span>Possible Futures</span>
+                     <span>About the project</span>
+                </div>
+            </section>
             <section id="healthy_rivers" class="scrolly scrolly-overlay">
                 <!-- background content -->
                 <figure>
@@ -66,7 +103,8 @@
                 </div>
             </section>
 
-            <section id="river_connectivities" class="scrolly" [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
+            <section id="river_connectivities" class="scrolly"
+                [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
 
                 <!-- stick figure -->
                 <figure>
@@ -129,7 +167,8 @@
                         data-step='13,14,15,16' data-transition-step="15">
                     </div>
 
-                    <div id="anthropogenic_threats_others" class="stacked_img anthropogenic_threats" data-step='15,16' data-offset="0.5">
+                    <div id="anthropogenic_threats_others" class="stacked_img anthropogenic_threats" data-step='15,16'
+                        data-offset="0.5">
                     </div>
 
                     <!-- al 17° step si attiva tooltip on hover ad ogni bin -->

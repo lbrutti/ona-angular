@@ -15,7 +15,34 @@
 }
 
 #intro {
-    background-image: url("/assets/imgs/gif/header_background.gif");
+    p {
+        margin-left: 25vw;
+        margin-right: 25vw;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+#breadcrumb {
+    margin-left: 25vw;
+    margin-right: 25vw;
+    position: sticky;
+
+    top: 0;
+    z-index: 2000;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+
+        span {
+            display: inline-block;
+            font-size: small;
+            margin: auto;
+        }
+    }
 }
 
 .stacked_img {
