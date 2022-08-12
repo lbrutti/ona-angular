@@ -34,14 +34,14 @@
      fit-margin-right="0"
      fit-margin-left="0"
      fit-margin-top="0"
-     inkscape:current-layer="g922"
+     inkscape:current-layer="lat2"
      inkscape:window-maximized="0"
-     inkscape:window-y="26"
+     inkscape:window-y="23"
      inkscape:window-x="0"
-     inkscape:window-height="742"
+     inkscape:window-height="697"
      inkscape:window-width="1366"
-     inkscape:cy="146.44145"
-     inkscape:cx="204.15941"
+     inkscape:cy="146.91846"
+     inkscape:cx="86.338444"
      inkscape:zoom="1.0482005"
      showgrid="false"
      inkscape:document-units="mm"
@@ -56,9 +56,9 @@
      id="defs2" />
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     style="display:inline"
      inkscape:label="temp2"
-     id="g6433"
+     id="temp2"
      inkscape:groupmode="layer">
     <g
        transform="translate(-690.58467,-85.08119)"
@@ -205,9 +205,9 @@
   <g
      sodipodi:insensitive="true"
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     style="display:inline"
      inkscape:label="temp1"
-     id="g6385"
+     id="temp1"
      inkscape:groupmode="layer">
     <g
        transform="translate(-690.58467,-85.08119)"
@@ -342,10 +342,11 @@
   </g>
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     style="display:inline"
      inkscape:label="vert2"
-     id="g5106"
-     inkscape:groupmode="layer">
+     id="vert2"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
     <g
        transform="translate(-690.58467,-85.08119)"
        id="g5084">
@@ -1083,10 +1084,11 @@
   </g>
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     style="display:inline"
      inkscape:label="vert1"
-     id="g4794"
-     inkscape:groupmode="layer">
+     id="vert1"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
     <g
        transform="translate(-690.58467,-85.08119)"
        id="g4776">
@@ -1823,10 +1825,11 @@
        style="display:inline;fill:#90a2c5;fill-opacity:1;stroke:none;stroke-width:0.234118;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:0.468236, 0.936474;stroke-dashoffset:0" />
   </g>
   <g
-     style="display:none"
+     style="display:inline"
      inkscape:label="lat2"
-     id="layer1"
-     inkscape:groupmode="layer">
+     id="lat2"
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
     <g
        style="display:inline"
        transform="translate(-865.77313,-475.47321)"
@@ -1976,9 +1979,9 @@
   <g
      sodipodi:insensitive="true"
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     style="display:inline"
      inkscape:label="lat1"
-     id="g6309"
+     id="lat1"
      inkscape:groupmode="layer">
     <g
        transform="translate(-690.58467,-85.08119)"
@@ -2115,7 +2118,7 @@
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
      inkscape:label="long2"
-     id="g32072"
+     id="long2"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <path
@@ -2502,7 +2505,7 @@
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
      inkscape:label="long1"
-     id="g32756"
+     id="long1"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <path
@@ -2875,9 +2878,9 @@
   <g
      sodipodi:insensitive="true"
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     style="display:inline"
      inkscape:label="base "
-     id="g922"
+     id="base"
      inkscape:groupmode="layer">
     <g
        transform="translate(-690.58467,-85.08119)"
