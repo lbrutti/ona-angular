@@ -19,3 +19,22 @@
         fill: #4f0000
     }
 }
+
+::ng-deep #connectivity {
+
+    #base,
+    #longitudinal1,
+    #longitudinal2,
+    #lateral1,
+    #lateral2,
+    #vertical1,
+    #vertical2,
+    #temporal1,
+    #temporal2 {
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}

@@ -150,10 +150,19 @@ export class HomePage implements AfterViewInit {
             let svg = d3.select('#connectivity_image svg');
             let currentStep = response.index + 1;
             //step 1: solo base image visibile
+            svg.select('#base').classed("active", () => currentStep == 1);
             //step 2: solo Longitudinal image visibile
+            svg.select('#longitudinal1').classed("active", () => currentStep == 2);
+            svg.select('#longitudinal2').classed("active", () => currentStep == 2);
             //step 3: solo Lateral image visibile
+            svg.select('#lateral1').classed("active", () => currentStep == 3);
+            svg.select('#lateral2').classed("active", () => currentStep == 3);
             //step 4: solo Vertical image visibile
+            svg.select('#vertical1').classed("active", () => currentStep == 4);
+            svg.select('#vertical2').classed("active", () => currentStep == 4);
             //step 5: solo Temporal image visibile
+            svg.select('#temporal1').classed("active", () => currentStep == 5);
+            svg.select('#temporal2').classed("active", () => currentStep == 5);
             connectivityAnimations.each(function () {
                 let imgStep = (this as any).dataset.step.split(',');
                 let isActive = imgStep['0'] === 'all' || imgStep.includes("" + currentStep);
