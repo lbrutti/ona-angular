@@ -14,18 +14,18 @@
     text-decoration: none;
 }
 
-#intro {
+.centered_text_block {
+    margin-left: 25vw;
+    margin-right: 25vw;
     p {
-        margin-left: 25vw;
-        margin-right: 25vw;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
 }
 
 #breadcrumb {
-    margin-left: 25vw;
-    margin-right: 25vw;
+    // margin-left: 25vw;
+    // margin-right: 25vw;
     position: sticky;
 
     top: 0;
@@ -34,7 +34,7 @@
     div {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: nowrap;
 
         span {

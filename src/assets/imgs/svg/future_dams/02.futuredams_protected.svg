@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   id="svg2124"
+   height="111.83516"
+   width="309.56009"
+   version="1.1">
+  <metadata
+     id="metadata2130">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2128">
+    <marker
+       style="overflow:visible"
+       id="marker1469"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#db7870;fill-opacity:1;fill-rule:evenodd;stroke:#db7870;stroke-width:1pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path1467" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1291"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#968263;fill-opacity:1;fill-rule:evenodd;stroke:#968263;stroke-width:1pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path1289" />
+    </marker>
+    <rect
+       x="-57.035786"
+       y="28.908548"
+       width="224.23659"
+       height="0"
+       id="rect891" />
+    <clipPath
+       id="fl-chart-layout-3-clip-path"
+       class="fl-data-clip-path">
+      <rect
+         id="rect1981"
+         height="201.377"
+         width="659.65271"
+         y="0"
+         x="103.74332" />
+    </clipPath>
+    <clipPath
+       id="fl-chart-layout-3-grid-clip-path"
+       class="fl-grid-clip-path">
+      <rect
+         id="rect1984"
+         height="204.377"
+         width="662.65271"
+         y="-1.5"
+         x="102.24332" />
+    </clipPath>
+    <marker
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1291-8"
+       style="overflow:visible">
+      <path
+         id="path1289-8"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill:#968263;fill-opacity:1;fill-rule:evenodd;stroke:#968263;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1469-6"
+       style="overflow:visible">
+      <path
+         id="path1467-2"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         style="fill:#db7870;fill-opacity:1;fill-rule:evenodd;stroke:#db7870;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)" />
+    </marker>
+  </defs>
+  <svg
+     id="svg1973"
+     version="1.1"
+     y="0"
+     x="0"
+     style="display:none"
+     width="100%"
+     height="14"
+     class="fl-legend-icon">
+    <path
+       id="path1971"
+       style="fill:#4328e7;stroke:none;stroke-width:0"
+       d="" />
+  </svg>
+  <svg
+     id="svg1977"
+     version="1.1"
+     y="0"
+     x="0"
+     style="display:none"
+     width="100%"
+     height="14"
+     class="fl-legend-icon">
+    <path
+       id="path1975"
+       style="fill:#9654e5;stroke:none;stroke-width:0"
+       d="" />
+  </svg>
+  <rect
+     id="rect1979"
+     height="263.677"
+     width="775"
+     style="font-family:'Source Sans Pro';display:none;fill:none;stroke:#ff0000;stroke-width:1px"
+     y="24.165047"
+     x="-104.34302"
+     class="fl-chart-debug-rectangle" />
+  <rect
+     class="fl-chart-fill"
+     x="-0.5996958"
+     y="24.165047"
+     width="659.65271"
+     height="201.377"
+     fill="none"
+     id="rect1987"
+     style="font-family:'Source Sans Pro'" />
+  <image
+     class="fl-chart-image"
+     x="-0.5996958"
+     y="24.165047"
+     width="659.65271"
+     height="201.377"
+     preserveAspectRatio="none"
+     id="image1989"
+     style="font-family:'Source Sans Pro'" />
+  <rect
+     class="fl-chart-interaction"
+     x="-0.5996958"
+     y="24.165047"
+     width="659.65271"
+     height="201.377"
+     style="font-family:'Source Sans Pro';opacity:0"
+     id="rect1991" />
+  <line
+     y2="232.54204"
+     style="font-family:'Source Sans Pro';stroke:#eeeeee;stroke-width:1.5"
+     id="line2009"
+     x1="659.05304"
+     y1="225.54204"
+     x2="659.05304" />
+  <text
+     y="244.35803"
+     x="668.44635"
+     text-anchor="end"
+     style="font-weight:normal;font-size:12.6px;font-family:'Source Sans Pro';fill:#aaaaaa"
+     id="text2013"><tspan
+       x="668.44635"
+       dy="0"
+       id="tspan2011">100</tspan></text>
+  <line
+     y2="232.54204"
+     style="font-family:'Source Sans Pro';stroke:#eeeeee;stroke-width:1.5"
+     id="line2017"
+     x1="292.57928"
+     y1="225.54204"
+     x2="292.57928" />
+  <line
+     id="line1999"
+     style="font-family:'Source Sans Pro';stroke:#eeeeee;stroke-width:1.5"
+     y2="24.165047"
+     y1="225.54204"
+     x2="659.05304"
+     x1="659.05304" />
+  <text
+     class="facet-title"
+     y="24.165047"
+     font-size="1.25rem"
+     font-weight="bold"
+     dominant-baseline="middle"
+     x="-0.5996958"
+     clip-path="url(#facet-clip-0-42)"
+     fill="rgb(136, 136, 136)"
+     opacity="0"
+     id="text2087"
+     style="font-family:'Source Sans Pro'" />
+  <path
+     id="dot-2"
+     stroke-width="1"
+     stroke-opacity="0"
+     fill-opacity="0.8"
+     fill="#4328E7"
+     stroke="#4328E7"
+     vector-effect="non-scaling-stroke"
+     d="m 610.42463,74.5093 a 2.67793,2.67793 0 1 1 -5.35586,0 2.67793,2.67793 0 1 1 5.35586,0"
+     class="data-point"
+     style="font-family:'Source Sans Pro'" />
+  <path
+     id="dot-3"
+     stroke-width="1"
+     stroke-opacity="0"
+     fill-opacity="0.8"
+     fill="#9654E5"
+     stroke="#9654E5"
+     vector-effect="non-scaling-stroke"
+     d="m 588.4362,74.509297 a 2.67793,2.67793 0 1 1 -5.35586,0 2.67793,2.67793 0 1 1 5.35586,0"
+     class="data-point"
+     style="font-family:'Source Sans Pro'" />
+  <path
+     stroke="#333333"
+     stroke-width="0.5rem"
+     stroke-linecap="round"
+     d="m -94.343012,20.165046 20,20 m 0,-20 -20,20"
+     style="opacity:0;stroke:#333333"
+     id="path2120" />
+  <g
+     style="display:inline"
+     id="g16660">
+    <text
+       transform="matrix(1.5686907,0,0,1.5686907,127.29378,36.955684)"
+       y="0"
+       x="99.88829"
+       style="font-style:normal;font-weight:normal;font-size:8.49966000000000044px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#968263;fill-opacity:1;stroke:none;"
+       id="text1261"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         x="-80.813169"
+         y="0"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#4d4f4a;fill-opacity:1">IN PROTECTED AREAS</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1269"
+       style="font-style:normal;font-weight:normal;font-size:13.33329999999999949px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#968263;fill-opacity:1;stroke:none;"
+       x="99.88829"
+       y="0"
+       transform="matrix(1.5686907,0,0,1.5686907,159.35733,14.892066)"><tspan
+         sodipodi:role="line"
+         x="-102.7862"
+         y="0"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#4d4f4a;fill-opacity:1">Hydropower dams</tspan></tspan></text>
+    <path
+       style="font-family:'Source Sans Pro';display:inline;stroke:#968263;stroke-width:5.676;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1291-8)"
+       class="line"
+       d="M 52.907005,75.621944 H 0.21629377"
+       fill="none"
+       stroke="#4328E7"
+       stroke-width="1.4000000000000001"
+       opacity="1"
+       stroke-dashoffset="0"
+       clip-path="url(#facet-clip-0-42)"
+       marker-end="url(#arrowhead-line-small-(&lt;10)-facet-)"
+       id="path1275" />
+    <text
+       transform="translate(51.588894,64.699839)"
+       y="0"
+       x="99.88829"
+       style="font-style:normal;font-weight:normal;font-size:13.33329999999999949px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#968263;fill-opacity:1;stroke:none;"
+       id="text1281"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         x="-46.406133"
+         y="0"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Bold';text-align:end;text-anchor:end;fill:#968263;fill-opacity:1">Existing</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1287"
+       style="font-style:normal;font-weight:normal;font-size:13.33329999999999949px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#968263;fill-opacity:1;stroke:none;"
+       x="99.88829"
+       y="0"
+       transform="translate(96.01633,79.357105)"><tspan
+         sodipodi:role="line"
+         x="-24.218689"
+         y="0"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#968263;fill-opacity:1">18%</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1459"
+       style="font-style:normal;font-weight:normal;font-size:13.33329999999999949px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#968263;fill-opacity:1;stroke:none;"
+       x="99.88829"
+       y="0"
+       transform="translate(151.97926,109.70183)"><tspan
+         sodipodi:role="line"
+         x="-146.7965"
+         y="0"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#db7870;fill-opacity:1">Planned / in construction</tspan></tspan></text>
+    <path
+       id="path1461"
+       marker-end="url(#arrowhead-line-small-(&lt;10)-facet-)"
+       clip-path="url(#facet-clip-0-42)"
+       stroke-dashoffset="0"
+       opacity="1"
+       stroke-width="1.4000000000000001"
+       stroke="#4328E7"
+       fill="none"
+       d="M 82.238057,94.27503 H 0.21591377"
+       class="line"
+       style="font-family:'Source Sans Pro';display:inline;fill:#db7870;fill-opacity:1;stroke:#db7870;stroke-width:5.676;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1469-6)" />
+    <text
+       transform="translate(126.01633,98.02701)"
+       y="0"
+       x="99.88829"
+       style="font-style:normal;font-weight:normal;font-size:13.33329999999999949px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#db7870;fill-opacity:1;stroke:none;"
+       id="text1465"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         x="-24.218689"
+         y="0"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#db7870;fill-opacity:1">28%</tspan></tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg2124"
+   version="1.1"
+   sodipodi:docname="01.futuredams_small.svg"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   height="132.81026"
+   width="367.73563"
+   viewBox="0 0 367.73563 132.81026"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview890"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.8477834"
+     inkscape:cx="134.75605"
+     inkscape:cy="66.025055"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="3"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2124"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-bottom="10"
+     fit-margin-right="10"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata2130">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2128">
+    <rect
+       x="-57.035786"
+       y="28.908548"
+       width="224.23659"
+       height="0"
+       id="rect891" />
+    <marker
+       style="overflow:visible"
+       id="DotS"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#968263;fill-opacity:1;fill-rule:evenodd;stroke:#968263;stroke-width:1pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path1006" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1214"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:#db7870;fill-opacity:1;fill-rule:evenodd;stroke:#db7870;stroke-width:1pt;stroke-opacity:1"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path1212" />
+    </marker>
+  </defs>
+  <svg
+     id="svg1973"
+     version="1.1"
+     y="0"
+     x="0"
+     style="display:none"
+     width="100%"
+     height="14"
+     class="fl-legend-icon">
+    <path
+       id="path1971"
+       style="fill:#4328e7;stroke:none;stroke-width:0"
+       d="" />
+  </svg>
+  <svg
+     id="svg1977"
+     version="1.1"
+     y="0"
+     x="0"
+     style="display:none"
+     width="100%"
+     height="14"
+     class="fl-legend-icon">
+    <path
+       id="path1975"
+       style="fill:#9654e5;stroke:none;stroke-width:0"
+       d="" />
+  </svg>
+  <g
+     style="display:inline"
+     id="g13504"
+     transform="translate(48.689337,10.999057)">
+    <text
+       transform="matrix(1.5686907,0,0,1.5686907,150.5335,14.892066)"
+       y="0"
+       x="99.88829"
+       style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;opacity:1;fill:#968263;fill-opacity:1;stroke:none"
+       id="text918"
+       xml:space="preserve"><tspan
+         x="-121.92678"
+         y="0"
+         id="tspan1280"><tspan
+           style="font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#4d4f4a"
+           id="tspan1278">Hydropower dams</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text933"
+       style="font-style:normal;font-weight:normal;font-size:8.49966px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;opacity:1;fill:#968263;fill-opacity:1;stroke:none"
+       x="99.88829"
+       y="0"
+       transform="matrix(1.5686907,0,0,1.5686907,127.29378,36.955684)"><tspan
+         x="-106.26235"
+         y="0"
+         id="tspan1284"><tspan
+           style="font-weight:bold;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#4d4f4a"
+           id="tspan1282">SMALLER THAN 10MW</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text889"
+       style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#968263;fill-opacity:1;stroke:none"
+       x="99.88829"
+       y="0"
+       transform="translate(20.400677,64.699839)"><tspan
+         x="-59.973807"
+         y="0"
+         id="tspan1288"><tspan
+           style="font-weight:bold;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Bold';text-align:end;text-anchor:end"
+           id="tspan1286">Existing</tspan></tspan></text>
+    <text
+       transform="translate(278.82811,79.827796)"
+       y="0"
+       x="99.88829"
+       style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);display:inline;fill:#968263;fill-opacity:1;stroke:none"
+       id="text1229"
+       xml:space="preserve"><tspan
+         x="-31.328046"
+         y="0"
+         id="tspan1292"><tspan
+           style="font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end"
+           id="tspan1290">90%</tspan></tspan></text>
+    <text
+       transform="translate(151.54618,109.70183)"
+       y="0"
+       x="99.88829"
+       style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);fill:#968263;fill-opacity:1;stroke:none"
+       id="text905"
+       xml:space="preserve"><tspan
+         x="-191.11931"
+         y="0"
+         id="tspan1296"><tspan
+           style="font-weight:bold;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;fill:#db7870"
+           id="tspan1294">Planned / in construction</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1235"
+       style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:0.85;font-family:sans-serif;white-space:pre;shape-inside:url(#rect891);fill:#db7870;fill-opacity:1;stroke:none"
+       x="99.88829"
+       y="0"
+       transform="translate(278.82811,99.122023)"><tspan
+         x="-31.328046"
+         y="0"
+         id="tspan1300"><tspan
+           style="font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end"
+           id="tspan1298">93%</tspan></tspan></text>
+    <path
+       id="existing_dams"
+       marker-end="url(#arrowhead-line-small-(&lt;10)-facet-)"
+       stroke-dashoffset="0"
+       opacity="1"
+       stroke-width="5"
+       stroke="#968263"
+       fill="none"
+       d="M 232.46786,74.984058 H -30.971923"
+       class="line"
+       style="font-family:'Source Sans Pro';display:inline;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#DotS)"
+       vector-effect="non-scaling-stroke" />
+    <path
+       style="font-family:'Source Sans Pro';fill:none;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1214)"
+       class="line"
+       d="M 241.44534,94.27503 H -30.972303"
+       stroke="#db7870"
+       stroke-width="5"
+       opacity="1"
+       stroke-dashoffset="0"
+       clip-path="url(#facet-clip-0-42)"
+       marker-end="url(#arrowhead-line-small-(&lt;10)-facet-)"
+       id="planned_dams"
+       vector-effect="non-scaling-stroke" />
+  </g>
+</svg>
