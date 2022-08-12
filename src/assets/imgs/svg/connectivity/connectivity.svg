@@ -30,7 +30,8 @@
      id="g922">
     <g
        transform="translate(-690.58467,-85.08119)"
-       id="g898">
+       id="g898"
+        style="display:none">
       <path
          id="path870"
          d="m 1260.5136,527.57938 v 101.7965 l -150.058,85.859 -139.09204,80.30483 v -21.07636 l 38.67144,-19.20519 29.3885,-11.12129 21.1557,-18.7437 21.3528,-15.01862 28.5236,-19.38742 -0.025,-24.1646 21.1467,-5.84299 21.9733,-12.82726 14.0019,-31.71529 20.5812,-10.06454 50.6826,-68.83384 z"
@@ -91,7 +92,7 @@
   </g>
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     
      id="g32756">
     <g
        style="display:inline;fill:#d87870;fill-opacity:1"
@@ -360,7 +361,7 @@
   </g>
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     
      id="g32072">
     <ellipse
        transform="rotate(-22.684653)"
@@ -624,11 +625,11 @@
     </g>
   </g>
   <g
-     style="display:none"
+     
      id="layer2" />
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     
      id="g6433">
     <path
        id="path6411"
@@ -691,7 +692,7 @@
   </g>
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     
      id="g4794">
     <g
        style="opacity:0.827691;fill:#cde9f1;fill-opacity:0.758791"
@@ -1342,7 +1343,7 @@
   </g>
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     
      id="g5106">
     <g
        style="opacity:0.827691;fill:#cde9f1;fill-opacity:0.758791"
@@ -1993,7 +1994,7 @@
   </g>
   <g
      transform="translate(-175.21346,-390.30887)"
-     style="display:none"
+     
      id="g6309">
     <g
        style="opacity:0.827691;fill:#cde9f1;fill-opacity:0.758791"
@@ -2043,7 +2044,7 @@
     </g>
   </g>
   <g
-     style="display:none"
+     
      id="layer1">
     <path
        id="path181677"
