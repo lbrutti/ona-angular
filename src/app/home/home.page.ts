@@ -32,15 +32,13 @@ export class HomePage implements AfterViewInit {
         var step = article.selectAll(".step");
 
         //load connectivity imgs
-        let lateralConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/lateral.svg');
-        let longitudinalConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/longitudinal.svg');
-        let temporalConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/temporal.svg');
-        let verticalConnectivityImg = await d3.xml('assets/imgs/svg/connectivity/vertical.svg');
-        (riverConnectivities.select('#lateral_img').node() as any).append(lateralConnectivityImg.documentElement);
-        (riverConnectivities.select('#longitudinal_img').node() as any).append(longitudinalConnectivityImg.documentElement);
-        (riverConnectivities.select('#temporal_img').node() as any).append(temporalConnectivityImg.documentElement);
-        (riverConnectivities.select('#vertical_img').node() as any).append(verticalConnectivityImg.documentElement);
+        let connectivity = await d3.xml('assets/imgs/svg/connectivity/connectivity.svg');
+        connectivity.documentElement.setAttribute('width', 'auto');
+        connectivity.documentElement.setAttribute('height', 'auto');
 
+        d3.select(connectivity.documentElement).style('height', '100%');
+        
+        (riverConnectivities.select('#connectivity_image').node() as any).append(connectivity.documentElement);
 
         //antropogenic threats svgs
 
@@ -56,6 +54,10 @@ export class HomePage implements AfterViewInit {
         let sluices = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
         let others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
         let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
+
+
+
+
         dams.documentElement.setAttribute('width', 'auto');
         dams.documentElement.setAttribute('height', 'auto');
         ramps.documentElement.setAttribute('width', 'auto');
@@ -188,7 +190,7 @@ export class HomePage implements AfterViewInit {
                 let transitionStep = (this as any).dataset.transitionStep || Infinity;
                 let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
                 //al 16° step la mappa torna tutta rossa
-                let isTranstioned = (currentStep !== 16) &&( currentStep >= +transitionStep);
+                let isTranstioned = (currentStep !== 16) && (currentStep >= +transitionStep);
                 let isForeground = (this as any).dataset.foregroundStep == currentStep;
                 (this as any).classList.toggle('active', isActive);
                 (this as any).classList.toggle('transitioned', isTranstioned);
