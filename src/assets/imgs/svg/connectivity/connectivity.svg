@@ -34,7 +34,7 @@
      fit-margin-right="0"
      fit-margin-left="0"
      fit-margin-top="0"
-     inkscape:current-layer="lat2"
+     inkscape:current-layer="lateral2"
      inkscape:window-maximized="0"
      inkscape:window-y="23"
      inkscape:window-x="0"
@@ -57,8 +57,8 @@
   <g
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
-     inkscape:label="temp2"
-     id="temp2"
+     inkscape:label="temporal2"
+     id="temporal2"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <g
@@ -207,8 +207,8 @@
      sodipodi:insensitive="true"
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
-     inkscape:label="temp1"
-     id="temp1"
+     inkscape:label="temporal1"
+     id="temporal1"
      inkscape:groupmode="layer">
     <g
        transform="translate(-690.58467,-85.08119)"
@@ -344,8 +344,8 @@
   <g
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
-     inkscape:label="vert2"
-     id="vert2"
+     inkscape:label="vertical2"
+     id="vertical2"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <g
@@ -1086,8 +1086,8 @@
   <g
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
-     inkscape:label="vert1"
-     id="vert1"
+     inkscape:label="vertical1"
+     id="vertical1"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <g
@@ -1827,8 +1827,8 @@
   </g>
   <g
      style="display:inline"
-     inkscape:label="lat2"
-     id="lat2"
+     inkscape:label="lateral2"
+     id="lateral2"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <g
@@ -1981,8 +1981,8 @@
      sodipodi:insensitive="true"
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
-     inkscape:label="lat1"
-     id="lat1"
+     inkscape:label="lateral1"
+     id="lateral1"
      inkscape:groupmode="layer">
     <g
        transform="translate(-690.58467,-85.08119)"
@@ -2118,8 +2118,8 @@
   <g
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
-     inkscape:label="long2"
-     id="long2"
+     inkscape:label="longitudinal2"
+     id="longitudinal2"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <path
@@ -2505,8 +2505,8 @@
   <g
      transform="translate(-175.21346,-390.30887)"
      style="display:inline"
-     inkscape:label="long1"
-     id="long1"
+     inkscape:label="longitudinal1"
+     id="longitudinal1"
      inkscape:groupmode="layer"
      sodipodi:insensitive="true">
     <path

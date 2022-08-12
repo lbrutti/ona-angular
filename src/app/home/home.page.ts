@@ -37,7 +37,7 @@ export class HomePage implements AfterViewInit {
         connectivity.documentElement.setAttribute('height', 'auto');
 
         d3.select(connectivity.documentElement).style('height', '100%');
-        
+
         (riverConnectivities.select('#connectivity_image').node() as any).append(connectivity.documentElement);
 
         //antropogenic threats svgs
@@ -138,7 +138,6 @@ export class HomePage implements AfterViewInit {
 
         // scrollama event handlers
         function handleStepEnterConntectivities(response: any) {
-            console.log(response);
             // response = { element, direction, index }
 
             // add color to current step only
@@ -148,7 +147,13 @@ export class HomePage implements AfterViewInit {
 
             // update graphic based on step
             let connectivityAnimations = figure.selectAll(".river_connectivity_animation");
+            let svg = d3.select('#connectivity_image svg');
             let currentStep = response.index + 1;
+            //step 1: solo base image visibile
+            //step 2: solo Longitudinal image visibile
+            //step 3: solo Lateral image visibile
+            //step 4: solo Vertical image visibile
+            //step 5: solo Temporal image visibile
             connectivityAnimations.each(function () {
                 let imgStep = (this as any).dataset.step.split(',');
                 let isActive = imgStep['0'] === 'all' || imgStep.includes("" + currentStep);
