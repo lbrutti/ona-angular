@@ -21,15 +21,15 @@ export class HomePage implements AfterViewInit {
 
         //healthy river
         var healthyRivers = main.select("#healthy_rivers");
-        var figureOverlay = healthyRivers.select("figure");
-        var articleOverlay = healthyRivers.select("article");
-        var stepOverlay = articleOverlay.selectAll(".step");
+        var healthyRiversFigure = healthyRivers.select("figure");
+        var healthyRiversArticle = healthyRivers.select("article");
+        var healthyRiversStep = healthyRiversArticle.selectAll(".step");
 
         //connectivity (sticky side)
         var riverConnectivities = main.select("#river_connectivities");
-        var figure = riverConnectivities.select("figure");
-        var article = riverConnectivities.select("article");
-        var step = article.selectAll(".step");
+        var riverConnectivitiesFigure = riverConnectivities.select("figure");
+        var riverConnectivitiesArticle = riverConnectivities.select("article");
+        var riverConnectivitiesStep = riverConnectivitiesArticle.selectAll(".step");
 
         //load connectivity imgs
         let connectivity = await d3.xml('assets/imgs/svg/connectivity/connectivity.svg');
@@ -54,9 +54,6 @@ export class HomePage implements AfterViewInit {
         let sluices = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
         let others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
         let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
-
-
-
 
         dams.documentElement.setAttribute('width', 'auto');
         dams.documentElement.setAttribute('height', 'auto');
@@ -105,25 +102,26 @@ export class HomePage implements AfterViewInit {
 
         // initialize the scrollama
         var healthyRiversScroller = scrollama() as any;
-        var threatsScroller = scrollama() as any;
         var riverConnectivityScroller = scrollama() as any;
+        var threatsScroller = scrollama() as any;
+        var freshwaterWaffle = scrollama() as any;
 
         // generic window resize listener event
         function handleResize() {
             // 1. update height of step elements
             var stepH = Math.floor(window.innerHeight * 0.5);
-            step.style("height", stepH + "px");
-            stepOverlay.style("height", stepH + "px");
+            riverConnectivitiesStep.style("height", stepH + "px");
+            healthyRiversStep.style("height", stepH + "px");
             threatsStep.style("height", stepH + "px")
 
             var figureHeight = window.innerHeight; // / 2;
             var figureMarginTop = 0;// (window.innerHeight - figureHeight) / 2;
 
-            figure
+            riverConnectivitiesFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
 
-            figureOverlay
+            healthyRiversFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
 
@@ -141,12 +139,12 @@ export class HomePage implements AfterViewInit {
             // response = { element, direction, index }
 
             // add color to current step only
-            step.classed("is-active", function (d, i) {
+            riverConnectivitiesStep.classed("is-active", function (d, i) {
                 return i === response.index;
             });
 
             // update graphic based on step
-            let connectivityAnimations = figure.selectAll(".river_connectivity_animation");
+            let connectivityAnimations = riverConnectivitiesFigure.selectAll(".river_connectivity_animation");
             let svg = d3.select('#connectivity_image svg');
             let currentStep = response.index + 1;
             //step 1: solo base image visibile
@@ -176,12 +174,12 @@ export class HomePage implements AfterViewInit {
             // response = { element, direction, index }
 
             // add color to current step only
-            stepOverlay.classed("is-active", function (d, i) {
+            healthyRiversStep.classed("is-active", function (d, i) {
                 return i === response.index;
             });
 
             // update graphic based on step
-            let maps = figureOverlay.selectAll("img");
+            let maps = healthyRiversFigure.selectAll("img");
             let currentStep = response.index + 1;
             maps.each(function () {
                 let imgStep = (this as any).dataset.step.split(',');
