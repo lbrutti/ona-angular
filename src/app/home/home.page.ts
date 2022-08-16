@@ -47,57 +47,7 @@ export class HomePage implements AfterViewInit {
         var threatsArticle = threats.select("article");
         var threatsStep = threatsArticle.selectAll(".step");
 
-        let dams = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_dams.svg');
-        let ramps = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_ramps.svg');
-        let weirs = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_weirs.svg');
-        let culverts = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_culverts.svg');
-        let sluices = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
-        let others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
-        let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
-
-        dams.documentElement.setAttribute('width', 'auto');
-        dams.documentElement.setAttribute('height', 'auto');
-        ramps.documentElement.setAttribute('width', 'auto');
-        ramps.documentElement.setAttribute('height', 'auto');
-        weirs.documentElement.setAttribute('width', 'auto');
-        weirs.documentElement.setAttribute('height', 'auto');
-        culverts.documentElement.setAttribute('width', 'auto');
-        culverts.documentElement.setAttribute('height', 'auto');
-        sluices.documentElement.setAttribute('width', 'auto');
-        sluices.documentElement.setAttribute('height', 'auto');
-        others.documentElement.setAttribute('width', 'auto');
-        others.documentElement.setAttribute('height', 'auto');
-        hexbins.documentElement.setAttribute('width', 'auto');
-        hexbins.documentElement.setAttribute('height', 'auto');
-
-        d3.select(dams.documentElement).style('height', '100%');
-        d3.select(ramps.documentElement).style('height', '100%');
-        d3.select(weirs.documentElement).style('height', '100%');
-        d3.select(culverts.documentElement).style('height', '100%');
-        d3.select(sluices.documentElement).style('height', '100%');
-        d3.select(others.documentElement).style('height', '100%');
-        d3.select(hexbins.documentElement).style('height', '100%');
-
-        (threats.select('#anthropogenic_threats_dams').node() as any).append(dams.documentElement);
-        (threats.select('#anthropogenic_threats_ramps').node() as any).append(ramps.documentElement);
-        (threats.select('#anthropogenic_threats_weirs').node() as any).append(weirs.documentElement);
-        (threats.select('#anthropogenic_threats_culverts').node() as any).append(culverts.documentElement);
-        (threats.select('#anthropogenic_threats_sluices').node() as any).append(sluices.documentElement);
-        (threats.select('#anthropogenic_threats_others').node() as any).append(others.documentElement);
-        (threats.select('#anthropogenic_threats_hex_bin').node() as any).append(hexbins.documentElement);
-        let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
-        //this works only if paths are in foreground
-        hexbinsPaths.each(function () {
-            d3.select(this).on('mouseenter', function () {
-                let points = (this as any).dataset.points;
-                // alert(`Contengo ${points} sbarramenti! buonanotte.`);
-                d3.select(this).classed('focused', true)
-            });
-
-            d3.select(this).on('mouseleave', function () {
-                d3.select(this).classed('focused', false)
-            });
-        });
+        await this.loadThreatsCharts(threats);
 
 
         // initialize the scrollama
@@ -256,10 +206,62 @@ export class HomePage implements AfterViewInit {
             return Promise.resolve();
         }
 
-
-
         // kick things off
         return init();
     }
 
+
+    private async loadThreatsCharts(threats: d3.Selection<d3.BaseType, unknown, HTMLElement, any>) {
+        let dams = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_dams.svg');
+        let ramps = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_ramps.svg');
+        let weirs = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_weirs.svg');
+        let culverts = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_culverts.svg');
+        let sluices = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
+        let others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
+        let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
+
+        dams.documentElement.setAttribute('width', 'auto');
+        dams.documentElement.setAttribute('height', 'auto');
+        ramps.documentElement.setAttribute('width', 'auto');
+        ramps.documentElement.setAttribute('height', 'auto');
+        weirs.documentElement.setAttribute('width', 'auto');
+        weirs.documentElement.setAttribute('height', 'auto');
+        culverts.documentElement.setAttribute('width', 'auto');
+        culverts.documentElement.setAttribute('height', 'auto');
+        sluices.documentElement.setAttribute('width', 'auto');
+        sluices.documentElement.setAttribute('height', 'auto');
+        others.documentElement.setAttribute('width', 'auto');
+        others.documentElement.setAttribute('height', 'auto');
+        hexbins.documentElement.setAttribute('width', 'auto');
+        hexbins.documentElement.setAttribute('height', 'auto');
+
+        d3.select(dams.documentElement).style('height', '100%');
+        d3.select(ramps.documentElement).style('height', '100%');
+        d3.select(weirs.documentElement).style('height', '100%');
+        d3.select(culverts.documentElement).style('height', '100%');
+        d3.select(sluices.documentElement).style('height', '100%');
+        d3.select(others.documentElement).style('height', '100%');
+        d3.select(hexbins.documentElement).style('height', '100%');
+
+        (threats.select('#anthropogenic_threats_dams').node() as any).append(dams.documentElement);
+        (threats.select('#anthropogenic_threats_ramps').node() as any).append(ramps.documentElement);
+        (threats.select('#anthropogenic_threats_weirs').node() as any).append(weirs.documentElement);
+        (threats.select('#anthropogenic_threats_culverts').node() as any).append(culverts.documentElement);
+        (threats.select('#anthropogenic_threats_sluices').node() as any).append(sluices.documentElement);
+        (threats.select('#anthropogenic_threats_others').node() as any).append(others.documentElement);
+        (threats.select('#anthropogenic_threats_hex_bin').node() as any).append(hexbins.documentElement);
+        let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
+        //this works only if paths are in foreground
+        hexbinsPaths.each(function () {
+            d3.select(this).on('mouseenter', function () {
+                let points = (this as any).dataset.points;
+                // alert(`Contengo ${points} sbarramenti! buonanotte.`);
+                d3.select(this).classed('focused', true);
+            });
+
+            d3.select(this).on('mouseleave', function () {
+                d3.select(this).classed('focused', false);
+            });
+        });
+    }
 }
