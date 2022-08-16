@@ -99,7 +99,8 @@
 
                 <!-- stick figure -->
                 <figure>
-                    <div id="connectivity_image" class="stacked_img river_connectivity_animation" data-step="1,2,3,4,5"></div>
+                    <div id="connectivity_image" class="stacked_img river_connectivity_animation" data-step="1,2,3,4,5">
+                    </div>
                 </figure>
                 <!-- scrolling side -->
                 <article>
@@ -122,8 +123,27 @@
 
             </section>
 
+            <section id="free_flowing_rivers_text" class="centered_text_block">
+                <p>
+                    <em>Free-flowing rivers</em> are those in which all four types of connectivity are present.
+                    There are, however, many potential threats to maintaining a free-flowing status from the headwaters
+                    to the outlet. For example,
+                    barriers like dams impact longitudinal and temporal connectivity, while bank protection and levees
+                    hinder lateral
+                    connectivity.
+                </p>
+                <p>
+                    The human pressures that impact a river’s flow and dynamics are multiple, often linked to
+                    urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and
+                    energy production - to name a few.
+                </p>
 
 
+            </section>
+
+            <section id="anthropogenic_threats-title" class="centered_text_block">
+                <h1>THE FOUR DIMENSIONS OF CONNECTIVITY</h1>
+            </section>
             <section id="anthropogenic_threats" class="scrolly scrolly-overlay">
                 <!-- background content -->
                 <div id="barrier_counter">
@@ -224,22 +244,84 @@
                     </div>
                 </article>
             </section>
+            <section id="anthropogenic_threats_text" class="centered_text_block">
+                <p>
+                    These barriers mostly impact <em>longitudinal connectivity</em>, blocking or limiting the passage of
+                    fish and sediments.
+                </p>
+                <p>
+                    Some obstacles, like dams, also impact <em>temporal connectivity</em>, as they regulate the flow of
+                    water and sediments according
+                    to human needs rather than allowing the river to follow its natural seasonal patterns.
+                </p>
+                <figure>
+                    <img src="assets/imgs/gif/foto7.gif">
+                </figure>
+                <p>
+                    Other types of human interventions put pressure on lateral connectivity, for example artificial
+                    levees and bank
+                    protection works. Such barriers are built in the floodplains and run parallel to the river. Levees
+                    are used to stop
+                    water from flooding the nearby land but, depending on how far they are from the river channel, they
+                    could still allow
+                    for some lateral movements. Bank protection works, on the other hand, are made specifically to
+                    prevent the river channel
+                    from shifting its path sideways, although they don’t necessarily block the river’s waters from
+                    reaching the floodplains,
+                    for example if they are built with rocks that let water pass through.
+                </p>
+                <figure>
+                    <img src="assets/imgs/jpg/foto15.jpeg">
+                    <figcaption>loren ipsum</figcaption>
+                </figure>
 
+                <figure>
+                    <img src="assets/imgs/jpg/foto16.jpeg">
+                    <figcaption>loren ipsum</figcaption>
+                </figure>
+
+            </section>
 
             <!-- non scrolly content -->
-            <section id="outro">
-                <div [innerHTML]="'healthyRivers.outro'|transloco">
+            <section id="canalizzazione" class="centered_text_block">
+                <div>
+                    <p>
+                        Rivers with lateral barriers quickly become channels that follow a strict path, rather than live
+                        elements that weave in
+                        the environment and change shape over time. This can cause catastrophic floods when rivers
+                        overflow embankments and also
+                        increases flood risk further downstream.
+                    </p>
+
                 </div>
                 <img-comparison-slider direction="vertical" *ngIf="platform.is('mobile')">
-                    <img slot="first" src="https://placeholder.pics/svg/600x300/4B691C/FFFFFF/aaaaaaaaa" />
-                    <img slot="second" src="https://placeholder.pics/svg/600x300/FFAA00/FFFFFF/BBBBBBB" />
+                    <img slot="first" src="assets/imgs/png/foto9.png" />
+                    <img slot="second" src="assets/imgs/png/foto10.png" />
                 </img-comparison-slider>
 
 
                 <img-comparison-slider direction="horizontal" *ngIf="platform.is('desktop')">
-                    <img slot="first" src="https://placeholder.pics/svg/600x300/4B691C/FFFFFF/aaaaaaaaa" />
-                    <img slot="second" src="https://placeholder.pics/svg/600x300/FFAA00/FFFFFF/BBBBBBB" />
+                    <img slot="first" src="assets/imgs/png/foto9.png" />
+                    <img slot="second" src="assets/imgs/png/foto10.png" />
                 </img-comparison-slider>
+                <div>
+                    <p>
+                        Lateral obstacles are less likely to be noticed as they are deeply ingrained in the anthropized
+                        landscape, but they are
+                        even more numerous than the shocking number of longitudinal obstacles like dams, weirs, ramps,
+                        and sluices.
+                    </p>
+                    <p>
+                        Lastly, human interventions hinder the vertical connectivity of the riverbed. Activities like
+                        paving, dredging, or
+                        clogging with fine sediments limit the exchange between surface and groundwater.
+                    </p>
+
+                </div>
+                <figure>
+                    <img src="assets/imgs/jpg/foto11.jpeg" />
+                    <figcaption>lorem ipsum</figcaption>
+                </figure>
             </section>
             <section id="outro"></section>
         </main>

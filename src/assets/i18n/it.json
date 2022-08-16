@@ -22,9 +22,9 @@
     },
     "anthropogenicThreats": {
         "barrierCounterTitle": "Barrier counter",
-        "step-1": "Dams are the most evident example of infrastructure that inhibits rivers’ connectivity.",
-        "step-2": "In Europe alone, there’s an estimate of 2,043 large hydropower dams",
-        "step-3": "While big hydropower dams are very visible, even much smaller types of barriers can have a similar and equally strong impact on river connectivity... For example, if we include known smaller obstacles, we get a total estimate of at least...",
+        "step-1": "Dams and other barriers are the most evident example of built infrastructure that hinder river connectivity.",
+        "step-2": "While large hydropower dams are very visible, they are actually only a small fraction of the types of barriers that a river encounters throughout its course",
+        "step-3": "For example, the estimate of known barriers in Europe is at least...",
         "step-4": "62,293 dams",
         "step-5": "&nbsp;",
         "step-6": "And then there are at least ",
@@ -39,6 +39,6 @@
         "step-15": "and 59,577 other barriers",
         "step-16": "&nbsp;",
         "step-17": "&nbsp;",
-        "step-18": "With such numbers, it is no surprise that Europe has the most fragmented river network in the world"
+        "step-18": "With such numbers, it is no surprise that Europe has the most fragmented river network in the world."
     }
 }
