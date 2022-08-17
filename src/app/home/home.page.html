@@ -552,6 +552,29 @@
                     <div class="step" data-step="1" [innerHTML]="'possibleFutures.step-7'|transloco"> </div>
                 </article>
             </section>
+            <section id="possible_futures_balkans_map" class="centered_text_block">
+                <div>
+                    <h4>
+                        <span>Existing</span>, <span>planned / in construction medium-large</span> and <span>planned /
+                            in construction small</span> hydropower dams in the Balkans and Eastern Mediterranean Region
+
+                    </h4>
+                </div>
+                <figure>
+
+                    <img-comparison-slider direction="vertical" *ngIf="platform.is('mobile')">
+                        <img slot="first" src="assets/imgs/png/balkans_existing.png" />
+                        <img slot="second" src="assets/imgs/png/balkans_planned.png" />
+                    </img-comparison-slider>
+
+
+                    <img-comparison-slider direction="horizontal" *ngIf="platform.is('desktop')">
+                        <img slot="first" src="assets/imgs/png/balkans_existing.png" />
+                        <img slot="second" src="assets/imgs/png/balkans_planned.png" />
+                    </img-comparison-slider>
+                    <figcaption>lorem ipsum</figcaption>
+                </figure>
+            </section>
             <section id="possible_futures_dam_removoval_text" class="centered_text_block">
                 <div>
                     <h4>Dam Removal</h4>
