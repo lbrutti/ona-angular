@@ -71,8 +71,9 @@
                 <ng-template>
                     <ion-content>
                         <ion-list>
-                            <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs; last as isLast" (click)="onBreadCrumbPopoverClick($event)"
-                                [href]="breadcrumb.href" [attr.data-href]="breadcrumb.href" [lines]="isLast ? 'none' : null">
+                            <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs; last as isLast"
+                                (click)="onBreadCrumbPopoverClick($event)" [href]="breadcrumb.href"
+                                [attr.data-href]="breadcrumb.href" [lines]="isLast ? 'none' : null">
                                 <ion-label>{{ breadcrumb.textContent }}</ion-label>
                             </ion-item>
                         </ion-list>
@@ -325,16 +326,20 @@
                     </p>
 
                 </div>
-                <img-comparison-slider direction="vertical" *ngIf="platform.is('mobile')">
-                    <img slot="first" src="assets/imgs/png/foto9.png" />
-                    <img slot="second" src="assets/imgs/png/foto10.png" />
-                </img-comparison-slider>
+                <figure>
+
+                    <img-comparison-slider direction="vertical" *ngIf="platform.is('mobile')">
+                        <img slot="first" src="assets/imgs/png/foto9.png" />
+                        <img slot="second" src="assets/imgs/png/foto10.png" />
+                    </img-comparison-slider>
 
 
-                <img-comparison-slider direction="horizontal" *ngIf="platform.is('desktop')">
-                    <img slot="first" src="assets/imgs/png/foto9.png" />
-                    <img slot="second" src="assets/imgs/png/foto10.png" />
-                </img-comparison-slider>
+                    <img-comparison-slider direction="horizontal" *ngIf="platform.is('desktop')">
+                        <img slot="first" src="assets/imgs/png/foto9.png" />
+                        <img slot="second" src="assets/imgs/png/foto10.png" />
+                    </img-comparison-slider>
+                    <figcaption>lorem ipsum</figcaption>
+                </figure>
                 <div>
                     <p>
                         Lateral obstacles are less likely to be noticed as they are deeply ingrained in the anthropized
@@ -451,7 +456,48 @@
                     <div class="step" data-step="9" [innerHTML]="'ecosystemImpacts.step-9'|transloco"></div>
                 </article>
             </section>
+            <section id="ecosystem_impacts_sediment_text" class="centered_text_block">
+                <div>
+                    <p>
 
+                        The trapping of sediments by barriers doesn’t only alter riparian habitats. Without obstacles
+                        sediments would eventually
+                        reach the coastal zone, preventing coastal erosion and the loss of river deltas. Areas rich in
+                        sediments are often also
+                        rich in biodiversity since they supplement the soil with nutrients. It is <a
+                            href="https://www.forbes.com/sites/jeffopperman/2019/09/27/worlds-major-deltas-threatened-by-climate-change-and-also-by-how-we-develop-power-systems/?sh=c8de97a60e1f"
+                            target="_blank">estimated</a> that the Nile river delta is losing
+                        98% of its sediment supply because of upstream dams and reservoirs.
+
+
+                    </p>
+                    <p>Sediment trapping and downstream erosion threaten the lives and economic activities of the
+                        millions of people who belong
+                        to communities settled along river deltas and coasts.
+                    </p>
+                    <p>
+                        Erosion makes these environments increasingly susceptible to heavy floods, a risk aggravated by
+                        rising sea levels.
+                    </p>
+
+                    <figure>
+
+                        <img-comparison-slider direction="vertical" *ngIf="platform.is('mobile')">
+                            <img slot="first" src="assets/imgs/png/foto12.png" />
+                            <img slot="second" src="assets/imgs/png/foto13.png" />
+                        </img-comparison-slider>
+
+
+                        <img-comparison-slider direction="horizontal" *ngIf="platform.is('desktop')">
+                            <img slot="first" src="assets/imgs/png/foto12.png" />
+                            <img slot="second" src="assets/imgs/png/foto13.png" />
+                        </img-comparison-slider>
+                        <figcaption>lorem ipsum</figcaption>
+                    </figure>
+
+                </div>
+
+            </section>
         </main>
 
 
