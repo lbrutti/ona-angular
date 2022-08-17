@@ -1,18 +1,23 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import * as scrollama from 'scrollama';
 import * as d3 from 'd3';
 import { Platform } from '@ionic/angular';
+import * as _ from 'lodash';
 @Component({
     selector: 'app-home',
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
 })
 export class HomePage implements AfterViewInit {
+    @ViewChild('popover') popover;
     public sliderDirection = 'horizontal';
+    public maxBreadcrumbItems: number = 0;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
+        this.maxBreadcrumbItems = this.platform.is('mobile') ? 0 : 5;
     }
-
+    isOpen = false;
+    collapsedBreadcrumbs: HTMLIonBreadcrumbElement[] = [];
     barrierCount = 0;
     async ngAfterViewInit(): Promise<any> {
         // using d3 for convenience
@@ -263,5 +268,29 @@ export class HomePage implements AfterViewInit {
                 d3.select(this).classed('focused', false);
             });
         });
+    }
+    async presentPopover(e: Event) {
+        this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
+        this.popover.event = e;
+        this.isOpen = true;
+    }
+
+    public onBreadCrumbClick(e: Event) {
+        e.preventDefault();
+        let section = (e.target as any).parentElement.getAttribute('href');
+        this.scrollSectionIntoView(section);
+    }
+    public onBreadCrumbPopoverClick(e: Event) {
+        e.preventDefault();
+        let section = (e.target as any).parentElement.dataset.href;
+        this.isOpen = false;
+        this.scrollSectionIntoView(section);
+    }
+
+    private scrollSectionIntoView(sectionSelector: string) {
+        let destination = document.querySelector(sectionSelector);
+        if (!_.isNil(destination)) {
+            destination.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }

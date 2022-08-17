@@ -17,6 +17,11 @@
 main {
     margin-left: 20vw;
     margin-right: 20vw;
+
+    &.mobile {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
 }
 
 .centered_text_block {
@@ -37,10 +42,9 @@ main {
 }
 
 #breadcrumb {
-    // margin-left: 25vw;
-    // margin-right: 25vw;
+    background-color: var(--ion-color-primary-contrast);
     position: sticky;
-
+    font-size: small !important;
     top: 0;
     z-index: 2000;
 

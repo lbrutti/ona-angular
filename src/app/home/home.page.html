@@ -1,8 +1,8 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="false">
     <div id="container">
 
         <!-- sticky side -->
-        <main>
+        <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
             <section id="header">
                 <div class="centered_text_block">
                     <h1 class="intro__hed">{{'introTitle'|transloco}}</h1>
@@ -40,15 +40,46 @@
                 </p>
 
             </section>
-            <section id="breadcrumb">
-                <div>
+            <span>{{maxBreadcrumbItems}}</span>
+            <ion-breadcrumbs [maxItems]="maxBreadcrumbItems" id="breadcrumb"
+                (ionCollapsedClick)="presentPopover($event)">
+                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#healthy_rivers">
                     <span>Healthy Rivers</span>
+                    <span slot="separator"></span>
+                </ion-breadcrumb>
+                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#river-connectivities-title">
+                    <span>River Connectivities</span>
+                    <span slot="separator"></span>
+                </ion-breadcrumb>
+                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#anthropogenic_threats-title">
                     <span>Anthropogenic Threats</span>
+                    <span slot="separator"></span>
+                </ion-breadcrumb>
+                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#ecosystem_impacts_title">
                     <span>Ecosystem Impacts</span>
+                    <span slot="separator"></span>
+                </ion-breadcrumb>
+                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#futures">
                     <span>Possible Futures</span>
-                    <span>About the project</span>
-                </div>
-            </section>
+                    <span slot="separator"></span>
+                </ion-breadcrumb>
+                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#about">
+                    <span>About</span>
+                </ion-breadcrumb>
+            </ion-breadcrumbs>
+            <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+                <ng-template>
+                    <ion-content>
+                        <ion-list>
+                            <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs; last as isLast" (click)="onBreadCrumbPopoverClick($event)"
+                                [href]="breadcrumb.href" [attr.data-href]="breadcrumb.href" [lines]="isLast ? 'none' : null">
+                                <ion-label>{{ breadcrumb.textContent }}</ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </ion-content>
+                </ng-template>
+            </ion-popover>
+
             <section id="healthy_rivers" class="scrolly scrolly-overlay">
                 <!-- background content -->
                 <figure>
@@ -400,8 +431,8 @@
             <section id="ecosystem_impacts_viz" class="scrolly scrolly-overlay">
                 <h1>METTERE QUI mettere WAFFLE chart con animazioni</h1>
                 <figure id="ecosystem_impacts_viz_figure">
-                    <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz"
-                        data-step='1' data-transition-step="">
+                    <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz" data-step='1'
+                        data-transition-step="">
                     </div>
 
 
