@@ -14,9 +14,13 @@
     text-decoration: none;
 }
 
-.centered_text_block {
+main {
     margin-left: 20vw;
     margin-right: 20vw;
+}
+
+.centered_text_block {
+
 
     p {
         margin-top: 1rem;
@@ -72,7 +76,7 @@ section {
     figure {
         position: -webkit-sticky;
         position: sticky;
-        width: 95vw;
+        // width: 95vw;
         // min-width: 640px;
         margin: auto;
         -webkit-transform: translate3d(0, 0, 0);
