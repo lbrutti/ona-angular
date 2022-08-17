@@ -41,15 +41,24 @@
         "step-17": "&nbsp;",
         "step-18": "With such numbers, it is no surprise that Europe has the most fragmented river network in the world."
     },
-    "ecosystemImpacts":{
-        "step-1":"The International Union for Conservation of Nature (IUCN) assessed the status of freshwater species in Europe",
-        "step-2":"1% of them are extinct, either globally or regionally.",
-        "step-3":"34% are critically endangered, endangered, near threatened, or vulnerable.",
-        "step-4":"Only 55% are classified as low risk or least concern.",
-        "step-5":"And for 10% of them, there is not enough data.",
-        "step-6":"Breaking down these overall numbers by type of European freshwater species",
+    "ecosystemImpacts": {
+        "step-1": "The International Union for Conservation of Nature (IUCN) assessed the status of freshwater species in Europe",
+        "step-2": "1% of them are extinct, either globally or regionally.",
+        "step-3": "34% are critically endangered, endangered, near threatened, or vulnerable.",
+        "step-4": "Only 55% are classified as low risk or least concern.",
+        "step-5": "And for 10% of them, there is not enough data.",
+        "step-6": "Breaking down these overall numbers by type of European freshwater species",
         "step-7": "Many fish species are at risk",
         "step-8": "38% of freshwater fish species are classified either as extinct, (critically) endangered, near threatened, or vulnerable.",
         "step-9": "Fish are second only to invertebrates in terms of the number of species vulnerable to extinction"
+    },
+    "possibleFutures": {
+        "step-1": "Of the existing dams mapped by the study, 90% of them have a capacity of fewer than 10 megawatts.",
+        "step-2":"93% of future European dams are classified as small, a ratio that is even higher than that of existing ones. Although they usually pose fewer problems to sediment transport, in some aspects, small hydropower schemes are more damaging than larger ones. They fragment river connectivity like larger dams while providing only a small contribution to energy demands. As most of them do not offer any storage and regulation capacity, they are strategically less valuable. Additionally, in most countries room for further hydropower is virtually exhausted, so they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
+        "step-3": "According to the study, at least 18% of the existing European hydropower plants are in protected areas, like National Parks, World Heritage sites, Emerald areas for Eastern Europe, and others.",
+        "step-4": "It is a paradox: future European hydropower dams, while being developed for the production of green energy, will in fact be placed inside protected areas in 28% of the cases, destroying invaluable habitats. ",
+        "step-5": "This risk is well demonstrated by the situation in the Balkans, Eastern Mediterranean and Turkey, an area that currently hosts 20% of the existing European hydropower dams.",
+        "step-6": "The area is expected to host almost 50% of the total future hydropower dams in Europe.",
+        "step-7": "And 9 out of 10 of these planned or in construction hydropower dams in the region are small, thus providing little energy while still greatly impacting the ecosystem."
     }
 }
