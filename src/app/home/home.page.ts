@@ -11,10 +11,10 @@ import * as _ from 'lodash';
 export class HomePage implements AfterViewInit {
     @ViewChild('popover') popover;
     public sliderDirection = 'horizontal';
-    public maxBreadcrumbItems: number = 0;
+    public maxBreadcrumbItems: number = 1;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
-        this.maxBreadcrumbItems = this.platform.is('mobile') ? 0 : 5;
+        this.maxBreadcrumbItems = this.platform.is('mobile') ? 1 : 10;
     }
     isOpen = false;
     collapsedBreadcrumbs: HTMLIonBreadcrumbElement[] = [];
