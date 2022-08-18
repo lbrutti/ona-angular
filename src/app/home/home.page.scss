@@ -97,7 +97,7 @@ section {
             -moz-transform: translate(-50%, -50%);
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            font-size: 8rem;
+            font-size: 3rem;
             font-weight: 900;
             color: var(--ion-color-primary-contrast);
         }
@@ -106,7 +106,7 @@ section {
     .step {
         margin: 0 auto 2rem auto;
         color: #3b3b3b;
-        font-size: 5rem;
+        font-size: 3rem;
         text-align: center;
         opacity: 0;
         transition-duration: 500ms;

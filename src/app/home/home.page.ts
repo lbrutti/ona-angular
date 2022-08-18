@@ -57,11 +57,16 @@ export class HomePage implements AfterViewInit {
         await this.loadThreatsCharts(threats);
 
 
+        //Freshwater decline
+        let ecosystemImpacts = main.select("#ecosystem_impacts_viz");
+        let ecosystemImpactsFigure = ecosystemImpacts.select("figure");
+        let ecosystemImpactsArticle = ecosystemImpacts.select("article");
+        let ecosystemImpactsStep = ecosystemImpactsArticle.selectAll(".step");
         // initialize the scrollama
         let healthyRiversScroller = scrollama() as any;
         let riverConnectivityScroller = scrollama() as any;
         let threatsScroller = scrollama() as any;
-        let freshwaterWaffle = scrollama() as any;
+        let ecosystemImpactsScroller = scrollama() as any;
 
         // generic window resize listener event
         function handleResize() {
@@ -85,10 +90,16 @@ export class HomePage implements AfterViewInit {
             threatsFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
+
+            ecosystemImpactsFigure
+                .style("height", figureHeight + "px")
+                .style("top", figureMarginTop + "px");
+
             // 3. tell scrollama to update new element dimensions
             riverConnectivityScroller.resize();
             healthyRiversScroller.resize();
             threatsScroller.resize();
+            ecosystemImpactsScroller.resize();
         }
 
         // scrollama event handlers
@@ -127,7 +138,6 @@ export class HomePage implements AfterViewInit {
 
         // scrollama event handlers
         function handleStepEnterHealthyRivers(response: any) {
-            console.log(response);
             // response = { element, direction, index }
 
             // add color to current step only
@@ -171,6 +181,13 @@ export class HomePage implements AfterViewInit {
             });
         }
 
+
+        function handleStepEnterEcosystemImpacts(response: any) {
+            ecosystemImpactsStep.classed("is-active", function (d, i) {
+                return i === response.index;
+            });
+
+        }
         function handleStepExit(response: any) {
             response.element.classList.remove('is-active');
             console.log('exit : ', response);
@@ -210,6 +227,14 @@ export class HomePage implements AfterViewInit {
                 .onStepEnter(handleStepEnterThreats)
                 .onStepExit(handleStepExit);
 
+            ecosystemImpactsScroller
+                .setup({
+                    step: "#ecosystem_impacts_viz article .step",
+                    offset: 0.5,
+                    debug: false
+                })
+                .onStepEnter(handleStepEnterEcosystemImpacts)
+                .onStepExit(handleStepExit);
             return Promise.resolve();
         }
 
