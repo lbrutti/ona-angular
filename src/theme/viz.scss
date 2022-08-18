@@ -61,3 +61,24 @@
     }
 
 }
+
+::ng-deep #freshwater_only {
+
+    #extinct,
+    #endangered,
+    #low_risk,
+    #no_data {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+
+        &.active {
+            fill-opacity: 1;
+            stroke-opacity: 1;
+        }
+    }
+
+    #low_risk.active {
+        fill-opacity: 0.403922;
+    }
+
+}

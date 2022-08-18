@@ -179,6 +179,7 @@ export class HomePage implements AfterViewInit {
                 } else {
                     threatsFigure.style('z-index', 0);
                 }
+
             });
         }
 
@@ -191,19 +192,26 @@ export class HomePage implements AfterViewInit {
             let waffles = ecosystemImpactsFigure.selectAll(".ecosystem_impacts_viz");
             let currentStep = response.index + 1;
             waffles.each(function () {
-                let activeSteps = (this as any).dataset.step.split(',');
-                let transitionStep = (this as any).dataset.transitionStep || Infinity;
+                let waffle = (this as any);
+                let activeSteps = waffle.dataset.step.split(',');
+                let transitionStep = waffle.dataset.transitionStep || Infinity;
                 let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
                 //al 16° step la mappa torna tutta rossa
                 let isTranstioned = (currentStep !== 16) && (currentStep >= +transitionStep);
-                let isForeground = (this as any).dataset.foregroundStep == currentStep;
-                (this as any).classList.toggle('active', isActive);
-                (this as any).classList.toggle('transitioned', isTranstioned);
+                let isForeground = waffle.dataset.foregroundStep == currentStep;
+                waffle.classList.toggle('active', isActive);
+                waffle.classList.toggle('transitioned', isTranstioned);
                 if (isForeground && isActive) {
                     ecosystemImpactsFigure.style('z-index', 1000);
                 } else {
                     ecosystemImpactsFigure.style('z-index', 0);
                 }
+
+                //show groups one step at the time
+                d3.select(waffle).select('#extinct').classed('active', currentStep > 1);
+                d3.select(waffle).select('#endangered').classed('active', currentStep > 2);
+                d3.select(waffle).select('#low_risk').classed('active', currentStep > 3);
+                d3.select(waffle).select('#no_data').classed('active', currentStep > 4);
             });
 
         }
