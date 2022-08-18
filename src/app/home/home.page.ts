@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import * as scrollama from 'scrollama';
 import * as d3 from 'd3';
 import { Platform } from '@ionic/angular';
@@ -10,6 +10,8 @@ import * as _ from 'lodash';
 })
 export class HomePage implements AfterViewInit {
     @ViewChild('popover') popover;
+    @ViewChild('freshwater_index_chart_container') freshwater_index_chart_container: ElementRef;
+
     public sliderDirection = 'horizontal';
     public maxBreadcrumbItems: number = 1;
     constructor(public platform: Platform) {
@@ -21,20 +23,20 @@ export class HomePage implements AfterViewInit {
     barrierCount = 0;
     async ngAfterViewInit(): Promise<any> {
         // using d3 for convenience
-        var main = d3.select("main");
+        let main = d3.select("main");
 
 
         //healthy river
-        var healthyRivers = main.select("#healthy_rivers");
-        var healthyRiversFigure = healthyRivers.select("figure");
-        var healthyRiversArticle = healthyRivers.select("article");
-        var healthyRiversStep = healthyRiversArticle.selectAll(".step");
+        let healthyRivers = main.select("#healthy_rivers");
+        let healthyRiversFigure = healthyRivers.select("figure");
+        let healthyRiversArticle = healthyRivers.select("article");
+        let healthyRiversStep = healthyRiversArticle.selectAll(".step");
 
         //connectivity (sticky side)
-        var riverConnectivities = main.select("#river_connectivities");
-        var riverConnectivitiesFigure = riverConnectivities.select("figure");
-        var riverConnectivitiesArticle = riverConnectivities.select("article");
-        var riverConnectivitiesStep = riverConnectivitiesArticle.selectAll(".step");
+        let riverConnectivities = main.select("#river_connectivities");
+        let riverConnectivitiesFigure = riverConnectivities.select("figure");
+        let riverConnectivitiesArticle = riverConnectivities.select("article");
+        let riverConnectivitiesStep = riverConnectivitiesArticle.selectAll(".step");
 
         //load connectivity imgs
         let connectivity = await d3.xml('assets/imgs/svg/connectivity/connectivity.svg');
@@ -47,30 +49,30 @@ export class HomePage implements AfterViewInit {
 
         //antropogenic threats svgs
 
-        var threats = main.select("#anthropogenic_threats");
-        var threatsFigure = threats.select("figure");
-        var threatsArticle = threats.select("article");
-        var threatsStep = threatsArticle.selectAll(".step");
+        let threats = main.select("#anthropogenic_threats");
+        let threatsFigure = threats.select("figure");
+        let threatsArticle = threats.select("article");
+        let threatsStep = threatsArticle.selectAll(".step");
 
         await this.loadThreatsCharts(threats);
 
 
         // initialize the scrollama
-        var healthyRiversScroller = scrollama() as any;
-        var riverConnectivityScroller = scrollama() as any;
-        var threatsScroller = scrollama() as any;
-        var freshwaterWaffle = scrollama() as any;
+        let healthyRiversScroller = scrollama() as any;
+        let riverConnectivityScroller = scrollama() as any;
+        let threatsScroller = scrollama() as any;
+        let freshwaterWaffle = scrollama() as any;
 
         // generic window resize listener event
         function handleResize() {
             // 1. update height of step elements
-            var stepH = Math.floor(window.innerHeight * 0.5);
+            let stepH = Math.floor(window.innerHeight * 0.5);
             riverConnectivitiesStep.style("height", stepH + "px");
             healthyRiversStep.style("height", stepH + "px");
             threatsStep.style("height", stepH + "px")
 
-            var figureHeight = window.innerHeight; // / 2;
-            var figureMarginTop = 0;// (window.innerHeight - figureHeight) / 2;
+            let figureHeight = window.innerHeight; // / 2;
+            let figureMarginTop = 0;// (window.innerHeight - figureHeight) / 2;
 
             riverConnectivitiesFigure
                 .style("height", figureHeight + "px")
@@ -212,6 +214,7 @@ export class HomePage implements AfterViewInit {
         }
 
         // kick things off
+        this.renderFreshWaterIndexChart();
         return init();
     }
 
@@ -291,6 +294,174 @@ export class HomePage implements AfterViewInit {
         let destination = document.querySelector(sectionSelector);
         if (!_.isNil(destination)) {
             destination.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    private renderFreshWaterIndexChart() {
+        let margin = { top: 30, right: 120, bottom: 30, left: 60 },
+            width = 700 - margin.left - margin.right,
+            height = 400 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        let svg = d3.select(this.freshwater_index_chart_container.nativeElement)
+            .append("svg")
+            .attr("width", "auto")
+            .attr("height", "auto")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.csv("assets/data/linechart_fish_simple.csv")
+            .then(csv => createMap(csv));
+
+        function createMap(data: any) {
+
+
+            // Add X axis --> it is a date format
+            let x = d3.scaleLinear()
+                .domain([1970, 2017])
+                .range([0, width]);
+
+            let xAxis = (d3 as any)
+                .axisBottom()
+                .scale(x)
+                .ticks(10)
+                .tickFormat(function (d) { return Math.floor(d) })
+                .tickSizeInner(0)
+                .tickSizeOuter(0);
+
+            svg.append("g")
+                .attr("transform", "translate(0," + (height + 10) + ")")
+                .call(xAxis);
+
+
+
+            // Add Y axis
+            let y = d3.scaleLinear()
+                .domain([0, 100])
+                .range([height, 0]);
+
+            let yAxis = (d3 as any).axisLeft().scale(y).ticks(3).tickFormat(function (d) { return Math.floor(d) + "%" }).tickSizeInner(0)
+                .tickSizeOuter(0);
+            svg.append("g")
+                .call(yAxis)
+                .select('.domain')
+                .attr("opacity", 0);
+
+
+
+            // This allows to find the closest X index of the mouse:
+            let bisect = d3.bisector(function (d: any) { return d.year; }).left;
+
+            // Show confidence interval
+            let CI = svg.append("path")
+                .datum(data)
+                .transition()
+                .duration(2500)
+                .attr("fill", "#cce5df")
+                .attr("stroke", "none")
+                .attr("d", d3.area()
+                    .curve(d3.curveBasis)
+                    .x(function (d: any) { return x(d.year) })
+                    .y0(function (d: any) { return y(d.Freshwater_upper) })
+                    .y1(function (d: any) { return y(d.Freshwater_lower) })
+                );
+
+            // Add the line
+            let lineChart = svg
+                .append("path")
+                .datum(data)
+                .attr("fill", "none")
+                .attr("stroke", "steelblue")
+                .attr("stroke-width", 1.5)
+                .attr("d", d3.line()
+                    .curve(d3.curveBasis)
+
+                    .x(function (d: any) { return x(d.year) })
+                    .y(function (d: any) { return y(d.Freshwater_index) })
+                );
+            const pathLength = lineChart.node().getTotalLength();
+            const CILength = CI.node().getTotalLength();
+
+            //append upper axis
+            let upperUpperAxisG = svg.append("g");
+            upperUpperAxisG.append("line")
+                .attr("class", "upper_axis")
+                .attr('x1', 0)
+                .attr('x2', width)
+                .attr("y1", d => y(100))
+                .attr("y2", d => y(100))
+                .attr("stroke-dasharray", 4)
+                .attr("stroke", 'red');
+            upperUpperAxisG
+                .append("text")
+                .attr("class", "upper_axis_text_left")
+                .text("1970")
+                .attr('x', x(2016))
+                .attr('y', d => y(100))
+            // Create the circle that travels along the curve of chart
+            let focus = svg
+                .append('g')
+                .append('circle')
+                .style("fill", "steelblue")
+                .attr('r', 4)
+                .style("opacity", 0)
+
+            // Create the text that travels along the curve of chart
+            let focusText = svg
+                .append('g')
+                .append('text')
+                .attr("class", "focus_text")
+                .style("opacity", 0)
+                .attr("fill", "steelblue")
+                .attr("alignment-baseline", "middle")
+            // Create a rect on top of the svg area: this rectangle recovers mouse position
+            svg
+                .append('rect')
+                .style("fill", "none")
+                .style("pointer-events", "all")
+                .attr('width', width)
+                .attr('height', height)
+                .on('mouseover', mouseover)
+                .on('mousemove', mousemove)
+                .on('mouseout', mouseout);
+
+            // What happens when the mouse move -> show the annotations at the right positions.
+            function mouseover() {
+                focus.style("opacity", 1)
+                focusText.style("opacity", 1)
+            }
+            function mousemove(e) {
+                // recover coordinate we need
+                let x0 = x.invert(d3.pointer(e)[0]);
+                if (isNaN(x0)) {
+                    return;
+                }
+                let i = bisect(data, x0, 1);
+                let selectedData = data[i]
+                if (selectedData) {
+
+                    focus
+                        .attr("cx", x(selectedData.year))
+                        .attr("cy", y(selectedData.Freshwater_index));
+
+                    focusText
+                        .attr("text-anchor", "left")
+                        .html(() => {
+                            let year = selectedData.year;
+                            let value = d3.format(".2f")(selectedData.Freshwater_index);
+                            return `${year}:${value}%`;
+                        })
+                        .attr("x", x(selectedData.year) + 15)
+                        .attr("y", y(selectedData.Freshwater_index))
+                }
+
+            }
+            function mouseout() {
+                focus.style("opacity", 0)
+                focusText.style("opacity", 0)
+            }
         }
     }
 }
