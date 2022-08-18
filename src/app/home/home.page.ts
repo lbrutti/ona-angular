@@ -62,6 +62,8 @@ export class HomePage implements AfterViewInit {
         let ecosystemImpactsFigure = ecosystemImpacts.select("figure");
         let ecosystemImpactsArticle = ecosystemImpacts.select("article");
         let ecosystemImpactsStep = ecosystemImpactsArticle.selectAll(".step");
+
+        await this.loadEcosystemImpactsCharts(ecosystemImpacts);
         // initialize the scrollama
         let healthyRiversScroller = scrollama() as any;
         let riverConnectivityScroller = scrollama() as any;
@@ -156,7 +158,6 @@ export class HomePage implements AfterViewInit {
         }
 
         function handleStepEnterThreats(response: any) {
-            console.log(response);
             threatsStep.classed("is-active", function (d, i) {
                 return i === response.index;
             });
@@ -185,6 +186,24 @@ export class HomePage implements AfterViewInit {
         function handleStepEnterEcosystemImpacts(response: any) {
             ecosystemImpactsStep.classed("is-active", function (d, i) {
                 return i === response.index;
+            });
+
+            let waffles = ecosystemImpactsFigure.selectAll(".ecosystem_impacts_viz");
+            let currentStep = response.index + 1;
+            waffles.each(function () {
+                let activeSteps = (this as any).dataset.step.split(',');
+                let transitionStep = (this as any).dataset.transitionStep || Infinity;
+                let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
+                //al 16° step la mappa torna tutta rossa
+                let isTranstioned = (currentStep !== 16) && (currentStep >= +transitionStep);
+                let isForeground = (this as any).dataset.foregroundStep == currentStep;
+                (this as any).classList.toggle('active', isActive);
+                (this as any).classList.toggle('transitioned', isTranstioned);
+                if (isForeground && isActive) {
+                    ecosystemImpactsFigure.style('z-index', 1000);
+                } else {
+                    ecosystemImpactsFigure.style('z-index', 0);
+                }
             });
 
         }
@@ -237,10 +256,18 @@ export class HomePage implements AfterViewInit {
                 .onStepExit(handleStepExit);
             return Promise.resolve();
         }
+        this.renderFreshWaterIndexChart();
 
         // kick things off
-        this.renderFreshWaterIndexChart();
         return init();
+    }
+    private async loadEcosystemImpactsCharts(ecosystemImpacts: d3.Selection<d3.BaseType, unknown, HTMLElement, any>) {
+        let freshwater = await d3.xml('assets/imgs/svg/eu_fishes_danger/01_eu_fishes_danger_freshwater.svg');
+        freshwater.documentElement.setAttribute('width', 'auto');
+        freshwater.documentElement.setAttribute('height', 'auto');
+        d3.select(freshwater.documentElement).style('height', '100%');
+        (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement)
+        return Promise.resolve();
     }
 
 
