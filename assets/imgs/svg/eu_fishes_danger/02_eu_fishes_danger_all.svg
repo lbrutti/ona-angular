@@ -3,7 +3,8 @@
    version="1.1"
    width="1649.828"
    height="848.12823"
-   id="eu_fish_danger"
+   viewBox="0 0 1649 848"
+   id="all_species"
    sodipodi:docname="02_eu_fishes_danger_all.svg"
    inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -59,7 +60,7 @@
        id="rect1064" />
   </defs>
   <g
-     id="freshwater">
+     id="freshwater_aggregated">
     <g
        id="g12854">
       <path
