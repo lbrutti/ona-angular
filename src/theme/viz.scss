@@ -80,5 +80,20 @@
     #low_risk.active {
         fill-opacity: 0.403922;
     }
+}
 
+::ng-deep #all_species {
+
+    #freshwater_aggregated,
+    #fishes,
+    #mammals,
+    #reptiles,
+    #amphibian,
+    #birds {
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+    }
 }

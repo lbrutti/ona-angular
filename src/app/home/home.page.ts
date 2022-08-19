@@ -194,24 +194,36 @@ export class HomePage implements AfterViewInit {
             waffles.each(function () {
                 let waffle = (this as any);
                 let activeSteps = waffle.dataset.step.split(',');
-                let transitionStep = waffle.dataset.transitionStep || Infinity;
                 let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
-                //al 16° step la mappa torna tutta rossa
-                let isTranstioned = (currentStep !== 16) && (currentStep >= +transitionStep);
-                let isForeground = waffle.dataset.foregroundStep == currentStep;
                 waffle.classList.toggle('active', isActive);
-                waffle.classList.toggle('transitioned', isTranstioned);
-                if (isForeground && isActive) {
-                    ecosystemImpactsFigure.style('z-index', 1000);
-                } else {
-                    ecosystemImpactsFigure.style('z-index', 0);
-                }
 
+
+                // let transitionStep = waffle.dataset.transitionStep || Infinity;
+                // let isTranstioned = (currentStep !== 16) && (currentStep >= +transitionStep);
+                // let isForeground = waffle.dataset.foregroundStep == currentStep;
+                // waffle.classList.toggle('transitioned', isTranstioned);
+                // if (isForeground && isActive) {
+                //     ecosystemImpactsFigure.style('z-index', 1000);
+                // } else {
+                //     ecosystemImpactsFigure.style('z-index', 0);
+                // }
+                let selectedWaffle = d3.select(waffle);
                 //show groups one step at the time
-                d3.select(waffle).select('#extinct').classed('active', currentStep > 1);
-                d3.select(waffle).select('#endangered').classed('active', currentStep > 2);
-                d3.select(waffle).select('#low_risk').classed('active', currentStep > 3);
-                d3.select(waffle).select('#no_data').classed('active', currentStep > 4);
+                if (selectedWaffle.select('svg').attr('id') === 'freshwater_only') {
+                    selectedWaffle.select('#extinct').classed('active', isActive && currentStep > 1);
+                    selectedWaffle.select('#endangered').classed('active', isActive && currentStep > 2);
+                    selectedWaffle.select('#low_risk').classed('active', isActive && currentStep > 3);
+                    selectedWaffle.select('#no_data').classed('active', isActive && currentStep > 4);
+                }
+                if (selectedWaffle.select('svg').attr('id') === 'all_species') {
+                    selectedWaffle.select('#freshwater_aggregated').classed('active', isActive && currentStep > 5);
+                    selectedWaffle.select('#fishes').classed('active', isActive && currentStep > 6);
+                    selectedWaffle.select('#mammals').classed('active', isActive && currentStep > 8);
+                    selectedWaffle.select('#reptiles').classed('active', isActive && currentStep > 8);
+                    selectedWaffle.select('#amphibian').classed('active', isActive && currentStep > 8);
+                    selectedWaffle.select('#birds').classed('active', isActive && currentStep > 8);
+                }
+                //
             });
 
         }
@@ -275,6 +287,13 @@ export class HomePage implements AfterViewInit {
         freshwater.documentElement.setAttribute('height', 'auto');
         d3.select(freshwater.documentElement).style('height', '100%');
         (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement)
+
+        let freshwater_detail = await d3.xml('assets/imgs/svg/eu_fishes_danger/02_eu_fishes_danger_all.svg');
+        freshwater_detail.documentElement.setAttribute('width', 'auto');
+        freshwater_detail.documentElement.setAttribute('height', 'auto');
+        d3.select(freshwater_detail.documentElement).style('height', '100%');
+        (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart_all').node() as any).append(freshwater_detail.documentElement)
+
         return Promise.resolve();
     }
 

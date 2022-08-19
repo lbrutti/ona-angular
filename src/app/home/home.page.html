@@ -433,13 +433,15 @@
                 </div>
 
             </section>
+            <!-- waffle chart -->
             <section id="ecosystem_impacts_viz" class="scrolly scrolly-overlay">
-                <h1>METTERE QUI mettere WAFFLE chart con animazioni</h1>
                 <figure id="ecosystem_impacts_viz_figure">
                     <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz" data-step='2,3,4,5'>
                     </div>
 
-                    <div id="ecosystem_impacts_viz_figure_chart_all" class="stacked_img ecosystem_impacts_viz" data-step='5,6,7,8,9'>
+                    <!-- AGGINUGERE QUI SVG DEI SOLI PESCI VISIBILE DA MOBILE -->
+
+                    <div id="ecosystem_impacts_viz_figure_chart_all" class="stacked_img ecosystem_impacts_viz" data-step='6,7,8,9,10'>
                     </div>
 
 
@@ -448,7 +450,7 @@
 
                 <!-- foreground master content -->
                 <article id="ecosystem_impacts_viz_article">
-                    <div class="step" data-step="1" [innerHTML]="'ecosystemImpacts.step-1'|transloco"> </div>
+                    <div class="step active" data-step="1" [innerHTML]="'ecosystemImpacts.step-1'|transloco"> </div>
                     <div class="step" data-step="2" [innerHTML]="'ecosystemImpacts.step-2'|transloco"></div>
                     <div class="step" data-step="3" [innerHTML]="'ecosystemImpacts.step-3'|transloco"></div>
                     <div class="step" data-step="4" [innerHTML]="'ecosystemImpacts.step-4'|transloco"></div>
