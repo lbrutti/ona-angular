@@ -54,15 +54,15 @@ export class HomePage implements AfterViewInit {
         let threatsArticle = threats.select("article");
         let threatsStep = threatsArticle.selectAll(".step");
 
-        await this.loadThreatsCharts(threats);
-
-
+        
+        
         //Freshwater decline
         let ecosystemImpacts = main.select("#ecosystem_impacts_viz");
         let ecosystemImpactsFigure = ecosystemImpacts.select("figure");
         let ecosystemImpactsArticle = ecosystemImpacts.select("article");
         let ecosystemImpactsStep = ecosystemImpactsArticle.selectAll(".step");
-
+        
+        await this.loadThreatsCharts(threats);
         await this.loadEcosystemImpactsCharts(ecosystemImpacts);
         // initialize the scrollama
         let healthyRiversScroller = scrollama() as any;
@@ -218,6 +218,7 @@ export class HomePage implements AfterViewInit {
                 if (selectedWaffle.select('svg').attr('id') === 'all_species') {
                     selectedWaffle.select('#freshwater_aggregated').classed('active', isActive && currentStep > 5);
                     selectedWaffle.select('#fishes').classed('active', isActive && currentStep > 6);
+                    selectedWaffle.select('#invertebrates').classed('active', isActive && currentStep > 8);
                     selectedWaffle.select('#mammals').classed('active', isActive && currentStep > 8);
                     selectedWaffle.select('#reptiles').classed('active', isActive && currentStep > 8);
                     selectedWaffle.select('#amphibian').classed('active', isActive && currentStep > 8);
@@ -283,9 +284,9 @@ export class HomePage implements AfterViewInit {
     }
     private async loadEcosystemImpactsCharts(ecosystemImpacts: d3.Selection<d3.BaseType, unknown, HTMLElement, any>) {
         let freshwater = await d3.xml('assets/imgs/svg/eu_fishes_danger/01_eu_fishes_danger_freshwater.svg');
-        freshwater.documentElement.setAttribute('width', 'auto');
-        freshwater.documentElement.setAttribute('height', 'auto');
+ 
         d3.select(freshwater.documentElement).style('height', '100%');
+
         (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement)
 
         let freshwater_detail = await d3.xml('assets/imgs/svg/eu_fishes_danger/02_eu_fishes_danger_all.svg');
