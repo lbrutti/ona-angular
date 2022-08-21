@@ -15,6 +15,7 @@ export class HomePage implements AfterViewInit {
     @ViewChild('possible_futures_viz_chart_protected_dams') possible_futures_viz_chart_protected_dams_container: ElementRef;
     @ViewChild('possible_futures_viz_chart_balkans_dams') possible_futures_viz_chart_balkans_dams_container: ElementRef;
 
+
     public sliderDirection = 'horizontal';
     public maxBreadcrumbItems: number = 1;
     balkansDamsChart: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
@@ -259,13 +260,59 @@ export class HomePage implements AfterViewInit {
             possibleFuturesStep.classed("is-active", function (d, i) {
                 return i === response.index;
             });
+            let page: HomePage = this;
+            let damsCharts = possibleFuturesFigure.selectAll(".possible_futures_viz");
+            let currentStep = response.index + 1;
+            try {
+                damsCharts.each(function () {
+                    let damChart = (this as any);
+                    let activeSteps = damChart.dataset.step.split(',');
+                    let isActive = activeSteps['0'] === 'all' || activeSteps.includes("" + currentStep);
+                    damChart.classList.toggle('active', isActive);
+
+
+                    // smallDamsChart
+                    // protectedDamsChart
+                    // balkansDamsChart
+                    switch (currentStep) {
+                        case 1:
+                            page.updateFutureDamsChart(page.futureDamsdata.small, (page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'existing');
+                            break;
+                        case 2:
+                            page.updateFutureDamsChart(page.futureDamsdata.small, (page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'planned');
+                            break;
+                        case 3:
+
+                            break;
+                        case 4:
+
+                            break;
+                        case 5:
+
+                            break;
+                        case 6:
+
+                            break;
+                        case 7:
+
+                            break;
+
+                        default:
+                            break;
+                    }
+                    //
+                });
+            } catch (error) {
+
+            }
+
 
         }
         function handleStepExit(response: any) {
             response.element.classList.remove('is-active');
             console.log('exit : ', response);
         }
-        function init() {
+        let init = () => {
 
             // 1. force a resize on load to ensure proper dimensions are sent to scrollama
             handleResize();
@@ -315,7 +362,7 @@ export class HomePage implements AfterViewInit {
                     offset: 0.5,
                     debug: false
                 })
-                .onStepEnter(handleStepEnterPossibleFutures)
+                .onStepEnter(handleStepEnterPossibleFutures.bind(this))
                 .onStepExit(handleStepExit);
             return Promise.resolve();
         }
@@ -591,50 +638,40 @@ export class HomePage implements AfterViewInit {
 
     private renderPossibleFuturesChart() {
 
-        var margin = { top: 10, right: 30, bottom: 10, left: 60 },
-            width = 460 - margin.left - margin.right,
-            height = 200 - margin.top - margin.bottom;
+
 
         // append the svg object to the body of the page
         this.smallDamsChart = d3.select(this.possible_futures_viz_chart_small_dams_container.nativeElement)
             .append("svg")
             .attr("width", "auto")
             .attr("height", "auto")
-            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-            .append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+            .attr("viewBox", `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
+
 
         this.protectedDamsChart = d3.select(this.possible_futures_viz_chart_protected_dams_container.nativeElement)
             .append("svg")
             .attr("width", "auto")
             .attr("height", "auto")
-            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-            .append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+            .attr("viewBox", `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
+
 
         this.balkansDamsChart = d3.select(this.possible_futures_viz_chart_balkans_dams_container.nativeElement)
             .append("svg")
             .attr("width", "auto")
             .attr("height", "auto")
-            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-            .append("g")
-            .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+            .attr("viewBox", `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
+
 
         d3.json("assets/data/future_dams.json")
             .then((data: any) => {
-                this.createFutureDamsChart(data.small, '#smallChartContainer svg', 'smallChart', false);
-                this.createFutureDamsChart(data.protected, '#protectedChartContainer svg', 'protectedChart', false);
-                this.createFutureDamsChart(data.balkans, '#balkansChartContainer svg', 'balkansChart', true);
                 this.futureDamsdata = data;
+                this.createFutureDamsChart(data.small, this.possible_futures_viz_chart_small_dams_container.nativeElement.querySelector('svg'), 'smallDamsChart', false);
+                this.createFutureDamsChart(data.protected, this.possible_futures_viz_chart_protected_dams_container.nativeElement.querySelector('svg'), 'protectedDamsChart', false);
+                this.createFutureDamsChart(data.balkans, this.possible_futures_viz_chart_balkans_dams_container.nativeElement.querySelector('svg'), 'balkansDamsChart', true);
             });
     }
 
-    private createFutureDamsChart(data, svgSelector, groupId, addBar) {
-
-
+    private createFutureDamsChart(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
 
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
@@ -724,19 +761,13 @@ export class HomePage implements AfterViewInit {
 
     }
 
-    private updateFutureDamsChart(data, chartId, type) {
+    private updateFutureDamsChart(data: any, chartContainer: HTMLElement, type: string) {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
             .range([0, this.futureDamsWidth]);
 
-        // Add Y axis
-        var y = d3.scaleBand()
-            .range([0, this.futureDamsWidth])
-            .domain(data.map(d => d.type))
-            .padding(1);
-
-        let g = d3.select(chartId);
+        let g = d3.select(chartContainer);
         // Change the X coordinates of line and circle
         g.selectAll(".lollipop_line")
             .each(function (d) {
@@ -744,7 +775,7 @@ export class HomePage implements AfterViewInit {
                     d3.select(this)
                         .transition()
                         .duration(2000)
-                        .attr("x2", (d: any) => x(d.value))
+                        .attr("x2", (d: any) => x(d.value));
                 }
             });
 
@@ -775,12 +806,11 @@ export class HomePage implements AfterViewInit {
                                 return `${Math.floor(value)}%`;
                             };
                         })
-                        .end();
 
                 }
             });
 
-
+        return Promise.resolve()
     }
 
     private addFutureDamsBar() {
