@@ -14,6 +14,7 @@ export class HomePage implements AfterViewInit {
     @ViewChild('possible_futures_viz_chart_small_dams') possible_futures_viz_chart_small_dams_container: ElementRef;
     @ViewChild('possible_futures_viz_chart_protected_dams') possible_futures_viz_chart_protected_dams_container: ElementRef;
     @ViewChild('possible_futures_viz_chart_balkans_dams') possible_futures_viz_chart_balkans_dams_container: ElementRef;
+    @ViewChild('barrier_removal_projects_chart_container') barrier_removal_projects_chart_container: ElementRef;
 
 
     public sliderDirection = 'horizontal';
@@ -367,6 +368,7 @@ export class HomePage implements AfterViewInit {
             return Promise.resolve();
         }
         this.renderFreshWaterIndexChart();
+        this.renderDamRemovalProjectsChart();
         this.renderPossibleFuturesChart();
 
 
@@ -626,6 +628,160 @@ export class HomePage implements AfterViewInit {
                         })
                         .attr("x", x(selectedData.year) + 15)
                         .attr("y", y(selectedData.Freshwater_index))
+                }
+
+            }
+            function mouseout() {
+                focus.style("opacity", 0)
+                focusText.style("opacity", 0)
+            }
+        }
+    }
+
+    private renderDamRemovalProjectsChart() {
+        let margin = { top: 30, right: 120, bottom: 30, left: 60 },
+            width = 700 - margin.left - margin.right,
+            height = 400 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        let svg = d3.select(this.barrier_removal_projects_chart_container.nativeElement)
+            .append("svg")
+            .attr("width", "auto")
+            .attr("height", "auto")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.csv("assets/data/dam_removal_projects.csv")
+            .then(csv => createMap(csv));
+
+        function createMap(data: any) {
+
+
+            // Add X axis --> it is a date format
+            let x = d3.scaleLinear()
+                .domain([1940, 2020])
+                .range([0, width]);
+
+            let xAxis = (d3 as any)
+                .axisBottom()
+                .scale(x)
+                .ticks(10)
+                .tickFormat(function (d) { return Math.floor(d) })
+                .tickSizeInner(0)
+                .tickSizeOuter(0);
+
+            svg.append("g")
+                .attr("transform", "translate(0," + (height + 10) + ")")
+                .call(xAxis);
+
+
+
+            // Add Y axis
+            let y = d3.scaleLinear()
+                .domain([429, 4984])
+                .range([height, 0]);
+
+            let yAxis = (d3 as any).axisLeft().scale(y).ticks(3).tickFormat(function (d) { return Math.floor(d) + "%" }).tickSizeInner(0)
+                .tickSizeOuter(0);
+            svg.append("g")
+                .call(yAxis)
+                .select('.domain')
+                .attr("opacity", 0);
+
+
+
+            // This allows to find the closest X index of the mouse:
+            let bisect = d3.bisector(function (d: any) { return d.year; }).left;
+
+            // Show confidence interval
+            let CI = svg.append("path")
+                .datum(data)
+                .transition()
+                .duration(2500)
+                .attr("fill", "#cce5df")
+                .attr("stroke", "none")
+                .attr("d", d3.area()
+                    .curve(d3.curveBasis)
+                    .x(function (d: any) { return x(d.year) })
+                    .y0(function (d: any) { return y(d.cumulative) })
+                    .y1(function (d: any) { return 429; })
+                );
+
+            // Add the line
+            let lineChart = svg
+                .append("path")
+                .datum(data)
+                .attr("fill", "none")
+                .attr("stroke", "steelblue")
+                .attr("stroke-width", 1.5)
+                .attr("d", d3.line()
+                    .curve(d3.curveBasis)
+
+                    .x(function (d: any) { return x(d.year) })
+                    .y(function (d: any) { return y(d.cumulative) })
+                );
+            const pathLength = lineChart.node().getTotalLength();
+            const CILength = CI.node().getTotalLength();
+
+            //append upper axis
+
+            // Create the circle that travels along the curve of chart
+            let focus = svg
+                .append('g')
+                .append('circle')
+                .style("fill", "steelblue")
+                .attr('r', 4)
+                .style("opacity", 0)
+
+            // Create the text that travels along the curve of chart
+            let focusText = svg
+                .append('g')
+                .append('text')
+                .attr("class", "focus_text")
+                .style("opacity", 0)
+                .attr("fill", "steelblue")
+                .attr("alignment-baseline", "middle")
+            // Create a rect on top of the svg area: this rectangle recovers mouse position
+            svg
+                .append('rect')
+                .style("fill", "none")
+                .style("pointer-events", "all")
+                .attr('width', width)
+                .attr('height', height)
+                .on('mouseover', mouseover)
+                .on('mousemove', mousemove)
+                .on('mouseout', mouseout);
+
+            // What happens when the mouse move -> show the annotations at the right positions.
+            function mouseover() {
+                focus.style("opacity", 1)
+                focusText.style("opacity", 1)
+            }
+            function mousemove(e) {
+                // recover coordinate we need
+                let x0 = x.invert(d3.pointer(e)[0]);
+                if (isNaN(x0)) {
+                    return;
+                }
+                let i = bisect(data, x0, 1);
+                let selectedData = data[i]
+                if (selectedData) {
+
+                    focus
+                        .attr("cx", x(selectedData.year))
+                        .attr("cy", y(selectedData.cumulative));
+
+                    focusText
+                        .attr("text-anchor", "left")
+                        .html(() => {
+                            let year = selectedData.year;
+                            let value = d3.format(".2f")(selectedData.cumulative);
+                            return `${year}:${value}%`;
+                        })
+                        .attr("x", x(selectedData.year) + 15)
+                        .attr("y", y(selectedData.cumulative))
                 }
 
             }
