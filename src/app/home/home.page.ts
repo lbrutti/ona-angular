@@ -9,15 +9,27 @@ import * as _ from 'lodash';
     styleUrls: ['home.page.scss'],
 })
 export class HomePage implements AfterViewInit {
-    @ViewChild('popover') popover;
+    @ViewChild('popover') popover: ElementRef;
     @ViewChild('freshwater_index_chart_container') freshwater_index_chart_container: ElementRef;
+    @ViewChild('possible_futures_viz_chart_small_dams') possible_futures_viz_chart_small_dams_container: ElementRef;
+    @ViewChild('possible_futures_viz_chart_protected_dams') possible_futures_viz_chart_protected_dams_container: ElementRef;
+    @ViewChild('possible_futures_viz_chart_balkans_dams') possible_futures_viz_chart_balkans_dams_container: ElementRef;
 
     public sliderDirection = 'horizontal';
     public maxBreadcrumbItems: number = 1;
+    balkansDamsChart: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
+    smallDamsChart: d3.Selection<SVGGElement, unknown, null, undefined>;
+    protectedDamsChart: d3.Selection<SVGGElement, unknown, null, undefined>;
+    futureDamsdata: any;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 1 : 10;
     }
+
+    futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
+    futureDamsWidth = 460 - this.futureDamsMargin.left - this.futureDamsMargin.right;
+    futureDamsHeight = 200 - this.futureDamsMargin.top - this.futureDamsMargin.bottom;
+
     isOpen = false;
     collapsedBreadcrumbs: HTMLIonBreadcrumbElement[] = [];
     barrierCount = 0;
@@ -54,21 +66,28 @@ export class HomePage implements AfterViewInit {
         let threatsArticle = threats.select("article");
         let threatsStep = threatsArticle.selectAll(".step");
 
-        
-        
+
         //Freshwater decline
         let ecosystemImpacts = main.select("#ecosystem_impacts_viz");
         let ecosystemImpactsFigure = ecosystemImpacts.select("figure");
         let ecosystemImpactsArticle = ecosystemImpacts.select("article");
         let ecosystemImpactsStep = ecosystemImpactsArticle.selectAll(".step");
-        
+
+        //possible futures
+        let possibleFutures = main.select("#possible_futures_viz");
+        let possibleFuturesFigure = possibleFutures.select("figure");
+        let possibleFuturesArticle = possibleFutures.select("article");
+        let possibleFuturesStep = possibleFuturesArticle.selectAll(".step");
+
         await this.loadThreatsCharts(threats);
         await this.loadEcosystemImpactsCharts(ecosystemImpacts);
+
         // initialize the scrollama
         let healthyRiversScroller = scrollama() as any;
         let riverConnectivityScroller = scrollama() as any;
         let threatsScroller = scrollama() as any;
         let ecosystemImpactsScroller = scrollama() as any;
+        let possibleFuturesScroller = scrollama() as any;
 
         // generic window resize listener event
         function handleResize() {
@@ -76,7 +95,9 @@ export class HomePage implements AfterViewInit {
             let stepH = Math.floor(window.innerHeight * 0.5);
             riverConnectivitiesStep.style("height", stepH + "px");
             healthyRiversStep.style("height", stepH + "px");
-            threatsStep.style("height", stepH + "px")
+            threatsStep.style("height", stepH + "px");
+
+            possibleFuturesStep.style("height", stepH + "px");
 
             let figureHeight = window.innerHeight; // / 2;
             let figureMarginTop = 0;// (window.innerHeight - figureHeight) / 2;
@@ -97,11 +118,16 @@ export class HomePage implements AfterViewInit {
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
 
+            possibleFuturesFigure
+                .style("height", figureHeight + "px")
+                .style("top", figureMarginTop + "px");
+
             // 3. tell scrollama to update new element dimensions
             riverConnectivityScroller.resize();
             healthyRiversScroller.resize();
             threatsScroller.resize();
             ecosystemImpactsScroller.resize();
+            possibleFuturesScroller.resize();
         }
 
         // scrollama event handlers
@@ -228,6 +254,13 @@ export class HomePage implements AfterViewInit {
             });
 
         }
+
+        function handleStepEnterPossibleFutures(response: any) {
+            possibleFuturesStep.classed("is-active", function (d, i) {
+                return i === response.index;
+            });
+
+        }
         function handleStepExit(response: any) {
             response.element.classList.remove('is-active');
             console.log('exit : ', response);
@@ -275,16 +308,27 @@ export class HomePage implements AfterViewInit {
                 })
                 .onStepEnter(handleStepEnterEcosystemImpacts)
                 .onStepExit(handleStepExit);
+
+            possibleFuturesScroller
+                .setup({
+                    step: "#possible_futures_viz article .step",
+                    offset: 0.5,
+                    debug: false
+                })
+                .onStepEnter(handleStepEnterPossibleFutures)
+                .onStepExit(handleStepExit);
             return Promise.resolve();
         }
         this.renderFreshWaterIndexChart();
+        this.renderPossibleFuturesChart();
+
 
         // kick things off
         return init();
     }
     private async loadEcosystemImpactsCharts(ecosystemImpacts: d3.Selection<d3.BaseType, unknown, HTMLElement, any>) {
         let freshwater = await d3.xml('assets/imgs/svg/eu_fishes_danger/01_eu_fishes_danger_freshwater.svg');
- 
+
         d3.select(freshwater.documentElement).style('height', '100%');
 
         (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement)
@@ -354,7 +398,7 @@ export class HomePage implements AfterViewInit {
     }
     async presentPopover(e: Event) {
         this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
-        this.popover.event = e;
+        this.popover.nativeElement.event = e;
         this.isOpen = true;
     }
 
@@ -544,4 +588,212 @@ export class HomePage implements AfterViewInit {
             }
         }
     }
+
+    private renderPossibleFuturesChart() {
+
+        var margin = { top: 10, right: 30, bottom: 10, left: 60 },
+            width = 460 - margin.left - margin.right,
+            height = 200 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        this.smallDamsChart = d3.select(this.possible_futures_viz_chart_small_dams_container.nativeElement)
+            .append("svg")
+            .attr("width", "auto")
+            .attr("height", "auto")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        this.protectedDamsChart = d3.select(this.possible_futures_viz_chart_protected_dams_container.nativeElement)
+            .append("svg")
+            .attr("width", "auto")
+            .attr("height", "auto")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        this.balkansDamsChart = d3.select(this.possible_futures_viz_chart_balkans_dams_container.nativeElement)
+            .append("svg")
+            .attr("width", "auto")
+            .attr("height", "auto")
+            .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.json("assets/data/future_dams.json")
+            .then((data: any) => {
+                this.createFutureDamsChart(data.small, '#smallChartContainer svg', 'smallChart', false);
+                this.createFutureDamsChart(data.protected, '#protectedChartContainer svg', 'protectedChart', false);
+                this.createFutureDamsChart(data.balkans, '#balkansChartContainer svg', 'balkansChart', true);
+                this.futureDamsdata = data;
+            });
+    }
+
+    private createFutureDamsChart(data, svgSelector, groupId, addBar) {
+
+
+
+        // Add X axis --> it is a date format
+        var x = d3.scaleLinear()
+            .domain([0, 100])
+            .range([0, this.futureDamsWidth]);
+
+        // Add Y axis
+        var y = d3.scaleBand()
+            .range([0, this.futureDamsHeight])
+            .domain(data.map((d) => d.type))
+            .padding(1);
+
+        let g = d3.select(svgSelector)
+            .append("g")
+            .attr("id", groupId)
+            .attr("transform",
+                "translate(" + this.futureDamsMargin.left + "," + this.futureDamsMargin.top + ")");
+
+        // Add the lines
+        g
+            .selectAll('.lollipop_line')
+            .data(data)
+            .enter()
+            .append("line")
+            .attr('class', 'lollipop_line')
+            .attr('data-type', (d: any) => d.type)
+            .attr('x1', 0)
+            .attr('x2', 0)
+            .attr("y1", (d: any) => y(d.type))
+            .attr("y2", (d: any) => y(d.type))
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-width", 7);
+
+        // Circles -> start at X=0
+        g.selectAll(".lollipop_circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr('class', 'lollipop_circle')
+            .attr('data-type', (d: any) => d.type)
+            .attr("cx", x(0))
+            .attr("cy", (d: any) => y(d.type))
+            .attr("r", "7")
+            .style("fill", "steelblue")
+            .attr("stroke", "steelblue");
+
+        //append labels
+
+        g.selectAll(".lollipop_type_label")
+            .data(data)
+            .enter()
+            .append("text")
+            .text((d: any) => d.type)
+            .attr('x', 5)
+            .attr('y', (d: any) => y(d.type) - 10)
+
+
+        g.selectAll(".lollipop_value_label")
+            .data(data)
+            .enter()
+            .append("text")
+            .attr('data-type', (d: any) => d.type)
+            .text(d => `0%`)
+            .attr('x', () => x(100) - 10)
+            .attr('y', (d: any) => y(d.type) + 3.5)
+            .attr('class', 'lollipop_value_label');
+
+        if (addBar) {
+            let small_of_planned = data[1].small_of_planned;
+
+            //small_of_planned bar
+            g.selectAll('.lollipop_line_small_of_planned')
+                .data([small_of_planned])
+                .enter()
+                .append("line")
+                .attr('class', 'lollipop_line_small_of_planned')
+                .attr('data-type', d => d.type)
+                .attr('x1', 0)
+                .attr('x2', () => 0)
+                .attr("y1", () => y("planned"))
+                .attr("y2", () => y("planned"))
+                .attr("fill", "none")
+                .attr("stroke", "darkred")
+                .attr("stroke-width", 7);
+        }
+
+    }
+
+    private updateFutureDamsChart(data, chartId, type) {
+        // Add X axis --> it is a date format
+        var x = d3.scaleLinear()
+            .domain([0, 100])
+            .range([0, this.futureDamsWidth]);
+
+        // Add Y axis
+        var y = d3.scaleBand()
+            .range([0, this.futureDamsWidth])
+            .domain(data.map(d => d.type))
+            .padding(1);
+
+        let g = d3.select(chartId);
+        // Change the X coordinates of line and circle
+        g.selectAll(".lollipop_line")
+            .each(function (d) {
+                if ((this as HTMLElement).dataset.type == type) {
+                    d3.select(this)
+                        .transition()
+                        .duration(2000)
+                        .attr("x2", (d: any) => x(d.value))
+                }
+            });
+
+        g.selectAll(".lollipop_circle")
+            .each(function (d) {
+                if ((this as HTMLElement).dataset.type == type) {
+                    d3.select(this)
+                        .transition()
+                        .duration(2000)
+                        .attr("cx", (d: any) => x(d.value))
+                }
+            });
+
+
+        g.selectAll(".lollipop_value_label")
+            .each(function (d) {
+                if ((this as HTMLElement).dataset.type == type) {
+                    d3.select(this)
+                        .transition()
+                        .duration(2000)
+                        .textTween(function (d: any) {
+                            if (!(this as any)._current) {
+                                (this as any)._current = 0;
+                            }
+                            const i = d3.interpolate((this as any)._current, d.value);
+                            return function (t) {
+                                let value: any = d3.format(".2")((this as any)._current = i(t));
+                                return `${Math.floor(value)}%`;
+                            };
+                        })
+                        .end();
+
+                }
+            });
+
+
+    }
+
+    private addFutureDamsBar() {
+        // Add X axis --> it is a date format
+        var x = d3.scaleLinear()
+            .domain([0, 100])
+            .range([0, this.futureDamsWidth]);
+
+        let g = d3.select('#balkansChart');
+        g.selectAll(".lollipop_line_small_of_planned")
+            .transition()
+            .duration(2000)
+            .attr("x2", (d: any) => x(d.value));
+    }
+
 }

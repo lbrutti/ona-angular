@@ -182,12 +182,13 @@
                     <h5>{{barrierCount}}</h5>
                 </div>
                 <figure id="anthropogenic_threats_figure">
-                    <video autoplay loop muted id="anthropogenic_threats_dam_background" class="stacked_img anthropogenic_threats" data-step='1,2'>
-                        <source src="assets/video/video2_20_sec.mp4"/>
+                    <video autoplay loop muted id="anthropogenic_threats_dam_background"
+                        class="stacked_img anthropogenic_threats" data-step='1,2'>
+                        <source src="assets/video/video2_20_sec.mp4" />
                         <source src="assets/video/video2_20_sec.webm" />
                     </video>
                     <!-- <img src="assets/imgs/gif/dam.gif" id="anthropogenic_threats_dam_background" -->
-                        <!-- class="stacked_img anthropogenic_threats" data-step='1,2' /> -->
+                    <!-- class="stacked_img anthropogenic_threats" data-step='1,2' /> -->
 
                     <img src="assets/imgs/svg/map_eu/2.map_eu_land.svg" id="anthropogenic_threats_land"
                         class="stacked_img anthropogenic_threats" data-step='3,4,5,6,7,8,9,10,11,12,13,14,15' />
@@ -376,7 +377,7 @@
                     <p>Freshwater species have declined by 84% on average across monitored species compared to 1970.
                     </p>
                     <div #freshwater_index_chart_container id="freshwater_index_chart_container">
-                        
+
                     </div>
                     <p>
                         The reasons why freshwater species are declining are multiple, from overfishing to rising water
@@ -436,12 +437,14 @@
             <!-- waffle chart -->
             <section id="ecosystem_impacts_viz" class="scrolly scrolly-overlay">
                 <figure id="ecosystem_impacts_viz_figure">
-                    <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz" data-step='2,3,4,5'>
+                    <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz"
+                        data-step='2,3,4,5'>
                     </div>
 
                     <!-- AGGINUGERE QUI SVG DEI SOLI PESCI VISIBILE DA MOBILE -->
 
-                    <div id="ecosystem_impacts_viz_figure_chart_all" class="stacked_img ecosystem_impacts_viz" data-step='6,7,8,9,10'>
+                    <div id="ecosystem_impacts_viz_figure_chart_all" class="stacked_img ecosystem_impacts_viz"
+                        data-step='6,7,8,9,10'>
                     </div>
 
 
@@ -538,23 +541,30 @@
                 </div>
 
             </section>
-            <section id="possible_futures_viz" class="scrolly scrolly-overlay">
-                <h1>METTERE QUI mettere LOLLIPOPS con animazioni</h1>
+            <section id="possible_futures_viz" class="scrolly"
+                [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
                 <figure id="possible_futures_viz_figure">
-                    <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img possible_futures_viz" data-step='1'
+                    <div #possible_futures_viz_chart_small_dams id="possible_futures_viz_chart_small_dams" class="stacked_img possible_futures_viz" data-step='1,2'
+                        data-transition-step="">
+                    </div>
+                    <div #possible_futures_viz_chart_protected_dams id="possible_futures_viz_chart_protected_dams" class="stacked_img possible_futures_viz" data-step='3,4'
+                        data-transition-step="">
+                    </div>
+                    <div #possible_futures_viz_chart_balkans_dams id="possible_futures_viz_chart_balkans_dams" class="stacked_img possible_futures_viz" data-step='5,6,7'
                         data-transition-step="">
                     </div>
 
+                    <figcaption>METTERE QUI mettere LOLLIPOPS con animazioni</figcaption>
                 </figure>
                 <!-- foreground master content -->
                 <article id="possible_futures_viz_article">
                     <div class="step" data-step="1" [innerHTML]="'possibleFutures.step-1'|transloco"> </div>
-                    <!-- <div class="step" data-step="2" [innerHTML]="'possibleFutures.step-2'|transloco"> </div>
+                    <div class="step" data-step="2" [innerHTML]="'possibleFutures.step-2'|transloco"> </div>
                     <div class="step" data-step="3" [innerHTML]="'possibleFutures.step-3'|transloco"> </div>
                     <div class="step" data-step="4" [innerHTML]="'possibleFutures.step-4'|transloco"> </div>
                     <div class="step" data-step="5" [innerHTML]="'possibleFutures.step-5'|transloco"> </div>
                     <div class="step" data-step="6" [innerHTML]="'possibleFutures.step-6'|transloco"> </div>
-                    <div class="step" data-step="7" [innerHTML]="'possibleFutures.step-7'|transloco"> </div> -->
+                    <div class="step" data-step="7" [innerHTML]="'possibleFutures.step-7'|transloco"> </div>
                 </article>
             </section>
             <section id="possible_futures_balkans_map" class="centered_text_block">
@@ -600,8 +610,8 @@
                             href="https://damremoval.eu/about/" target="_blank">documented</a>
                         the removal of at least
                         4,984 longitudinal barriers, and the <a
-                            href="https://restorerivers.eu/wiki/index.php?title=Main_Page"
-                            target="_blank">RiverWiki: Restoring Europe’s rivers</a> has collected over
+                            href="https://restorerivers.eu/wiki/index.php?title=Main_Page" target="_blank">RiverWiki:
+                            Restoring Europe’s rivers</a> has collected over
                         1,400 case studies. These
                         case studies portray the complexity of what river restoration can mean in different contexts:
                         not only the demolition of

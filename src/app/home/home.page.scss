@@ -309,3 +309,28 @@ section {
         }
     }
 }
+
+
+#possible_futures_viz {
+    .possible_futures_viz {
+
+        top: 10vh;
+        width: 100%;
+        height: calc(100% - 20vh);
+        opacity: 0;
+        transition-duration: 500ms;
+
+        ::ng-deep svg {
+            width: 100%;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+        svg {
+            height: 100%;
+        }
+
+    }
+}
