@@ -1,0 +1,50 @@
+{
+    "reset": [
+        {
+            "type": "existing",
+            "value": 0
+        },
+        {
+            "type": "planned",
+            "value": 0,
+            "small_of_planned": {
+                "type": "small_of_planned",
+                "value": 44.1
+            }
+        }
+    ],
+    "small": [
+        {
+            "type": "existing",
+            "value": 90
+        },
+        {
+            "type": "planned",
+            "value": 93
+        }
+    ],
+    "protected": [
+        {
+            "type": "existing",
+            "value": 18
+        },
+        {
+            "type": "planned",
+            "value": 28
+        }
+    ],
+    "balkans": [
+        {
+            "type": "existing",
+            "value": 20
+        },
+        {
+            "type": "planned",
+            "value": 49,
+            "small_of_planned": {
+                "type": "small_of_planned",
+                "value": 44.1
+            }
+        }
+    ]
+}
