@@ -276,27 +276,27 @@ export class HomePage implements AfterViewInit {
                     // balkansDamsChart
                     switch (currentStep) {
                         case 1:
-                            page.updateFutureDamsChart(page.futureDamsdata.small, (page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'existing');
+                            page.updateFutureDamsChart((page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'existing');
                             break;
                         case 2:
-                            page.updateFutureDamsChart(page.futureDamsdata.small, (page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'planned');
+                            page.updateFutureDamsChart((page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'planned');
                             break;
-                        case 3:
 
+                        case 3:
+                            page.updateFutureDamsChart((page.protectedDamsChart as any).node().querySelector('#protectedDamsChart'), 'existing');
                             break;
                         case 4:
-
+                            page.updateFutureDamsChart((page.protectedDamsChart as any).node().querySelector('#protectedDamsChart'), 'planned');
                             break;
                         case 5:
-
+                            page.updateFutureDamsChart((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'), 'existing');
                             break;
                         case 6:
-
+                            page.updateFutureDamsChart((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'), 'planned');
                             break;
                         case 7:
-
+                            page.addFutureDamsBar((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'));
                             break;
-
                         default:
                             break;
                     }
@@ -761,7 +761,7 @@ export class HomePage implements AfterViewInit {
 
     }
 
-    private updateFutureDamsChart(data: any, chartContainer: HTMLElement, type: string) {
+    private updateFutureDamsChart(chartContainer: HTMLElement, type: string) {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
@@ -813,13 +813,13 @@ export class HomePage implements AfterViewInit {
         return Promise.resolve()
     }
 
-    private addFutureDamsBar() {
+    private addFutureDamsBar(chartContainer: HTMLElement) {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
             .range([0, this.futureDamsWidth]);
 
-        let g = d3.select('#balkansChart');
+        let g = d3.select(chartContainer);
         g.selectAll(".lollipop_line_small_of_planned")
             .transition()
             .duration(2000)

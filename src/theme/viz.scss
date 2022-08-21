@@ -98,3 +98,16 @@
         }
     }
 }
+
+::ng-deep .possible_futures_viz {
+
+    #possible_futures_viz_chart_small_dams,
+    #possible_futures_viz_chart_protected_dams,
+    #possible_futures_viz_chart_balkans_dams {
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
