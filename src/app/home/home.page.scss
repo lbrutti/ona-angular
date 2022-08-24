@@ -17,11 +17,6 @@
 main {
     margin-left: 20vw;
     margin-right: 20vw;
-
-    &.mobile {
-        margin-left: 3vw;
-        margin-right: 3vw;
-    }
 }
 
 .centered_text_block {
@@ -71,6 +66,7 @@ section {
     position: relative;
     background-color: var(--ion-color-primary-contrast);
     padding: 1rem;
+    background: gold;
 
     article {
         position: relative;
@@ -78,6 +74,7 @@ section {
     }
 
     figure {
+        background-color: red;
         position: -webkit-sticky;
         position: sticky;
         // width: 95vw;
@@ -332,5 +329,18 @@ section {
             height: 100%;
         }
 
+    }
+}
+
+//mobile overloads
+
+main.mobile {
+    margin-left: 3vw;
+    margin-right: 3vw;
+
+    #healthy_rivers {
+        .map_global_rivers {
+            top: 2.5vh;
+        }
     }
 }

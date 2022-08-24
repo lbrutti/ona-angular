@@ -23,9 +23,11 @@ export class HomePage implements AfterViewInit {
     smallDamsChart: d3.Selection<SVGGElement, unknown, null, undefined>;
     protectedDamsChart: d3.Selection<SVGGElement, unknown, null, undefined>;
     futureDamsdata: any;
+    isMobile: boolean = false;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 1 : 10;
+        this.isMobile = this.platform.is('mobile');
     }
 
     futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
@@ -92,7 +94,7 @@ export class HomePage implements AfterViewInit {
         let possibleFuturesScroller = scrollama() as any;
 
         // generic window resize listener event
-        function handleResize() {
+        let handleResize = () => {
             // 1. update height of step elements
             let stepH = Math.floor(window.innerHeight * 0.5);
             riverConnectivitiesStep.style("height", stepH + "px");
@@ -101,7 +103,7 @@ export class HomePage implements AfterViewInit {
 
             possibleFuturesStep.style("height", stepH + "px");
 
-            let figureHeight = window.innerHeight; // / 2;
+            let figureHeight = window.innerHeight / (this.isMobile ? 2 : 1);
             let figureMarginTop = 0;// (window.innerHeight - figureHeight) / 2;
 
             riverConnectivitiesFigure
@@ -318,6 +320,16 @@ export class HomePage implements AfterViewInit {
             // 1. force a resize on load to ensure proper dimensions are sent to scrollama
             handleResize();
 
+            healthyRiversScroller
+                .setup({
+                    step: "#healthy_rivers article .step",
+                    offset: 0.5,
+                    debug: false
+                })
+                .onStepEnter(handleStepEnterHealthyRivers)
+                .onStepExit(handleStepExit)
+                .onStepProgress((a, b, c) => console.log(a, b, c));
+
             // 2. setup the scroller passing options
             // 		this will also initialize trigger observations
             // 3. bind scrollama event handlers (this can be chained like below)
@@ -330,14 +342,6 @@ export class HomePage implements AfterViewInit {
                 .onStepEnter(handleStepEnterConntectivities)
                 .onStepExit(handleStepExit);
 
-            healthyRiversScroller
-                .setup({
-                    step: "#healthy_rivers article .step",
-                    offset: 0.5,
-                    debug: false
-                })
-                .onStepEnter(handleStepEnterHealthyRivers)
-                .onStepExit(handleStepExit);
 
             threatsScroller
                 .setup({

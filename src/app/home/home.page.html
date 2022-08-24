@@ -41,7 +41,7 @@
 
             </section>
             <span>{{maxBreadcrumbItems}}</span>
-            <ion-breadcrumbs [maxItems]="maxBreadcrumbItems" id="breadcrumb"
+            <ion-breadcrumbs *ngIf="!this.platform.is('mobile')" [maxItems]="maxBreadcrumbItems" id="breadcrumb"
                 (ionCollapsedClick)="presentPopover($event)">
                 <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#healthy_rivers">
                     <span>Healthy Rivers</span>
@@ -92,7 +92,7 @@
 
                 <!-- foreground master content -->
                 <article>
-                    <div class="step" data-step="1" data-offset="0.5">
+                    <div class="step is-active" data-step="1" data-offset="0.5">
                         <div [innerHTML]="'healthyRivers.step-1'|transloco"></div>
                     </div>
                     <div class="step" data-step="2">
