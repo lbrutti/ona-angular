@@ -77,7 +77,11 @@
                 </ng-template>
             </ion-popover>
 
+            <section id="healthy_rivers-title" class="centered_text_block">
+               
+            </section>
             <section id="healthy_rivers" class="scrolly scrolly-overlay">
+                <h1 class="section_title">healthy rivers</h1>
                 <!-- background content -->
                 <figure>
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
@@ -92,7 +96,7 @@
 
                 <!-- foreground master content -->
                 <article>
-                    <div class="step is-active" data-step="1" data-offset="0.5">
+                    <div class="step" data-step="1" data-offset="0.5">
                         <div [innerHTML]="'healthyRivers.step-1'|transloco"></div>
                     </div>
                     <div class="step" data-step="2">
@@ -544,14 +548,14 @@
             <section id="possible_futures_viz" class="scrolly"
                 [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
                 <figure id="possible_futures_viz_figure">
-                    <div #possible_futures_viz_chart_small_dams id="possible_futures_viz_chart_small_dams" class="stacked_img possible_futures_viz" data-step='1,2'
-                        data-transition-step="">
+                    <div #possible_futures_viz_chart_small_dams id="possible_futures_viz_chart_small_dams"
+                        class="stacked_img possible_futures_viz" data-step='1,2' data-transition-step="">
                     </div>
-                    <div #possible_futures_viz_chart_protected_dams id="possible_futures_viz_chart_protected_dams" class="stacked_img possible_futures_viz" data-step='3,4'
-                        data-transition-step="">
+                    <div #possible_futures_viz_chart_protected_dams id="possible_futures_viz_chart_protected_dams"
+                        class="stacked_img possible_futures_viz" data-step='3,4' data-transition-step="">
                     </div>
-                    <div #possible_futures_viz_chart_balkans_dams id="possible_futures_viz_chart_balkans_dams" class="stacked_img possible_futures_viz" data-step='5,6,7'
-                        data-transition-step="">
+                    <div #possible_futures_viz_chart_balkans_dams id="possible_futures_viz_chart_balkans_dams"
+                        class="stacked_img possible_futures_viz" data-step='5,6,7' data-transition-step="">
                     </div>
 
                     <figcaption>loren ipsum</figcaption>

@@ -24,13 +24,17 @@ export class HomePage implements AfterViewInit {
     protectedDamsChart: d3.Selection<SVGGElement, unknown, null, undefined>;
     futureDamsdata: any;
     isMobile: boolean = false;
+    futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 1 : 10;
         this.isMobile = this.platform.is('mobile');
+        if (this.isMobile) {
+            this.futureDamsMargin.left = 10;
+            this.futureDamsMargin.right = 15;
+        }
     }
 
-    futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
     futureDamsWidth = 460 - this.futureDamsMargin.left - this.futureDamsMargin.right;
     futureDamsHeight = 200 - this.futureDamsMargin.top - this.futureDamsMargin.bottom;
 
@@ -327,8 +331,7 @@ export class HomePage implements AfterViewInit {
                     debug: false
                 })
                 .onStepEnter(handleStepEnterHealthyRivers)
-                .onStepExit(handleStepExit)
-                .onStepProgress((a, b, c) => console.log(a, b, c));
+                .onStepExit(handleStepExit);
 
             // 2. setup the scroller passing options
             // 		this will also initialize trigger observations
@@ -846,9 +849,9 @@ export class HomePage implements AfterViewInit {
 
         let g = d3.select(svgSelector)
             .append("g")
-            .attr("id", groupId)
-            .attr("transform",
-                "translate(" + this.futureDamsMargin.left + "," + this.futureDamsMargin.top + ")");
+            .attr("id", groupId);
+        g.attr("transform",
+            "translate(" + this.futureDamsMargin.left + "," + this.futureDamsMargin.top + ")");
 
         // Add the lines
         g

@@ -66,7 +66,6 @@ section {
     position: relative;
     background-color: var(--ion-color-primary-contrast);
     padding: 1rem;
-    background: gold;
 
     article {
         position: relative;
@@ -74,7 +73,6 @@ section {
     }
 
     figure {
-        background-color: red;
         position: -webkit-sticky;
         position: sticky;
         // width: 95vw;
@@ -142,11 +140,16 @@ section {
 
     figure {
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .step {
         font-size: 2rem;
         // opacity: 1;
+        text-align: left;
+
     }
 
     * {
@@ -203,9 +206,7 @@ section {
         opacity: 0;
         transition-property: opacity;
         transition-duration: 500ms;
-        margin-top: 25%;
-        margin-left: 12.5%;
-        margin-right: 12.5%;
+        display: flex;
 
         &.active {
             opacity: 1;
@@ -335,12 +336,27 @@ section {
 //mobile overloads
 
 main.mobile {
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
 
     #healthy_rivers {
         .map_global_rivers {
             top: 2.5vh;
         }
+    }
+
+    #river_connectivities {
+        .river_connectivity_animation {
+            margin-top: 2vh;
+        }
+
+
+    }
+
+    .step {
+        margin: 0 auto 2rem auto;
+        font-size: 2rem;
+        background-color: transparent;
+        text-align: left;
     }
 }
