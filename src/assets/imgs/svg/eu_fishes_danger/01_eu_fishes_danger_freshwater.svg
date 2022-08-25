@@ -468,17 +468,17 @@
     <text
        xml:space="preserve"
        id="text1062"
-       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect1064);display:inline;fill:#000000;stroke:none"
+       style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:centuryGothic,sans-serif;white-space:pre;shape-inside:url(#rect1064);display:inline;fill:#000000;stroke:none"
        transform="translate(546.17112,215.84775)"><tspan
          x="-548.75781"
          y="174.67454"
          id="tspan1257"><tspan
-           style="font-weight:300;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light'"
+           style="font-weight:300;font-family:centuryGothic,'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light'"
            id="tspan1255">European Freshwater </tspan></tspan><tspan
          x="-548.75781"
          y="208.00792"
          id="tspan1261"><tspan
-           style="font-weight:300;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light'"
+           style="font-weight:300;font-family:centuryGothic,'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light'"
            id="tspan1259">Species</tspan></tspan></text>
   </g>
 </svg>

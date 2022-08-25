@@ -1,4 +1,9 @@
+::ng-dee svg {
+    font-family: var(--ion-font-family) !important;
+}
+
 ::ng-deep .hex {
+
     &[data-quantile="1"] {
         fill: #ffd8cd
     }
