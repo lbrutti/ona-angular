@@ -282,9 +282,9 @@ section {
 #ecosystem_impacts_viz {
     .ecosystem_impacts_viz {
 
-        // top: 10vh;
+        top: 10vh;
+        height: calc(100% - 20vh);
         width: 100%;
-        // height: calc(100% - 20vh);
         opacity: 0;
         transition-duration: 500ms;
 
@@ -353,6 +353,12 @@ main.mobile {
     }
 
     #ecosystem_impacts_viz {
+        .ecosystem_impacts_viz {
+
+            top: unset;
+            height: unset;
+        }
+
         .step {
             font-size: 1.25rem;
         }
