@@ -282,9 +282,9 @@ section {
 #ecosystem_impacts_viz {
     .ecosystem_impacts_viz {
 
-        top: 10vh;
+        // top: 10vh;
         width: 100%;
-        height: calc(100% - 20vh);
+        // height: calc(100% - 20vh);
         opacity: 0;
         transition-duration: 500ms;
 
@@ -294,30 +294,13 @@ section {
 
         &.active {
             opacity: 1;
-
-            &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
-                fill: #db7870;
-                transition: fill 500ms;
-            }
-
-            &#anthropogenic_threats_hex_bin::ng-deep svg path.focused {
-                stroke: black !important;
-                stroke-width: 1px !important;
-            }
         }
 
         svg {
             height: 100%;
         }
 
-        &.transitioned {
 
-            &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
-                fill: rgb(30, 14, 4);
-                fill-opacity: 0.50;
-
-            }
-        }
     }
 }
 
@@ -370,6 +353,12 @@ main.mobile {
     }
 
     #ecosystem_impacts_viz {
+        .step {
+            font-size: 1.25rem;
+        }
+    }
+
+    #possible_futures_viz {
         .step {
             font-size: 1.25rem;
         }

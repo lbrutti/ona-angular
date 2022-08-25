@@ -72,10 +72,14 @@
     #endangered,
     #low_risk,
     #no_data {
+        transition-property: all;
+        transition-duration: 500ms;
         fill-opacity: 0;
         stroke-opacity: 0;
 
         &.active {
+            transition-property: all;
+            transition-duration: 500ms;
             fill-opacity: 1;
             stroke-opacity: 1;
         }
@@ -95,9 +99,13 @@
     #reptiles,
     #amphibian,
     #birds {
+        transition-property: all;
+        transition-duration: 500ms;
         opacity: 0;
 
         &.active {
+            transition-property: all;
+            transition-duration: 500ms;
             opacity: 1;
         }
     }

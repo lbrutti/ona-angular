@@ -27,6 +27,7 @@ export class HomePage implements AfterViewInit {
     futureDamsdata: any;
     isMobile: boolean = false;
     futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
+    public ecosystem_viz_drill_offset: number = 0.5;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
@@ -34,6 +35,7 @@ export class HomePage implements AfterViewInit {
         if (this.isMobile) {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;
+            this.ecosystem_viz_drill_offset = 0.75;
         }
     }
 
@@ -404,7 +406,7 @@ export class HomePage implements AfterViewInit {
             ecosystemImpactsScroller
                 .setup({
                     step: "#ecosystem_impacts_viz article .step",
-                    offset: this.isMobile ? 0.65 : 0.5,
+                    offset: this.isMobile ? 0.75 : 0.5,
                 })
                 .onStepEnter(handleStepEnterEcosystemImpacts)
                 .onStepExit(handleStepExitImpacts);
