@@ -261,9 +261,9 @@ section {
     }
 
     #barrier_counter {
-        position: sticky;
-        top: 0;
-        background-color: #fefefe;
+        position: absolute;
+        top: 88%;
+        background-color: transparent;
         color: darkred;
         z-index: 20;
     }

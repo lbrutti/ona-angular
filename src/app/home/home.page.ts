@@ -15,6 +15,7 @@ export class HomePage implements AfterViewInit {
     @ViewChild('possible_futures_viz_chart_protected_dams') possible_futures_viz_chart_protected_dams_container: ElementRef;
     @ViewChild('possible_futures_viz_chart_balkans_dams') possible_futures_viz_chart_balkans_dams_container: ElementRef;
     @ViewChild('barrier_removal_projects_chart_container') barrier_removal_projects_chart_container: ElementRef;
+    @ViewChild('barrierCounter') barrierCounter: ElementRef;
 
 
     public sliderDirection = 'horizontal';
@@ -193,10 +194,11 @@ export class HomePage implements AfterViewInit {
             });
         }
 
-        function handleStepEnterThreats(response: any) {
+        let handleStepEnterThreats = (response: any) => {
             threatsStep.classed("is-active", function (d, i) {
                 return i === response.index;
             });
+            let increments = [62293, 199744, 197752, 112898, 8528, 59577];
 
             // update graphic based on step
             let maps = threatsFigure.selectAll(".anthropogenic_threats");
@@ -217,6 +219,27 @@ export class HomePage implements AfterViewInit {
                 }
 
             });
+
+            if (currentStep == 4) {
+                this.barrierCount += increments[0];
+            }
+            if (currentStep == 6) {
+                this.barrierCount += increments[1];
+            }
+            if (currentStep == 8) {
+                this.barrierCount += increments[2];
+            }
+            if (currentStep == 10) {
+                this.barrierCount += increments[3];
+            }
+            if (currentStep == 12) {
+                this.barrierCount += increments[4];
+            }
+            if (currentStep == 14) {
+                this.barrierCount += increments[5];
+            }
+
+
         }
 
 
@@ -321,7 +344,16 @@ export class HomePage implements AfterViewInit {
             response.element.classList.remove('is-active');
         }
 
-    
+        let handleStepExitThreats = (response: any) => {
+            handleStepExit(response);
+            let currentStep = response.index + 1;
+
+            if (currentStep == 15) {
+                this.barrierCount = 0;
+            }
+        };
+
+
         let init = () => {
 
             // 1. force a resize on load to ensure proper dimensions are sent to scrollama
@@ -356,7 +388,7 @@ export class HomePage implements AfterViewInit {
                     debug: false
                 })
                 .onStepEnter(handleStepEnterThreats)
-                .onStepExit(handleStepExit);
+                .onStepExit(handleStepExitThreats);
 
             ecosystemImpactsScroller
                 .setup({
