@@ -122,22 +122,31 @@ export class HomePage implements AfterViewInit {
                 .style("top", figureMarginTop + "px");
 
             riverConnectivities.select(".step:last-child")
-                .style("height", 2 * stepH + "px")
+                .style("height", 2 * stepH + "px");
+
             healthyRiversFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
+            healthyRivers.select(".step:last-child")
+                .style("height", 2 * stepH + "px");
 
             threatsFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
+            threats.select(".step:last-child")
+                .style("height", 2 * stepH + "px");
 
             ecosystemImpactsFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
+            ecosystemImpacts.select(".step:last-child")
+                .style("height", 2 * stepH + "px");
 
             possibleFuturesFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
+            possibleFutures.select(".step:last-child")
+                .style("height", 2 * stepH + "px");
 
             // 3. tell scrollama to update new element dimensions
             riverConnectivityScroller.resize();
