@@ -114,6 +114,8 @@ export class HomePage implements AfterViewInit {
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
 
+            riverConnectivities.select(".step:last-child")
+                .style("height", 2 * stepH + "px")
             healthyRiversFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
@@ -317,8 +319,9 @@ export class HomePage implements AfterViewInit {
         }
         function handleStepExit(response: any) {
             response.element.classList.remove('is-active');
-            console.log('exit : ', response);
         }
+
+    
         let init = () => {
 
             // 1. force a resize on load to ensure proper dimensions are sent to scrollama
@@ -339,7 +342,7 @@ export class HomePage implements AfterViewInit {
             riverConnectivityScroller
                 .setup({
                     step: "#river_connectivities article .step",
-                    offset: 0.5,
+                    offset: this.isMobile ? 0.65 : 0.5,
                     debug: false
                 })
                 .onStepEnter(handleStepEnterConntectivities)

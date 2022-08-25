@@ -146,10 +146,8 @@ section {
     }
 
     .step {
-        font-size: 2rem;
-        // opacity: 1;
+        font-size: 1.5rem;
         text-align: left;
-
     }
 
     * {
@@ -211,6 +209,11 @@ section {
         &.active {
             opacity: 1;
         }
+
+    }
+
+    .step:last-child {
+        height: 744px;
     }
 
 
@@ -350,6 +353,9 @@ main.mobile {
             margin-top: 2vh;
         }
 
+        .step {
+            font-size: 1.25rem;
+        }
 
     }
 

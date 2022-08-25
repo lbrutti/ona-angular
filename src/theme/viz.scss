@@ -42,15 +42,19 @@
     #lateral2,
     #vertical2,
     #temporal2 {
-        animation: blinker 1s step-end infinite;
+        &.active {
+            animation: blinker 1s step-end infinite;
+        }
     }
 
     #longitudinal1,
     #lateral1,
     #vertical1,
     #temporal1 {
+        &.active {
+            animation: blinker 1s step-start infinite;
+        }
 
-        animation: blinker 1s step-start infinite;
 
     }
 
