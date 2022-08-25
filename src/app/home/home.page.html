@@ -167,11 +167,13 @@
                 </article>
             </section>
 
-            <!-- non scrolly content -->  
-            <section id="river_connectivities" class="scrolly"
-            [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
-            
+            <!-- non scrolly content -->
+            <section>
                 <h1 class="section_title">THE FOUR DIMENSIONS OF CONNECTIVITY</h1>
+            </section>
+            <section id="river_connectivities" class="scrolly"
+                [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
+
                 <!-- stick figure -->
                 <figure>
                     <div id="connectivity_image" class="stacked_img river_connectivity_animation" data-step="1,2,3,4,5">
@@ -522,10 +524,14 @@
                     <div class="step" data-step="3" [innerHTML]="'ecosystemImpacts.step-3'|transloco"></div>
                     <div class="step" data-step="4" [innerHTML]="'ecosystemImpacts.step-4'|transloco"></div>
                     <div class="step" data-step="5" [innerHTML]="'ecosystemImpacts.step-5'|transloco"></div>
-                    <div class="step" data-step="6"  [attr.data-offset]="ecosystem_viz_drill_offset" [innerHTML]="'ecosystemImpacts.step-6'|transloco"></div>
-                    <div class="step" data-step="7"  [attr.data-offset]="ecosystem_viz_drill_offset" [innerHTML]="'ecosystemImpacts.step-7'|transloco"></div>
-                    <div class="step" data-step="8"  [attr.data-offset]="ecosystem_viz_drill_offset" [innerHTML]="'ecosystemImpacts.step-8'|transloco"></div>
-                    <div class="step" data-step="9"  [attr.data-offset]="ecosystem_viz_drill_offset" [innerHTML]="'ecosystemImpacts.step-9'|transloco"></div>
+                    <div class="step" data-step="6" [attr.data-offset]="ecosystem_viz_drill_offset"
+                        [innerHTML]="'ecosystemImpacts.step-6'|transloco"></div>
+                    <div class="step" data-step="7" [attr.data-offset]="ecosystem_viz_drill_offset"
+                        [innerHTML]="'ecosystemImpacts.step-7'|transloco"></div>
+                    <div class="step" data-step="8" [attr.data-offset]="ecosystem_viz_drill_offset"
+                        [innerHTML]="'ecosystemImpacts.step-8'|transloco"></div>
+                    <div class="step" data-step="9" [attr.data-offset]="ecosystem_viz_drill_offset"
+                        [innerHTML]="'ecosystemImpacts.step-9'|transloco"></div>
                 </article>
             </section>
             <section id="ecosystem_impacts_sediment_text" class="centered_text_block">
