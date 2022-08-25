@@ -16,7 +16,8 @@ export class HomePage implements AfterViewInit {
     @ViewChild('possible_futures_viz_chart_balkans_dams') possible_futures_viz_chart_balkans_dams_container: ElementRef;
     @ViewChild('barrier_removal_projects_chart_container') barrier_removal_projects_chart_container: ElementRef;
     @ViewChild('barrierCounter') barrierCounter: ElementRef;
-
+    @ViewChild('breadcrumb') breadcrumb: ElementRef;
+    @ViewChild('breadcrumbMobile') breadcrumbMobile: ElementRef;
 
     public sliderDirection = 'horizontal';
     public maxBreadcrumbItems: number = 1;
@@ -28,13 +29,15 @@ export class HomePage implements AfterViewInit {
     futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
-        this.maxBreadcrumbItems = this.platform.is('mobile') ? 1 : 10;
+        this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
         this.isMobile = this.platform.is('mobile');
         if (this.isMobile) {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;
         }
     }
+
+
 
     futureDamsWidth = 460 - this.futureDamsMargin.left - this.futureDamsMargin.right;
     futureDamsHeight = 200 - this.futureDamsMargin.top - this.futureDamsMargin.bottom;
@@ -45,6 +48,7 @@ export class HomePage implements AfterViewInit {
     async ngAfterViewInit(): Promise<any> {
         // using d3 for convenience
         let main = d3.select("main");
+        this.maxBreadcrumbItems = this.platform.is('mobile') ? 1 : 4;
 
 
         //healthy river
@@ -221,22 +225,22 @@ export class HomePage implements AfterViewInit {
             });
 
             if (currentStep == 4) {
-                this.barrierCount += increments[0];
+                this.barrierCount = increments[0];
             }
             if (currentStep == 6) {
-                this.barrierCount += increments[1];
+                this.barrierCount = increments[1] + increments[0];
             }
             if (currentStep == 8) {
-                this.barrierCount += increments[2];
+                this.barrierCount = increments[2] + increments[1] + increments[0];
             }
             if (currentStep == 10) {
-                this.barrierCount += increments[3];
+                this.barrierCount = increments[3] + increments[2] + increments[1] + increments[0];
             }
             if (currentStep == 12) {
-                this.barrierCount += increments[4];
+                this.barrierCount = increments[4] + increments[3] + increments[2] + increments[1] + increments[0];
             }
             if (currentStep == 14) {
-                this.barrierCount += increments[5];
+                this.barrierCount = increments[5] + increments[4] + increments[3] + increments[2] + increments[1] + increments[0];
             }
 
 
@@ -489,26 +493,31 @@ export class HomePage implements AfterViewInit {
     }
     async presentPopover(e: Event) {
         this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
-        this.popover.nativeElement.event = e;
+        (this.popover as any).el.event = e;
         this.isOpen = true;
     }
 
     public onBreadCrumbClick(e: Event) {
         e.preventDefault();
         let section = (e.target as any).parentElement.getAttribute('href');
-        this.scrollSectionIntoView(section);
+        let breadcrumbH = (this.breadcrumb as any).el.getBoundingClientRect().height;
+        this.scrollSectionIntoView(section, breadcrumbH);
     }
     public onBreadCrumbPopoverClick(e: Event) {
         e.preventDefault();
         let section = (e.target as any).parentElement.dataset.href;
         this.isOpen = false;
-        this.scrollSectionIntoView(section);
+        let breadcrumbH = (this.breadcrumbMobile as any).el.getBoundingClientRect().height;
+
+        this.scrollSectionIntoView(section, breadcrumbH);
     }
 
-    private scrollSectionIntoView(sectionSelector: string) {
+
+    private scrollSectionIntoView(sectionSelector: string, offset: number = 0) {
         let destination = document.querySelector(sectionSelector);
         if (!_.isNil(destination)) {
             destination.scrollIntoView({ behavior: 'smooth' });
+            destination.scrollBy({ top:  -(2 * offset) });
         }
     }
 

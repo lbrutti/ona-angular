@@ -1,3 +1,67 @@
+<!-- <ion-header>
+    <!-- <ion-toolbar *ngIf="this.isMobile">
+        <ion-breadcrumbs maxItems="3" 
+        id="breadcrumb" #breadcrumbMobile
+            (ionCollapsedClick)="presentPopover($event)">
+            <ion-breadcrumb (click)="onMobileBreadCrumbClick($event)" href="#healthy_rivers">
+                <span>Healthy Rivers</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onMobileBreadCrumbClick($event)" href="#anthropogenic_threats-title">
+                <span>Anthropogenic Threats</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onMobileBreadCrumbClick($event)" href="#ecosystem_impacts_title">
+                <span>Ecosystem Impacts</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onMobileBreadCrumbClick($event)" href="#possible_futures_title">
+                <span>Possible Futures</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onMobileBreadCrumbClick($event)" href="#about_title">
+                <span>About</span>
+            </ion-breadcrumb>
+        </ion-breadcrumbs>
+        <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+            <ng-template>
+                <ion-content>
+                    <ion-list>
+                        <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs; last as isLast"
+                            (click)="onBreadCrumbPopoverClick($event)" [href]="breadcrumb.href"
+                            [attr.data-href]="breadcrumb.href" [lines]="isLast ? 'none' : null">
+                            <ion-label>{{ breadcrumb.textContent }}</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-content>
+            </ng-template>
+        </ion-popover>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-breadcrumbs id="breadcrumb" #breadcrumb>
+            <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#healthy_rivers">
+                <span>Healthy Rivers</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#anthropogenic_threats-title">
+                <span>Anthropogenic Threats</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#ecosystem_impacts_title">
+                <span>Ecosystem Impacts</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#possible_futures_title">
+                <span>Possible Futures</span>
+                <span slot="separator"></span>
+            </ion-breadcrumb>
+            <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#about_title">
+                <span>About</span>
+            </ion-breadcrumb>
+        </ion-breadcrumbs>
+    </ion-toolbar>
+</ion-header> -->
+
 <ion-content [fullscreen]="false">
     <div id="container">
 
@@ -40,10 +104,9 @@
                 </p>
 
             </section>
-            <span>{{maxBreadcrumbItems}}</span>
-            <ion-breadcrumbs *ngIf="!this.platform.is('mobile')" [maxItems]="maxBreadcrumbItems" id="breadcrumb"
-                (ionCollapsedClick)="presentPopover($event)">
-                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#healthy_rivers">
+
+            <ion-breadcrumbs id="breadcrumb" #breadcrumb>
+                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#healthy_rivers_title">
                     <span>Healthy Rivers</span>
                     <span slot="separator"></span>
                 </ion-breadcrumb>
@@ -63,25 +126,8 @@
                     <span>About</span>
                 </ion-breadcrumb>
             </ion-breadcrumbs>
-            <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
-                <ng-template>
-                    <ion-content>
-                        <ion-list>
-                            <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs; last as isLast"
-                                (click)="onBreadCrumbPopoverClick($event)" [href]="breadcrumb.href"
-                                [attr.data-href]="breadcrumb.href" [lines]="isLast ? 'none' : null">
-                                <ion-label>{{ breadcrumb.textContent }}</ion-label>
-                            </ion-item>
-                        </ion-list>
-                    </ion-content>
-                </ng-template>
-            </ion-popover>
-
-            <section id="healthy_rivers-title" class="centered_text_block">
-
-            </section>
             <section id="healthy_rivers" class="scrolly scrolly-overlay">
-                <h1 class="section_title">healthy rivers</h1>
+                <h1 id="healthy_rivers_title" class="section_title">healthy rivers</h1>
                 <!-- background content -->
                 <figure>
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
@@ -121,14 +167,11 @@
                 </article>
             </section>
 
-            <!-- non scrolly content -->
-            <section id="river-connectivities-title" class="centered_text_block">
-                <h1>THE FOUR DIMENSIONS OF CONNECTIVITY</h1>
-            </section>
-
+            <!-- non scrolly content -->  
             <section id="river_connectivities" class="scrolly"
-                [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
-
+            [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
+            
+                <h1 class="section_title">THE FOUR DIMENSIONS OF CONNECTIVITY</h1>
                 <!-- stick figure -->
                 <figure>
                     <div id="connectivity_image" class="stacked_img river_connectivity_animation" data-step="1,2,3,4,5">
@@ -191,11 +234,9 @@
 
             </section>
 
-            <section id="anthropogenic_threats-title" class="centered_text_block">
-                <h1>The Main Threats to rivers' connectivity</h1>
-            </section>
             <section id="anthropogenic_threats" class="scrolly scrolly-overlay">
                 <!-- background content -->
+                <h1 class="section_title" id="anthropogenic_threats-title">The Main Threats to rivers' connectivity</h1>
 
                 <figure id="anthropogenic_threats_figure">
                     <video autoplay loop muted id="anthropogenic_threats_dam_background"
@@ -385,7 +426,7 @@
             </section>
 
             <section id="ecosystem_impacts_title" class="centered_text_block">
-                <h1>The ecological impacts of the loss of connectivity</h1>
+                <h1 class="section_title">The ecological impacts of the loss of connectivity</h1>
             </section>
             <section id="ecosystem_impacts_text" class="centered_text_block">
                 <div>
@@ -532,10 +573,8 @@
 
 
             <!-- possible futures -->
-            <section id="possible_futures_title" class="centered_text_block">
-                <h1>The future for European rivers</h1>
-            </section>
             <section id="possible_futures_text" class="centered_text_block">
+                <h1 id="possible_futures_title" class="section_title">The future for European rivers</h1>
                 <div>
                     <p>
 
@@ -702,10 +741,9 @@
             </section>
 
             <!-- about -->
-            <section id="about_title" class="centered_text_block">
-                <h1>About the project</h1>
-            </section>
+
             <section id="about_credits" class="centered_text_block">
+                <h1 class="section_title" id="about_title">About the project</h1>
                 <h4>Credits:</h4>
                 <p>Project financed by Wetlands International </p>
                 <p>Scientific supervision: Andrea Goltara (CIRF) and Erica Villa (LOGON)</p>

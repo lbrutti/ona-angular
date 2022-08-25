@@ -42,6 +42,12 @@ main {
     font-size: small !important;
     top: 0;
     z-index: 2000;
+    width: auto;
+    overflow-x: auto;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
     div {
         display: flex;
@@ -55,6 +61,10 @@ main {
             margin: auto;
         }
     }
+}
+
+.section_title {
+    padding-top: 36px;
 }
 
 .stacked_img {
