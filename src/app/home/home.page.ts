@@ -113,7 +113,7 @@ export class HomePage implements AfterViewInit {
             possibleFuturesStep.style("height", stepH + "px");
 
             let figureHeight = window.innerHeight / (this.isMobile ? 2 : 1);
-            let figureMarginTop = 0;// (window.innerHeight - figureHeight) / 2;
+            let figureMarginTop = 36;// (window.innerHeight - figureHeight) / 2;
 
             riverConnectivitiesFigure
                 .style("height", figureHeight + "px")
@@ -357,6 +357,13 @@ export class HomePage implements AfterViewInit {
             }
         };
 
+        let handleStepExitImpacts = (response: any) => {
+            let currentStep = response.index + 1;
+            if (currentStep > 1) {
+                handleStepExit(response);
+            }
+        };
+
 
         let init = () => {
 
@@ -397,11 +404,10 @@ export class HomePage implements AfterViewInit {
             ecosystemImpactsScroller
                 .setup({
                     step: "#ecosystem_impacts_viz article .step",
-                    offset: 0.5,
-                    debug: false
+                    offset: this.isMobile ? 0.65 : 0.5,
                 })
                 .onStepEnter(handleStepEnterEcosystemImpacts)
-                .onStepExit(handleStepExit);
+                .onStepExit(handleStepExitImpacts);
 
             possibleFuturesScroller
                 .setup({
@@ -517,7 +523,7 @@ export class HomePage implements AfterViewInit {
         let destination = document.querySelector(sectionSelector);
         if (!_.isNil(destination)) {
             destination.scrollIntoView({ behavior: 'smooth' });
-            destination.scrollBy({ top:  -(2 * offset) });
+            destination.scrollBy({ top: -(2 * offset) });
         }
     }
 
