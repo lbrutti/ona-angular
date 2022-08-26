@@ -110,14 +110,18 @@ section {
 
     .step {
         margin: 0 auto 2rem auto;
-        color: #4d4f4a;
+        color: var(--ion-color-text-color-standard);
         font-size: 3rem;
         text-align: center;
         opacity: 0;
         transition-duration: 500ms;
         transition-property: opacity;
         background-color: rgba(var(--ion-background-color), 0.5);
+
         // display: flex;
+        &.smaller-font {
+            font-size: 1.25rem;
+        }
 
         &.separator {
             background-color: transparent;
@@ -301,6 +305,11 @@ section {
         }
 
 
+    }
+
+    #ecosystem_impacts_viz_figure_chart_all {
+        top: unset;
+        height: unset;
     }
 }
 
