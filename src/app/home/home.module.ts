@@ -7,6 +7,8 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslocoModule } from '@ngneat/transloco';
 import 'img-comparison-slider';
+import { SafehtmlPipe } from '../utils/pipes/safepipe/safehtml.pipe';
+import { SafehtmlPipeModule } from '../utils/pipes/safepipe/safehtml.pipe.module';
 
 @NgModule({
     imports: [
@@ -14,8 +16,8 @@ import 'img-comparison-slider';
         FormsModule,
         IonicModule,
         HomePageRoutingModule,
-        TranslocoModule
-    ],
+        TranslocoModule,
+        SafehtmlPipeModule],
     declarations: [HomePage],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

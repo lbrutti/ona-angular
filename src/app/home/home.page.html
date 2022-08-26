@@ -143,25 +143,25 @@
                 <!-- foreground master content -->
                 <article>
                     <div class="step" data-step="1" data-offset="0.5">
-                        <div [innerHTML]="'healthyRivers.step-1'|transloco"></div>
+                        <div [innerHTML]="'healthyRivers.step-1'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="2">
-                        <div [innerHTML]="'healthyRivers.step-2'|transloco"></div>
+                        <div [innerHTML]="'healthyRivers.step-2'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="3">
-                        <div [innerHTML]="'healthyRivers.step-3'|transloco"></div>
+                        <div [innerHTML]="'healthyRivers.step-3'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="4">
-                        <div [innerHTML]="'healthyRivers.step-4'|transloco"></div>
+                        <div [innerHTML]="'healthyRivers.step-4'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="5">
-                        <div [innerHTML]="'healthyRivers.step-5'|transloco"></div>
+                        <div [innerHTML]="'healthyRivers.step-5'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="6">
-                        <div [innerHTML]="'healthyRivers.step-6'|transloco"></div>
+                        <div [innerHTML]="'healthyRivers.step-6'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step separator" data-step="7">
-                        <div [innerHTML]="'healthyRivers.step-7'|transloco"></div>
+                        <div [innerHTML]="'healthyRivers.step-7'|transloco | safehtml: 'html'"></div>
                     </div>
 
                 </article>

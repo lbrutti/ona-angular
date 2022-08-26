@@ -4,9 +4,9 @@
     "introSubtitle": "The health of the world’s rivers is severely threatened. But there is still hope if we take action.",
     "introParagraphs": "<p class='intro__dek'>Rivers are complex water systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from natural disasters. They collect waters from the atmosphere and from the surface to replenish the groundwater systems which we depend upon for our survival. </p> <p class='intro__dek'>To provide all these fundamental ecosystemic actions rivers must be able to flow freely, moving unobstructed across multiple directions. Only a small fraction of the world’s watercourses however can do so: a myriad of human-made interventions tend to fragment, deviate, constrict, and regulate a river’s flow, dramatically impacting its functions and its surrounding ecosystems.  </p> <p class='intro__dek'>Understanding how rivers work and the threats they face is a first step in recognizing that restoring our watercourses is not only possible, but it is crucial.</p>",
     "healthyRivers": {
-        "step-1": "Let’s map the global longest rivers",
-        "step-2": "…and see which are not free-flowing…",
-        "step-3": "…and which instead remain free-flowing.",
+        "step-1": "These are the world's <ion-text color=\"medium\">longest* rivers</ion-text>",
+        "step-2": "…and see which are <ion-text color=\"danger\">not free-flowing…</ion-text>",
+        "step-3": "…and which instead remain <ion-text color=\"success\">free-flowing</ion-text>.",
         "step-4": "Free-flowing rivers are clearly concentrated in a few areas,",
         "step-5": "like in the Arctic, or in the basins of the Amazon and Congo rivers.",
         "step-6": "In the rest of the world, very long free-flowing rivers are rare, if not totally absent.",
@@ -53,7 +53,7 @@
     },
     "possibleFutures": {
         "step-1": "Of the existing dams mapped by the study, 90% of them have a capacity of fewer than 10 megawatts.",
-        "step-2":"93% of future European dams are classified as small, a ratio that is even higher than that of existing ones. Although they usually pose fewer problems to sediment transport, in some aspects, small hydropower schemes are more damaging than larger ones. They fragment river connectivity like larger dams while providing only a small contribution to energy demands. As most of them do not offer any storage and regulation capacity, they are strategically less valuable. Additionally, in most countries room for further hydropower is virtually exhausted, so they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
+        "step-2": "93% of future European dams are classified as small, a ratio that is even higher than that of existing ones. Although they usually pose fewer problems to sediment transport, in some aspects, small hydropower schemes are more damaging than larger ones. They fragment river connectivity like larger dams while providing only a small contribution to energy demands. As most of them do not offer any storage and regulation capacity, they are strategically less valuable. Additionally, in most countries room for further hydropower is virtually exhausted, so they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
         "step-3": "According to the study, at least 18% of the existing European hydropower plants are in protected areas, like National Parks, World Heritage sites, Emerald areas for Eastern Europe, and others.",
         "step-4": "It is a paradox: future European hydropower dams, while being developed for the production of green energy, will in fact be placed inside protected areas in 28% of the cases, destroying invaluable habitats. ",
         "step-5": "This risk is well demonstrated by the situation in the Balkans, Eastern Mediterranean and Turkey, an area that currently hosts 20% of the existing European hydropower dams.",
