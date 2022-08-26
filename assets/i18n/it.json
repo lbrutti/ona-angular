@@ -2,23 +2,22 @@
     "pageTitle": "River Connectivity",
     "introTitle": "River Connectivity",
     "introSubtitle": "The health of the world’s rivers is severely threatened. But there is still hope if we take action.",
-    "introParagraphs": "<p class='intro__dek'>Rivers are complex water systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from natural disasters. They collect waters from the atmosphere and from the surface to replenish the groundwater systems which we depend upon for our survival. </p> <p class='intro__dek'>To provide all these fundamental ecosystemic actions rivers must be able to flow freely, moving unobstructed across multiple directions. Only a small fraction of the world’s watercourses however can do so: a myriad of human-made interventions tend to fragment, deviate, constrict, and regulate a river’s flow, dramatically impacting its functions and its surrounding ecosystems.  </p> <p class='intro__dek'>Understanding how rivers work and the threats they face is a first step in recognizing that restoring our watercourses is not only possible, but it is crucial.</p>",
+    "introParagraphs": "<p class='intro__dek'>Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.  </p> <p class='intro__dek'>To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems.</p>",
     "healthyRivers": {
-        "step-1": "Let’s map the global longest rivers",
-        "step-2": "…and see which are not free-flowing…",
-        "step-3": "…and which instead remain free-flowing.",
-        "step-4": "Free-flowing rivers are clearly concentrated in a few areas,",
-        "step-5": "like in the Arctic, or in the basins of the Amazon and Congo rivers.",
-        "step-6": "In the rest of the world, very long free-flowing rivers are rare, if not totally absent.",
-        "step-7": "&nbsp",
-        "outro": "To thrive, a river needs liberty of movement across four main dimensions: longitudinal, lateral, vertical, and temporal."
+        "step-1": "These are the world's <ion-text color=\"secondary\">longest* rivers</ion-text>",
+        "step-2": "Most of them are <ion-text color=\"danger\">not free-flowing…</ion-text>",
+        "step-3": "…only a few remain <ion-text color=\"success\">free-flowing</ion-text>.",
+        "step-4": "Concentrated in a few areas,",
+        "step-5": "The Arctic, Amazon, and Congo.",
+        "step-6": "In the rest of the world, very long <ion-text color=\"success\">free-flowing rivers</ion-text> are rare, if not totally absent.",
+        "step-7": "&nbsp"
     },
     "connectivity": {
         "step-1": "To thrive, a river needs freedom of movement across four dimensions: longitudinal, lateral, vertical, and temporal",
-        "step-2": "<span class='em_primary'>Longitudinal connectivity</span> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs and culverts can restrict or cut off this connectivity entirely.",
-        "step-3": "<span class='em_primary'>Lateral connectivity</span> Rivers periodically overflow their banks and inundate land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa. ",
-        "step-4": "<span class='em_primary'>Vertical connectivity</span> addresses the natural connections between the atmosphere, surface and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge and much more.",
-        "step-5": "<span class='em_primary'>Temporal connectivity</span> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
+        "step-2": "<ion-text class=\"font-bold\" color=\"secondary\">Longitudinal connectivity</ion-text> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs and culverts can restrict or cut off this connectivity entirely.",
+        "step-3": "<ion-text class=\"font-bold\" color=\"secondary\">Lateral connectivity</ion-text> Rivers periodically overflow their banks and inundate land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa. ",
+        "step-4": "<ion-text class=\"font-bold\" color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge and much more.",
+        "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
     },
     "anthropogenicThreats": {
         "barrierCounterTitle": "Barrier counter",
@@ -53,7 +52,7 @@
     },
     "possibleFutures": {
         "step-1": "Of the existing dams mapped by the study, 90% of them have a capacity of fewer than 10 megawatts.",
-        "step-2":"93% of future European dams are classified as small, a ratio that is even higher than that of existing ones. Although they usually pose fewer problems to sediment transport, in some aspects, small hydropower schemes are more damaging than larger ones. They fragment river connectivity like larger dams while providing only a small contribution to energy demands. As most of them do not offer any storage and regulation capacity, they are strategically less valuable. Additionally, in most countries room for further hydropower is virtually exhausted, so they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
+        "step-2": "93% of future European dams are classified as small, a ratio that is even higher than that of existing ones. Although they usually pose fewer problems to sediment transport, in some aspects, small hydropower schemes are more damaging than larger ones. They fragment river connectivity like larger dams while providing only a small contribution to energy demands. As most of them do not offer any storage and regulation capacity, they are strategically less valuable. Additionally, in most countries room for further hydropower is virtually exhausted, so they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
         "step-3": "According to the study, at least 18% of the existing European hydropower plants are in protected areas, like National Parks, World Heritage sites, Emerald areas for Eastern Europe, and others.",
         "step-4": "It is a paradox: future European hydropower dams, while being developed for the production of green energy, will in fact be placed inside protected areas in 28% of the cases, destroying invaluable habitats. ",
         "step-5": "This risk is well demonstrated by the situation in the Balkans, Eastern Mediterranean and Turkey, an area that currently hosts 20% of the existing European hydropower dams.",
