@@ -172,19 +172,19 @@
                 <!-- scrolling side -->
                 <article>
                     <div class="step" data-step="1">
-                        <div [innerHTML]="'connectivity.step-1'|transloco"></div>
+                        <div [innerHTML]="'connectivity.step-1'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="2">
-                        <div [innerHTML]="'connectivity.step-2'|transloco"></div>
+                        <div [innerHTML]="'connectivity.step-2'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="3">
-                        <div [innerHTML]="'connectivity.step-3'|transloco"></div>
+                        <div [innerHTML]="'connectivity.step-3'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="4">
-                        <div [innerHTML]="'connectivity.step-4'|transloco"></div>
+                        <div [innerHTML]="'connectivity.step-4'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="5">
-                        <div [innerHTML]="'connectivity.step-5'|transloco"></div>
+                        <div [innerHTML]="'connectivity.step-5'|transloco | safehtml: 'html'"></div>
                     </div>
                 </article>
 
@@ -195,22 +195,12 @@
                     <ion-row>
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
                             <p>
-                                <em>Free-flowing rivers</em> are those in which all four types of connectivity are
-                                present.
-                                There are, however, many potential threats to maintaining a free-flowing status from the
-                                headwaters
-                                to the outlet. For example,
-                                barriers like dams impact longitudinal and temporal connectivity, while bank protection
-                                and levees
-                                hinder lateral
-                                connectivity.
+                                <ion-text class="font-bold">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br>
+                                There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>
+                                For example, barriers like dams impact longitudinal and temporal connectivity, while bank protection and levees hinder lateral connectivity.
                             </p>
                             <p>
-                                The human pressures that impact a river’s flow and dynamics are multiple, often linked
-                                to
-                                urbanization, agriculture, roads and infrastructure built in riparian areas, water
-                                abstraction and
-                                energy production - to name a few.
+                                The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few.
                             </p>
                         </ion-col>
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">

@@ -14,10 +14,10 @@
     },
     "connectivity": {
         "step-1": "To thrive, a river needs freedom of movement across four dimensions: longitudinal, lateral, vertical, and temporal",
-        "step-2": "<ion-text color=\"secondary\">Longitudinal connectivity</ion-text> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs and culverts can restrict or cut off this connectivity entirely.",
-        "step-3": "<ion-text color=\"secondary\">Lateral connectivity</ion-text> Rivers periodically overflow their banks and inundate land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa. ",
-        "step-4": "<ion-text color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge and much more.",
-        "step-5": "<ion-text color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
+        "step-2": "<ion-text class=\"font-bold\" color=\"secondary\">Longitudinal connectivity</ion-text> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs and culverts can restrict or cut off this connectivity entirely.",
+        "step-3": "<ion-text class=\"font-bold\" color=\"secondary\">Lateral connectivity</ion-text> Rivers periodically overflow their banks and inundate land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa. ",
+        "step-4": "<ion-text class=\"font-bold\" color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge and much more.",
+        "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
     },
     "anthropogenicThreats": {
         "barrierCounterTitle": "Barrier counter",
