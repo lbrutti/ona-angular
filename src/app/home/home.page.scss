@@ -335,6 +335,11 @@ main.mobile {
     margin-left: 1vw;
     margin-right: 1vw;
 
+    section,
+    #breadcrumb {
+        background-color: var(--ion-background-color);
+    }
+
     #healthy_rivers {
         .map_global_rivers {
             top: 2.5vh;
