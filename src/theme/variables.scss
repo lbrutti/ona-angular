@@ -47,6 +47,7 @@
     --ion-color-danger-contrast-rgb: 0, 0, 0;
     --ion-color-danger-shade: #c16a63;
     --ion-color-danger-tint: #df867e;
+    --ion-color-danger-dark: #af6059;
 
     --ion-color-medium: #75938d;
     --ion-color-medium-rgb: 117, 147, 141;
@@ -61,6 +62,8 @@
     --ion-color-light-contrast-rgb: 0, 0, 0;
     --ion-color-light-shade: #a5aba5;
     --ion-color-light-tint: #c3c8c3;
+
+    --ion-color-least-concern:#e1d6c9;
 }
 
 @media (prefers-color-scheme: _dark) {

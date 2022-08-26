@@ -110,14 +110,14 @@ section {
 
     .step {
         margin: 0 auto 2rem auto;
-        color: #3b3b3b;
+        color: #4d4f4a;
         font-size: 3rem;
         text-align: center;
         opacity: 0;
         transition-duration: 500ms;
         transition-property: opacity;
-        background-color: rgba(#f3f3f3, 0.5);
-        display: flex;
+        background-color: rgba(var(--ion-background-color), 0.5);
+        // display: flex;
 
         &.separator {
             background-color: transparent;

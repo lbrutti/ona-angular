@@ -359,16 +359,22 @@
                 </p>
                 <ion-grid>
                     <ion-row>
-                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="4">
                             <figure>
                                 <img src="assets/imgs/jpg/foto15.jpeg">
                                 <figcaption>loren ipsum</figcaption>
                             </figure>
                         </ion-col>
-                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="4">
                             <figure>
                                 <img src="assets/imgs/jpg/foto16.jpeg">
                                 <figcaption>loren ipsum</figcaption>
+                            </figure>
+                        </ion-col>
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="4" class="ion-no-margin">
+                            <figure>
+                                <img src="assets/imgs/jpg/foto11.jpeg" />
+                                <figcaption>lorem ipsum</figcaption>
                             </figure>
                         </ion-col>
                     </ion-row>
@@ -406,22 +412,31 @@
                 </figure>
                 <div>
                     <p>
-                        Lateral obstacles are less likely to be noticed as they are deeply ingrained in the anthropized
+                        Lateral obstacles are less likely to be noticed as they are deeply ingrained in the
+                        anthropized
                         landscape, but they are
-                        even more numerous than the shocking number of longitudinal obstacles like dams, weirs, ramps,
+                        even more numerous than the shocking number of longitudinal obstacles like dams,
+                        weirs, ramps,
                         and sluices.
                     </p>
-                    <p>
-                        Lastly, human interventions hinder the vertical connectivity of the riverbed. Activities like
-                        paving, dredging, or
-                        clogging with fine sediments limit the exchange between surface and groundwater.
-                    </p>
-
                 </div>
-                <figure>
-                    <img src="assets/imgs/jpg/foto11.jpeg" />
-                    <figcaption>lorem ipsum</figcaption>
-                </figure>
+                <ion-grid class="ion-no-margin">
+                    <ion-row class="ion-no-margin">
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="12"
+                            class="ion-no-margin ion-no-padding">
+
+                            <p>
+                                Lastly, human interventions hinder the <ion-text class="font-bold" color="secondary">
+                                    vertical connectivity</ion-text> of the riverbed.
+                                Activities like
+                                paving, dredging, or
+                                clogging with fine sediments limit the exchange between surface and groundwater.
+                            </p>
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+
             </section>
 
             <section id="ecosystem_impacts_title" class="centered_text_block">
@@ -516,19 +531,24 @@
 
                 <!-- foreground master content -->
                 <article id="ecosystem_impacts_viz_article">
-                    <div class="step is-active" data-step="1" [innerHTML]="'ecosystemImpacts.step-1'|transloco"> </div>
-                    <div class="step" data-step="2" [innerHTML]="'ecosystemImpacts.step-2'|transloco"></div>
-                    <div class="step" data-step="3" [innerHTML]="'ecosystemImpacts.step-3'|transloco"></div>
-                    <div class="step" data-step="4" [innerHTML]="'ecosystemImpacts.step-4'|transloco"></div>
-                    <div class="step" data-step="5" [innerHTML]="'ecosystemImpacts.step-5'|transloco"></div>
+                    <div class="step is-active" data-step="1"
+                        [innerHTML]="'ecosystemImpacts.step-1'|transloco | safehtml: 'html'"> </div>
+                    <div class="step" data-step="2"
+                        [innerHTML]="'ecosystemImpacts.step-2'|transloco | safehtml: 'html'"></div>
+                    <div class="step" data-step="3"
+                        [innerHTML]="'ecosystemImpacts.step-3'|transloco | safehtml: 'html'"></div>
+                    <div class="step" data-step="4"
+                        [innerHTML]="'ecosystemImpacts.step-4'|transloco | safehtml: 'html'"></div>
+                    <div class="step" data-step="5"
+                        [innerHTML]="'ecosystemImpacts.step-5'|transloco | safehtml: 'html'"></div>
                     <div class="step" data-step="6" [attr.data-offset]="ecosystem_viz_drill_offset"
-                        [innerHTML]="'ecosystemImpacts.step-6'|transloco"></div>
+                        [innerHTML]="'ecosystemImpacts.step-6'|transloco | safehtml: 'html'"></div>
                     <div class="step" data-step="7" [attr.data-offset]="ecosystem_viz_drill_offset"
-                        [innerHTML]="'ecosystemImpacts.step-7'|transloco"></div>
+                        [innerHTML]="'ecosystemImpacts.step-7'|transloco | safehtml: 'html'"></div>
                     <div class="step" data-step="8" [attr.data-offset]="ecosystem_viz_drill_offset"
-                        [innerHTML]="'ecosystemImpacts.step-8'|transloco"></div>
+                        [innerHTML]="'ecosystemImpacts.step-8'|transloco | safehtml: 'html'"></div>
                     <div class="step" data-step="9" [attr.data-offset]="ecosystem_viz_drill_offset"
-                        [innerHTML]="'ecosystemImpacts.step-9'|transloco"></div>
+                        [innerHTML]="'ecosystemImpacts.step-9'|transloco | safehtml: 'html'"></div>
                 </article>
             </section>
             <section id="ecosystem_impacts_sediment_text" class="centered_text_block">
