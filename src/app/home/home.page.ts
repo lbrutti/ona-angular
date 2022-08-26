@@ -111,7 +111,7 @@ export class HomePage implements AfterViewInit {
             riverConnectivitiesStep.style("height", stepH + "px");
             healthyRiversStep.style("height", stepH + "px");
             threatsStep.style("height", stepH + "px");
-
+            ecosystemImpactsStep.style("height", stepH + "px");
             possibleFuturesStep.style("height", stepH + "px");
 
             let figureHeight = window.innerHeight / (this.isMobile ? 2 : 1);
