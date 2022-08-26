@@ -600,8 +600,8 @@ export class HomePage implements AfterViewInit {
                 .datum(data)
                 .transition()
                 .duration(2500)
-                .attr("fill", "#cce5df")
-                .attr("stroke", "none")
+                .attr("fill", "rgba(117, 147, 206, 0.3)")
+                .attr("stroke", "rgba(117, 147, 206, 0.37")
                 .attr("d", d3.area()
                     .curve(d3.curveBasis)
                     .x(function (d: any) { return x(d.year) })
@@ -614,7 +614,7 @@ export class HomePage implements AfterViewInit {
                 .append("path")
                 .datum(data)
                 .attr("fill", "none")
-                .attr("stroke", "steelblue")
+                .attr("stroke", "#7593ce")
                 .attr("stroke-width", 1.5)
                 .attr("d", d3.line()
                     .curve(d3.curveBasis)
@@ -634,7 +634,7 @@ export class HomePage implements AfterViewInit {
                 .attr("y1", d => y(100))
                 .attr("y2", d => y(100))
                 .attr("stroke-dasharray", 4)
-                .attr("stroke", 'red');
+                .attr("stroke", 'var(--ion-color-text-color-standard)');
             upperUpperAxisG
                 .append("text")
                 .attr("class", "upper_axis_text_left")
@@ -645,7 +645,7 @@ export class HomePage implements AfterViewInit {
             let focus = svg
                 .append('g')
                 .append('circle')
-                .style("fill", "steelblue")
+                .style("fill", "#7593ce")
                 .attr('r', 4)
                 .style("opacity", 0)
 
@@ -655,7 +655,7 @@ export class HomePage implements AfterViewInit {
                 .append('text')
                 .attr("class", "focus_text")
                 .style("opacity", 0)
-                .attr("fill", "steelblue")
+                .attr("fill", "#7593ce")
                 .attr("alignment-baseline", "middle")
             // Create a rect on top of the svg area: this rectangle recovers mouse position
             svg
@@ -782,7 +782,7 @@ export class HomePage implements AfterViewInit {
                 .append("path")
                 .datum(data)
                 .attr("fill", "none")
-                .attr("stroke", "steelblue")
+                .attr("stroke", "#7593ce")
                 .attr("stroke-width", 1.5)
                 .attr("d", d3.line()
                     .curve(d3.curveBasis)
@@ -799,7 +799,7 @@ export class HomePage implements AfterViewInit {
             let focus = svg
                 .append('g')
                 .append('circle')
-                .style("fill", "steelblue")
+                .style("fill", "#7593ce")
                 .attr('r', 4)
                 .style("opacity", 0)
 
@@ -809,7 +809,7 @@ export class HomePage implements AfterViewInit {
                 .append('text')
                 .attr("class", "focus_text")
                 .style("opacity", 0)
-                .attr("fill", "steelblue")
+                .attr("fill", "#7593ce")
                 .attr("alignment-baseline", "middle")
             // Create a rect on top of the svg area: this rectangle recovers mouse position
             svg
@@ -927,7 +927,7 @@ export class HomePage implements AfterViewInit {
             .attr("y1", (d: any) => y(d.type))
             .attr("y2", (d: any) => y(d.type))
             .attr("fill", "none")
-            .attr("stroke", "steelblue")
+            .attr("stroke", "#7593ce")
             .attr("stroke-width", 7);
 
         // Circles -> start at X=0
@@ -940,8 +940,8 @@ export class HomePage implements AfterViewInit {
             .attr("cx", x(0))
             .attr("cy", (d: any) => y(d.type))
             .attr("r", "7")
-            .style("fill", "steelblue")
-            .attr("stroke", "steelblue");
+            .style("fill", "#7593ce")
+            .attr("stroke", "#7593ce");
 
         //append labels
 
