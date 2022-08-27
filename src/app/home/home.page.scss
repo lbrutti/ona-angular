@@ -37,7 +37,7 @@ main {
 }
 
 #breadcrumb {
-    background-color: var(--ion-color-primary-contrast);
+    background-color: var(--ion-section-background-color);
     position: sticky;
     font-size: small !important;
     top: 0;
@@ -65,7 +65,7 @@ main {
 
 .section_title {
     padding-top: 36px;
-    background-color: var(--ion-color-light-contrast);
+    background-color: var(--ion-section-background-color);
 }
 
 .sticky_section_title {
@@ -83,7 +83,7 @@ main {
 //shared rules among sticky side and overlay
 section {
     position: relative;
-    background-color: var(--ion-color-primary-contrast);
+    background-color: var(--ion-section-background-color);
     padding: 1rem;
 
     article {
@@ -102,19 +102,19 @@ section {
         transform: translate3d(0, 0, 0);
         z-index: 0;
 
-        p {
-            text-align: center;
-            padding: 1rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -moz-transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--ion-color-primary-contrast);
-        }
+        // p {
+        //     text-align: center;
+        //     padding: 1rem;
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 50%;
+        //     -moz-transform: translate(-50%, -50%);
+        //     -webkit-transform: translate(-50%, -50%);
+        //     transform: translate(-50%, -50%);
+        //     font-size: 3rem;
+        //     font-weight: 900;
+        //     color: var(--ion-color-primary-contrast);
+        // }
     }
 
     .step {
@@ -125,7 +125,7 @@ section {
         opacity: 0;
         transition-duration: 500ms;
         transition-property: opacity;
-        background-color: rgba(var(--ion-background-color), 0.5);
+        background-color: rgba(var(--ion-section-background-color), 0.5);
 
         // display: flex;
         &.smaller-font {
@@ -378,7 +378,7 @@ main.mobile {
 
     section,
     #breadcrumb {
-        background-color: var(--ion-background-color);
+        background-color: var(--ion-section-background-color);
     }
 
     #healthy_rivers {
