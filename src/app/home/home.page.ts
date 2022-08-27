@@ -30,7 +30,7 @@ export class HomePage implements AfterViewInit {
     futureDamsdata: any;
     isMobile: boolean = false;
     futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
-    public ecosystem_viz_drill_offset: number = 0.5;
+    public ecosystem_viz_drill_offset: number = 1;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
@@ -38,7 +38,7 @@ export class HomePage implements AfterViewInit {
         if (this.isMobile) {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;
-            this.ecosystem_viz_drill_offset = 0.75;
+            this.ecosystem_viz_drill_offset = 0.5;
         }
     }
 
@@ -54,7 +54,7 @@ export class HomePage implements AfterViewInit {
         // using d3 for convenience
         let main = d3.select("main");
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 1 : 4;
-
+        // this.ecosystem_viz_drill_offset = 0.5;//window.innerHeight - (window.innerHeight * 0.4);
 
         //healthy river
         let healthyRivers = main.select("#healthy_rivers");
@@ -378,7 +378,7 @@ export class HomePage implements AfterViewInit {
         let handleStepExitImpacts = (response: any) => {
             let currentStep = response.index + 1;
             if (currentStep > 1) {
-                handleStepExit(response);
+                // handleStepExit(response);
             }
         };
 

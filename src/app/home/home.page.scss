@@ -73,7 +73,7 @@ main {
     top: 0;
     z-index: 10;
     height: auto;
-    max-height: 10vh;
+    max-height: calc(10vh + 36px);
 }
 
 .stacked_img {
@@ -126,6 +126,10 @@ section {
         transition-duration: 500ms;
         transition-property: opacity;
         background-color: rgba(var(--ion-section-background-color), 0.5);
+
+        &.quick-transition {
+            transition-duration: 0ms;
+        }
 
         // display: flex;
         &.smaller-font {
@@ -304,7 +308,7 @@ section {
 #ecosystem_impacts_viz {
     .ecosystem_impacts_viz {
 
-        top: 10vh;
+        top: calc(10vh + 36px);
         height: calc(100% - 20vh);
         width: 100%;
         opacity: 0;
