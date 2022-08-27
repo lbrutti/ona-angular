@@ -65,6 +65,15 @@ main {
 
 .section_title {
     padding-top: 36px;
+    background-color: var(--ion-color-light-contrast);
+}
+
+.sticky_section_title {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: auto;
+    max-height: 10vh;
 }
 
 .stacked_img {
@@ -317,7 +326,7 @@ section {
     }
 
     #ecosystem_impacts_viz_figure_chart_all {
-        top: unset;
+        // top: unset;
         height: unset;
     }
 }
@@ -352,6 +361,18 @@ section {
 //mobile overloads
 
 main.mobile {
+
+    --ion-color-primary-contrast: #e9e4d8;
+    --ion-color-secondary-contrast: #e9e4d8;
+    --ion-color-tertiary-contrast: #e9e4d8;
+    --ion-color-success-contrast: #e9e4d8;
+    --ion-color-warning-contrast: #e9e4d8;
+    --ion-color-danger-contrast: #e9e4d8;
+    --ion-color-medium-contrast: #e9e4d8;
+    --ion-color-light-contrast: #e9e4d8;
+
+
+
     margin-left: 1vw;
     margin-right: 1vw;
 
@@ -380,7 +401,7 @@ main.mobile {
     #ecosystem_impacts_viz {
         .ecosystem_impacts_viz {
 
-            top: unset;
+            // top: unset;
             height: unset;
         }
 
@@ -401,4 +422,7 @@ main.mobile {
         background-color: transparent;
         text-align: left;
     }
+
+
+
 }

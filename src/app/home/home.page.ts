@@ -19,6 +19,9 @@ export class HomePage implements AfterViewInit {
     @ViewChild('breadcrumb') breadcrumb: ElementRef;
     @ViewChild('breadcrumbMobile') breadcrumbMobile: ElementRef;
 
+    @ViewChild('ecosystem_impacts_title') ecosystem_impacts_title: ElementRef;
+    @ViewChild('ecosystem_impacts_viz') ecosystem_impacts_viz: ElementRef;
+
     public sliderDirection = 'horizontal';
     public maxBreadcrumbItems: number = 1;
     balkansDamsChart: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
@@ -108,8 +111,8 @@ export class HomePage implements AfterViewInit {
         let handleResize = () => {
             // 1. update height of step elements
             let stepH = Math.floor(window.innerHeight * 0.5);
-            riverConnectivitiesStep.style("height", stepH + "px");
             healthyRiversStep.style("height", stepH + "px");
+            riverConnectivitiesStep.style("height", stepH + "px");
             threatsStep.style("height", stepH + "px");
             ecosystemImpactsStep.style("height", stepH + "px");
             possibleFuturesStep.style("height", stepH + "px");
@@ -139,6 +142,10 @@ export class HomePage implements AfterViewInit {
             ecosystemImpactsFigure
                 .style("height", figureHeight + "px")
                 .style("top", figureMarginTop + "px");
+
+            // let titleHeigth = (this.ecosystem_impacts_title as any).nativeElement.getBoundingClientRect().height;
+            // (this.ecosystem_impacts_viz as any).nativeElement.style('top', `${titleHeigth}px`);
+
             ecosystemImpacts.select(".step:last-child")
                 .style("height", 2 * stepH + "px");
 
@@ -384,8 +391,7 @@ export class HomePage implements AfterViewInit {
             healthyRiversScroller
                 .setup({
                     step: "#healthy_rivers article .step",
-                    offset: 0.5,
-                    debug: false
+                    offset: 0.5
                 })
                 .onStepEnter(handleStepEnterHealthyRivers)
                 .onStepExit(handleStepExit);
@@ -396,8 +402,7 @@ export class HomePage implements AfterViewInit {
             riverConnectivityScroller
                 .setup({
                     step: "#river_connectivities article .step",
-                    offset: this.isMobile ? 0.65 : 0.5,
-                    debug: false
+                    offset: this.isMobile ? 0.65 : 0.5
                 })
                 .onStepEnter(handleStepEnterConntectivities)
                 .onStepExit(handleStepExit);
@@ -406,8 +411,7 @@ export class HomePage implements AfterViewInit {
             threatsScroller
                 .setup({
                     step: "#anthropogenic_threats article .step",
-                    offset: 0.5,
-                    debug: false
+                    offset: 0.5
                 })
                 .onStepEnter(handleStepEnterThreats)
                 .onStepExit(handleStepExitThreats);
@@ -423,8 +427,7 @@ export class HomePage implements AfterViewInit {
             possibleFuturesScroller
                 .setup({
                     step: "#possible_futures_viz article .step",
-                    offset: 0.5,
-                    debug: false
+                    offset: 0.5
                 })
                 .onStepEnter(handleStepEnterPossibleFutures.bind(this))
                 .onStepExit(handleStepExit);
@@ -438,6 +441,7 @@ export class HomePage implements AfterViewInit {
         // kick things off
         return init();
     }
+
     private async loadEcosystemImpactsCharts(ecosystemImpacts: d3.Selection<d3.BaseType, unknown, HTMLElement, any>) {
         let freshwater = await d3.xml('assets/imgs/svg/eu_fishes_danger/01_eu_fishes_danger_freshwater.svg');
 

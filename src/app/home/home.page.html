@@ -117,7 +117,7 @@
                 </ion-breadcrumb>
             </ion-breadcrumbs>
             <section id="healthy_rivers" class="scrolly scrolly-overlay">
-                <h1 id="healthy_rivers_title" class="section_title">healthy rivers</h1>
+                <h1 id="healthy_rivers_title" class="section_title sticky_section_title">healthy rivers</h1>
                 <!-- background content -->
                 <figure>
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
@@ -132,9 +132,10 @@
 
                 <!-- foreground master content -->
                 <article>
-                    <div class="step flex-step" data-step="1" data-offset="0.5">
+                    <div class="step flex-step" data-step="1">
                         <div [innerHTML]="'healthyRivers.step-1'|transloco | safehtml: 'html'"></div>
-                        <div [innerHTML]="'healthyRivers.step-1-subtitle'|transloco | safehtml: 'html'" class="step-footer"></div>
+                        <div [innerHTML]="'healthyRivers.step-1-subtitle'|transloco | safehtml: 'html'"
+                            class="step-footer"></div>
                     </div>
                     <div class="step" data-step="2">
                         <div [innerHTML]="'healthyRivers.step-2'|transloco | safehtml: 'html'"></div>
@@ -224,7 +225,8 @@
 
             <section id="anthropogenic_threats" class="scrolly scrolly-overlay">
                 <!-- background content -->
-                <h1 class="section_title" id="anthropogenic_threats-title">The Main Threats to rivers' connectivity</h1>
+                <h1 class="section_title sticky_section_title" id="anthropogenic_threats-title">The Main Threats to
+                    rivers' connectivity</h1>
 
                 <figure id="anthropogenic_threats_figure">
                     <video autoplay loop muted id="anthropogenic_threats_dam_background"
@@ -440,7 +442,7 @@
 
             </section>
 
-            <section id="ecosystem_impacts_title" class="centered_text_block">
+            <section id="ecosystem_impacts_title" #ecosystem_impacts_title class="centered_text_block sticky_section_title">
                 <h1 class="section_title">The ecological impacts of the loss of connectivity</h1>
             </section>
             <section id="ecosystem_impacts_text" class="centered_text_block">
@@ -514,7 +516,7 @@
 
             </section>
             <!-- waffle chart -->
-            <section id="ecosystem_impacts_viz" class="scrolly scrolly-overlay">
+            <section id="ecosystem_impacts_viz" #ecosystem_impacts_viz class="scrolly scrolly-overlay">
                 <figure id="ecosystem_impacts_viz_figure">
                     <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz"
                         data-step='2,3,4,5'>
