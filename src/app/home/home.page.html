@@ -64,7 +64,13 @@
 
 <ion-content [fullscreen]="false">
     <div id="container">
-
+        <div id="hovercard">
+            <h4>{{hovercard.title}}</h4>
+            <div>
+                <img src="{{hovercard.imgSrc}}" alt="{{hovercard.imgAlt}}">
+                <span [innerText]="hovercard.content"></span>
+            </div>
+        </div>
         <!-- sticky side -->
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
             <section id="header">
@@ -442,7 +448,8 @@
 
             </section>
 
-            <section id="ecosystem_impacts_title" #ecosystem_impacts_title class="centered_text_block sticky_section_title">
+            <section id="ecosystem_impacts_title" #ecosystem_impacts_title
+                class="centered_text_block sticky_section_title">
                 <h1 class="section_title">The ecological impacts of the loss of connectivity</h1>
             </section>
             <section id="ecosystem_impacts_text" class="centered_text_block">
@@ -546,13 +553,17 @@
                         [innerHTML]="'ecosystemImpacts.step-5'|transloco | safehtml: 'html'"></div>
 
 
-                    <div class="step smaller-font quick-transition" data-step="6" attr.data-offset="{{ecosystem_viz_drill_offset}}"
+                    <div class="step smaller-font quick-transition" data-step="6"
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
                         [innerHTML]="'ecosystemImpacts.step-6'|transloco | safehtml: 'html'"></div>
-                    <div class="step smaller-font quick-transition" data-step="7" attr.data-offset="{{ecosystem_viz_drill_offset}}"
+                    <div class="step smaller-font quick-transition" data-step="7"
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
                         [innerHTML]="'ecosystemImpacts.step-7'|transloco | safehtml: 'html'"></div>
-                    <div class="step smaller-font quick-transition" data-step="8" attr.data-offset="{{ecosystem_viz_drill_offset}}"
+                    <div class="step smaller-font quick-transition" data-step="8"
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
                         [innerHTML]="'ecosystemImpacts.step-8'|transloco | safehtml: 'html'"></div>
-                    <div class="step smaller-font quick-transition" data-step="9" attr.data-offset="{{ecosystem_viz_drill_offset}}"
+                    <div class="step smaller-font quick-transition" data-step="9"
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
                         [innerHTML]="'ecosystemImpacts.step-9'|transloco | safehtml: 'html'"></div>
                 </article>
             </section>
@@ -841,5 +852,7 @@
 
 
 
+
     </div>
+
 </ion-content>

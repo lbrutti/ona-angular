@@ -22,6 +22,13 @@ export class HomePage implements AfterViewInit {
     @ViewChild('ecosystem_impacts_title') ecosystem_impacts_title: ElementRef;
     @ViewChild('ecosystem_impacts_viz') ecosystem_impacts_viz: ElementRef;
 
+    public hovercard: any = {
+        title: "I'm a title",
+        imgSrc: "",
+        imgAlt: "",
+        definition: "definition"
+    };
+
     public sliderDirection = 'horizontal';
     public maxBreadcrumbItems: number = 1;
     balkansDamsChart: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
@@ -501,16 +508,22 @@ export class HomePage implements AfterViewInit {
         let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
         //this works only if paths are in foreground
         hexbinsPaths.each(function () {
-            d3.select(this).on('mouseenter', function () {
+            d3.select(this).on('mousemove', function (e) {
                 let points = (this as any).dataset.points;
-                // alert(`Contengo ${points} sbarramenti! buonanotte.`);
-                d3.select(this).classed('focused', true);
+                let x = (this as any).getBoundingClientRect().x;
+                let y = (this as any).getBoundingClientRect().y;
+                d3.select('#hovercard')
+                    .style('left', x + 'px')
+                    .style('top', y + 'px')
+                    .classed('active', true);
             });
 
-            d3.select(this).on('mouseleave', function () {
-                d3.select(this).classed('focused', false);
-            });
         });
+        // d3.select('#anthropogenic_threats_hex_bin #eu_barrier_count').on('mouseout', function () {
+        //     d3.select('#hovercard')
+        //         .classed('active', false);
+        // });
+
     }
     async presentPopover(e: Event) {
         this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
