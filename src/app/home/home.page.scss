@@ -147,6 +147,15 @@ section {
     }
 }
 
+.flex-step {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-footer {
+    font-size: medium;
+}
+
 .scrolly-sticky-side {
     display: -webkit-box;
     display: -ms-flexbox;

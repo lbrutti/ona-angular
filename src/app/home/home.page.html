@@ -132,8 +132,9 @@
 
                 <!-- foreground master content -->
                 <article>
-                    <div class="step" data-step="1" data-offset="0.5">
+                    <div class="step flex-step" data-step="1" data-offset="0.5">
                         <div [innerHTML]="'healthyRivers.step-1'|transloco | safehtml: 'html'"></div>
+                        <div [innerHTML]="'healthyRivers.step-1-subtitle'|transloco | safehtml: 'html'" class="step-footer"></div>
                     </div>
                     <div class="step" data-step="2">
                         <div [innerHTML]="'healthyRivers.step-2'|transloco | safehtml: 'html'"></div>
