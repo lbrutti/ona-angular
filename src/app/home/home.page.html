@@ -129,14 +129,15 @@
                             <h1 id="healthy_rivers_title" class="">healthy rivers</h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
-                            <ion-button  (click)="setToFullscreen()" size="small" fill="outline" expand="block" class="ion-no-margin" color="light">
+                            <ion-button (click)="setToFullscreen()" size="small" fill="outline" expand="block"
+                                class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="expand-outline"></ion-icon>
                             </ion-button>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
                 <!-- background content -->
-                <figure #healthy_rivers_figure>
+                <!-- <figure #healthy_rivers_figure>
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
                         id="map_global_rivers_land" class="stacked_img map_global_rivers active" data-step='all' />
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_all.svg" id="map_global_rivers_all"
@@ -145,8 +146,19 @@
                         class="stacked_img map_global_rivers" data-step='2,7' />
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_ffr.svg" id="map_global_rivers_ffr"
                         class="stacked_img map_global_rivers" data-step='3,4,5,6,7' />
+                </figure> -->
+                <figure #healthy_rivers_figure>
+                    <!-- <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
+                        id="map_global_rivers_land" class="stacked_img map_global_rivers active" data-step='all' /> -->
+                    <img src="assets/imgs/png/world rivers/global_all.png" id="map_global_rivers_all"
+                        class="stacked_img map_global_rivers" data-step='1' />
+                    <img src="assets/imgs/png/world rivers/global_nffr.png" id="map_global_rivers_not"
+                        class="stacked_img map_global_rivers" data-step='2' />
+                    <img src="assets/imgs/png/world rivers/global_ffr.png" id="map_global_rivers_ffr"
+                        class="stacked_img map_global_rivers" data-step='3' />
+                    <img src="assets/imgs/png/world rivers/global_ffr.png" id="map_global_rivers_ffr"
+                        class="stacked_img map_global_rivers" data-step='4,5,6,7' />
                 </figure>
-
                 <!-- foreground master content -->
                 <article>
                     <div class="step flex-step" data-step="1">

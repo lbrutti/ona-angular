@@ -40,6 +40,11 @@ export class HomePage implements AfterViewInit {
     futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
     public ecosystem_viz_drill_offset: number = 1;
     public isFullscreen: boolean = false;
+    healthyRiversScroller: any;
+    riverConnectivityScroller: any;
+    threatsScroller: any;
+    ecosystemImpactsScroller: any;
+    possibleFuturesScroller: any;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
@@ -49,6 +54,8 @@ export class HomePage implements AfterViewInit {
             this.futureDamsMargin.right = 15;
             this.ecosystem_viz_drill_offset = 0.5;
         }
+
+
     }
 
 
@@ -115,6 +122,12 @@ export class HomePage implements AfterViewInit {
         let threatsScroller = scrollama() as any;
         let ecosystemImpactsScroller = scrollama() as any;
         let possibleFuturesScroller = scrollama() as any;
+
+        this.healthyRiversScroller = healthyRiversScroller;
+        this.riverConnectivityScroller = riverConnectivityScroller;
+        this.threatsScroller = threatsScroller;
+        this.ecosystemImpactsScroller = ecosystemImpactsScroller;
+        this.possibleFuturesScroller = possibleFuturesScroller;
 
         // generic window resize listener event
         let handleResize = () => {
@@ -464,6 +477,13 @@ export class HomePage implements AfterViewInit {
         d3.select(freshwater_detail.documentElement).style('height', '100%');
         (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart_all').node() as any).append(freshwater_detail.documentElement)
 
+        document.addEventListener('fullscreenchange', () => {
+            this.healthyRiversScroller.enable();
+            this.riverConnectivityScroller.enable();
+            this.threatsScroller.enable();
+            this.ecosystemImpactsScroller.enable();
+            this.possibleFuturesScroller.enable();
+        });
         return Promise.resolve();
     }
 
@@ -1070,6 +1090,7 @@ export class HomePage implements AfterViewInit {
     }
 
     public setToFullscreen() {
+        this.healthyRiversScroller.disable();
         this.healthy_rivers_figure.nativeElement.requestFullscreen().then(() => {
             this.isFullscreen = true;
         });
