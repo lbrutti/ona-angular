@@ -131,13 +131,13 @@
                         <ion-col size="2" class="ion-no-margin">
                             <ion-button (click)="setToFullscreen()" size="small" fill="outline" expand="block"
                                 class="ion-no-margin" color="light">
-                                <ion-icon slot="icon-only" name="expand-outline"></ion-icon>
+                                <ion-icon slot="icon-only" name="search-outline"></ion-icon>
                             </ion-button>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
                 <!-- background content -->
-                <!-- <figure #healthy_rivers_figure>
+                <figure #healthy_rivers_figure>
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
                         id="map_global_rivers_land" class="stacked_img map_global_rivers active" data-step='all' />
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_all.svg" id="map_global_rivers_all"
@@ -146,10 +146,8 @@
                         class="stacked_img map_global_rivers" data-step='2,7' />
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_ffr.svg" id="map_global_rivers_ffr"
                         class="stacked_img map_global_rivers" data-step='3,4,5,6,7' />
-                </figure> -->
-                <figure #healthy_rivers_figure>
-                    <!-- <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
-                        id="map_global_rivers_land" class="stacked_img map_global_rivers active" data-step='all' /> -->
+                </figure>
+                <!-- <figure #healthy_rivers_figure>
                     <img src="assets/imgs/png/world rivers/global_all.png" id="map_global_rivers_all"
                         class="stacked_img map_global_rivers" data-step='1' />
                     <img src="assets/imgs/png/world rivers/global_nffr.png" id="map_global_rivers_not"
@@ -158,7 +156,7 @@
                         class="stacked_img map_global_rivers" data-step='3' />
                     <img src="assets/imgs/png/world rivers/global_ffr.png" id="map_global_rivers_ffr"
                         class="stacked_img map_global_rivers" data-step='4,5,6,7' />
-                </figure>
+                </figure> -->
                 <!-- foreground master content -->
                 <article>
                     <div class="step flex-step" data-step="1">
@@ -746,7 +744,6 @@
 
                     </p>
                     <div #barrier_removal_projects_chart_container id="barrier_removal_projects_chart_container">
-                        inserire area chart
                     </div>
                     <p>These numbers capture only a fraction of the overall removed barriers, but there are likely more.
                         Yet, even a small
@@ -807,11 +804,29 @@
             <section id="about_credits" class="centered_text_block">
                 <h1 class="section_title" id="about_title">About the project</h1>
                 <h4>Credits:</h4>
-                <p>Project financed by Wetlands International </p>
-                <p>Scientific supervision: Andrea Goltara (CIRF) and Erica Villa (LOGON)</p>
-                <p>Data, visualizations, and content: Alice Corona </p>
-                <p>Website design and development: Lorenzo Brutti </p>
+                <p>
+                    <ion-label class="font-bold">Project financed by:</ion-label> CIRF, Wetlands International Europe, LIFE Programme
+                </p>
+                <p>
+                    <ion-label class="font-bold">Scientific supervision:</ion-label> Andrea Goltara (CIRF), Paul Brotherton (Wetlands
+                    International Europe)
+                </p>
+                <p>
+                    <ion-label class="font-bold">Science Communication:</ion-label> Erica Villa
+                </p>
+                <p>
+                    <ion-label class="font-bold">Data, visualizations, and content:</ion-label> Alice Corona
+                </p>
+                <p>
+                    <ion-label class="font-bold">Website design and development:</ion-label> Lorenzo Brutti
+                </p>
 
+                <h4>Info:</h4>
+                <p><a target="_blank" href="https://www.cirf.org/it/home/">CIRF - Centro Italiano per la
+                        Riqualificazione Fluviale</a> (<a target="_blank" href="mailto:info@cirf.org">info@cirf.org</a>)
+                </p>
+                <p><a target="_blank" href="https://europe.wetlands.org/">Wetlands International Europe</a></p>
+                <!-- <p><a target="_blank" href="mailto:info@cirf.org">info@cirf.org</a></p> -->
             </section>
 
             <section id="about_data" class="centered_text_block">

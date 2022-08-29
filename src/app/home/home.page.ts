@@ -220,9 +220,10 @@ export class HomePage implements AfterViewInit {
         }
 
         // scrollama event handlers
-        function handleStepEnterHealthyRivers(response: any) {
+        let handleStepEnterHealthyRivers = (response: any) => {
+            if (this.isFullscreen) { return; }
             // response = { element, direction, index }
-
+            console.log('handleStepEnterHealthyRivers : ', response);
             // add color to current step only
             healthyRiversStep.classed("is-active", function (d, i) {
                 return i === response.index;
@@ -477,12 +478,22 @@ export class HomePage implements AfterViewInit {
         d3.select(freshwater_detail.documentElement).style('height', '100%');
         (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart_all').node() as any).append(freshwater_detail.documentElement)
 
-        document.addEventListener('fullscreenchange', () => {
-            this.healthyRiversScroller.enable();
-            this.riverConnectivityScroller.enable();
-            this.threatsScroller.enable();
-            this.ecosystemImpactsScroller.enable();
-            this.possibleFuturesScroller.enable();
+        document.addEventListener('fullscreenchange', (e) => {
+            this.isFullscreen = document.fullscreenElement !== null;
+            if (this.isFullscreen) {
+                this.healthyRiversScroller.disable();
+                this.riverConnectivityScroller.disable();
+                this.threatsScroller.disable();
+                this.ecosystemImpactsScroller.disable();
+                this.possibleFuturesScroller.disable();
+            } else {
+                this.healthyRiversScroller.enable();
+                this.riverConnectivityScroller.enable();
+                this.threatsScroller.enable();
+                this.ecosystemImpactsScroller.enable();
+                this.possibleFuturesScroller.enable();
+
+            }
         });
         return Promise.resolve();
     }
@@ -1090,10 +1101,7 @@ export class HomePage implements AfterViewInit {
     }
 
     public setToFullscreen() {
-        this.healthyRiversScroller.disable();
-        this.healthy_rivers_figure.nativeElement.requestFullscreen().then(() => {
-            this.isFullscreen = true;
-        });
+        this.healthy_rivers_figure.nativeElement.requestFullscreen();
     }
 
 }
