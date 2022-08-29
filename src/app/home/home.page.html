@@ -62,7 +62,7 @@
     </ion-toolbar>
 </ion-header> -->
 
-<ion-content [fullscreen]="false">
+<ion-content [fullscreen]="true">
     <div id="container">
         <div id="hovercard">
             <h4>{{hovercard.title}}</h4>
@@ -123,9 +123,20 @@
                 </ion-breadcrumb>
             </ion-breadcrumbs>
             <section id="healthy_rivers" class="scrolly scrolly-overlay">
-                <h1 id="healthy_rivers_title" class="section_title sticky_section_title">healthy rivers</h1>
+                <ion-grid class="sticky_section_title section_title ion-no-margin">
+                    <ion-row class="ion-no-margin">
+                        <ion-col size="10" class="ion-no-margin">
+                            <h1 id="healthy_rivers_title" class="">healthy rivers</h1>
+                        </ion-col>
+                        <ion-col size="2" class="ion-no-margin">
+                            <ion-button  (click)="setToFullscreen()" size="small" fill="outline" expand="block" class="ion-no-margin" color="light">
+                                <ion-icon slot="icon-only" name="expand-outline"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
                 <!-- background content -->
-                <figure>
+                <figure #healthy_rivers_figure>
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_land.svg"
                         id="map_global_rivers_land" class="stacked_img map_global_rivers active" data-step='all' />
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_all.svg" id="map_global_rivers_all"

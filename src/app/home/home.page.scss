@@ -114,6 +114,14 @@ section {
         -moz-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         z-index: 0;
+        background-color: var(--ion-section-background-color);
+
+        // @media only screen and (orientation:portrait) {
+        //     &.horizontal {
+        //         rotate: 90deg;
+        //         width: 100vh;
+        //     }
+        // }
 
         // p {
         //     text-align: center;

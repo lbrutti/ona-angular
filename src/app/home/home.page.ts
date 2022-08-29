@@ -21,6 +21,7 @@ export class HomePage implements AfterViewInit {
 
     @ViewChild('ecosystem_impacts_title') ecosystem_impacts_title: ElementRef;
     @ViewChild('ecosystem_impacts_viz') ecosystem_impacts_viz: ElementRef;
+    @ViewChild('healthy_rivers_figure') healthy_rivers_figure: ElementRef;
 
     public hovercard: any = {
         title: "I'm a title",
@@ -38,6 +39,7 @@ export class HomePage implements AfterViewInit {
     isMobile: boolean = false;
     futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
     public ecosystem_viz_drill_offset: number = 1;
+    public isFullscreen: boolean = false;
     constructor(public platform: Platform) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
@@ -1065,6 +1067,12 @@ export class HomePage implements AfterViewInit {
             .transition()
             .duration(2000)
             .attr("x2", (d: any) => x(d.value));
+    }
+
+    public setToFullscreen() {
+        this.healthy_rivers_figure.nativeElement.requestFullscreen().then(() => {
+            this.isFullscreen = true;
+        });
     }
 
 }
