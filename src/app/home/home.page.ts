@@ -1134,5 +1134,10 @@ export class HomePage implements AfterViewInit {
         d3.select('#hovercard')
             .classed('active', false);
     }
+    public exitFullScreen() {
+        if (document.fullscreenElement !== null) {
 
+            document.exitFullscreen();
+        }
+    }
 }
