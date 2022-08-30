@@ -307,6 +307,8 @@ section {
 }
 
 #ecosystem_impacts_viz {
+
+
     .ecosystem_impacts_viz {
 
         top: calc(10vh + 36px);
@@ -333,6 +335,28 @@ section {
     #ecosystem_impacts_viz_figure_chart_all {
         // top: unset;
         height: unset;
+    }
+}
+
+#ecosystem_impacts_viz_article {
+
+    ::ng-deep ion-text {
+
+        &[highlight-color="danger-dark"] {
+            border-bottom: solid 0.75rem var(--ion-color-danger-dark)
+        }
+
+        &[highlight-color="danger"] {
+            border-bottom: solid 0.75rem var(--ion-color-danger)
+        }
+
+        &[highlight-color="least-concern"] {
+            border-bottom: solid 0.75rem var(--ion-color-warning-low-risk)
+        }
+
+        &[highlight-color="no-data"] {
+            border-bottom: solid 0.75rem var(--ion-color-no-data)
+        }
     }
 }
 
