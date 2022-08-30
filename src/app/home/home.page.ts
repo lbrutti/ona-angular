@@ -23,6 +23,28 @@ export class HomePage implements AfterViewInit {
     @ViewChild('ecosystem_impacts_viz') ecosystem_impacts_viz: ElementRef;
     @ViewChild('healthy_rivers_figure') healthy_rivers_figure: ElementRef;
 
+    public breadcrumbItems: any[] = [{
+        href: '#healthy_rivers_title',
+        text: 'Healthy Rivers',
+        active: false
+    },
+    {
+        href: '#anthropogenic_threats-title',
+        text: 'Anthropogenic Threats',
+        active: false
+    }, {
+        href: '#ecosystem_impacts_title',
+        text: 'Ecosystem Impacts',
+        active: false
+    }, {
+        href: '#possible_futures_title',
+        text: 'Possible Futures',
+        active: false
+    }, {
+        href: '#about_title',
+        text: 'About',
+        active: false
+    }];
     public hovercard: any = {
         title: "I'm a title",
         imgSrc: "",
@@ -564,11 +586,11 @@ export class HomePage implements AfterViewInit {
         this.isOpen = true;
     }
 
-    public onBreadCrumbClick(e: Event) {
+    public onBreadCrumbClick(e: Event, item: any) {
         e.preventDefault();
-        let section = (e.target as any).parentElement.getAttribute('href');
+        this.breadcrumbItems.map(i => i.active = i.href === item.href);
         let breadcrumbH = (this.breadcrumb as any).el.getBoundingClientRect().height;
-        this.scrollSectionIntoView(section, breadcrumbH);
+        this.scrollSectionIntoView(item.href, breadcrumbH);
     }
     public onBreadCrumbPopoverClick(e: Event) {
         e.preventDefault();

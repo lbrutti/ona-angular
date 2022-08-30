@@ -65,11 +65,19 @@
 <ion-content [fullscreen]="true">
     <div id="container">
         <div id="hovercard">
-            <h4>{{hovercard.title}}</h4>
-            <div>
-                <img src="{{hovercard.imgSrc}}" alt="{{hovercard.imgAlt}}">
-                <span [innerText]="hovercard.content"></span>
-            </div>
+            <ion-grid>
+                <ion-row>
+                    <h4>{{hovercard.title}}</h4>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <img src="{{hovercard.imgSrc}}" alt="{{hovercard.imgAlt}}">
+                    </ion-col>
+                    <ion-col>
+                        <span [innerText]="hovercard.content"></span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </div>
         <!-- sticky side -->
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
@@ -102,24 +110,14 @@
             </section>
 
             <ion-breadcrumbs id="breadcrumb" #breadcrumb>
-                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#healthy_rivers_title">
-                    <span>Healthy Rivers</span>
+                <!-- item invisibile per evitare active inizializzato a true su about -->
+                <ion-breadcrumb active="true" style="display: none;">
                     <span slot="separator"></span>
                 </ion-breadcrumb>
-                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#anthropogenic_threats-title">
-                    <span>Anthropogenic Threats</span>
+                <ion-breadcrumb *ngFor="let item of breadcrumbItems" (click)="onBreadCrumbClick($event, item)" [active]="item.active"
+                    href="{{item.href}}">
+                    <span>{{item.text}}</span>
                     <span slot="separator"></span>
-                </ion-breadcrumb>
-                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#ecosystem_impacts_title">
-                    <span>Ecosystem Impacts</span>
-                    <span slot="separator"></span>
-                </ion-breadcrumb>
-                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#possible_futures_title">
-                    <span>Possible Futures</span>
-                    <span slot="separator"></span>
-                </ion-breadcrumb>
-                <ion-breadcrumb (click)="onBreadCrumbClick($event)" href="#about_title">
-                    <span>About</span>
                 </ion-breadcrumb>
             </ion-breadcrumbs>
             <section id="healthy_rivers" class="scrolly scrolly-overlay">
@@ -805,10 +803,12 @@
                 <h1 class="section_title" id="about_title">About the project</h1>
                 <h4>Credits:</h4>
                 <p>
-                    <ion-label class="font-bold">Project financed by:</ion-label> CIRF, Wetlands International Europe, LIFE Programme
+                    <ion-label class="font-bold">Project financed by:</ion-label> CIRF, Wetlands International Europe,
+                    LIFE Programme
                 </p>
                 <p>
-                    <ion-label class="font-bold">Scientific supervision:</ion-label> Andrea Goltara (CIRF), Paul Brotherton (Wetlands
+                    <ion-label class="font-bold">Scientific supervision:</ion-label> Andrea Goltara (CIRF), Paul
+                    Brotherton (Wetlands
                     International Europe)
                 </p>
                 <p>
