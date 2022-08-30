@@ -77,13 +77,10 @@ export class HomePage implements AfterViewInit {
         if (this.isMobile) {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;
-            // this.ecosystem_viz_drill_offset = 0.5;
         }
 
 
     }
-
-
 
     futureDamsWidth = 460 - this.futureDamsMargin.left - this.futureDamsMargin.right;
     futureDamsHeight = 200 - this.futureDamsMargin.top - this.futureDamsMargin.bottom;
@@ -286,6 +283,11 @@ export class HomePage implements AfterViewInit {
                     threatsFigure.style('z-index', 1000);
                 } else {
                     threatsFigure.style('z-index', 0);
+                }
+
+                if (currentStep != 16) {
+                    d3.select('#hovercard')
+                        .classed('active', false);
                 }
 
             });
@@ -568,7 +570,7 @@ export class HomePage implements AfterViewInit {
         let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
         //this works only if paths are in foreground
         hexbinsPaths.each(function () {
-            d3.select(this).on('mousemove', function (e) {
+            d3.select(this).on('click', function (e) {
                 let points = (this as any).dataset.points;
                 let x = (this as any).getBoundingClientRect().x;
                 let y = (this as any).getBoundingClientRect().y;
@@ -579,11 +581,6 @@ export class HomePage implements AfterViewInit {
             });
 
         });
-        // d3.select('#anthropogenic_threats_hex_bin #eu_barrier_count').on('mouseout', function () {
-        //     d3.select('#hovercard')
-        //         .classed('active', false);
-        // });
-
     }
     async presentPopover(e: Event) {
         this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;

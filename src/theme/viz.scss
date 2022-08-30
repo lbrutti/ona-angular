@@ -2,6 +2,10 @@
     font-family: var(--ion-font-family) !important;
 }
 
+::ng-deep .active .hex {
+    cursor: context-menu;
+}
+
 ::ng-deep .hex {
 
     &[data-quantile="1"] {
