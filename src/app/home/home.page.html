@@ -114,8 +114,8 @@
                 <ion-breadcrumb active="true" style="display: none;">
                     <span slot="separator"></span>
                 </ion-breadcrumb>
-                <ion-breadcrumb *ngFor="let item of breadcrumbItems" (click)="onBreadCrumbClick($event, item)" [active]="item.active"
-                    href="{{item.href}}">
+                <ion-breadcrumb *ngFor="let item of breadcrumbItems" (click)="onBreadCrumbClick($event, item)"
+                    [active]="item.active" href="{{item.href}}">
                     <span>{{item.text}}</span>
                     <span slot="separator"></span>
                 </ion-breadcrumb>
@@ -127,8 +127,8 @@
                             <h1 id="healthy_rivers_title" class="">healthy rivers</h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
-                            <ion-button (click)="setToFullscreen()" size="small" fill="outline" expand="block"
-                                class="ion-no-margin" color="light">
+                            <ion-button (click)="setToFullscreen('healthy_rivers_figure')" size="small" fill="outline"
+                                expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>
                             </ion-button>
                         </ion-col>
@@ -250,10 +250,23 @@
 
             <section id="anthropogenic_threats" class="scrolly scrolly-overlay">
                 <!-- background content -->
-                <h1 class="section_title sticky_section_title" id="anthropogenic_threats-title">The Main Threats to
-                    rivers' connectivity</h1>
+                <ion-grid class="sticky_section_title section_title ion-no-margin">
+                    <ion-row class="ion-no-margin">
+                        <ion-col size="10" class="ion-no-margin">
+                            <h1 id="anthropogenic_threats-title" class="">The Main Threats to
+                            rivers' connectivity</h1>
+                        </ion-col>
+                        <ion-col size="2" class="ion-no-margin">
+                            <ion-button (click)="setToFullscreen('anthropogenic_threats_figure')" size="small" fill="outline"
+                                expand="block" class="ion-no-margin" color="light">
+                                <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
 
-                <figure id="anthropogenic_threats_figure">
+
+                <figure id="anthropogenic_threats_figure" #anthropogenic_threats_figure>
                     <video autoplay loop muted id="anthropogenic_threats_dam_background"
                         class="stacked_img anthropogenic_threats" data-step='1,2'>
                         <source src="assets/video/video2_20_sec.mp4" />
@@ -543,7 +556,20 @@
             </section>
             <!-- waffle chart -->
             <section id="ecosystem_impacts_viz" #ecosystem_impacts_viz class="scrolly scrolly-overlay">
-                <figure id="ecosystem_impacts_viz_figure">
+                <ion-grid class="sticky_section_title section_title ion-no-margin">
+                    <ion-row class="ion-no-margin">
+                        <ion-col size="10" class="ion-no-margin">
+                            <h1 id="healthy_rivers_title" class="">Freshwater Species</h1>
+                        </ion-col>
+                        <ion-col size="2" class="ion-no-margin">
+                            <ion-button (click)="setToFullscreen('ecosystem_impacts_viz_figure')" size="small" fill="outline" expand="block"
+                                class="ion-no-margin" color="light">
+                                <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <figure id="ecosystem_impacts_viz_figure" #ecosystem_impacts_viz_figure>
                     <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz"
                         data-step='2,3,4,5'>
                     </div>

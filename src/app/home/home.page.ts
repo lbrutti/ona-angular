@@ -22,6 +22,9 @@ export class HomePage implements AfterViewInit {
     @ViewChild('ecosystem_impacts_title') ecosystem_impacts_title: ElementRef;
     @ViewChild('ecosystem_impacts_viz') ecosystem_impacts_viz: ElementRef;
     @ViewChild('healthy_rivers_figure') healthy_rivers_figure: ElementRef;
+    @ViewChild('anthropogenic_threats_figure') anthropogenic_threats_figure: ElementRef;
+    @ViewChild('ecosystem_impacts_viz_figure') ecosystem_impacts_viz_figure: ElementRef;
+    
 
     public breadcrumbItems: any[] = [{
         href: '#healthy_rivers_title',
@@ -1122,8 +1125,8 @@ export class HomePage implements AfterViewInit {
             .attr("x2", (d: any) => x(d.value));
     }
 
-    public setToFullscreen() {
-        this.healthy_rivers_figure.nativeElement.requestFullscreen();
+    public setToFullscreen(sectionId:string) {
+        this[sectionId].nativeElement.requestFullscreen();
     }
 
 }
