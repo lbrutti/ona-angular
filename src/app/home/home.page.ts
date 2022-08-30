@@ -48,7 +48,7 @@ export class HomePage implements AfterViewInit {
         text: 'About',
         active: false
     }];
-    public hovercard: any = {
+    public hovercardData: any = {
         title: "I'm a title",
         imgSrc: "",
         imgAlt: "",

@@ -257,6 +257,13 @@ section {
 }
 
 #anthropogenic_threats {
+    article ::ng-deep ion-text{
+        font-size: 5rem;
+        font-weight: 700;
+        color: var(--ion-background-color, #3c372f);
+        border-bottom: 1rem solid var(--ion-color-base);
+    }
+
     .anthropogenic_threats {
 
         top: 10vh;
@@ -291,7 +298,7 @@ section {
 
             &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
                 fill: rgb(30, 14, 4);
-                fill-opacity: 0.50;
+                fill-opacity: 0.30;
 
             }
         }

@@ -35,7 +35,7 @@
         "step-11": "&nbsp;",
         "step-12": "<ion-text color=\"danger\">8,528 sluices</ion-text>",
         "step-13": "&nbsp;",
-        "step-14": "and <ion-text color=\"danger\">59,577 other barriers</ion-text>",
+        "step-14": "<ion-text color=\"danger\">59,577 other barriers</ion-text>",
         "step-15": "&nbsp;",
         "step-16": "&nbsp;",
         "step-17": "With such numbers, it is no surprise that Europe has the most fragmented river network in the world."

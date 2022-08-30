@@ -67,14 +67,14 @@
         <div id="hovercard" (click)="disposeHovercard()">
             <ion-grid>
                 <ion-row>
-                    <h4>{{hovercard.title}}</h4>
+                    <h4>{{hovercardData.title}}</h4>
                 </ion-row>
                 <ion-row>
                     <ion-col>
-                        <img src="{{hovercard.imgSrc}}" alt="{{hovercard.imgAlt}}">
+                        <img src="{{hovercardData.imgSrc}}" alt="{{hovercardData.imgAlt}}">
                     </ion-col>
                     <ion-col>
-                        <span [innerText]="hovercard.content"></span>
+                        <span [innerText]="hovercardData.content"></span>
                     </ion-col>
                 </ion-row>
             </ion-grid>
