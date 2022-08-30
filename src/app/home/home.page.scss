@@ -107,35 +107,12 @@ section {
     figure {
         position: -webkit-sticky;
         position: sticky;
-        // width: 95vw;
-        // min-width: 640px;
         margin: auto;
         -webkit-transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         z-index: 0;
         background-color: var(--ion-section-background-color);
-
-        // @media only screen and (orientation:portrait) {
-        //     &.horizontal {
-        //         rotate: 90deg;
-        //         width: 100vh;
-        //     }
-        // }
-
-        // p {
-        //     text-align: center;
-        //     padding: 1rem;
-        //     position: absolute;
-        //     top: 50%;
-        //     left: 50%;
-        //     -moz-transform: translate(-50%, -50%);
-        //     -webkit-transform: translate(-50%, -50%);
-        //     transform: translate(-50%, -50%);
-        //     font-size: 3rem;
-        //     font-weight: 900;
-        //     color: var(--ion-color-primary-contrast);
-        // }
     }
 
     .step {
@@ -273,6 +250,9 @@ section {
         height: 744px;
     }
 
+    #connectivities_step1 {
+        margin-top: 50%;
+    }
 
 }
 
@@ -283,7 +263,7 @@ section {
         width: 100%;
         height: calc(100% - 20vh);
         opacity: 0;
-        transition-duration: 500ms;
+        // transition-duration: 500ms;
 
         ::ng-deep svg {
             width: 100%;
@@ -421,6 +401,9 @@ main.mobile {
             font-size: 1.25rem;
         }
 
+        #connectivities_step1 {
+            margin-top: unset;
+        }
     }
 
     #ecosystem_impacts_viz {

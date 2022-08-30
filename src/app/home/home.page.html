@@ -64,7 +64,7 @@
 
 <ion-content [fullscreen]="true">
     <div id="container">
-        <div id="hovercard">
+        <div id="hovercard" (click)="disposeHovercard()">
             <ion-grid>
                 <ion-row>
                     <h4>{{hovercard.title}}</h4>
@@ -198,7 +198,7 @@
                 </figure>
                 <!-- scrolling side -->
                 <article>
-                    <div class="step" data-step="1">
+                    <div class="step" data-step="1" data-offset="0.5" id="connectivities_step1">
                         <div [innerHTML]="'connectivity.step-1'|transloco | safehtml: 'html'"></div>
                     </div>
                     <div class="step" data-step="2">

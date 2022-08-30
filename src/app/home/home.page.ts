@@ -24,7 +24,7 @@ export class HomePage implements AfterViewInit {
     @ViewChild('healthy_rivers_figure') healthy_rivers_figure: ElementRef;
     @ViewChild('anthropogenic_threats_figure') anthropogenic_threats_figure: ElementRef;
     @ViewChild('ecosystem_impacts_viz_figure') ecosystem_impacts_viz_figure: ElementRef;
-    
+
 
     public breadcrumbItems: any[] = [{
         href: '#healthy_rivers_title',
@@ -77,7 +77,7 @@ export class HomePage implements AfterViewInit {
         if (this.isMobile) {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;
-            this.ecosystem_viz_drill_offset = 0.5;
+            // this.ecosystem_viz_drill_offset = 0.5;
         }
 
 
@@ -418,9 +418,20 @@ export class HomePage implements AfterViewInit {
             handleStepExit(response);
             let currentStep = response.index + 1;
 
-            if (currentStep == 15) {
-                this.barrierCount = 0;
-            }
+            // if (currentStep == 17) {
+            //     this.barrierCount = 0;
+            // }
+
+            // if (currentStep == 17) {
+            //     let maps = threatsFigure.selectAll(".anthropogenic_threats");
+            //     maps.each(function () {
+            //         let isActive = false;
+            //         //al 16° step la mappa torna tutta rossa
+            //         (this as any).classList.toggle('active', isActive);
+            //         (this as any).classList.toggle('transitioned', false);
+            //         threatsFigure.style('z-index', 0);
+            //     });
+            // }
         };
 
         let handleStepExitImpacts = (response: any) => {
@@ -439,7 +450,7 @@ export class HomePage implements AfterViewInit {
             healthyRiversScroller
                 .setup({
                     step: "#healthy_rivers article .step",
-                    offset: 0.5
+                    offset: 0.75
                 })
                 .onStepEnter(handleStepEnterHealthyRivers)
                 .onStepExit(handleStepExit);
@@ -450,7 +461,7 @@ export class HomePage implements AfterViewInit {
             riverConnectivityScroller
                 .setup({
                     step: "#river_connectivities article .step",
-                    offset: this.isMobile ? 0.65 : 0.5
+                    offset: 0.75
                 })
                 .onStepEnter(handleStepEnterConntectivities)
                 .onStepExit(handleStepExit);
@@ -459,7 +470,7 @@ export class HomePage implements AfterViewInit {
             threatsScroller
                 .setup({
                     step: "#anthropogenic_threats article .step",
-                    offset: 0.5
+                    offset: 0.75
                 })
                 .onStepEnter(handleStepEnterThreats)
                 .onStepExit(handleStepExitThreats);
@@ -467,7 +478,7 @@ export class HomePage implements AfterViewInit {
             ecosystemImpactsScroller
                 .setup({
                     step: "#ecosystem_impacts_viz article .step",
-                    offset: this.isMobile ? 0.75 : 0.5,
+                    offset: 0.75,
                 })
                 .onStepEnter(handleStepEnterEcosystemImpacts)
                 .onStepExit(handleStepExitImpacts);
@@ -475,7 +486,7 @@ export class HomePage implements AfterViewInit {
             possibleFuturesScroller
                 .setup({
                     step: "#possible_futures_viz article .step",
-                    offset: 0.5
+                    offset: 0.75
                 })
                 .onStepEnter(handleStepEnterPossibleFutures.bind(this))
                 .onStepExit(handleStepExit);
@@ -1125,8 +1136,12 @@ export class HomePage implements AfterViewInit {
             .attr("x2", (d: any) => x(d.value));
     }
 
-    public setToFullscreen(sectionId:string) {
+    public setToFullscreen(sectionId: string) {
         this[sectionId].nativeElement.requestFullscreen();
+    }
+    public disposeHovercard() {
+        d3.select('#hovercard')
+            .classed('active', false);
     }
 
 }
