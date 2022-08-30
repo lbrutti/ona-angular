@@ -423,16 +423,6 @@ export class HomePage implements AfterViewInit {
                     .classed('active', false);
             }
 
-            // if (currentStep == 17) {
-            //     let maps = threatsFigure.selectAll(".anthropogenic_threats");
-            //     maps.each(function () {
-            //         let isActive = false;
-            //         //al 16° step la mappa torna tutta rossa
-            //         (this as any).classList.toggle('active', isActive);
-            //         (this as any).classList.toggle('transitioned', false);
-            //         threatsFigure.style('z-index', 0);
-            //     });
-            // }
         };
 
         let handleStepExitImpacts = (response: any) => {
