@@ -418,9 +418,10 @@ export class HomePage implements AfterViewInit {
             handleStepExit(response);
             let currentStep = response.index + 1;
 
-            // if (currentStep == 17) {
-            //     this.barrierCount = 0;
-            // }
+            if (currentStep == 17) {
+                d3.select('#hovercard')
+                    .classed('active', false);
+            }
 
             // if (currentStep == 17) {
             //     let maps = threatsFigure.selectAll(".anthropogenic_threats");
