@@ -26,9 +26,22 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @font-face {
-    font-family: centuryGothic;
+    font-family: Century-Gothic;
+    src: url('assets/fonts/font.woff2');
+    // 
+}
+
+@font-face {
+    font-family: Roboto;
     // src: url('assets/fonts/font.woff2');
     src: url('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/font/roboto/Roboto-Regular.woff2');
+    // 
+}
+
+@font-face {
+    font-family: Roboto-flex;
+    src: url('assets/fonts/RobotoFlex.woff2');
+    // src: url('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/font/roboto/Roboto-Regular.woff2');
     // 
 }
 
