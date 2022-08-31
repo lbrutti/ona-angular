@@ -842,7 +842,7 @@ export class HomePage implements AfterViewInit {
                 .datum(data)
                 .transition()
                 .duration(2500)
-                .attr("fill", "#cce5df")
+                .attr("fill", "var( --ion-color-secondary-shade-transarency)")
                 .attr("stroke", "none")
                 .attr("d", d3.area()
                     .curve(d3.curveBasis)
@@ -856,7 +856,7 @@ export class HomePage implements AfterViewInit {
                 .append("path")
                 .datum(data)
                 .attr("fill", "none")
-                .attr("stroke", "#7593ce")
+                .attr("stroke", "var(--ion-color-secondary-shade)")
                 .attr("stroke-width", 1.5)
                 .attr("d", d3.line()
                     .curve(d3.curveBasis)
@@ -873,7 +873,7 @@ export class HomePage implements AfterViewInit {
             let focus = svg
                 .append('g')
                 .append('circle')
-                .style("fill", "#7593ce")
+                .style("fill", "var(--ion-color-secondary-shade)")
                 .attr('r', 4)
                 .style("opacity", 0)
 
@@ -883,7 +883,7 @@ export class HomePage implements AfterViewInit {
                 .append('text')
                 .attr("class", "focus_text")
                 .style("opacity", 0)
-                .attr("fill", "#7593ce")
+                .attr("fill", "var(--ion-color-secondary-shade)")
                 .attr("alignment-baseline", "middle")
             // Create a rect on top of the svg area: this rectangle recovers mouse position
             svg
