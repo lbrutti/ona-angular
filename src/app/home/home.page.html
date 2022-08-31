@@ -244,11 +244,11 @@
                     <ion-row class="ion-no-margin">
                         <ion-col size="10" class="ion-no-margin">
                             <h1 id="anthropogenic_threats-title" class="">The Main Threats to
-                            rivers' connectivity</h1>
+                                rivers' connectivity</h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
-                            <ion-button (click)="setToFullscreen('anthropogenic_threats_figure')" size="small" fill="outline"
-                                expand="block" class="ion-no-margin" color="light">
+                            <ion-button (click)="setToFullscreen('anthropogenic_threats_figure')" size="small"
+                                fill="outline" expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>
                             </ion-button>
                         </ion-col>
@@ -256,7 +256,7 @@
                 </ion-grid>
 
 
-                <figure id="anthropogenic_threats_figure" #anthropogenic_threats_figure  (click)="exitFullScreen()">
+                <figure id="anthropogenic_threats_figure" #anthropogenic_threats_figure (click)="exitFullScreen()">
                     <video autoplay loop muted id="anthropogenic_threats_dam_background"
                         class="stacked_img anthropogenic_threats" data-step='1,2'>
                         <source src="assets/video/video2_20_sec.mp4" />
@@ -402,12 +402,6 @@
                                 <figcaption>loren ipsum</figcaption>
                             </figure>
                         </ion-col>
-                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="4" class="ion-no-margin">
-                            <figure>
-                                <img src="assets/imgs/jpg/foto11.jpeg" />
-                                <figcaption>lorem ipsum</figcaption>
-                            </figure>
-                        </ion-col>
                     </ion-row>
                 </ion-grid>
 
@@ -453,17 +447,22 @@
                 </div>
                 <ion-grid class="ion-no-margin">
                     <ion-row class="ion-no-margin">
-                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="12"
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6" class="ion-no-margin">
+                            <figure>
+                                <img src="assets/imgs/jpg/foto11.jpeg" />
+                                <figcaption>lorem ipsum</figcaption>
+                            </figure>
+                        </ion-col>
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6"
                             class="ion-no-margin ion-no-padding">
-
                             <p>
                                 Lastly, human interventions hinder the <ion-text class="font-bold" color="secondary">
                                     vertical connectivity</ion-text> of the riverbed.
-                                Activities like
-                                paving, dredging, or
-                                clogging with fine sediments limit the exchange between surface and groundwater.
+                                Activities like paving, dredging, or clogging with fine sediments limit the exchange
+                                between surface and groundwater.
                             </p>
                         </ion-col>
+
 
                     </ion-row>
                 </ion-grid>
@@ -552,14 +551,14 @@
                             <h1 id="healthy_rivers_title" class="">Freshwater Species</h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
-                            <ion-button (click)="setToFullscreen('ecosystem_impacts_viz_figure')" size="small" fill="outline" expand="block"
-                                class="ion-no-margin" color="light">
+                            <ion-button (click)="setToFullscreen('ecosystem_impacts_viz_figure')" size="small"
+                                fill="outline" expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>
                             </ion-button>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
-                <figure id="ecosystem_impacts_viz_figure" #ecosystem_impacts_viz_figure  (click)="exitFullScreen()">
+                <figure id="ecosystem_impacts_viz_figure" #ecosystem_impacts_viz_figure (click)="exitFullScreen()">
                     <div id="ecosystem_impacts_viz_figure_chart" class="stacked_img ecosystem_impacts_viz"
                         data-step='2,3,4,5'>
                     </div>
@@ -706,9 +705,9 @@
             <section id="possible_futures_balkans_map" class="centered_text_block">
                 <div>
                     <h4>
-                        <span>Existing</span>, <span>planned / in construction medium-large</span> and <span>planned /
-                            in construction small</span> hydropower dams in the Balkans and Eastern Mediterranean Region
-
+                        <ion-text style="color:var(--ion-color-warning-dark)">Existing</ion-text>, <ion-text
+                            style="color:var(--ion-color-danger-dark)">planned / in construction </ion-text>
+                        medium-large and small hydropower dams in the Balkans and Eastern Mediterranean Region
                     </h4>
                 </div>
                 <figure>
@@ -723,7 +722,7 @@
                         <img slot="first" src="assets/imgs/png/balkans_existing.png" />
                         <img slot="second" src="assets/imgs/png/balkans_all.png" />
                     </img-comparison-slider>
-                    <figcaption>lorem ipsum</figcaption>
+                    <!-- <figcaption>slide hover to compare</figcaption> -->
                 </figure>
             </section>
             <section id="possible_futures_dam_removoval_text" class="centered_text_block">
