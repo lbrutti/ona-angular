@@ -153,7 +153,7 @@ section {
         p {
             text-align: center;
             padding: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
     }
 }
@@ -180,7 +180,7 @@ section {
     }
 
     .step {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         text-align: left;
     }
 
@@ -257,7 +257,7 @@ section {
 }
 
 #anthropogenic_threats {
-    article ::ng-deep ion-text{
+    article ::ng-deep ion-text {
         font-size: 5rem;
         font-weight: 700;
         color: var(--ion-background-color, #3c372f);
@@ -376,6 +376,9 @@ section {
         height: calc(100% - 20vh);
         opacity: 0;
         transition-duration: 500ms;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         ::ng-deep svg {
             width: 100%;
@@ -450,6 +453,12 @@ main.mobile {
     }
 
     #possible_futures_viz {
+        .possible_futures_viz {
+            display: unset;
+            flex-direction: unset;
+            justify-content: unset;
+        }
+
         .step {
             font-size: 1.25rem;
         }

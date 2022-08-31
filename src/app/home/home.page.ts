@@ -970,7 +970,7 @@ export class HomePage implements AfterViewInit {
     }
 
     private createFutureDamsChart(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
-
+        let colors = { 'existing': 'var(--ion-color-warning)', 'planned': 'var(--ion-color-danger)' }
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
@@ -1000,8 +1000,8 @@ export class HomePage implements AfterViewInit {
             .attr('x2', 0)
             .attr("y1", (d: any) => y(d.type))
             .attr("y2", (d: any) => y(d.type))
-            .attr("fill", "none")
-            .attr("stroke", "#7593ce")
+            .attr("fill", (d: any) => colors[d.type])
+            .attr("stroke", (d: any) => colors[d.type])
             .attr("stroke-width", 7);
 
         // Circles -> start at X=0
@@ -1014,8 +1014,8 @@ export class HomePage implements AfterViewInit {
             .attr("cx", x(0))
             .attr("cy", (d: any) => y(d.type))
             .attr("r", "7")
-            .style("fill", "#7593ce")
-            .attr("stroke", "#7593ce");
+            .style("fill", (d: any) => colors[d.type])
+            .attr("stroke", (d: any) => colors[d.type]);
 
         //append labels
 
@@ -1024,6 +1024,7 @@ export class HomePage implements AfterViewInit {
             .enter()
             .append("text")
             .text((d: any) => d.type)
+            .style("fill", (d: any) => colors[d.type])
             .attr('x', 5)
             .attr('y', (d: any) => y(d.type) - 10)
 
@@ -1033,6 +1034,7 @@ export class HomePage implements AfterViewInit {
             .enter()
             .append("text")
             .attr('data-type', (d: any) => d.type)
+            .style("fill", (d: any) => colors[d.type])
             .text(d => `0%`)
             .attr('x', () => x(100) - 10)
             .attr('y', (d: any) => y(d.type) + 3.5)
