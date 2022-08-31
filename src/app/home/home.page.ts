@@ -815,7 +815,7 @@ export class HomePage implements AfterViewInit {
                 .tickSizeOuter(0);
 
             svg.append("g")
-                .attr("transform", "translate(0," + (height + 10) + ")")
+                .attr("transform", "translate(0," + (height) + ")")
                 .call(xAxis);
 
 
@@ -848,7 +848,7 @@ export class HomePage implements AfterViewInit {
                     .curve(d3.curveBasis)
                     .x(function (d: any) { return x(d.year) })
                     .y0(function (d: any) { return y(d.cumulative) })
-                    .y1(function (d: any) { return 429; })
+                    .y1(function (d: any) { return y(429); })
                 );
 
             // Add the line
