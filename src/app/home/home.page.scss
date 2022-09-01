@@ -503,3 +503,39 @@ h4,
 h5 {
     text-transform: capitalize;
 }
+
+
+#header {
+    height: calc(50vh + 36px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #e9e4d875;
+    padding: 0;
+
+    .centered_text_block {
+        margin-top: auto;
+        margin-bottom: auto;
+        background: #e9e4d830;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #intro_title {
+        font-size: 4rem;
+        font-weight: bolder;
+        color:var(--ion-background-color)
+    }
+}
+
+#video_fixed {
+    position: fixed;
+
+    left: 20vw;
+
+    video {
+        width: 59vw;
+    }
+}

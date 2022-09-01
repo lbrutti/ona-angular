@@ -80,11 +80,19 @@
             </ion-grid>
         </div>
         <!-- sticky side -->
+        <div id="video_fixed">
+            <video autoplay loop muted id="anthropogenic_threats_dam_background"
+                class="stacked_img anthropogenic_threats" >
+                <source src="assets/video/video_1.mp4" />
+            </video>
+        </div>
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
             <section id="header">
-                <div class="centered_text_block">
-                    <h1 class="intro__hed">{{'introTitle'|transloco}}</h1>
-                    <h4 class="intro__hed">{{'introSubtitle'|transloco}}</h4>
+                <div class="centered_text_block font-bold">
+                    <h1 class="intro__hed" id="intro_title">{{'introTitle'|transloco}}</h1>
+                </div>
+                <div>
+                    <h1 class="intro__hed">{{'introSubtitle'|transloco}}</h1>
                 </div>
             </section>
 
@@ -256,11 +264,11 @@
 
 
                 <figure id="anthropogenic_threats_figure" #anthropogenic_threats_figure (click)="exitFullScreen()">
-                    <video autoplay loop muted id="anthropogenic_threats_dam_background"
+                    <!-- <video autoplay loop muted id="anthropogenic_threats_dam_background"
                         class="stacked_img anthropogenic_threats" data-step='1,2'>
                         <source src="assets/video/video2_20_sec.mp4" />
                         <source src="assets/video/video2_20_sec.webm" />
-                    </video>
+                    </video> -->
                     <!-- <img src="assets/imgs/gif/dam.gif" id="anthropogenic_threats_dam_background" -->
                     <!-- class="stacked_img anthropogenic_threats" data-step='1,2' /> -->
 
