@@ -503,6 +503,18 @@ main.mobile {
         }
     }
 
+    #anthropogenic_threats {
+        .anthropogenic_threats{
+            height: unset;
+        }
+        article ::ng-deep ion-text {
+            font-size: 3.5rem;
+        }
+        .step{
+            text-align: center;
+        }
+    }
+
     #ecosystem_impacts_viz {
         .ecosystem_impacts_viz {
 
