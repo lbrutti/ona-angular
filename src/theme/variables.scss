@@ -5,8 +5,8 @@
 :root {
     --ion-section-background-color: #e9e4d8;
     --ion-background-color: #3c372f;
-    // --ion-font-family: 'Century Gothic',Century-Gothic,AppleGothic,sans-serif;
     --ion-font-family: Century-Gothic, sans-serif;
+    --ion-font-family-bold: Century-Gothic-Bold, sans-serif;
     --ion-color-primary: #6C948D;
     --ion-color-primary-rgb: 108, 148, 141;
     --ion-color-primary-contrast: #f3f3f3;
@@ -69,4 +69,5 @@
 
     --ion-color-text-color-standard: #4d4f4a;
     --ion-color-no-data: #f3eee7;
+    --ion-header-background-transparent:#e9e4d875;
 }

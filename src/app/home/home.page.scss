@@ -400,6 +400,66 @@ section {
 
 
 
+
+
+#glossary_container {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+#glossary {
+    ion-row {
+        justify-content: space-between;
+    }
+
+    font-size: small;
+
+    ion-col {
+        display: flex;
+        align-content: flex-end;
+    }
+}
+
+.section_title {
+    text-transform: capitalize;
+}
+
+
+#header {
+    height: calc(50vh + 36px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: var(--ion-header-background-transparent);
+    padding: 0;
+
+    .centered_text_block {
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #intro_title {
+        font-size: 4rem;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bolder;
+        color: var(--ion-background-color)
+    }
+}
+
+#video_fixed {
+    position: fixed;
+
+    left: 20vw;
+
+    video {
+        width: 59vw;
+    }
+}
+
 //mobile overloads
 
 main.mobile {
@@ -474,68 +534,10 @@ main.mobile {
         text-align: left;
     }
 
+    #header {
 
-
-}
-
-#glossary_container {
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-}
-
-#glossary {
-    ion-row {
-        justify-content: space-between;
-    }
-
-    font-size: small;
-
-    ion-col {
-        display: flex;
-        align-content: flex-end;
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    text-transform: capitalize;
-}
-
-
-#header {
-    height: calc(50vh + 36px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-color: #e9e4d875;
-    padding: 0;
-
-    .centered_text_block {
-        margin-top: auto;
-        margin-bottom: auto;
-        background: #e9e4d830;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    #intro_title {
-        font-size: 4rem;
-        font-weight: bolder;
-        color:var(--ion-background-color)
-    }
-}
-
-#video_fixed {
-    position: fixed;
-
-    left: 20vw;
-
-    video {
-        width: 59vw;
+        #intro_title {
+            font-size: 3rem;
+        }
     }
 }

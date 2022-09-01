@@ -62,7 +62,7 @@
     </ion-toolbar>
 </ion-header> -->
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
     <div id="container">
         <div id="hovercard" (click)="disposeHovercard()">
             <ion-grid>
@@ -80,10 +80,10 @@
             </ion-grid>
         </div>
         <!-- sticky side -->
-        <div id="video_fixed">
+        <div id="video_fixed" *ngIf="!isMobile">
             <video autoplay loop muted id="anthropogenic_threats_dam_background"
-                class="stacked_img anthropogenic_threats" >
-                <source src="assets/video/video_1.mp4" />
+                class="stacked_img anthropogenic_threats">
+                <source src="assets/video/video1.mp4" />
             </video>
         </div>
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
@@ -92,7 +92,7 @@
                     <h1 class="intro__hed" id="intro_title">{{'introTitle'|transloco}}</h1>
                 </div>
                 <div>
-                    <h1 class="intro__hed">{{'introSubtitle'|transloco}}</h1>
+                    <h1 class="intro__hed font-bold" id="intro_subtitle">{{'introSubtitle'|transloco}}</h1>
                 </div>
             </section>
 
@@ -237,7 +237,6 @@
 
                             <figure>
                                 <img src="assets/imgs/jpg/foto1.jpeg" />
-                                <figcaption>lorem ipsum</figcaption>
                             </figure>
                         </ion-col>
                     </ion-row>
@@ -538,6 +537,9 @@
                         preventing natural-occurring inundations and sediment redistribution and reducing the exchange
                         with the groundwater.
                     </p>
+                    <figure>
+                        <img src="assets/imgs/jpg/foto18.jpg" />
+                    </figure>
                     <p>
                         Migratory birds face growing challenges as they lose access to wetlands, which offer safe havens
                         of food and habitat
@@ -696,8 +698,6 @@
                     <div #possible_futures_viz_chart_balkans_dams id="possible_futures_viz_chart_balkans_dams"
                         class="stacked_img possible_futures_viz" data-step='5,6,7' data-transition-step="">
                     </div>
-
-                    <figcaption>loren ipsum</figcaption>
                 </figure>
                 <!-- foreground master content -->
                 <article id="possible_futures_viz_article">

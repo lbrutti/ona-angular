@@ -49,10 +49,10 @@ export class HomePage implements AfterViewInit {
         active: false
     }];
     public hovercardData: any = {
-        title: "I'm a title",
+        title: 0,
         imgSrc: "",
         imgAlt: "",
-        definition: "definition"
+        definition: ""
     };
 
     public sliderDirection = 'horizontal';
