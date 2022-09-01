@@ -536,6 +536,7 @@ export class HomePage implements AfterViewInit {
         let sluices = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_sluices.svg');
         let others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
         let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
+        let page = this;
 
         dams.documentElement.setAttribute('width', 'auto');
         dams.documentElement.setAttribute('height', 'auto');
@@ -574,6 +575,8 @@ export class HomePage implements AfterViewInit {
                 let points = (this as any).dataset.points;
                 let x = (this as any).getBoundingClientRect().x;
                 let y = (this as any).getBoundingClientRect().y;
+                page.hovercardData.title = points;
+                page.hovercardData.definition = 'hovercard.barriers';
                 d3.select('#hovercard')
                     .style('left', x + 'px')
                     .style('top', y + 'px')

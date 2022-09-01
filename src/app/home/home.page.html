@@ -67,16 +67,16 @@
         <div id="hovercard" (click)="disposeHovercard()">
             <ion-grid>
                 <ion-row>
-                    <h4>{{hovercardData.title}}</h4>
+                    <span>{{hovercardData.title | number:'':'en-US'}} {{hovercardData.definition | transloco}}</span>
                 </ion-row>
-                <ion-row>
+                <!-- <ion-row>
                     <ion-col>
                         <img src="{{hovercardData.imgSrc}}" alt="{{hovercardData.imgAlt}}">
                     </ion-col>
                     <ion-col>
                         <span [innerText]="hovercardData.content"></span>
                     </ion-col>
-                </ion-row>
+                </ion-row> -->
             </ion-grid>
         </div>
         <!-- sticky side -->

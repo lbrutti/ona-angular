@@ -45,7 +45,7 @@ main {
         display: block;
         opacity: 1;
         z-index: 5000;
-        background-color: red;
+        background-color: var(--ion-color-primary-contrast);
     }
 }
 

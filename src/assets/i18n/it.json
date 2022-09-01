@@ -72,5 +72,8 @@
         "weir_definition": ".....",
         "culvert_title": "culvert",
         "culvert_definition": "....."
+    },
+    "hovercard": {
+        "barriers": "barriers"
     }
 }
