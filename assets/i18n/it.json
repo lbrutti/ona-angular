@@ -1,7 +1,7 @@
 {
     "pageTitle": "River Connectivity",
     "introTitle": "River Connectivity",
-    "introSubtitle": "The health of the world’s rivers is severely threatened. But there is still hope if we take action.",
+    "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>. But there is still hope if we take action.",
     "introParagraphs": "<p class='intro__dek'>Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.  </p> <p class='intro__dek'>To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems.</p>",
     "healthyRivers": {
         "step-1": "These are the world's <ion-text color=\"secondary\">longest* rivers</ion-text>",
@@ -25,15 +25,15 @@
         "step-1": "Dams and other barriers are the most evident example of built infrastructure that hinder river connectivity.",
         "step-2": "While large hydropower dams are very visible, they are actually only a small fraction of the types of barriers that a river encounters throughout its course",
         "step-3": "For example, the estimate of known barriers in Europe is at least...",
-        "step-4": "dams",
+        "step-4": "<ion-text color=\"danger\">62,293 dams</ion-text>",
         "step-5": "&nbsp;",
-        "step-6": "<ion-text color=\"danger\">199,744 <em class\"hover-trigger\" (click)=\"console.log($event)\">ramps</em></ion-text>",
+        "step-6": "<ion-text color=\"danger\">199,744 ramps</ion-text>",
         "step-7": "&nbsp;",
-        "step-8": "<ion-text color=\"danger\">197,752 <em class\"hover-trigger\" (click)=\"console.log($event)\">weirs</em></ion-text>",
+        "step-8": "<ion-text color=\"danger\">197,752 weirs</ion-text>",
         "step-9": "&nbsp;",
-        "step-10": "<ion-text color=\"danger\">112,898 <em class\"hover-trigger\" (click)=\"console.log($event)\">culverts</em></ion-text>",
+        "step-10": "<ion-text color=\"danger\">112,898 culverts</ion-text>",
         "step-11": "&nbsp;",
-        "step-12": "<ion-text color=\"danger\">8,528 <em class\"hover-trigger\" (click)=\"console.log($event)\">sluices</em></ion-text>",
+        "step-12": "<ion-text color=\"danger\">8,528 sluices</ion-text>",
         "step-13": "&nbsp;",
         "step-14": "<ion-text color=\"danger\">59,577 other barriers</ion-text>",
         "step-15": "&nbsp;",
@@ -60,5 +60,20 @@
         "step-5": "This risk is well demonstrated by the situation in the Balkans, Eastern Mediterranean and Turkey, an area that currently hosts 20% of the existing European hydropower dams.",
         "step-6": "The area is expected to host almost 50% of the total future hydropower dams in Europe.",
         "step-7": "And 9 out of 10 of these planned or in construction hydropower dams in the region are small, thus providing little energy while still greatly impacting the ecosystem."
+    },
+    "glossary": {
+        "dam_title": "dam",
+        "dam_definition": ".....",
+        "ramp_title": "ramp",
+        "ramp_definition": ".....",
+        "sluice_title": "sluice",
+        "sluice_definition": ".....",
+        "weir_title": "weir",
+        "weir_definition": ".....",
+        "culvert_title": "culvert",
+        "culvert_definition": "....."
+    },
+    "hovercard": {
+        "barriers": "barriers"
     }
 }
