@@ -1139,4 +1139,11 @@ export class HomePage implements AfterViewInit {
             document.exitFullscreen();
         }
     }
+
+    public threatsMouseEnterHandler(e: Event) {
+        console.log(e);
+    }
+    public threatsMouseLeaveHandler(e: Event) {
+        console.log(e);
+    }
 }
