@@ -60,5 +60,17 @@
         "step-5": "This risk is well demonstrated by the situation in the Balkans, Eastern Mediterranean and Turkey, an area that currently hosts 20% of the existing European hydropower dams.",
         "step-6": "The area is expected to host almost 50% of the total future hydropower dams in Europe.",
         "step-7": "And 9 out of 10 of these planned or in construction hydropower dams in the region are small, thus providing little energy while still greatly impacting the ecosystem."
+    },
+    "glossary": {
+        "dam_title": "dam",
+        "dam_definition": ".....",
+        "ramp_title": "ramp",
+        "ramp_definition": ".....",
+        "sluice_title": "sluice",
+        "sluice_definition": ".....",
+        "weir_title": "weir",
+        "weir_definition": ".....",
+        "culvert_title": "culvert",
+        "culvert_definition": "....."
     }
 }
