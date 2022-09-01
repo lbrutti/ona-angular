@@ -89,10 +89,10 @@
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
             <section id="header">
                 <div class="centered_text_block font-bold">
-                    <h1 class="intro__hed" id="intro_title">{{'introTitle'|transloco}}</h1>
+                    <h1 class="intro__hed" id="intro_title">{{'introTitle'|transloco }}</h1>
                 </div>
                 <div>
-                    <h1 class="intro__hed font-bold" id="intro_subtitle">{{'introSubtitle'|transloco}}</h1>
+                    <h1 class="intro__hed" id="intro_subtitle" [innerHTML]="'introSubtitle'|transloco | safehtml: 'html'"></h1>
                 </div>
             </section>
 
@@ -184,7 +184,7 @@
 
             <!-- non scrolly content -->
             <section>
-                <h1 class="section_title">THE FOUR DIMENSIONS OF CONNECTIVITY</h1>
+                <h1 class="section_title">The Four Dimensions of Connectivity</h1>
             </section>
             <section id="river_connectivities" class="scrolly"
                 [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
@@ -394,13 +394,13 @@
                 </p>
                 <ion-grid>
                     <ion-row>
-                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="4">
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
                             <figure>
                                 <img src="assets/imgs/jpg/foto15.jpeg">
                                 <figcaption>Embankments</figcaption>
                             </figure>
                         </ion-col>
-                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="4">
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
                             <figure>
                                 <img src="assets/imgs/jpg/foto16.jpeg">
                                 <figcaption>Bank protection works. Credits: Andrea Goltara</figcaption>

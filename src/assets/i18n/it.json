@@ -1,7 +1,7 @@
 {
     "pageTitle": "River Connectivity",
     "introTitle": "River Connectivity",
-    "introSubtitle": "The health of the world’s rivers is severely threatened. But there is still hope if we take action.",
+    "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>. But there is still hope if we take action.",
     "introParagraphs": "<p class='intro__dek'>Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.  </p> <p class='intro__dek'>To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems.</p>",
     "healthyRivers": {
         "step-1": "These are the world's <ion-text color=\"secondary\">longest* rivers</ion-text>",
