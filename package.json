@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "ionic build --prod -- --base-href https://lbrutti.github.io/ona-angular/ && npx angular-cli-ghpages --dir=www"
+    "publish-gh": "ionic build --prod -- --base-href https://lbrutti.github.io/ona-angular/ && npx angular-cli-ghpages --dir=www",
+    "publish": "ionic build --prod -- --base-href https://www.freeflowingrivers.eu/  --outputPath=prod"
   },
   "private": true,
   "dependencies": {
