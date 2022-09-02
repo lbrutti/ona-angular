@@ -92,7 +92,8 @@
                     <h1 class="intro__hed" id="intro_title">{{'introTitle'|transloco }}</h1>
                 </div>
                 <div>
-                    <h1 class="intro__hed" id="intro_subtitle" [innerHTML]="'introSubtitle'|transloco | safehtml: 'html'"></h1>
+                    <h1 class="intro__hed" id="intro_subtitle"
+                        [innerHTML]="'introSubtitle'|transloco | safehtml: 'html'"></h1>
                 </div>
             </section>
 
@@ -475,11 +476,20 @@
 
             </section>
 
-            <section id="ecosystem_impacts_title" #ecosystem_impacts_title
+            <!-- <section id="ecosystem_impacts_title" #ecosystem_impacts_title
                 class="centered_text_block sticky_section_title">
-                <h1 class="section_title">The ecological impacts of the loss of connectivity</h1>
-            </section>
+                <h1 class="section_title" *ngIf="!isMobile">The ecological impacts of the loss of connectivity</h1>
+                <h1 class="section_title" *ngIf="isMobile">The ecological impacts</h1>
+            </section> -->
             <section id="ecosystem_impacts_text" class="centered_text_block">
+                <ion-grid class="sticky_section_title section_title ion-no-margin ion-no-padding" id="ecosystem_impacts_title" #ecosystem_impacts_title>
+                    <ion-row class="ion-no-margin ion-no-padding">
+                        <ion-col size="12" class="ion-no-margin ion-no-padding">
+                            <h1 class="section_title ion-no-padding-top" *ngIf="!isMobile">The ecological impacts of the loss of connectivity</h1>
+                            <h1 class="section_title ion-no-padding-top" *ngIf="isMobile">The ecological impacts</h1>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
                 <div>
                     <p>
                         As rivers encounter man-made barriers to their free flow, the complex habitats they sustain are
