@@ -1,9 +1,13 @@
 {
     "pageTitle": "River Connectivity",
-    "introTitle": "River Connectivity",
-    "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>.<br>But there is still hope if we take action.",
-    "introParagraphs": "<p class='intro__dek'>Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival. </p> <p class='intro__dek'>To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems. </p>",
+    "intro": {
+        "introTitle": "River Connectivity",
+        "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>.<br>But there is still hope if we take action.",
+        "p1": " Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.",
+        "p2": "To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems."
+    },
     "healthyRivers": {
+        "section_title": "Healthy Rivers",
         "step-1": "These are the world's <ion-text color=\"secondary\">longest* rivers</ion-text>",
         "step-1-subtitle": "* defined as rivers longer than 1,000 km",
         "step-2": "Most of them are <ion-text color=\"danger\">not free-flowing…</ion-text>",
@@ -20,7 +24,12 @@
         "step-4": "<ion-text class=\"font-bold\" color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface, and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge, and much more.",
         "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
     },
+    "free_flowing_rivers_text": {
+        "p1":"<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br> For example, barriers like dams impact longitudinal and temporal connectivity, while bank protection and levees hinder lateral connectivity.",
+        "p2":"The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few."
+    },
     "anthropogenicThreats": {
+        "section_title":"The Main Threats to river connectivity",
         "barrierCounterTitle": "Barrier counter",
         "step-1": "Dams and other barriers are the most evident example of built infrastructure that hinder river connectivity.",
         "step-2": "While large hydropower dams are very visible, they are actually only a small fraction of the types of barriers that a river encounters throughout its course",
@@ -38,9 +47,34 @@
         "step-14": "<ion-text color=\"danger\">59,577 other barriers</ion-text>",
         "step-15": "&nbsp;",
         "step-16": "&nbsp;",
-        "step-17": "With such an enormous number of barriers, it is no surprise that Europe has the most fragmented rivers in the world"
+        "step-17": "With such an enormous number of barriers, it is no surprise that Europe has the most fragmented rivers in the world",
+        "anthropogenic_threats_text":{
+            "p1":" These barriers mostly impact <ion-text class=\"font-bold\" color=\"secondary\">longitudinal connectivity </ion-text>, blocking or limiting the passage of fish and sediments.",
+            "p2":"Some obstacles, like dams, also impact <ion-text class=\"font-bold\" color=\"secondary\">temporal connectivity</ion-text>, as they regulate the flow of water and sediments according to human needs rather than allowing the river to follow its natural seasonal patterns.",
+            "p3":" Other types of human interventions put pressure on <ion-text class=\"font-bold\" color=\"secondary\"> lateral connectivity</ion-text>, for example artificial levees and bank protection works. Such barriers are built in the floodplains and run parallel to the river. Levees are used to stop water from flooding the nearby land. Bank protection works, on the other hand, are made specifically to prevent the river channel from shifting its path sideways, although they don’t necessarily block the river’s waters from reaching the floodplains.",
+            "embankments_caption":"Embankments",
+            "bank_protection_caption":"Bank protection works. Credits: Andrea Goltara",
+            "p4":"Rivers with lateral barriers quickly become channels that follow a strict path, rather than live elements that weave in the environment and change shape over time. This can cause catastrophic floods when rivers overflow embankments and also increases flood risk further downstream.",
+            "reno_caption":"Reno River (Italy) in 1954 and in 2022. Credits: Volo IGMI GAI 1954 and Bing Maps.",
+            "p5":"Lateral obstacles are less likely to be noticed as they are deeply ingrained in the anthropized landscape, but they can be even more widespread than the shocking number of longitudinal obstacles like dams, weirs, ramps, and sluices.",
+            "dredging_caption":"Riverbed dredging",
+            "p6":"Lastly, human interventions hinder the <ion-text class=\"font-bold\" color=\"secondary\"> vertical connectivity</ion-text> of the riverbed. Paving, dredging, or clogging with fine sediments limit the exchange between surface and groundwater."
+        }
     },
     "ecosystemImpacts": {
+        "ecosystem_impacts_text":{
+            "section_title":"The ecological impacts of the loss of connectivity",
+            "section_title_mobile": "The ecological impacts",
+            "p1":" As rivers encounter man-made barriers to their free flow, the complex habitats they sustain are degraded or lost and animal species become increasingly vulnerable. Freshwater biodiversity is taking the hardest hit, declining at a faster rate than that of oceans and forests, according to WWF’s <a href=\"https://livingplanet.panda.org/freshwater\" target=\"_blank\">Living Planet Index.</a>",
+            "p2":"Freshwater species have declined by 84% on average across monitored species compared to 1970.",
+            "p3":"The reasons why freshwater species are declining are multiple, from overfishing to rising water temperatures. The loss of river connectivity impacts biodiversity in many ways. Barriers block rivers’ longitudinal and lateral movements, fragmenting habitats and making entire portions inaccessible. For example, migratory fish might get cut off from their breeding areas, but even non-migratory fish species are impacted, as they can’t reach sheltered or nutrient-rich areas of the river that are critical to their survival.",
+            "p4":"Fish get caught in dam turbines as they move downstream, or get stuck and disoriented as they move upstream and in reservoirs. In short, the negative impact of river fragmentation on the survival of fish species is great, and has been <a href=\"https://onlinelibrary.wiley.com/doi/full/10.1002/rra.3386\" target=\"_blank\">documented and quantified</a>.",
+            "p5":" Barriers also transform the physical and chemical characteristics of rivers and negatively impact a wide range of freshwater species. Sediments of different sizes, especially the coarser ones, get trapped, leading to riverbed erosion. The latter, together with the altered water flows due to barriers, is linked to more salty water from the sea penetrating the river. Such change in salinity affects species’ distribution, behavior, and limits the reproduction rate.",
+            "p6":"Lateral barriers such as bank protection works have an impact on floodplain habitats and cause the loss of wetlands by preventing natural-occurring inundations and sediment redistribution and reducing the exchange with the groundwater.",
+            "p7":"Migratory birds face growing challenges as they lose access to wetlands, which offer safe havens of food and habitat throughout their journeys. Critical nesting habitat such as gravel bed bars and islands can disappear due to altered river flows.",
+            "freshwater_species_title":"Freshwater Species"
+        
+        },
         "step-1": "The International Union for Conservation of Nature (IUCN) assessed the status of freshwater species in Europe",
         "step-2": "1% of them are <ion-text highlight-color=\"danger-dark\" class=\"font-bold\">extinct, either globally or regionally</ion-text>.",
         "step-3": "34% are <ion-text highlight-color=\"danger\" class=\"font-bold\">critically endangered, endangered, near threatened, or vulnerable</ion-text>.",

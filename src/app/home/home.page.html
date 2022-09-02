@@ -25,31 +25,18 @@
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
             <section id="header">
                 <div class="centered_text_block font-bold">
-                    <h1 class="intro__hed" id="intro_title">{{'introTitle'|transloco }}</h1>
+                    <h1 class="intro__hed" id="intro_title">{{'intro.introTitle'|transloco }}</h1>
                 </div>
                 <div>
                     <h1 class="intro__hed" id="intro_subtitle"
-                        [innerHTML]="'introSubtitle'|transloco | safehtml: 'html'"></h1>
+                        [innerHTML]="'intro.introSubtitle'|transloco | safehtml: 'html'"></h1>
                 </div>
             </section>
 
             <section id="intro" class="centered_text_block">
-                <p>
-                    Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide
-                    range of freshwater
-                    species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which
-                    nurture flora, fauna,
-                    and human communities and protect us from floods, droughts, and other natural disasters. They
-                    collect water from the
-                    atmosphere and land and replenish groundwater systems, which are key for our survival.
+                <p [innerHTML]="'intro.p1'|transloco | safehtml: 'html'">
                 </p>
-                <p>
-                    To provide these essential ecosystem services, rivers must be able to flow freely, moving
-                    unobstructed in multiple
-                    directions. However, only a small fraction of the world’s rivers can still do so: a myriad of
-                    human-made works fragment,
-                    deviate, constrict, and regulate river flow, dramatically impacting natural functions and
-                    surrounding ecosystems.
+                <p [innerHTML]="'intro.p2'|transloco | safehtml: 'html'">
                 </p>
 
             </section>
@@ -69,7 +56,7 @@
                 <ion-grid class="sticky_section_title section_title ion-no-margin">
                     <ion-row class="ion-no-margin">
                         <ion-col size="10" class="ion-no-margin">
-                            <h1 id="healthy_rivers_title" class="">healthy rivers</h1>
+                            <h1 id="healthy_rivers_title">{{'healthyRivers.section_title'|transloco}}</h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
                             <ion-button (click)="setToFullscreen('healthy_rivers_figure')" size="small" fill="outline"
@@ -156,22 +143,12 @@
                 <ion-grid>
                     <ion-row>
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
-                            <p>
-                                <ion-text class="font-bold">Free-flowing rivers</ion-text> are those in which all four
-                                types of connectivity are present. <br>
-                                There are, however, many potential threats to maintaining a free-flowing status from the
-                                headwaters to the outlet. <br>
-                                For example, barriers like dams impact longitudinal and temporal connectivity, while
-                                bank protection and levees hinder lateral connectivity.
+                            <p [innerHTML]="'free_flowing_rivers_text.p1'|transloco | safehtml: 'html'">
                             </p>
-                            <p>
-                                The human pressures that impact a river’s flow and dynamics are multiple, often linked
-                                to urbanization, agriculture, roads and infrastructure built in riparian areas, water
-                                abstraction and energy production - to name a few.
+                            <p [innerHTML]="'free_flowing_rivers_text.p2'|transloco | safehtml: 'html'">
                             </p>
                         </ion-col>
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
-
                             <figure>
                                 <img src="assets/imgs/jpg/foto1.jpeg" />
                             </figure>
@@ -187,7 +164,8 @@
                 <ion-grid class="sticky_section_title section_title ion-no-margin">
                     <ion-row class="ion-no-margin">
                         <ion-col size="10" class="ion-no-margin">
-                            <h1 id="anthropogenic_threats-title">The Main Threats to river connectivity</h1>
+                            <h1 id="anthropogenic_threats-title">{{'anthropogenicThreats.section_title'| transloco}}
+                            </h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
                             <ion-button (click)="setToFullscreen('anthropogenic_threats_figure')" size="small"
@@ -307,63 +285,36 @@
                 </article>
             </section>
             <section id="anthropogenic_threats_text" class="centered_text_block">
-                <p>
-                    These barriers mostly impact <ion-text class="font-bold" color="secondary">longitudinal connectivity
-                    </ion-text>, blocking or limiting the passage of
-                    fish and sediments.
-                </p>
-                <p>
-                    Some obstacles, like dams, also impact <ion-text class="font-bold" color="secondary">temporal
-                        connectivity</ion-text>, as they regulate the flow of
-                    water and sediments according
-                    to human needs rather than allowing the river to follow its natural seasonal patterns.
-                </p>
+                <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p1'|transloco | safehtml: 'html'"> </p>
+                <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p2'|transloco | safehtml: 'html'"> </p>
                 <figure>
                     <!-- <img src="assets/imgs/gif/foto7.gif"> -->
                     <img src="https://environmentaldynamics.files.wordpress.com/2013/09/google_fisk.jpg">
                 </figure>
-                <p>
-                    Other types of human interventions put pressure on <ion-text class="font-bold" color="secondary">
-                        lateral connectivity</ion-text>, for example artificial
-                    levees and bank
-                    protection works. Such barriers are built in the floodplains and run parallel to the river. Levees
-                    are used to stop
-                    water from flooding the nearby land. Bank protection works, on the other hand, are made specifically
-                    to
-                    prevent the river channel
-                    from shifting its path sideways, although they don’t necessarily block the river’s waters from
-                    reaching the floodplains.
-                </p>
+                <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p3'|transloco | safehtml: 'html'"> </p>
                 <ion-grid>
                     <ion-row>
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
                             <figure>
                                 <img src="assets/imgs/jpg/foto15.jpeg">
-                                <figcaption>Embankments</figcaption>
+                                <figcaption>
+                                    {{'anthropogenicThreats.anthropogenic_threats_text.embankments_caption'|transloco}}
+                                </figcaption>
                             </figure>
                         </ion-col>
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
                             <figure>
                                 <img src="assets/imgs/jpg/foto16.jpeg">
-                                <figcaption>Bank protection works. Credits: Andrea Goltara</figcaption>
+                                <figcaption>
+                                    {{'anthropogenicThreats.anthropogenic_threats_text.bank_protection_caption'|transloco}}
+                                </figcaption>
                             </figure>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
 
-
-
-            </section>
-
-            <!-- non scrolly content -->
-            <section id="canalizzazione" class="centered_text_block">
                 <div>
-                    <p>
-                        Rivers with lateral barriers quickly become channels that follow a strict path, rather than live
-                        elements that weave in
-                        the environment and change shape over time. This can cause catastrophic floods when rivers
-                        overflow embankments and also
-                        increases flood risk further downstream.
+                    <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p4'|transloco | safehtml: 'html'">
                     </p>
 
                 </div>
@@ -379,16 +330,12 @@
                         <img slot="first" src="assets/imgs/png/foto9.png" />
                         <img slot="second" src="assets/imgs/png/foto10.png" />
                     </img-comparison-slider>
-                    <figcaption>Reno River (Italy) in 1954 and in 2022. Credits: Volo IGMI GAI 1954 and Bing Maps.
+                    <figcaption>{{'anthropogenicThreats.anthropogenic_threats_text.reno_caption' | transloco}}
                     </figcaption>
                 </figure>
                 <div>
-                    <p>
-                        Lateral obstacles are less likely to be noticed as they are deeply ingrained in the
-                        anthropized
-                        landscape, but they can be even more widespread than the shocking number of longitudinal obstacles like dams,
-                        weirs, ramps,
-                        and sluices.
+                    <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p5'|transloco | safehtml: 'html'">
+
                     </p>
                 </div>
                 <ion-grid class="ion-no-margin">
@@ -396,16 +343,15 @@
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6" class="ion-no-margin">
                             <figure>
                                 <img src="assets/imgs/jpg/foto11.jpeg" />
-                                <figcaption>Riverbed dredging</figcaption>
+                                <figcaption>{{'anthropogenicThreats.anthropogenic_threats_text.dredging_caption' |
+                                    transloco}}</figcaption>
                             </figure>
                         </ion-col>
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6"
                             class="ion-no-margin ion-no-padding">
-                            <p>
-                                Lastly, human interventions hinder the <ion-text class="font-bold" color="secondary">
-                                    vertical connectivity</ion-text> of the riverbed.
-                               Paving, dredging, or clogging with fine sediments limit the exchange
-                                between surface and groundwater.
+                            <p
+                                [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p6'|transloco | safehtml: 'html'">
+
                             </p>
                         </ion-col>
 
@@ -425,35 +371,23 @@
                     id="ecosystem_impacts_title" #ecosystem_impacts_title>
                     <ion-row class="ion-no-margin ion-no-padding">
                         <ion-col size="12" class="ion-no-margin ion-no-padding">
-                            <h1 class="section_title ion-no-padding-top" *ngIf="!isMobile">The ecological impacts of the
-                                loss of connectivity</h1>
-                            <h1 class="section_title ion-no-padding-top" *ngIf="isMobile">The ecological impacts</h1>
+                            <h1 class="section_title ion-no-padding-top" *ngIf="!isMobile">
+                                {{'ecosystemImpacts.ecosystem_impacts_text.section_title'|transloco}}</h1>
+                            <h1 class="section_title ion-no-padding-top" *ngIf="isMobile">
+                                {{'ecosystemImpacts.ecosystem_impacts_text.section_title_mobile'|transloco}}</h1>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
                 <div>
-                    <p>
-                        As rivers encounter man-made barriers to their free flow, the complex habitats they sustain are
-                        degraded or lost and
-                        animal species become increasingly vulnerable. Freshwater biodiversity is taking the hardest
-                        hit, declining at a faster
-                        rate than that of oceans and forests, according to WWF’s <a
-                            href="https://livingplanet.panda.org/freshwater" target="_blank">Living Planet Index.</a>
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p1'|transloco | safehtml: 'html'">
                     </p>
-                    <p>Freshwater species have declined by 84% on average across monitored species compared to 1970.
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p2'|transloco | safehtml: 'html'">
                     </p>
                     <div #freshwater_index_chart_container id="freshwater_index_chart_container">
 
                     </div>
-                    <p>
-                        The reasons why freshwater species are declining are multiple, from overfishing to rising water
-                        temperatures.
-                        The loss of river connectivity impacts biodiversity in many ways. Barriers block rivers’
-                        longitudinal and lateral movements, fragmenting habitats and making entire portions
-                        inaccessible. For example, migratory
-                        fish might get cut off from their breeding areas, but even non-migratory fish species are
-                        impacted, as they can’t reach
-                        sheltered or nutrient-rich areas of the river that are critical to their survival.
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p3'|transloco | safehtml: 'html'">
+
                     </p>
                     <figure>
 
@@ -462,41 +396,21 @@
                             <source src="assets/video/video3.webm" type="video/webm">
                         </video>
                     </figure>
-                    <p>
-                        Fish get caught in dam turbines as they move downstream, or get stuck and disoriented as they
-                        move upstream and in
-                        reservoirs. In short, the negative impact of river fragmentation on the survival of fish species
-                        is great, and has been
-                        <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/rra.3386" target="_blank">documented
-                            and quantified</a>.
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p4'|transloco | safehtml: 'html'">
+
                     </p>
 
-                    <p>
-                        Barriers also transform the physical and chemical characteristics of rivers and negatively
-                        impact a wide range of
-                        freshwater species. Sediments of different sizes, especially the coarser ones, get trapped,
-                        leading to riverbed erosion.
-                        The latter, together with the altered water flows due to barriers, is linked to more salty water
-                        from the sea
-                        penetrating the river. Such change in salinity affects species’ distribution, behavior, and
-                        limits the reproduction
-                        rate.
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p5'|transloco | safehtml: 'html'">
+
                     </p>
-                    <p>
-                        Lateral barriers such as bank protection works have an impact on floodplain habitats and cause
-                        the loss of wetlands by
-                        preventing natural-occurring inundations and sediment redistribution and reducing the exchange
-                        with the groundwater.
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p6'|transloco | safehtml: 'html'">
+
                     </p>
                     <figure>
                         <img src="assets/imgs/jpg/foto18.jpg" />
                     </figure>
-                    <p>
-                        Migratory birds face growing challenges as they lose access to wetlands, which offer safe havens
-                        of food and habitat
-                        throughout their journeys. Critical nesting habitat such as gravel bed bars and islands can
-                        disappear due to altered
-                        river flows.
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p7'|transloco | safehtml: 'html'">
+
                     </p>
 
                 </div>
@@ -507,7 +421,8 @@
                 <ion-grid class="sticky_section_title section_title ion-no-margin">
                     <ion-row class="ion-no-margin">
                         <ion-col size="10" class="ion-no-margin">
-                            <h1 id="freshwater_species_title" class="">Freshwater Species</h1>
+                            <h1 id="freshwater_species_title">
+                                {{'ecosystemImpacts.ecosystem_impacts_text.freshwater_species_title' | transloco}}</h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
                             <ion-button (click)="setToFullscreen('ecosystem_impacts_viz_figure')" size="small"
@@ -522,13 +437,9 @@
                         data-step='2,3,4,5'>
                     </div>
 
-                    <!-- AGGINUGERE QUI SVG DEI SOLI PESCI VISIBILE DA MOBILE -->
-
                     <div id="ecosystem_impacts_viz_figure_chart_all" class="stacked_img ecosystem_impacts_viz"
                         data-step='6,7,8,9'>
                     </div>
-
-
 
                 </figure>
 
@@ -766,7 +677,8 @@
                     </p>
                     <figure>
                         <img src="assets/imgs/jpg/foto14.jpeg" />
-                        <figcaption>Bank protection removal in the river Sangro (Italy). Credits: Andrea Goltara</figcaption>
+                        <figcaption>Bank protection removal in the river Sangro (Italy). Credits: Andrea Goltara
+                        </figcaption>
                     </figure>
                 </div>
 
