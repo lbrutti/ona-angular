@@ -281,8 +281,11 @@ export class HomePage implements AfterViewInit {
                 (this as any).classList.toggle('transitioned', isTranstioned);
                 if (isForeground && isActive) {
                     threatsFigure.style('z-index', 1000);
+                    d3.select('#anthropogenic_threats ion-grid').style('z-index', 1200);
                 } else {
                     threatsFigure.style('z-index', 0);
+                    d3.select('#anthropogenic_threats ion-grid').style('z-index', 1)
+
                 }
 
                 if (currentStep != 16) {
@@ -570,20 +573,22 @@ export class HomePage implements AfterViewInit {
         (threats.select('#anthropogenic_threats_hex_bin').node() as any).append(hexbins.documentElement);
         let hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
         //this works only if paths are in foreground
-        hexbinsPaths.each(function () {
-            d3.select(this).on('click', function (e) {
-                let points = (this as any).dataset.points;
-                let x = (this as any).getBoundingClientRect().x;
-                let y = (this as any).getBoundingClientRect().y;
-                page.hovercardData.title = points;
-                page.hovercardData.definition = 'hovercard.barriers';
-                d3.select('#hovercard')
-                    .style('left', x + 'px')
-                    .style('top', y + 'px')
-                    .classed('active', true);
-            });
+        if (!this.isMobile) {
+            hexbinsPaths.each(function () {
+                d3.select(this).on('click', function (e) {
+                    let points = (this as any).dataset.points;
+                    let x = (this as any).getBoundingClientRect().x;
+                    let y = (this as any).getBoundingClientRect().y;
+                    page.hovercardData.title = points;
+                    page.hovercardData.definition = 'hovercard.barriers';
+                    d3.select('#hovercard')
+                        .style('left', x + 'px')
+                        .style('top', y + 'px')
+                        .classed('active', true);
+                });
 
-        });
+            });
+        }
     }
     async presentPopover(e: Event) {
         this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
