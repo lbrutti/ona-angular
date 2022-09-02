@@ -28,34 +28,16 @@
 @font-face {
     font-family: Century-Gothic;
     src: url('assets/fonts/CenturyGothic.woff2');
-    // 
 }
 
 @font-face {
     font-family: Century-Gothic-Bold;
     src: url('assets/fonts/CenturyGothic-Bold.woff');
-    // 
 }
 
-// @font-face {
-//     font-family: Roboto;
-//     src: url('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/font/roboto/Roboto-Regular.woff2');
-//     // 
-// }
-
-// @font-face {
-//     font-family: Roboto-flex;
-//     src: url('assets/fonts/RobotoFlex.woff2');
-// }
-
-// @font-face {
-//     font-family: Roboto-bold;
-//     src: url('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/font/roboto/Roboto-Bold.woff2');
-// }
 
 .font-bold {
     font-family: var(--ion-font-family-bold);
-    font-weight: bold;
 }
 
 [color=danger-dark] {
