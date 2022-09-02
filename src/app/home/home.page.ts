@@ -45,7 +45,7 @@ export class HomePage implements AfterViewInit {
         active: false
     }, {
         href: '#about_title',
-        text: 'About',
+        text: 'About Us',
         active: false
     }];
     public hovercardData: any = {

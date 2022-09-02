@@ -251,7 +251,7 @@
                 <ion-grid class="sticky_section_title section_title ion-no-margin">
                     <ion-row class="ion-no-margin">
                         <ion-col size="10" class="ion-no-margin">
-                            <h1 id="anthropogenic_threats-title">The Main Threats to rivers' connectivity</h1>
+                            <h1 id="anthropogenic_threats-title">The Main Threats to river connectivity</h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
                             <ion-button (click)="setToFullscreen('anthropogenic_threats_figure')" size="small"
@@ -307,6 +307,10 @@
                     <!-- al 17° step si attiva tooltip on hover ad ogni bin -->
                     <div id="anthropogenic_threats_hex_bin" class="stacked_img anthropogenic_threats" data-step='16,17'
                         data-foreground-step="16">
+                        <div id="barrier_counter">
+                            <h5>{{'anthropogenicThreats.barrierCounterTitle' | transloco}}</h5>
+                            <h5 #barrierCounter>{{barrierCount | number:'':'en-US'}}</h5>
+                        </div>
                     </div>
 
                 </figure>
@@ -446,8 +450,7 @@
                     <p>
                         Lateral obstacles are less likely to be noticed as they are deeply ingrained in the
                         anthropized
-                        landscape, but they are
-                        even more numerous than the shocking number of longitudinal obstacles like dams,
+                        landscape, but they can be even more widespread than the shocking number of longitudinal obstacles like dams,
                         weirs, ramps,
                         and sluices.
                     </p>
@@ -465,7 +468,7 @@
                             <p>
                                 Lastly, human interventions hinder the <ion-text class="font-bold" color="secondary">
                                     vertical connectivity</ion-text> of the riverbed.
-                                Activities like paving, dredging, or clogging with fine sediments limit the exchange
+                               Paving, dredging, or clogging with fine sediments limit the exchange
                                 between surface and groundwater.
                             </p>
                         </ion-col>
@@ -482,10 +485,12 @@
                 <h1 class="section_title" *ngIf="isMobile">The ecological impacts</h1>
             </section> -->
             <section id="ecosystem_impacts_text" class="centered_text_block">
-                <ion-grid class="sticky_section_title section_title ion-no-margin ion-no-padding" id="ecosystem_impacts_title" #ecosystem_impacts_title>
+                <ion-grid class="sticky_section_title section_title ion-no-margin ion-no-padding"
+                    id="ecosystem_impacts_title" #ecosystem_impacts_title>
                     <ion-row class="ion-no-margin ion-no-padding">
                         <ion-col size="12" class="ion-no-margin ion-no-padding">
-                            <h1 class="section_title ion-no-padding-top" *ngIf="!isMobile">The ecological impacts of the loss of connectivity</h1>
+                            <h1 class="section_title ion-no-padding-top" *ngIf="!isMobile">The ecological impacts of the
+                                loss of connectivity</h1>
                             <h1 class="section_title ion-no-padding-top" *ngIf="isMobile">The ecological impacts</h1>
                         </ion-col>
                     </ion-row>
@@ -825,7 +830,7 @@
                     </p>
                     <figure>
                         <img src="assets/imgs/jpg/foto14.jpeg" />
-                        <figcaption>Bank protection removal. Credits: Andrea Goltara</figcaption>
+                        <figcaption>Bank protection removal in the river Sangro (Italy). Credits: Andrea Goltara</figcaption>
                     </figure>
                 </div>
 

@@ -1,8 +1,8 @@
 {
     "pageTitle": "River Connectivity",
     "introTitle": "River Connectivity",
-    "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>. But there is still hope if we take action.",
-    "introParagraphs": "<p class='intro__dek'>Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.  </p> <p class='intro__dek'>To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems.</p>",
+    "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>.<br>But there is still hope if we take action.",
+    "introParagraphs": "<p class='intro__dek'>Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival. </p> <p class='intro__dek'>To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems. </p>",
     "healthyRivers": {
         "step-1": "These are the world's <ion-text color=\"secondary\">longest* rivers</ion-text>",
         "step-1-subtitle": "* defined as rivers longer than 1,000 km",
@@ -15,9 +15,9 @@
     },
     "connectivity": {
         "step-1": "To thrive, a river needs freedom of movement across four dimensions: longitudinal, lateral, vertical, and temporal",
-        "step-2": "<ion-text class=\"font-bold\" color=\"secondary\">Longitudinal connectivity</ion-text> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs and culverts can restrict or cut off this connectivity entirely.",
-        "step-3": "<ion-text class=\"font-bold\" color=\"secondary\">Lateral connectivity</ion-text> Rivers periodically overflow their banks and inundate land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa. ",
-        "step-4": "<ion-text class=\"font-bold\" color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge and much more.",
+        "step-2": "<ion-text class=\"font-bold\" color=\"secondary\">Longitudinal connectivity</ion-text> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs, and culverts can restrict or cut off this connectivity entirely.",
+        "step-3": "<ion-text class=\"font-bold\" color=\"secondary\">Lateral connectivity</ion-text>indicates that rivers move laterally and periodically overflow their banks and flood land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa.",
+        "step-4": "<ion-text class=\"font-bold\" color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface, and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge, and much more.",
         "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
     },
     "anthropogenicThreats": {
@@ -38,7 +38,7 @@
         "step-14": "<ion-text color=\"danger\">59,577 other barriers</ion-text>",
         "step-15": "&nbsp;",
         "step-16": "&nbsp;",
-        "step-17": "With such numbers, it is no surprise that Europe has the most fragmented river network in the world."
+        "step-17": "With such an enormous number of barriers, it is no surprise that Europe has the most fragmented rivers in the world"
     },
     "ecosystemImpacts": {
         "step-1": "The International Union for Conservation of Nature (IUCN) assessed the status of freshwater species in Europe",
