@@ -383,23 +383,23 @@ export class HomePage implements AfterViewInit {
                     // balkansDamsChart
                     switch (currentStep) {
                         case 1:
-                            page.updateFutureDamsChart((page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'existing');
+                            page.updateFutureDamsLollipopCharts((page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'existing');
                             break;
                         case 2:
-                            page.updateFutureDamsChart((page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'planned');
+                            page.updateFutureDamsLollipopCharts((page.smallDamsChart as any).node().querySelector('#smallDamsChart'), 'planned');
                             break;
 
                         case 3:
-                            page.updateFutureDamsChart((page.protectedDamsChart as any).node().querySelector('#protectedDamsChart'), 'existing');
+                            page.updateFutureDamsLollipopCharts((page.protectedDamsChart as any).node().querySelector('#protectedDamsChart'), 'existing');
                             break;
                         case 4:
-                            page.updateFutureDamsChart((page.protectedDamsChart as any).node().querySelector('#protectedDamsChart'), 'planned');
+                            page.updateFutureDamsLollipopCharts((page.protectedDamsChart as any).node().querySelector('#protectedDamsChart'), 'planned');
                             break;
                         case 5:
-                            page.updateFutureDamsChart((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'), 'existing');
+                            page.updateFutureDamsLollipopCharts((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'), 'existing');
                             break;
                         case 6:
-                            page.updateFutureDamsChart((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'), 'planned');
+                            page.updateFutureDamsLollipopCharts((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'), 'planned');
                             break;
                         case 7:
                             page.addFutureDamsBar((page.balkansDamsChart as any).node().querySelector('#balkansDamsChart'));
@@ -490,7 +490,7 @@ export class HomePage implements AfterViewInit {
         }
         this.renderFreshWaterIndexChart();
         this.renderDamRemovalProjectsChart();
-        this.renderPossibleFuturesChart();
+        this.renderPossibleFuturesLollipopsChart();
 
 
         // kick things off
@@ -704,8 +704,6 @@ export class HomePage implements AfterViewInit {
                     .x(function (d: any) { return x(d.year) })
                     .y(function (d: any) { return y(d.Freshwater_index) })
                 );
-            const pathLength = lineChart.node().getTotalLength();
-            const CILength = CI.node().getTotalLength();
 
             //append upper axis
             let upperUpperAxisG = svg.append("g");
@@ -833,7 +831,7 @@ export class HomePage implements AfterViewInit {
                 .domain([429, 4984])
                 .range([height, 0]);
 
-            let yAxis = (d3 as any).axisLeft().scale(y).ticks(3).tickFormat(function (d) { return Math.floor(d) + "%" }).tickSizeInner(0)
+            let yAxis = (d3 as any).axisLeft().scale(y).ticks(5).tickFormat(function (d) { return Math.floor(d) }).tickSizeInner(0)
                 .tickSizeOuter(0);
             svg.append("g")
                 .call(yAxis)
@@ -853,7 +851,7 @@ export class HomePage implements AfterViewInit {
                 .attr("fill", "var( --ion-color-secondary-shade-transarency)")
                 .attr("stroke", "none")
                 .attr("d", d3.area()
-                    .curve(d3.curveBasis)
+                    .curve(d3.curveLinear)
                     .x(function (d: any) { return x(d.year) })
                     .y0(function (d: any) { return y(d.cumulative) })
                     .y1(function (d: any) { return y(429); })
@@ -867,13 +865,23 @@ export class HomePage implements AfterViewInit {
                 .attr("stroke", "var(--ion-color-secondary-shade)")
                 .attr("stroke-width", 1.5)
                 .attr("d", d3.line()
-                    .curve(d3.curveBasis)
-
+                    .curve(d3.curveLinear)
                     .x(function (d: any) { return x(d.year) })
                     .y(function (d: any) { return y(d.cumulative) })
                 );
-            const pathLength = lineChart.node().getTotalLength();
-            const CILength = CI.node().getTotalLength();
+
+            // Add the line
+            // let dots = svg
+            //     .append('g')
+            //     .selectAll('.dot')
+            //     .data(data)
+            //     .enter()
+            //     .append("circle")
+            //     .attr('class', 'dot')
+            //     .style("fill", "var(--ion-color-secondary-shade)")
+            //     .attr('r', 4)
+            //     .attr("cx", (d: any) => x(d.year))
+            //     .attr("cy", (d: any) => y(d.cumulative));
 
             //append upper axis
 
@@ -927,8 +935,8 @@ export class HomePage implements AfterViewInit {
                         .attr("text-anchor", "left")
                         .html(() => {
                             let year = selectedData.year;
-                            let value = d3.format(".2f")(selectedData.cumulative);
-                            return `${year}:${value}%`;
+                            let value = d3.format(".0f")(selectedData.abs);
+                            return `${year}:${value}`;
                         })
                         .attr("x", x(selectedData.year) + 15)
                         .attr("y", y(selectedData.cumulative))
@@ -942,7 +950,7 @@ export class HomePage implements AfterViewInit {
         }
     }
 
-    private renderPossibleFuturesChart() {
+    private renderPossibleFuturesLollipopsChart() {
 
 
 
@@ -971,13 +979,13 @@ export class HomePage implements AfterViewInit {
         d3.json("assets/data/future_dams.json")
             .then((data: any) => {
                 this.futureDamsdata = data;
-                this.createFutureDamsChart(data.small, this.possible_futures_viz_chart_small_dams_container.nativeElement.querySelector('svg'), 'smallDamsChart', false);
-                this.createFutureDamsChart(data.protected, this.possible_futures_viz_chart_protected_dams_container.nativeElement.querySelector('svg'), 'protectedDamsChart', false);
-                this.createFutureDamsChart(data.balkans, this.possible_futures_viz_chart_balkans_dams_container.nativeElement.querySelector('svg'), 'balkansDamsChart', true);
+                this.createFutureDamsLillipop(data.small, this.possible_futures_viz_chart_small_dams_container.nativeElement.querySelector('svg'), 'smallDamsChart', false);
+                this.createFutureDamsLillipop(data.protected, this.possible_futures_viz_chart_protected_dams_container.nativeElement.querySelector('svg'), 'protectedDamsChart', false);
+                this.createFutureDamsLillipop(data.balkans, this.possible_futures_viz_chart_balkans_dams_container.nativeElement.querySelector('svg'), 'balkansDamsChart', true);
             });
     }
 
-    private createFutureDamsChart(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
+    private createFutureDamsLillipop(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
         let colors = { 'existing': 'var(--ion-color-warning)', 'planned': 'var(--ion-color-danger)' }
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
@@ -1069,7 +1077,7 @@ export class HomePage implements AfterViewInit {
 
     }
 
-    private updateFutureDamsChart(chartContainer: HTMLElement, type: string) {
+    private updateFutureDamsLollipopCharts(chartContainer: HTMLElement, type: string) {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
@@ -1146,12 +1154,5 @@ export class HomePage implements AfterViewInit {
 
             document.exitFullscreen();
         }
-    }
-
-    public threatsMouseEnterHandler(e: Event) {
-        console.log(e);
-    }
-    public threatsMouseLeaveHandler(e: Event) {
-        console.log(e);
     }
 }
