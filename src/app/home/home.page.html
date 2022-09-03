@@ -290,6 +290,8 @@
                 <figure>
                     <!-- <img src="assets/imgs/gif/foto7.gif"> -->
                     <img src="https://environmentaldynamics.files.wordpress.com/2013/09/google_fisk.jpg">
+                    <figcaption>{{'anthropogenicThreats.anthropogenic_threats_text.fisk_caption' | transloco}}
+                    </figcaption>
                 </figure>
                 <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p3'|transloco | safehtml: 'html'"> </p>
                 <ion-grid>
@@ -473,26 +475,10 @@
             </section>
             <section id="ecosystem_impacts_sediment_text" class="centered_text_block">
                 <div>
-                    <p>
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p8'|transloco | safehtml:'html'"></p>
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p9'|transloco | safehtml:'html'"></p>
 
-                        The trapping of sediments by barriers doesn’t only alter riparian habitats. Without obstacles
-                        sediments would eventually
-                        reach the coastal zone, preventing coastal erosion and the loss of river deltas. Areas rich in
-                        sediments are often also
-                        rich in biodiversity since they supplement the soil with nutrients. It is <a
-                            href="https://www.forbes.com/sites/jeffopperman/2019/09/27/worlds-major-deltas-threatened-by-climate-change-and-also-by-how-we-develop-power-systems/?sh=c8de97a60e1f"
-                            target="_blank">estimated</a> that the Nile river delta is losing
-                        98% of its sediment supply because of upstream dams and reservoirs.
-
-
-                    </p>
-                    <p>Sediment trapping and downstream erosion threaten the lives and economic activities of the
-                        millions of people who belong
-                        to communities settled along river deltas and coasts.
-                    </p>
-                    <p>
-                        Erosion makes these environments increasingly susceptible to heavy floods, a risk aggravated by
-                        rising sea levels.
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p10'|transloco | safehtml:'html'">
                     </p>
 
                     <figure>
@@ -507,8 +493,9 @@
                             <img slot="first" src="assets/imgs/png/foto12.png" />
                             <img slot="second" src="assets/imgs/png/foto13.png" />
                         </img-comparison-slider>
-                        <figcaption>Coastline of Puglia (Italy) near the Ofanto mouth in 1954 and in 2022 showing a
-                            maximum withdrawal of 600 m. (Volo IGMI GAI 1954 and Bing Maps.)</figcaption>
+                        <figcaption
+                            [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.caption_puglia'|transloco | safehtml:'html'">
+                        </figcaption>
                     </figure>
 
                 </div>
@@ -518,31 +505,16 @@
 
             <!-- possible futures -->
             <section id="possible_futures_text" class="centered_text_block">
-                <h1 id="possible_futures_title" class="section_title sticky_section_title">The future for European
-                    rivers</h1>
+                <h1 id="possible_futures_title" class="section_title sticky_section_title"
+                    [innerHTML]="'possibleFutures.possible_futures_text.section_title'|transloco | safehtml:'html'">
+                </h1>
                 <div>
-                    <p>
-
-                        While many other factors contribute to changing landscapes and declining freshwater populations,
-                        a river system where
-                        connectivity is compromised is surely exacerbating such trends. It is not only the environment
-                        and wildlife that are
-                        suffering the consequences of the absence of river connectivity. Humans too are already bearing
-                        the cost. Is there hope
-                        for things to change in Europe, hosting one of the most fragmented and compromised river
-                        networks in the world?
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p1'|transloco | safehtml:'html'">
 
                     </p>
-                    <p>A particular source of concern is the development of new hydropower dams. In the search for
-                        renewable energy sources,
-                        hydropower is often valued as a solid option.<a
-                            href="https://wwfeu.awsassets.panda.org/downloads/hydropower_pressure_on_european_rivers_the_story_in_numbers_web.pdf">
-                            A 2019 study by WWF </a>found that there are at least 8,785 new dams either
-                        planned or already under construction in Europe, which would add to the 21,387 existing ones.
-
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p2'|transloco | safehtml:'html'">
                     </p>
-                    <p>
-                        And these new barriers are likely going to be even more impactful than those already in place.
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p3'|transloco | safehtml:'html'">
                     </p>
 
                 </div>
@@ -574,7 +546,7 @@
             </section>
             <section id="possible_futures_balkans_map" class="centered_text_block">
                 <div>
-                    <h4>
+                    <h4 [innerHTML]="'possibleFutures.possible_futures_text.dams_text'|transloco | safehtml:'html'">
                         <ion-text class="font-bold" style="color:var(--ion-color-warning-dark)">Existing</ion-text>,
                         <ion-text class="font-bold" style="color:var(--ion-color-danger-dark)">planned / in construction
                         </ion-text>
@@ -598,44 +570,21 @@
             </section>
             <section id="possible_futures_dam_removoval_text" class="centered_text_block">
                 <div>
-                    <h4>Dam Removal</h4>
-                    <p>
-                        A significant number of the man-made obstacles that have hindered river connectivity in Europe
-                        could be removed, as they
-                        are no longer useful, and in some cases the reconnected reaches can bring back migratory fish.
+                    <h4>{{'possibleFutures.possible_futures_text.dam_removal' | transloco}}</h4>
+                    
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p4'|transloco | safehtml:'html'">
+
 
                     </p>
-                    <p>Small and obsolete barriers in particular cause significant harm while providing little benefits
-                        - or even representing
-                        an economic burden in maintenance costs and safety risks.
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p5'|transloco | safehtml:'html'">
                     </p>
-                    <p>
-                        It is on this basis that movements all over the world are organizing to restore global
-                        free-flowing rivers by removing
-                        the infrastructure that inhibits their free flows. In Europe, Dam Removal Europe has <a
-                            href="https://damremoval.eu/about/" target="_blank">documented</a>
-                        the removal of at least
-                        4,984 longitudinal barriers, and the <a
-                            href="https://restorerivers.eu/wiki/index.php?title=Main_Page" target="_blank">RiverWiki:
-                            Restoring Europe’s rivers</a> has collected over
-                        1,400 case studies. These
-                        case studies portray the complexity of what river restoration can mean in different contexts:
-                        not only the demolition of
-                        obsolete dams and longitudinal barriers, but also the dismantling of riverbank protections to
-                        allow lateral movements,
-                        and the mitigation of the impacts, for example through sediment reinjection, when removal is not
-                        possible.
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p6'|transloco | safehtml:'html'">
+                       
 
                     </p>
                     <div #barrier_removal_projects_chart_container id="barrier_removal_projects_chart_container">
                     </div>
-                    <p>These numbers capture only a fraction of the overall removed barriers, but there are likely more.
-                        Yet, even a small
-                        number of strategic removals can have a significant positive impact: the Open Rivers Programme,
-                        for example, <a
-                            href="https://openrivers.eu/open-rivers-programme-supports-19-new-dam-removal-projects-opening-up-386-km-of-river/"
-                            target="_blank">claims</a> that
-                        by removing just 19 specific dams the programme-supported projects will free 386 km of rivers.
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p7'|transloco | safehtml:'html'">
                     </p>
                     <figure>
 
@@ -643,41 +592,23 @@
                             <source src="assets/video/video5.mp4" type="video/mp4">
                             <source src="assets/video/video5.webm" type="video/webm">
                         </video>
-                        <figcaption>Restored reach of the river Drac (France). Credits: Bruno Boz</figcaption>
+                        <figcaption [innerHTML]="'possibleFutures.possible_futures_text.restored_video_caption'|transloco | safehtml:'html'"></figcaption>
                     </figure>
-                    <p>
-                        Associations and grassroots movements for the restoration of rivers might finally have found
-                        strong institutional
-                        support for their actions, with the European Commission presenting the proposal for a <a
-                            href="https://ec.europa.eu/commission/presscorner/detail/en/ip_22_3746"
-                            target="_blank">"Nature Restoration Law"</a> in June
-                        2022.
+                    <p  [innerHTML]="'possibleFutures.possible_futures_text.p8'|transloco | safehtml:'html'">
+                        
                     </p>
-                    <p>
-                        If approved, the legislation would bind EU Member States to restore rivers and wetlands, along
-                        with other natural
-                        habitats experiencing degradation and biodiversity loss. In particular, the Nature Restoration
-                        Law requires an inventory
-                        of barriers and plans for removals, with an ambition for the restoration of at least 25,000 km
-                        of free-flowing rivers by
-                        2030.
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p9'|transloco | safehtml:'html'">
+                       
                     </p>
-                    <p>
-                        The existing experiences of barrier removals and the potential support of the EU legislation
-                        show that restoring rivers
-                        is not only possible, but can be spectacularly impactful for humans, biodiversity, and
-                        landscapes.
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p10'|transloco | safehtml:'html'">
+                        
                     </p>
-                    <p>
-                        The strategic removal of existing obstacles, the mitigation of the impacts of those that cannot
-                        be removed, together
-                        with the conservation of existing free-flowing river reaches, and a critical assessment of
-                        future hydropower dam
-                        developments, are much-needed actions to counter the loss of river connectivity in Europe.
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p11'|transloco | safehtml:'html'">
+                       
                     </p>
                     <figure>
                         <img src="assets/imgs/jpg/foto14.jpeg" />
-                        <figcaption>Bank protection removal in the river Sangro (Italy). Credits: Andrea Goltara
+                        <figcaption [innerHTML]="'possibleFutures.possible_futures_text.bank_protection_removal_caption'|transloco | safehtml:'html'">
                         </figcaption>
                     </figure>
                 </div>
@@ -691,7 +622,7 @@
                 <div id="glossary_container">
 
 
-                    <h4>Barriers glossary</h4>
+                    <h4>{{'glossary.title' | transloco}}</h4>
                     <ion-grid class="ion-no-padding" id="glossary">
                         <ion-row class="ion-no-margin ion-no-padding">
                             <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="2" class="">
@@ -699,8 +630,6 @@
                                     <img src="assets/imgs/jpg/foto2.jpg" />
                                     <figcaption>
                                         <ion-label class="font-bold">{{'glossary.dam_title' | transloco}}</ion-label>
-                                        {{'glossary.dam_definition' |
-                                        transloco}}
                                     </figcaption>
                                 </figure>
                             </ion-col>
@@ -710,8 +639,6 @@
                                     <img src="assets/imgs/jpg/ramp.jpg" />
                                     <figcaption>
                                         <ion-label class="font-bold">{{'glossary.ramp_title' | transloco}}</ion-label>
-                                        {{'glossary.ramp_definition' |
-                                        transloco}}
                                     </figcaption>
                                 </figure>
                             </ion-col>
@@ -720,8 +647,6 @@
                                     <img src="assets/imgs/jpg/foto4.jpg" />
                                     <figcaption>
                                         <ion-label class="font-bold">{{'glossary.weir_title' | transloco}}</ion-label>
-                                        {{'glossary.weir_definition' |
-                                        transloco}}
                                     </figcaption>
                                 </figure>
                             </ion-col>
@@ -731,8 +656,6 @@
                                     <figcaption>
                                         <ion-label class="font-bold">{{'glossary.culvert_title' | transloco}}
                                         </ion-label>
-                                        {{'glossary.culvert_definition' |
-                                        transloco}}
                                     </figcaption>
                                 </figure>
                             </ion-col>
@@ -741,8 +664,6 @@
                                     <img src="assets/imgs/jpg/foto6.jpeg" />
                                     <figcaption>
                                         <ion-label class="font-bold">{{'glossary.sluice_title' | transloco}}</ion-label>
-                                        {{'glossary.sluice_definition' |
-                                        transloco}}
                                     </figcaption>
                                 </figure>
                             </ion-col>
@@ -750,42 +671,30 @@
                         </ion-row>
                     </ion-grid>
                 </div>
-                <h4>Credits:</h4>
+                <h4>{{'about.credits' | transloco}}</h4>
                 <p>
-                    <ion-label class="font-bold">Project financed by:</ion-label> CIRF, Wetlands International Europe,
-                    LIFE Programme
+                    <ion-label class="font-bold">{{'about.financed_by_label' | transloco}}</ion-label>{{'about.financed_by' | transloco}} 
                 </p>
                 <p>
-                    <ion-label class="font-bold">Scientific supervision:</ion-label> Andrea Goltara (CIRF), Paul
-                    Brotherton (Wetlands
-                    International Europe)
+                    <ion-label class="font-bold">{{'about.scientific_supervision_label' | transloco}}</ion-label>{{'about.scientific_supervision' | transloco}} 
                 </p>
                 <p>
-                    <ion-label class="font-bold">Science Communication:</ion-label> Erica Villa
+                    <ion-label class="font-bold">{{'about.science_communication_label' | transloco}}</ion-label> {{'about.science_communication' | transloco}}
                 </p>
                 <p>
-                    <ion-label class="font-bold">Data, visualizations, and content:</ion-label> Alice Corona
+                    <ion-label class="font-bold">{{'about.content_label' | transloco}}</ion-label>{{'about.content' | transloco}} 
                 </p>
                 <p>
-                    <ion-label class="font-bold">Website design and development:</ion-label> Lorenzo Brutti
+                    <ion-label class="font-bold">{{'about.dev_label' | transloco}}</ion-label> {{'about.dev' | transloco}}
                 </p>
 
-                <h4>Contacts:</h4>
-                <p><a target="_blank" href="https://www.cirf.org/it/home/">CIRF - Centro Italiano per la
-                        Riqualificazione Fluviale</a> is the reference not-for-profit organisation in Italy on river
-                    restoration, linking research with practice and
-                    advocating for more sustainable river management at national and European levels
+                <h4>{{'about.contacts' | transloco}}</h4>
+                <p [innerHTML]="'about.cirf'|transloco | safehtml:'html'">
                 </p>
-                <p><a target="_blank" href="https://europe.wetlands.org/">Wetlands International Europe</a>is an
-                    independent, not-for-profit organization with 10 members from 6 European countries, working to raise
-                    awareness
-                    about wetland ecosystems and to advocate the sustainable use of wetlands for people and nature, in
-                    particular by linking
-                    science, policy and practice. Wetlands are the source of water that supports all forms of life
+                <p [innerHTML]="'about.wetlands'|transloco | safehtml:'html'">
                 </p>
-                <!-- <p><a target="_blank" href="mailto:info@cirf.org">info@cirf.org</a></p> -->
 
-                <h4>Data sources:</h4>
+                <h4>{{'about.data_sources'}}</h4>
                 <p>
                     Grill, G., Lehner, B., Thieme, M. et al. Mapping the world’s free-flowing rivers. Nature 569,
                     215-221 (2019).
@@ -842,9 +751,6 @@
             </section>
 
         </main>
-
-
-
 
     </div>
 
