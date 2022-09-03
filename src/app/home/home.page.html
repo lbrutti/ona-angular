@@ -402,8 +402,17 @@
 
                     </p>
 
-                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p5'|transloco | safehtml: 'html'">
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p5a'|transloco | safehtml: 'html'">
+                    </p>
+                    <figure>
 
+                        <video autoplay autoPlay muted loop playsinline controls>
+                            <source src="assets/video/video4.mp4" type="video/mp4">
+                            <source src="assets/video/video4.webm" type="video/webm">
+                        </video>
+                        <figcaption>{{'ecosystemImpacts.ecosystem_impacts_text.video4_caption'|transloco}}</figcaption>
+                    </figure>
+                    <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p5b'|transloco | safehtml: 'html'">
                     </p>
                     <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p6'|transloco | safehtml: 'html'">
 
@@ -571,7 +580,7 @@
             <section id="possible_futures_dam_removoval_text" class="centered_text_block">
                 <div>
                     <h4>{{'possibleFutures.possible_futures_text.dam_removal' | transloco}}</h4>
-                    
+
                     <p [innerHTML]="'possibleFutures.possible_futures_text.p4'|transloco | safehtml:'html'">
 
 
@@ -579,7 +588,7 @@
                     <p [innerHTML]="'possibleFutures.possible_futures_text.p5'|transloco | safehtml:'html'">
                     </p>
                     <p [innerHTML]="'possibleFutures.possible_futures_text.p6'|transloco | safehtml:'html'">
-                       
+
 
                     </p>
                     <div #barrier_removal_projects_chart_container id="barrier_removal_projects_chart_container">
@@ -592,23 +601,26 @@
                             <source src="assets/video/video5.mp4" type="video/mp4">
                             <source src="assets/video/video5.webm" type="video/webm">
                         </video>
-                        <figcaption [innerHTML]="'possibleFutures.possible_futures_text.restored_video_caption'|transloco | safehtml:'html'"></figcaption>
+                        <figcaption
+                            [innerHTML]="'possibleFutures.possible_futures_text.restored_video_caption'|transloco | safehtml:'html'">
+                        </figcaption>
                     </figure>
-                    <p  [innerHTML]="'possibleFutures.possible_futures_text.p8'|transloco | safehtml:'html'">
-                        
+                    <p [innerHTML]="'possibleFutures.possible_futures_text.p8'|transloco | safehtml:'html'">
+
                     </p>
                     <p [innerHTML]="'possibleFutures.possible_futures_text.p9'|transloco | safehtml:'html'">
-                       
+
                     </p>
                     <p [innerHTML]="'possibleFutures.possible_futures_text.p10'|transloco | safehtml:'html'">
-                        
+
                     </p>
                     <p [innerHTML]="'possibleFutures.possible_futures_text.p11'|transloco | safehtml:'html'">
-                       
+
                     </p>
                     <figure>
                         <img src="assets/imgs/jpg/foto14.jpeg" />
-                        <figcaption [innerHTML]="'possibleFutures.possible_futures_text.bank_protection_removal_caption'|transloco | safehtml:'html'">
+                        <figcaption
+                            [innerHTML]="'possibleFutures.possible_futures_text.bank_protection_removal_caption'|transloco | safehtml:'html'">
                         </figcaption>
                     </figure>
                 </div>
@@ -673,19 +685,24 @@
                 </div>
                 <h4>{{'about.credits' | transloco}}</h4>
                 <p>
-                    <ion-label class="font-bold">{{'about.financed_by_label' | transloco}}</ion-label>{{'about.financed_by' | transloco}} 
+                    <ion-label class="font-bold">{{'about.financed_by_label' | transloco}}</ion-label>
+                    {{'about.financed_by' | transloco}}
                 </p>
                 <p>
-                    <ion-label class="font-bold">{{'about.scientific_supervision_label' | transloco}}</ion-label>{{'about.scientific_supervision' | transloco}} 
+                    <ion-label class="font-bold">{{'about.scientific_supervision_label' | transloco}}</ion-label>
+                    {{'about.scientific_supervision' | transloco}}
                 </p>
                 <p>
-                    <ion-label class="font-bold">{{'about.science_communication_label' | transloco}}</ion-label> {{'about.science_communication' | transloco}}
+                    <ion-label class="font-bold">{{'about.science_communication_label' | transloco}}</ion-label>
+                    {{'about.science_communication' | transloco}}
                 </p>
                 <p>
-                    <ion-label class="font-bold">{{'about.content_label' | transloco}}</ion-label>{{'about.content' | transloco}} 
+                    <ion-label class="font-bold">{{'about.content_label' | transloco}}</ion-label>{{'about.content' |
+                    transloco}}
                 </p>
                 <p>
-                    <ion-label class="font-bold">{{'about.dev_label' | transloco}}</ion-label> {{'about.dev' | transloco}}
+                    <ion-label class="font-bold">{{'about.dev_label' | transloco}}</ion-label> {{'about.dev' |
+                    transloco}}
                 </p>
 
                 <h4>{{'about.contacts' | transloco}}</h4>
