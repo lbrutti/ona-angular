@@ -1,1 +1,152 @@
-{}
+{
+    "pageTitle": "River Connectivity",
+    "intro": {
+        "introTitle": "River Connectivity",
+        "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>.<br>But there is still hope if we take action.",
+        "p1": " Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.",
+        "p2": "To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems."
+    },
+    "healthyRivers": {
+        "section_title": "Healthy Rivers",
+        "step-1": "These are the world's <ion-text color=\"secondary\">longest* rivers</ion-text>",
+        "step-1-subtitle": "* defined as rivers longer than 1,000 km",
+        "step-2": "Most of them are <ion-text color=\"danger\">not free-flowing…</ion-text>",
+        "step-3": "…only a few remain <ion-text color=\"success\">free-flowing</ion-text>.",
+        "step-4": "Concentrated in a few areas,",
+        "step-5": "The Arctic, Amazon, and Congo.",
+        "step-6": "In the rest of the world, very long <ion-text color=\"success\">free-flowing rivers</ion-text> are rare, if not totally absent.",
+        "step-7": "&nbsp"
+    },
+    "connectivity": {
+        "step-1": "To thrive, a river needs freedom of movement across four dimensions: longitudinal, lateral, vertical, and temporal",
+        "step-2": "<ion-text class=\"font-bold\" color=\"secondary\">Longitudinal connectivity</ion-text> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs, and culverts can restrict or cut off this connectivity entirely.",
+        "step-3": "<ion-text class=\"font-bold\" color=\"secondary\">Lateral connectivity</ion-text>indicates that rivers move laterally and periodically overflow their banks and flood land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa.",
+        "step-4": "<ion-text class=\"font-bold\" color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface, and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge, and much more.",
+        "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
+    },
+    "free_flowing_rivers_text": {
+        "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br> For example, barriers like dams impact longitudinal and temporal connectivity, while bank protection and levees hinder lateral connectivity.",
+        "p2": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few."
+    },
+    "anthropogenicThreats": {
+        "section_title": "The Main Threats to river connectivity",
+        "barrierCounterTitle": "Barrier counter",
+        "step-1": "Dams and other barriers are the most evident example of built infrastructure that hinder river connectivity.",
+        "step-2": "While large hydropower dams are very visible, they are actually only a small fraction of the types of barriers that a river encounters throughout its course",
+        "step-3": "For example, the estimate of known barriers in Europe is at least...",
+        "step-4": "<ion-text color=\"danger\">62,293 dams</ion-text>",
+        "step-5": "&nbsp;",
+        "step-6": "<ion-text color=\"danger\">199,744 ramps</ion-text>",
+        "step-7": "&nbsp;",
+        "step-8": "<ion-text color=\"danger\">197,752 weirs</ion-text>",
+        "step-9": "&nbsp;",
+        "step-10": "<ion-text color=\"danger\">112,898 culverts</ion-text>",
+        "step-11": "&nbsp;",
+        "step-12": "<ion-text color=\"danger\">8,528 sluices</ion-text>",
+        "step-13": "&nbsp;",
+        "step-14": "<ion-text color=\"danger\">59,577 other barriers</ion-text>",
+        "step-15": "&nbsp;",
+        "step-16": "&nbsp;",
+        "step-17": "With such an enormous number of barriers, it is no surprise that Europe has the most fragmented rivers in the world",
+        "anthropogenic_threats_text": {
+            "p1": " These barriers mostly impact <ion-text class=\"font-bold\" color=\"secondary\">longitudinal connectivity </ion-text>, blocking or limiting the passage of fish and sediments.",
+            "p2": "Some obstacles, like dams, also impact <ion-text class=\"font-bold\" color=\"secondary\">temporal connectivity</ion-text>, as they regulate the flow of water and sediments according to human needs rather than allowing the river to follow its natural seasonal patterns.",
+            "p3": " Other types of human interventions put pressure on <ion-text class=\"font-bold\" color=\"secondary\"> lateral connectivity</ion-text>, for example artificial levees and bank protection works. Such barriers are built in the floodplains and run parallel to the river. Levees are used to stop water from flooding the nearby land. Bank protection works, on the other hand, are made specifically to prevent the river channel from shifting its path sideways, although they don’t necessarily block the river’s waters from reaching the floodplains.",
+            "embankments_caption": "Embankments",
+            "bank_protection_caption": "Bank protection works. Credits: Andrea Goltara",
+            "p4": "Rivers with lateral barriers quickly become channels that follow a strict path, rather than live elements that weave in the environment and change shape over time. This can cause catastrophic floods when rivers overflow embankments and also increases flood risk further downstream.",
+            "reno_caption": "Reno River (Italy) in 1954 and in 2022. Credits: Volo IGMI GAI 1954 and Bing Maps.",
+            "p5": "Lateral obstacles are less likely to be noticed as they are deeply ingrained in the anthropized landscape, but they can be even more widespread than the shocking number of longitudinal obstacles like dams, weirs, ramps, and sluices.",
+            "dredging_caption": "Riverbed dredging",
+            "p6": "Lastly, human interventions hinder the <ion-text class=\"font-bold\" color=\"secondary\"> vertical connectivity</ion-text> of the riverbed. Paving, dredging, or clogging with fine sediments limit the exchange between surface and groundwater.",
+            "fisk_caption": "On the right the confluence of the Mississippi and Ohio rivers (USA) in the Harold Fisk map (1944), where centuries of changes and migration of meanders are represented with different colours, on the left the same area now (Google Earth map). The riverbed shows limited changes with respect to 1944 and the migration of meanders is almost totally hindered due to channelisation works. Credits: Eli Lazarus, The Environmental Dynamics Lab"
+        }
+    },
+    "ecosystemImpacts": {
+        "ecosystem_impacts_text": {
+            "section_title": "The ecological impacts of the loss of connectivity",
+            "section_title_mobile": "The ecological impacts",
+            "p1": " As rivers encounter man-made barriers to their free flow, the complex habitats they sustain are degraded or lost and animal species become increasingly vulnerable. Freshwater biodiversity is taking the hardest hit, declining at a faster rate than that of oceans and forests, according to WWF’s <a href=\"https://livingplanet.panda.org/freshwater\" target=\"_blank\">Living Planet Index.</a>",
+            "p2": "Freshwater species have declined by 84% on average across monitored species compared to 1970.",
+            "p3": "The reasons why freshwater species are declining are multiple, from overfishing to rising water temperatures. The loss of river connectivity impacts biodiversity in many ways. Barriers block rivers’ longitudinal and lateral movements, fragmenting habitats and making entire portions inaccessible. For example, migratory fish might get cut off from their breeding areas, but even non-migratory fish species are impacted, as they can’t reach sheltered or nutrient-rich areas of the river that are critical to their survival.",
+            "p4": "Fish get caught in dam turbines as they move downstream, or get stuck and disoriented as they move upstream and in reservoirs. In short, the negative impact of river fragmentation on the survival of fish species is great, and has been <a href=\"https://onlinelibrary.wiley.com/doi/full/10.1002/rra.3386\" target=\"_blank\">documented and quantified</a>.",
+            "p5": " Barriers also transform the physical and chemical characteristics of rivers and negatively impact a wide range of freshwater species. Sediments of different sizes, especially the coarser ones, get trapped, leading to riverbed erosion. The latter, together with the altered water flows due to barriers, is linked to more salty water from the sea penetrating the river. Such change in salinity affects species’ distribution, behavior, and limits the reproduction rate.",
+            "p6": "Lateral barriers such as bank protection works have an impact on floodplain habitats and cause the loss of wetlands by preventing natural-occurring inundations and sediment redistribution and reducing the exchange with the groundwater.",
+            "p7": "Migratory birds face growing challenges as they lose access to wetlands, which offer safe havens of food and habitat throughout their journeys. Critical nesting habitat such as gravel bed bars and islands can disappear due to altered river flows.",
+            "freshwater_species_title": "Freshwater Species",
+            "p8": " The trapping of sediments by barriers doesn’t only alter riparian habitats. Without obstacles sediments would eventually reach the coastal zone, preventing coastal erosion and the loss of river deltas. Areas rich in sediments are often also rich in biodiversity since they supplement the soil with nutrients. It is <a href=\"https://www.forbes.com/sites/jeffopperman/2019/09/27/worlds-major-deltas-threatened-by-climate-change-and-also-by-how-we-develop-power-systems/?sh=c8de97a60e1f\" target=\"_blank\">estimated</a> that the Nile river delta is losing 98% of its sediment supply because of upstream dams and reservoirs.",
+            "p9": " Sediment trapping and downstream erosion threaten the lives and economic activities of the millions of people who belong to communities settled along river deltas and coasts.",
+            "p10": "Erosion makes these environments increasingly susceptible to heavy floods, a risk aggravated by rising sea levels.",
+            "caption_puglia": "Coastline of Puglia (Italy) near the Ofanto mouth in 1954 and in 2022 showing a maximum withdrawal of 600 m. (Volo IGMI GAI 1954 and Bing Maps.)"
+        },
+        "step-1": "The International Union for Conservation of Nature (IUCN) assessed the status of freshwater species in Europe",
+        "step-2": "1% of them are <ion-text highlight-color=\"danger-dark\" class=\"font-bold\">extinct, either globally or regionally</ion-text>.",
+        "step-3": "34% are <ion-text highlight-color=\"danger\" class=\"font-bold\">critically endangered, endangered, near threatened, or vulnerable</ion-text>.",
+        "step-4": "Only 55% are classified as <ion-text highlight-color=\"least-concern\" class=\"font-bold\">low risk or least concern</ion-text>.",
+        "step-5": "And for 10% of them, there is <ion-text highlight-color=\"no-data\" class=\"font-bold\">not enough data</ion-text>.",
+        "step-6": "Breaking down these overall numbers by type of European freshwater species",
+        "step-7": "Many fish species are at risk",
+        "step-8": "38% of freshwater fish species are classified either as extinct, (critically) endangered, near threatened, or vulnerable.",
+        "step-9": "Fish are second only to invertebrates in terms of the number of species vulnerable to extinction"
+    },
+    "possibleFutures": {
+        "possible_futures_text": {
+            "section_title": "The future for European rivers",
+            "p1": "While many other factors contribute to changing landscapes and declining freshwater populations, a river system where connectivity is compromised is surely exacerbating such trends. It is not only the environment and wildlife that are suffering the consequences of the absence of river connectivity. Humans too are already bearing the cost. Is there hope for things to change in Europe, hosting one of the most fragmented and compromised river networks in the world?",
+            "p2": "A particular source of concern is the development of new hydropower dams. In the search for renewable energy sources, hydropower is often valued as a solid option.<a href=\"https://wwfeu.awsassets.panda.org/downloads/hydropower_pressure_on_european_rivers_the_story_in_numbers_web.pdf\"> A 2019 study by WWF </a>found that there are at least 8,785 new dams either planned or already under construction in Europe, which would add to the 21, 387 existing ones.",
+            "p3": " And these new barriers are likely going to be even more impactful than those already in place.",
+            "dam_removal": "Dam Removal",
+            "p4": " A significant number of the man-made obstacles that have hindered river connectivity in Europe could be removed, as they are no longer useful, and in some cases the reconnected reaches can bring back migratory fish.",
+            "p5": "Small and obsolete barriers in particular cause significant harm while providing little benefits - or even representing an economic burden in maintenance costs and safety risks.",
+            "p6": "It is on this basis that movements all over the world are organizing to restore global free-flowing rivers by removing the infrastructure that inhibits their free flows. In Europe, Dam Removal Europe has <a href=\"https://damremoval.eu/about/\" target=\"_blank\">documented</a> the removal of at least 4,984 longitudinal barriers, and the <a href=\"https://restorerivers.eu/wiki/index.php?title=Main_Page\" target=\"_blank\">RiverWiki: Restoring Europe’s rivers</a> has collected over 1,400 case studies. These case studies portray the complexity of what river restoration can mean in different contexts: not only the demolition of obsolete dams and longitudinal barriers, but also the dismantling of riverbank protections to allow lateral movements, and the mitigation of the impacts, for example through sediment reinjection, when removal is not possible.",
+            "p7": "These numbers capture only a fraction of the overall removed barriers, but there are likely more. Yet, even a small number of strategic  removals can have a significant positive impact: the Open Rivers Programme, for example, <a href=\"https://openrivers.eu/open-rivers-programme-supports-19-new-dam-removal-projects-opening-up-386-km-of-river/\" target=\"_blank\">claims</a> that by removing just 19 specific dams the programme-supported projects will free 386 km of rivers.",
+            "restored_video_caption": "Restored reach of the river Drac (France). Credits: Bruno Boz",
+            "p8": "Associations and grassroots movements for the restoration of rivers might finally have found strong institutional support for their actions, with the European Commission presenting the proposal for a <a href=\"https://ec.europa.eu/commission/presscorner/detail/en/ip_22_3746\" target=\"_blank\">\"Nature Restoration Law\"</a> in June 2022.",
+            "p9": " If approved, the legislation would bind EU Member States to restore rivers and wetlands, along with other natural habitats experiencing degradation and biodiversity loss. In particular, the Nature Restoration Law requires an inventory of barriers and plans for removals, with an ambition for the restoration of at least 25,000 km of free-flowing rivers by 2030.",
+            "p10": "The existing experiences of barrier removals and the potential support of the EU legislation show that restoring rivers is not only possible, but can be spectacularly impactful for humans, biodiversity, and landscapes.",
+            "p11": "The strategic removal of existing obstacles, the mitigation of the impacts of those that cannot be removed, together with the conservation of existing free-flowing river reaches, and a critical assessment of future hydropower dam developments, are much-needed actions to counter the loss of river connectivity in Europe.",
+            "bank_protection_removal_caption": "Bank protection removal in the river Sangro (Italy). Credits: Andrea Goltara"
+        },
+        "step-1": "Of the existing dams mapped by the study, 90% of them have an installed power of fewer than 10 megawatts.",
+        "step-_2": "93% of future European dams are classified as small, a ratio that is even higher than that of existing ones. Although they usually pose fewer problems to sediment transport, in some aspects, small hydropower schemes are more damaging than larger ones. They fragment river connectivity like larger dams while providing only a small contribution to energy demands. As most of them do not offer any storage and regulation capacity, they are strategically less valuable. Additionally, in most countries room for further hydropower is virtually exhausted, so they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
+        "step-2": "Although small hydropower plants usually pose fewer problems to sediment transport, in some aspects, they fragment river connectivity like larger dams while providing only a small contribution to energy demands. Moreover, they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
+        "step-3": "According to the study, at least 18% of the existing European hydropower plants are in protected areas, like National Parks, World Heritage sites, Emerald areas for Eastern Europe, and others.",
+        "step-4": "It is a paradox: future European hydropower dams, while being developed for the production of green energy, will in fact be placed inside protected areas in 28% of the cases, destroying invaluable habitats. ",
+        "step-5": "This risk is well demonstrated by the situation in the Balkans, Eastern Mediterranean and Turkey, an area that currently hosts 20% of the existing European hydropower dams.",
+        "step-6": "The area is expected to host almost 50% of the total future hydropower dams in Europe.",
+        "step-7": "And 9 out of 10 of these planned or in construction hydropower dams in the region are small, thus providing little energy while still greatly impacting the ecosystem."
+    },
+    "glossary": {
+        "title": "Barriers glossary",
+        "dam_title": "dam",
+        "dam_definition": ".....",
+        "ramp_title": "ramp",
+        "ramp_definition": ".....",
+        "sluice_title": "sluice",
+        "sluice_definition": ".....",
+        "weir_title": "weir",
+        "weir_definition": ".....",
+        "culvert_title": "culvert",
+        "culvert_definition": "....."
+    },
+    "about": {
+        "credits": "Credits:",
+        "financed_by_label": "Project financed by:",
+        "financed_by": "CIRF, Wetlands International Europe,LIFE Programme",
+        "scientific_supervision_label": "Scientific supervision:",
+        "scientific_supervision": "Andrea Goltara (CIRF), Paul Brotherton (Wetlands International Europe)",
+        "science_communication_label": "Science Communication:",
+        "science_communication": "Erica Villa",
+        "content_label": "Data, visualizations, and content:",
+        "content": "Alice Corona",
+        "dev_label": "Website design and development:",
+        "dev": "Lorenzo Brutti",
+        "contacts": "Contacts:",
+        "cirf": "<a target=\"_blank\" href=\"https://www.cirf.org/it/home/\">CIRF - Centro Italiano per la Riqualificazione Fluviale</a> is the reference not-for-profit organisation in Italy on river restoration, linking research with practice and advocating for more sustainable river management at national and European levels",
+        "wetlands": "<a target=\"_blank\" href=\"https://europe.wetlands.org/\">Wetlands International Europe</a>is an independent, not-for-profit organization with 10 members from 6 European countries, working to raise awareness about wetland ecosystems and to advocate the sustainable use of wetlands for people and nature, in particular by linking science, policy and practice. Wetlands are the source of water that supports all forms of life",
+        "data_sources": "Data sources:"
+    },
+    "hovercard": {
+        "barriers": "barriers"
+    }
+}
