@@ -8,11 +8,12 @@
     },
     "healthyRivers": {
         "section_title": "Healthy Rivers",
+        "four_dimensions_title": "The Four Dimensions of Connectivity",
         "step-1": "These are the world's <ion-text color=\"secondary\">longest* rivers</ion-text>",
         "step-1-subtitle": "* defined as rivers longer than 1,000 km",
         "step-2": "Most of them are <ion-text color=\"danger\">not free-flowing…</ion-text>",
         "step-3": "…only a few remain <ion-text color=\"success\">free-flowing</ion-text>.",
-        "step-4": "Concentrated in a few areas,",
+        "step-4": "Concentrated in a some areas,",
         "step-5": "The Arctic, Amazon, and Congo.",
         "step-6": "In the rest of the world, very long <ion-text color=\"success\">free-flowing rivers</ion-text> are rare, if not totally absent.",
         "step-7": "&nbsp"
@@ -20,12 +21,13 @@
     "connectivity": {
         "step-1": "To thrive, a river needs freedom of movement across four dimensions: longitudinal, lateral, vertical, and temporal",
         "step-2": "<ion-text class=\"font-bold\" color=\"secondary\">Longitudinal connectivity</ion-text> allows freshwater fauna to move upstream and downstream, and for sediments and nutrients to flow freely from the headwaters to the sea. Artificial barriers such as dams, weirs, and culverts can restrict or cut off this connectivity entirely.",
-        "step-3": "<ion-text class=\"font-bold\" color=\"secondary\">Lateral connectivity</ion-text>indicates that rivers move laterally and periodically overflow their banks and flood land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa.",
+        "step-3": "<ion-text class=\"font-bold\" color=\"secondary\">Lateral connectivity</ion-text> indicates that rivers move laterally and periodically overflow their banks and flood land in an exchange of water, sediments, nutrients, matter, and organisms from the river into the floodplain and vice-versa.",
         "step-4": "<ion-text class=\"font-bold\" color=\"secondary\">Vertical connectivity</ion-text> addresses the natural connections between the atmosphere, surface, and groundwater flows. The water flowing under the river bed is as important as the more visible surface flow: it is a key habitat for many invertebrates, regulates the river temperature, contributes to groundwater recharge, and much more.",
         "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
     },
     "free_flowing_rivers_text": {
-        "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br> For example, barriers like dams impact longitudinal and temporal connectivity, while bank protection and levees hinder lateral connectivity.",
+        "_p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br> For example, barriers like dams impact longitudinal and temporal connectivity, while bank protection and levees hinder lateral connectivity.",
+        "p1":"<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>",
         "p2": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few."
     },
     "anthropogenicThreats": {
@@ -55,7 +57,7 @@
             "embankments_caption": "Embankments",
             "bank_protection_caption": "Bank protection works. Credits: Andrea Goltara",
             "p4": "Rivers with lateral barriers quickly become channels that follow a strict path, rather than live elements that weave in the environment and change shape over time. This can cause catastrophic floods when rivers overflow embankments and also increases flood risk further downstream.",
-            "reno_caption": "Reno River (Italy) in 1954 and in 2022. Credits: Volo IGMI GAI 1954 and Bing Maps.",
+            "reno_caption": "River Reno (Regione Emilia Romagna, Italy) in 1954 and 2022. Credits: Flight IGMI GAI 1954 and Bing Maps.",
             "p5": "Lateral obstacles are less likely to be noticed as they are deeply ingrained in the anthropized landscape, but they can be even more widespread than the shocking number of longitudinal obstacles like dams, weirs, ramps, and sluices.",
             "dredging_caption": "Riverbed dredging",
             "p6": "Lastly, human interventions hinder the <ion-text class=\"font-bold\" color=\"secondary\"> vertical connectivity</ion-text> of the riverbed. Paving, dredging, or clogging with fine sediments limit the exchange between surface and groundwater.",
@@ -79,7 +81,7 @@
             "p8": " The trapping of sediments by barriers doesn’t only alter riparian habitats. Without obstacles sediments would eventually reach the coastal zone, preventing coastal erosion and the loss of river deltas. Areas rich in sediments are often also rich in biodiversity since they supplement the soil with nutrients. It is <a href=\"https://www.forbes.com/sites/jeffopperman/2019/09/27/worlds-major-deltas-threatened-by-climate-change-and-also-by-how-we-develop-power-systems/?sh=c8de97a60e1f\" target=\"_blank\">estimated</a> that the Nile river delta is losing 98% of its sediment supply because of upstream dams and reservoirs.",
             "p9": " Sediment trapping and downstream erosion threaten the lives and economic activities of the millions of people who belong to communities settled along river deltas and coasts.",
             "p10": "Erosion makes these environments increasingly susceptible to heavy floods, a risk aggravated by rising sea levels.",
-            "caption_puglia": "Coastline of Puglia (Italy) near the Ofanto mouth in 1954 and in 2022 showing a maximum withdrawal of 600 m. (Volo IGMI GAI 1954 and Bing Maps.)"
+            "caption_puglia": "Coastline of Puglia (Italy) near the Ofanto mouth in 1954 and in 2022 showing a maximum withdrawal of 600 m. (Flight IGMI GAI 1954 e Bing Maps.)"
         },
         "step-1": "The International Union for Conservation of Nature (IUCN) assessed the status of freshwater species in Europe",
         "step-2": "1% of them are <ion-text highlight-color=\"danger-dark\" class=\"font-bold\">extinct, either globally or regionally</ion-text>.",
@@ -134,7 +136,7 @@
     "about": {
         "credits": "Credits:",
         "financed_by_label": "Project financed by:",
-        "financed_by": "CIRF, Wetlands International Europe,LIFE Programme",
+        "financed_by": "CIRF, Wetlands International Europe, LIFE Programme, Fondazione Cariplo",
         "scientific_supervision_label": "Scientific supervision:",
         "scientific_supervision": "Andrea Goltara (CIRF), Paul Brotherton (Wetlands International Europe)",
         "science_communication_label": "Science Communication:",
@@ -151,5 +153,5 @@
     "hovercard": {
         "barriers": "barriers"
     },
-    "colophon":"Copyright © CIRF - 2022"
+    "colophon": "Copyright © CIRF - 2022"
 }

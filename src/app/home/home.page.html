@@ -31,6 +31,9 @@
                     <h1 class="intro__hed" id="intro_subtitle"
                         [innerHTML]="'intro.introSubtitle'|transloco | safehtml: 'html'"></h1>
                 </div>
+                <div id="subtitleCredits">
+                    A project by CIRF and Wetlands International Europe
+                </div>
             </section>
 
             <section id="intro" class="centered_text_block">
@@ -107,9 +110,9 @@
             </section>
 
             <!-- non scrolly content -->
-            <!-- <section>
-                <h1 class="section_title">The Four Dimensions of Connectivity</h1>
-            </section> -->
+            <section>
+                <h1 class="section_title">{{'healthyRivers.four_dimensions_title'|transloco}}</h1>
+            </section>
             <section id="river_connectivities" class="scrolly"
                 [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}">
 
@@ -283,8 +286,59 @@
                         <div [innerHTML]="'anthropogenicThreats.step-17'|transloco | safehtml:'html'"></div>
                     </div>
                 </article>
+
             </section>
             <section id="anthropogenic_threats_text" class="centered_text_block">
+                <div id="glossary_container">
+                    <!-- <h4>{{'glossary.title' | transloco}}</h4> -->
+                    <ion-grid class="ion-no-padding" id="glossary">
+                        <ion-row class="ion-no-margin ion-no-padding">
+                            <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="2" class="">
+                                <figure>
+                                    <img src="assets/imgs/jpg/foto2.jpg" />
+                                    <figcaption>
+                                        <ion-label>{{'glossary.dam_title' | transloco}}</ion-label>
+                                    </figcaption>
+                                </figure>
+                            </ion-col>
+
+                            <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="2" class="">
+                                <figure>
+                                    <img src="assets/imgs/jpg/ramp.jpg" />
+                                    <figcaption>
+                                        <ion-label>{{'glossary.ramp_title' | transloco}}</ion-label>
+                                    </figcaption>
+                                </figure>
+                            </ion-col>
+                            <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="2" class="">
+                                <figure>
+                                    <img src="assets/imgs/jpg/foto4.jpg" />
+                                    <figcaption>
+                                        <ion-label>{{'glossary.weir_title' | transloco}}</ion-label>
+                                    </figcaption>
+                                </figure>
+                            </ion-col>
+                            <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="2" class="">
+                                <figure>
+                                    <img src="assets/imgs/jpg/foto5.jpg" />
+                                    <figcaption>
+                                        <ion-label>{{'glossary.culvert_title' | transloco}}
+                                        </ion-label>
+                                    </figcaption>
+                                </figure>
+                            </ion-col>
+                            <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="2" class="">
+                                <figure>
+                                    <img src="assets/imgs/jpg/foto6.jpeg" />
+                                    <figcaption>
+                                        <ion-label>{{'glossary.sluice_title' | transloco}}</ion-label>
+                                    </figcaption>
+                                </figure>
+                            </ion-col>
+
+                        </ion-row>
+                    </ion-grid>
+                </div>
                 <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p1'|transloco | safehtml: 'html'"> </p>
                 <p [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p2'|transloco | safehtml: 'html'"> </p>
                 <figure>
@@ -469,17 +523,29 @@
 
 
                     <div class="step smaller-font quick-transition" data-step="6"
-                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
-                        [innerHTML]="'ecosystemImpacts.step-6'|transloco | safehtml: 'html'"></div>
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}">
+                        <div [innerHTML]="'ecosystemImpacts.step-6'|transloco | safehtml: 'html'">
+
+                        </div>
+                    </div>
                     <div class="step smaller-font quick-transition" data-step="7"
-                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
-                        [innerHTML]="'ecosystemImpacts.step-7'|transloco | safehtml: 'html'"></div>
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}">
+                        <div [innerHTML]="'ecosystemImpacts.step-7'|transloco | safehtml: 'html'">
+
+                        </div>
+                    </div>
                     <div class="step smaller-font quick-transition" data-step="8"
-                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
-                        [innerHTML]="'ecosystemImpacts.step-8'|transloco | safehtml: 'html'"></div>
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}">
+                        <div [innerHTML]="'ecosystemImpacts.step-8'|transloco | safehtml: 'html'">
+
+                        </div>
+                    </div>
                     <div class="step smaller-font quick-transition" data-step="9"
-                        attr.data-offset="{{ecosystem_viz_drill_offset}}"
-                        [innerHTML]="'ecosystemImpacts.step-9'|transloco | safehtml: 'html'"></div>
+                        attr.data-offset="{{ecosystem_viz_drill_offset}}">
+                        <div [innerHTML]="'ecosystemImpacts.step-9'|transloco | safehtml: 'html'">
+
+                        </div>
+                    </div>
                 </article>
             </section>
             <section id="ecosystem_impacts_sediment_text" class="centered_text_block">
@@ -631,7 +697,7 @@
 
             <section id="about_credits" class="centered_text_block">
                 <h1 class="section_title" id="about_title">About</h1>
-                <div id="glossary_container">
+                <!-- <div id="glossary_container">
 
 
                     <h4>{{'glossary.title' | transloco}}</h4>
@@ -682,7 +748,7 @@
 
                         </ion-row>
                     </ion-grid>
-                </div>
+                </div> -->
                 <h4>{{'about.credits' | transloco}}</h4>
                 <p>
                     <ion-label class="font-bold">{{'about.financed_by_label' | transloco}}</ion-label>
@@ -767,7 +833,8 @@
 
             </section>
             <section>
-                <div id="colophon"><a target="_blank" href="https://www.cirf.org/it/home/">{{'colophon'|transloco}}</a></div>
+                <div id="colophon"><a target="_blank" href="https://www.cirf.org/it/home/">{{'colophon'|transloco}}</a>
+                </div>
             </section>
         </main>
 
