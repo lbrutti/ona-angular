@@ -465,7 +465,7 @@
          d="m 353.70484,0.50001 h -24.82028 c -1.86857,0 -3.38458,1.51601 -3.38458,3.38458 v 24.82028 c 0,1.86857 1.51601,3.38459 3.38458,3.38459 h 24.82028 c 1.86858,0 3.38459,-1.51602 3.38459,-3.38459 V 3.88459 c 0,-1.86857 -1.51601,-3.38458 -3.38459,-3.38458 z"
          style="display:inline;fill:#f3eee7;stroke:#968263;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;" />
     </g>
-    <text
+    <!-- <text
        xml:space="preserve"
        id="text1062"
        style="font-style:normal;font-weight:normal;font-size:26.6667px;line-height:1.25;font-family:Century-Gothic,sans-serif;white-space:pre;shape-inside:url(#rect1064);display:inline;fill:#000000;stroke:none"
@@ -479,6 +479,6 @@
          y="208.00792"
          id="tspan1261"><tspan
            style="font-weight:300;font-family:Century-Gothic,'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light'"
-           id="tspan1259">Species</tspan></tspan></text>
+           id="tspan1259">Species</tspan></tspan></text> -->
   </g>
 </svg>
