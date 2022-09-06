@@ -3,6 +3,7 @@
     "intro": {
         "introTitle": "River Connectivity",
         "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>.<br>But there is still hope if we take action.",
+        "subtitleCredits": "A project by CIRF and Wetlands International Europe",
         "p1": " Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.",
         "p2": "To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems."
     },
@@ -101,7 +102,7 @@
     "possibleFutures": {
         "possible_futures_text": {
             "section_title": "The future for European rivers",
-            "breadcrumb_title":"Possible Futures",
+            "breadcrumb_title": "Possible Futures",
             "dams_text": "<ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">Existing</ion-text>,<ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">planned / in construction </ion-text> medium-large and small hydropower dams in the Balkans and Eastern Mediterranean Region",
             "balkans_caption": "Data source: Hydropower pressure on European rivers: The story in numbers by WWF, RiverWatch, EuroNatur,GEOTA",
             "barrier_removal_projects_chart_caption": "Data source: Dam removal Europe",
@@ -147,7 +148,7 @@
         "culvert_definition": "&nbsp"
     },
     "about": {
-        "breadcrumb_title":"About Us",
+        "breadcrumb_title": "About Us",
         "methodology": "This website has been created to make research and data accessible to a wide public. River connectivity, the ways its loss impacts ecosystems, and the difficulties involved in its restoration, are complex issues. CIRF and Wetlands International Europe have chosen data visualization as a tool to shed light on this complexity without oversimplifying it. Visualizing data, through charts and visual metaphors, helps humans recognize patterns by leveraging visual strategies that guide cognition. Combined with text, data visualization makes complexity accessible, explorable, and memorable in a way that text alone doesn’t.",
         "credits": "Credits:",
         "financed_by_label": "Project financed by:",
