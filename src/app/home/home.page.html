@@ -25,7 +25,8 @@
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
             <section id="header">
                 <div id="langSelector">
-                    <ion-button (click)="switchLang()" color="medium" size="small"  expand="block" class="ion-no-margin">{{translocoService.getActiveLang().split('-')[0]}}
+                    <ion-button (click)="switchLang()" color="medium" size="small" expand="block" class="ion-no-margin">
+                        {{translocoService.getActiveLang().split('-')[0]}}
                     </ion-button>
                 </div>
                 <div class="centered_text_block font-bold">
@@ -174,9 +175,11 @@
                 <ion-grid class="sticky_section_title section_title ion-no-margin">
                     <ion-row class="ion-no-margin">
                         <ion-col size="10" class="ion-no-margin">
-                            <h1 *ngIf="!isMobile" id="anthropogenic_threats-title">{{'anthropogenicThreats.section_title'| transloco}}
+                            <h1 *ngIf="!isMobile" id="anthropogenic_threats-title">
+                                {{'anthropogenicThreats.section_title'| transloco}}
                             </h1>
-                            <h1 *ngIf="isMobile" id="anthropogenic_threats-title">{{'anthropogenicThreats.section_title_mobile'| transloco}}
+                            <h1 *ngIf="isMobile" id="anthropogenic_threats-title">
+                                {{'anthropogenicThreats.section_title_mobile'| transloco}}
                             </h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
@@ -820,7 +823,7 @@
                 <p [innerHTML]="'about.wetlands'|transloco | safehtml:'html'">
                 </p>
 
-                <h4>{{'about.data_sources'}}</h4>
+                <h4>{{'about.data_sources'|transloco}}</h4>
                 <p>
                     Grill, G., Lehner, B., Thieme, M. et al. Mapping the world’s free-flowing rivers. Nature 569,
                     215-221 (2019).
