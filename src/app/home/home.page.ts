@@ -30,24 +30,24 @@ export class HomePage implements AfterViewInit {
 
     public breadcrumbItems: any[] = [{
         href: '#healthy_rivers_title',
-        text: 'Healthy Rivers',
+        text: 'healthyRivers.section_title',
         active: false
     },
     {
         href: '#anthropogenic_threats-title',
-        text: 'Anthropogenic Threats',
+        text: 'anthropogenicThreats.breadcrumb_title',
         active: false
     }, {
         href: '#ecosystem_impacts_title',
-        text: 'Ecosystem Impacts',
+        text: 'ecosystemImpacts.ecosystem_impacts_text.breadcrumb_title',
         active: false
     }, {
         href: '#possible_futures_title',
-        text: 'Possible Futures',
+        text: 'possibleFutures.possible_futures_text.breadcrumb_title',
         active: false
     }, {
         href: '#about_title',
-        text: 'About Us',
+        text: 'about.breadcrumb_title',
         active: false
     }];
     public hovercardData: any = {
