@@ -118,6 +118,10 @@
             "p11": "The strategic removal of existing obstacles, the mitigation of the impacts of those that cannot be removed, together with the conservation of existing free-flowing river reaches, and a critical assessment of future hydropower dam developments, are much-needed actions to counter the loss of river connectivity in Europe.",
             "bank_protection_removal_caption": "Bank protection removal in the river Sangro (Italy). Credits: Andrea Goltara"
         },
+        "possible_futures_viz_figure_title": "Hydropower Dams",
+        "possible_futures_viz_figure_smaller_than_10MW": "smaller than 10MW",
+        "possible_futures_viz_figure_in_protected_areas_subtitle": "in protected areas",
+        "possible_futures_viz_figure_balkans_subtitle": "in the Balkans and Turkey region",
         "step-1": "Of the existing dams mapped by the study, 90% of them have an installed power of fewer than 10 megawatts.",
         "step-_2": "93% of future European dams are classified as small, a ratio that is even higher than that of existing ones. Although they usually pose fewer problems to sediment transport, in some aspects, small hydropower schemes are more damaging than larger ones. They fragment river connectivity like larger dams while providing only a small contribution to energy demands. As most of them do not offer any storage and regulation capacity, they are strategically less valuable. Additionally, in most countries room for further hydropower is virtually exhausted, so they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
         "step-2": "Although small hydropower plants usually pose fewer problems to sediment transport, in some aspects, they fragment river connectivity like larger dams while providing only a small contribution to energy demands. Moreover, they are built in increasingly smaller rivers and remote areas, often affecting the last stretches of well-preserved and still free-flowing rivers.",
@@ -141,6 +145,7 @@
         "culvert_definition": "....."
     },
     "about": {
+        "methodology": "This website has been created to make research and data accessible to a wide public. River connectivity, the ways its loss impacts ecosystems, and the difficulties involved in its restoration, are complex issues. CIRF and Wetlands International Europe have chosen data visualization as a tool to shed light on this complexity without oversimplifying it. Visualizing data, through charts and visual metaphors, helps humans recognize patterns by leveraging visual strategies that guide cognition. Combined with text, data visualization makes complexity accessible, explorable, and memorable in a way that text alone doesn’t.",
         "credits": "Credits:",
         "financed_by_label": "Project financed by:",
         "financed_by": "CIRF, Wetlands International Europe, LIFE Programme, Fondazione Cariplo",
