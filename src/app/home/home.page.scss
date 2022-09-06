@@ -514,6 +514,16 @@ figcaption {
 }
 
 //mobile overloads
+.lillipop_title {
+    flex-grow: 0 !important;
+
+    h4 {
+        text-transform: uppercase;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bolder;
+        font-size: small;
+    }
+}
 
 main.mobile {
 

@@ -332,15 +332,6 @@ export class HomePage implements AfterViewInit {
                 waffle.classList.toggle('active', isActive);
 
 
-                // let transitionStep = waffle.dataset.transitionStep || Infinity;
-                // let isTranstioned = (currentStep !== 16) && (currentStep >= +transitionStep);
-                // let isForeground = waffle.dataset.foregroundStep == currentStep;
-                // waffle.classList.toggle('transitioned', isTranstioned);
-                // if (isForeground && isActive) {
-                //     ecosystemImpactsFigure.style('z-index', 1000);
-                // } else {
-                //     ecosystemImpactsFigure.style('z-index', 0);
-                // }
                 let selectedWaffle = d3.select(waffle);
                 //show groups one step at the time
                 if (selectedWaffle.select('svg').attr('id') === 'freshwater_only') {
@@ -656,7 +647,8 @@ export class HomePage implements AfterViewInit {
 
             svg.append("g")
                 .attr("transform", "translate(0," + (height + 10) + ")")
-                .call(xAxis);
+                .call(xAxis)
+                .attr('fill', 'var(--ion-color-text-color-standard)');
 
 
 
@@ -717,6 +709,7 @@ export class HomePage implements AfterViewInit {
                 .attr("stroke", 'var(--ion-color-text-color-standard)');
             upperUpperAxisG
                 .append("text")
+                .attr("fill", 'var(--ion-color-text-color-standard)')
                 .attr("class", "upper_axis_text_left")
                 .text("1970")
                 .attr('x', x(2016))

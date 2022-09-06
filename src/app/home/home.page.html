@@ -79,7 +79,6 @@
                         class="stacked_img map_global_rivers" data-step='2,7' />
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_ffr.svg" id="map_global_rivers_ffr"
                         class="stacked_img map_global_rivers" data-step='3,4,5,6,7' />
-                    <figcaption id="healthy_rivers_caption">{{'healthyRivers.caption'|transloco}}</figcaption>
                 </figure>
                 <!-- foreground master content -->
                 <article>
@@ -108,6 +107,9 @@
                     </div>
 
                 </article>
+            </section>
+            <section>
+                <figcaption id="healthy_rivers_caption">{{'healthyRivers.caption'|transloco}}</figcaption>
             </section>
 
             <!-- non scrolly content -->
@@ -230,8 +232,7 @@
                             <h5 #barrierCounter>{{barrierCount | number:'':'en-US'}}</h5>
                         </div>
                     </div>
-                    <figcaption id="anthropogenic_threats_caption">{{'anthropogenicThreats.caption'|transloco}}
-                    </figcaption>
+
                 </figure>
 
                 <!-- foreground master content -->
@@ -289,6 +290,10 @@
                     </div>
                 </article>
 
+            </section>
+            <section>
+                <figcaption id="anthropogenic_threats_caption">{{'anthropogenicThreats.caption'|transloco}}
+                </figcaption>
             </section>
             <section id="anthropogenic_threats_text" class="centered_text_block">
                 <div id="glossary_container">
@@ -513,9 +518,7 @@
                     <div id="ecosystem_impacts_viz_figure_chart_all" class="stacked_img ecosystem_impacts_viz"
                         data-step='6,7,8,9'>
                     </div>
-                    <figcaption id="ecosystem_impacts_viz_figure_chart_caption">Data source: IUCN. 2022. The IUCN Red
-                        List of Threatened Species. Version 2022-1
-                    </figcaption>
+
                 </figure>
 
                 <!-- foreground master content -->
@@ -557,6 +560,11 @@
                         </div>
                     </div>
                 </article>
+            </section>
+            <section>
+                <figcaption id="ecosystem_impacts_viz_figure_chart_caption">
+                    {{'ecosystemImpacts.ecosystem_impacts_text.ecosystem_impacts_viz_figure_chart_caption'|transloco }}
+                </figcaption>
             </section>
             <section id="ecosystem_impacts_sediment_text" class="centered_text_block">
                 <div>
@@ -610,12 +618,26 @@
                 <figure id="possible_futures_viz_figure">
                     <div #possible_futures_viz_chart_small_dams id="possible_futures_viz_chart_small_dams"
                         class="stacked_img possible_futures_viz" data-step='1,2' data-transition-step="">
+                        <div class="lillipop_title">
+                            <h3>{{'possibleFutures.possible_futures_viz_figure_title' | transloco}}</h3>
+                            <h4>{{'possibleFutures.possible_futures_viz_figure_smaller_than_10MW' | transloco}}</h4>
+                        </div>
                     </div>
                     <div #possible_futures_viz_chart_protected_dams id="possible_futures_viz_chart_protected_dams"
                         class="stacked_img possible_futures_viz" data-step='3,4' data-transition-step="">
+                        <div class="lillipop_title">
+                            <h3>{{'possibleFutures.possible_futures_viz_figure_title' | transloco}}</h3>
+                            <h4>{{'possibleFutures.possible_futures_viz_figure_in_protected_areas_subtitle' |
+                                transloco}}</h4>
+                        </div>
                     </div>
                     <div #possible_futures_viz_chart_balkans_dams id="possible_futures_viz_chart_balkans_dams"
                         class="stacked_img possible_futures_viz" data-step='5,6,7' data-transition-step="">
+                        <div class="lillipop_title">
+                            <h3>{{'possibleFutures.possible_futures_viz_figure_title' | transloco}}</h3>
+                            <h4>{{'possibleFutures.possible_futures_viz_figure_balkans_subtitle' |
+                                transloco}}</h4>
+                        </div>
                     </div>
                 </figure>
                 <!-- foreground master content -->
@@ -669,7 +691,9 @@
 
                         <div #barrier_removal_projects_chart_container id="barrier_removal_projects_chart_container">
                         </div>
-                        <figcaption id="barrier_removal_projects_chart_caption">{{'possibleFutures.possible_futures_text.barrier_removal_projects_chart_caption'|transloco}}</figcaption>
+                        <figcaption id="barrier_removal_projects_chart_caption">
+                            {{'possibleFutures.possible_futures_text.barrier_removal_projects_chart_caption'|transloco}}
+                        </figcaption>
                     </div>
                     <p [innerHTML]="'possibleFutures.possible_futures_text.p7'|transloco | safehtml:'html'">
                     </p>
