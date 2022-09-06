@@ -33,6 +33,7 @@
     },
     "anthropogenicThreats": {
         "section_title": "The Main Threats to river connectivity",
+        "section_title_mobile": "The main threats to connectivity",
         "breadcrumb_title": "Anthropogenic Threats",
         "barrierCounterTitle": "Barrier counter",
         "step-1": "Dams and other barriers are the most evident example of built infrastructure that hinder river connectivity.",

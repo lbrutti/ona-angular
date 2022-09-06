@@ -174,7 +174,9 @@
                 <ion-grid class="sticky_section_title section_title ion-no-margin">
                     <ion-row class="ion-no-margin">
                         <ion-col size="10" class="ion-no-margin">
-                            <h1 id="anthropogenic_threats-title">{{'anthropogenicThreats.section_title'| transloco}}
+                            <h1 *ngIf="!isMobile" id="anthropogenic_threats-title">{{'anthropogenicThreats.section_title'| transloco}}
+                            </h1>
+                            <h1 *ngIf="isMobile" id="anthropogenic_threats-title">{{'anthropogenicThreats.section_title_mobile'| transloco}}
                             </h1>
                         </ion-col>
                         <ion-col size="2" class="ion-no-margin">
