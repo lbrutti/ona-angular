@@ -494,7 +494,7 @@ section {
 
 #video_fixed {
     position: fixed;
-
+    object-fit: cover;
     left: 20vw;
 
     video {
@@ -521,19 +521,14 @@ main.mobile {
 
 
 
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin-left: 0;
+    margin-right: 0;
 
     section,
     #breadcrumb {
         background-color: var(--ion-section-background-color);
     }
 
-    // #healthy_rivers {
-    //     // .map_global_rivers {
-    //     //     // top: 2.5vh;
-    //     // }
-    // }
 
     #river_connectivities {
         .river_connectivity_animation {
@@ -601,13 +596,28 @@ main.mobile {
     }
 
     #header {
-        background-color: var(--ion-section-background-color);
+        // background-color: var(--ion-section-background-color);
 
         #intro_title {
             font-size: 3rem;
         }
 
 
+    }
+
+
+}
+
+
+ion-content.mobile {
+    #video_fixed {
+        left: 0;
+
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
     }
 }
 
