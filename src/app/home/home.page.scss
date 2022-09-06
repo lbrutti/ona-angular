@@ -513,6 +513,20 @@ figcaption {
     font-size: x-small;
 }
 
+#langSelector {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+
+    ion-button {
+        text-transform: uppercase;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bold;
+    }
+}
+
 //mobile overloads
 .lillipop_title {
     flex-grow: 0 !important;

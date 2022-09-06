@@ -3,6 +3,7 @@ import * as scrollama from 'scrollama';
 import * as d3 from 'd3';
 import { Platform } from '@ionic/angular';
 import * as _ from 'lodash';
+import { TranslocoService } from '@ngneat/transloco';
 @Component({
     selector: 'app-home',
     templateUrl: 'home.page.html',
@@ -25,6 +26,7 @@ export class HomePage implements AfterViewInit {
     @ViewChild('anthropogenic_threats_figure') anthropogenic_threats_figure: ElementRef;
     @ViewChild('ecosystem_impacts_viz_figure') ecosystem_impacts_viz_figure: ElementRef;
 
+    public currentLang: string = 'it';
 
     public breadcrumbItems: any[] = [{
         href: '#healthy_rivers_title',
@@ -70,7 +72,8 @@ export class HomePage implements AfterViewInit {
     threatsScroller: any;
     ecosystemImpactsScroller: any;
     possibleFuturesScroller: any;
-    constructor(public platform: Platform) {
+
+    constructor(public platform: Platform, public translocoService: TranslocoService) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
         this.isMobile = this.platform.is('mobile');
@@ -1147,5 +1150,13 @@ export class HomePage implements AfterViewInit {
 
             document.exitFullscreen();
         }
+    }
+
+    public async switchLang() {
+        let currentLang = this.translocoService.getActiveLang();
+        let availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
+        let currentLangIdx = availableLangs.indexOf(currentLang);
+        let nextLangIdx = (++currentLangIdx % availableLangs.length);
+        this.translocoService.setActiveLang(availableLangs[nextLangIdx]);
     }
 }

@@ -24,6 +24,11 @@
         </div>
         <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
             <section id="header">
+                <div id="langSelector">
+                    <ion-button (click)="switchLang()" size="small" fill="outline" expand="block" class="ion-no-margin"
+                        color="light">{{translocoService.getActiveLang().split('-')[0]}}
+                    </ion-button>
+                </div>
                 <div class="centered_text_block font-bold">
                     <h1 class="intro__hed" id="intro_title">{{'intro.introTitle'|transloco }}</h1>
                 </div>
