@@ -3,6 +3,7 @@
     "intro": {
         "introTitle": "River Connectivity",
         "introSubtitle": "The health of the world’s rivers is  <ion-text class=\"font-bold\">severely threatened</ion-text>.<br>But there is still hope if we take action.",
+        "subtitleCredits": "A project by CIRF and Wetlands International Europe",
         "p1": " Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.",
         "p2": "To provide these essential ecosystem services, rivers must be able to flow freely, moving unobstructed in multiple directions. However, only a small fraction of the world’s rivers can still do so: a myriad of human-made works fragment, deviate, constrict, and regulate river flow, dramatically impacting natural functions and surrounding ecosystems."
     },
@@ -27,12 +28,12 @@
         "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
     },
     "free_flowing_rivers_text": {
-        "_p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br> For example, barriers like dams impact longitudinal and temporal connectivity, while bank protection and levees hinder lateral connectivity.",
         "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>",
         "p2": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few."
     },
     "anthropogenicThreats": {
         "section_title": "The Main Threats to river connectivity",
+        "breadcrumb_title": "Anthropogenic Threats",
         "barrierCounterTitle": "Barrier counter",
         "step-1": "Dams and other barriers are the most evident example of built infrastructure that hinder river connectivity.",
         "step-2": "While large hydropower dams are very visible, they are actually only a small fraction of the types of barriers that a river encounters throughout its course",
@@ -69,6 +70,7 @@
     "ecosystemImpacts": {
         "ecosystem_impacts_text": {
             "section_title": "The ecological impacts of the loss of connectivity",
+            "breadcrumb_title": "Ecological Impacts",
             "section_title_mobile": "The ecological impacts",
             "freshwater_index_chart_caption": "Data source: LPI 2016. Living Planet Index database. 2016.",
             "ecosystem_impacts_viz_figure_chart_caption": "Data source: IUCN. 2022. The IUCN Red List of Threatened Species. Version 2022-1",
@@ -100,11 +102,12 @@
     "possibleFutures": {
         "possible_futures_text": {
             "section_title": "The future for European rivers",
-            "dams_text": " <ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">Existing</ion-text>,<ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">planned / in construction </ion-text> medium-large and small hydropower dams in the Balkans and Eastern Mediterranean Region",
+            "breadcrumb_title": "Possible Futures",
+            "dams_text": "<ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">Existing</ion-text>,<ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">planned / in construction </ion-text> medium-large and small hydropower dams in the Balkans and Eastern Mediterranean Region",
             "balkans_caption": "Data source: Hydropower pressure on European rivers: The story in numbers by WWF, RiverWatch, EuroNatur,GEOTA",
             "barrier_removal_projects_chart_caption": "Data source: Dam removal Europe",
             "p1": "While many other factors contribute to changing landscapes and declining freshwater populations, a river system where connectivity is compromised is surely exacerbating such trends. It is not only the environment and wildlife that are suffering the consequences of the absence of river connectivity. Humans too are already bearing the cost. Is there hope for things to change in Europe, hosting one of the most fragmented and compromised river networks in the world?",
-            "p2": "A particular source of concern is the development of new hydropower dams. In the search for renewable energy sources, hydropower is often valued as a solid option.<a href=\"https://wwfeu.awsassets.panda.org/downloads/hydropower_pressure_on_european_rivers_the_story_in_numbers_web.pdf\"> A 2019 study by WWF </a>found that there are at least 8,785 new dams either planned or already under construction in Europe, which would add to the 21, 387 existing ones.",
+            "p2": "A particular source of concern is the development of new hydropower dams. In the search for renewable energy sources, hydropower is often valued as a solid option.<a href=\"https://wwfeu.awsassets.panda.org/downloads/hydropower_pressure_on_european_rivers_the_story_in_numbers_web.pdf\"> A 2019 study by WWF</a> found that there are at least 8,785 new dams either planned or already under construction in Europe, which would add to the 21, 387 existing ones.",
             "p3": " And these new barriers are likely going to be even more impactful than those already in place.",
             "dam_removal": "Dam Removal",
             "p4": " A significant number of the man-made obstacles that have hindered river connectivity in Europe could be removed, as they are no longer useful, and in some cases the reconnected reaches can bring back migratory fish.",
@@ -134,17 +137,18 @@
     "glossary": {
         "title": "Barriers glossary",
         "dam_title": "dam",
-        "dam_definition": ".....",
+        "dam_definition": "&nbsp",
         "ramp_title": "ramp",
-        "ramp_definition": ".....",
+        "ramp_definition": "&nbsp",
         "sluice_title": "sluice",
-        "sluice_definition": ".....",
+        "sluice_definition": "&nbsp",
         "weir_title": "weir",
-        "weir_definition": ".....",
+        "weir_definition": "&nbsp",
         "culvert_title": "culvert",
-        "culvert_definition": "....."
+        "culvert_definition": "&nbsp"
     },
     "about": {
+        "breadcrumb_title": "About Us",
         "methodology": "This website has been created to make research and data accessible to a wide public. River connectivity, the ways its loss impacts ecosystems, and the difficulties involved in its restoration, are complex issues. CIRF and Wetlands International Europe have chosen data visualization as a tool to shed light on this complexity without oversimplifying it. Visualizing data, through charts and visual metaphors, helps humans recognize patterns by leveraging visual strategies that guide cognition. Combined with text, data visualization makes complexity accessible, explorable, and memorable in a way that text alone doesn’t.",
         "credits": "Credits:",
         "financed_by_label": "Project financed by:",
