@@ -17,7 +17,8 @@
         "step-4": "Concentrati in poche aree,",
         "step-5": "Artico, Amazzonia e Congo. ",
         "step-6": "Nel resto del mondo, i grandi fiumi che  <ion-text color=\"success\">scorrono ancora liberi</ion-text> sono rarissimi, se non del tutto assenti.",
-        "step-7": "&nbsp"
+        "step-7": "&nbsp",
+        "caption": "Dati: Grill, G., Lehner, B., Thieme, M. et al. Mapping the world’s free-flowing rivers. Nature 569, 215-221 (2019)."
     },
     "connectivity": {
         "step-1": "Per essere in salute, un fiume ha bisogno di muoversi liberamente nelle quattro dimensioni: longitudinale, laterale, verticale e temporale.",
@@ -144,6 +145,7 @@
         "culvert_definition": "&nbsp"
     },
     "about": {
+        "methodology": "Questo sito web è stato creato per rendere accessibile a un vasto pubblico la ricerca e i dati sulla connettività fluviale. La connettività fluviale, il modo in cui la sua perdita ha un impatto sugli ecosistemi, e le difficoltà legate al suo ripristino sono questioni complesse. CIRF e Wetlands International Europe hanno scelto la visualizzazione dei dati come strumento per far luce su questa complessità, senza però semplificarla in maniera riduttiva. La visualizzazione dei dati, attraverso grafici e metafore visive, aiuta gli esseri umani a individuare ciò che i dati raccontano, facendo leva sulle strategie visive che guidano la i nostri processi cognitivi. Combinata con il testo, la visualizzazione dei dati rende la complessità accessibile, esplorabile e memorabile in un modo in cui il testo da solo spesso non lo riesce a fare.",
         "breadcrumb_title": "Credits",
         "credits": "Credits: ",
         "financed_by_label": "Progetto finanziato da:",
