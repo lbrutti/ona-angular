@@ -162,8 +162,8 @@
         "dev_label": "Web design e sviluppo:",
         "dev": "Lorenzo Brutti",
         "contacts": "Contatti:",
-        "cirf": "Il Centro Italiano per la Riqualificazione Fluviale è l'organizzazione no-profit di riferimento in Italia che collega la ricerca alla pratica e promuove una gestione fluviale più sostenibile a livello nazionale ed europeo.",
-        "wetlands": "Wetlands International Europe è un'organizzazione indipendente, senza scopo di lucro, con 10 membri provenienti da 6 Paesi europei, che lavora per sensibilizzare l'opinione pubblica sugli ecosistemi delle zone umide e per promuovere l'uso sostenibile delle zone umide per le persone e la natura, in particolare collegando scienza, politica e pratica. Le zone umide sono la fonte d'acqua che sostiene tutte le forme di vita.",
+        "cirf": "<a target=\"_blank\" href=\"https://www.cirf.org/it/home/\"><span class=\"font-bold\">CIRF - Centro Italiano per la Riqualificazione Fluviale</span></a> è l'organizzazione no-profit di riferimento in Italia che collega la ricerca alla pratica e promuove una gestione fluviale più sostenibile a livello nazionale ed europeo.",
+        "wetlands": "<a target=\"_blank\" href=\"https://europe.wetlands.org/\"><span class=\"font-bold\">Wetlands International Europe</span></a> è un'organizzazione indipendente, senza scopo di lucro, con 10 membri provenienti da 6 Paesi europei, che lavora per sensibilizzare l'opinione pubblica sugli ecosistemi delle zone umide e per promuovere l'uso sostenibile delle zone umide per le persone e la natura, in particolare collegando scienza, politica e pratica. Le zone umide sono la fonte d'acqua che sostiene tutte le forme di vita.",
         "data_sources": "Fonti dei dati:"
     },
     "hovercard": {
