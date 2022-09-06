@@ -13,10 +13,11 @@
         "step-1-subtitle": "* defined as rivers longer than 1,000 km",
         "step-2": "Most of them are <ion-text color=\"danger\">not free-flowing…</ion-text>",
         "step-3": "…only a few remain <ion-text color=\"success\">free-flowing</ion-text>.",
-        "step-4": "Concentrated in a some areas,",
+        "step-4": "Concentrated in some areas,",
         "step-5": "The Arctic, Amazon, and Congo.",
         "step-6": "In the rest of the world, very long <ion-text color=\"success\">free-flowing rivers</ion-text> are rare, if not totally absent.",
-        "step-7": "&nbsp"
+        "step-7": "&nbsp",
+        "caption":"Data source: Grill, G., Lehner, B., Thieme, M. et al. Mapping the world’s free-flowing rivers. Nature 569, 215-221 (2019)."
     },
     "connectivity": {
         "step-1": "To thrive, a river needs freedom of movement across four dimensions: longitudinal, lateral, vertical, and temporal",
@@ -50,6 +51,7 @@
         "step-15": "&nbsp;",
         "step-16": "&nbsp;",
         "step-17": "With such an enormous number of barriers, it is no surprise that Europe has the most fragmented rivers in the world",
+        "caption":"Data source: AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European database of artificial instream barriers. Version 1.0 June 29th 2020.",
         "anthropogenic_threats_text": {
             "p1": " These barriers mostly impact <ion-text class=\"font-bold\" color=\"secondary\">longitudinal connectivity </ion-text>, blocking or limiting the passage of fish and sediments.",
             "p2": "Some obstacles, like dams, also impact <ion-text class=\"font-bold\" color=\"secondary\">temporal connectivity</ion-text>, as they regulate the flow of water and sediments according to human needs rather than allowing the river to follow its natural seasonal patterns.",
@@ -68,6 +70,7 @@
         "ecosystem_impacts_text": {
             "section_title": "The ecological impacts of the loss of connectivity",
             "section_title_mobile": "The ecological impacts",
+            "freshwater_index_chart_caption":"Data source: LPI 2016. Living Planet Index database. 2016.",
             "p1": " As rivers encounter man-made barriers to their free flow, the complex habitats they sustain are degraded or lost and animal species become increasingly vulnerable. Freshwater biodiversity is taking the hardest hit, declining at a faster rate than that of oceans and forests, according to WWF’s <a href=\"https://livingplanet.panda.org/freshwater\" target=\"_blank\">Living Planet Index.</a>",
             "p2": "Freshwater species have declined by 84% on average across monitored species compared to 1970.",
             "p3": "The reasons why freshwater species are declining are multiple, from overfishing to rising water temperatures. The loss of river connectivity impacts biodiversity in many ways. Barriers block rivers’ longitudinal and lateral movements, fragmenting habitats and making entire portions inaccessible. For example, migratory fish might get cut off from their breeding areas, but even non-migratory fish species are impacted, as they can’t reach sheltered or nutrient-rich areas of the river that are critical to their survival.",
@@ -96,6 +99,9 @@
     "possibleFutures": {
         "possible_futures_text": {
             "section_title": "The future for European rivers",
+            "dams_text":" <ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">Existing</ion-text>,<ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">planned / in construction </ion-text> medium-large and small hydropower dams in the Balkans and Eastern Mediterranean Region",
+            "balkans_caption":"Data source: Hydropower pressure on European rivers: The story in numbers by WWF, RiverWatch, EuroNatur,GEOTA",
+            "barrier_removal_projects_chart_caption":"Data source: Dam removal Europe",
             "p1": "While many other factors contribute to changing landscapes and declining freshwater populations, a river system where connectivity is compromised is surely exacerbating such trends. It is not only the environment and wildlife that are suffering the consequences of the absence of river connectivity. Humans too are already bearing the cost. Is there hope for things to change in Europe, hosting one of the most fragmented and compromised river networks in the world?",
             "p2": "A particular source of concern is the development of new hydropower dams. In the search for renewable energy sources, hydropower is often valued as a solid option.<a href=\"https://wwfeu.awsassets.panda.org/downloads/hydropower_pressure_on_european_rivers_the_story_in_numbers_web.pdf\"> A 2019 study by WWF </a>found that there are at least 8,785 new dams either planned or already under construction in Europe, which would add to the 21, 387 existing ones.",
             "p3": " And these new barriers are likely going to be even more impactful than those already in place.",
