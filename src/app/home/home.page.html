@@ -17,8 +17,8 @@
         </div>
         <main [ngClass]="{'mobile': isMobile}">
             <section id="header">
-                <video autoplay loop muted id="anthropogenic_threats_dam_background" class="stacked_img">
-                    <source src="assets/video/video1.mp4" />
+                <video autoplay autoPlay muted loop playsinline id="anthropogenic_threats_dam_background" class="stacked_img">
+                    <source src="assets/video/video1.mp4" type="video/mp4"/>
                 </video>
                 <div id="langSelector">
                     <ion-button (click)="switchLang()" color="medium" size="small" expand="block" class="ion-no-margin">
@@ -189,14 +189,6 @@
 
 
                 <figure id="anthropogenic_threats_figure" #anthropogenic_threats_figure (click)="exitFullScreen()">
-                    <!-- <video autoplay loop muted id="anthropogenic_threats_dam_background"
-                        class="stacked_img anthropogenic_threats" data-step='1,2'>
-                        <source src="assets/video/video2_20_sec.mp4" />
-                        <source src="assets/video/video2_20_sec.webm" />
-                    </video> -->
-                    <!-- <img src="assets/imgs/gif/dam.gif" id="anthropogenic_threats_dam_background" -->
-                    <!-- class="stacked_img anthropogenic_threats" data-step='1,2' /> -->
-
                     <img src="assets/imgs/svg/map_eu/2.map_eu_land.svg" id="anthropogenic_threats_land"
                         class="stacked_img anthropogenic_threats" data-step='3,4,5,6,7,8,9,10,11,12,13,14,15' />
 
