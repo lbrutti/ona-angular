@@ -276,7 +276,7 @@ section {
         border-bottom: 1rem solid var(--ion-color-base);
     }
 
-    #anthropogenic_threats_hex_bin {
+    #anthropogenic_threats_hex_bin svg{
         transform: scale(0.95);
     }
 
@@ -505,12 +505,12 @@ section {
     left: 20vw;
 
     video {
-        width: 59vw;
+        width: 58.9vw;
     }
 }
 
 figcaption {
-    font-size: x-small;
+    font-size: small;
 }
 
 #langSelector {

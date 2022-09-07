@@ -72,6 +72,7 @@ export class HomePage implements AfterViewInit {
     threatsScroller: any;
     ecosystemImpactsScroller: any;
     possibleFuturesScroller: any;
+    otherLang: string;
 
     constructor(public platform: Platform, public translocoService: TranslocoService) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
@@ -81,6 +82,11 @@ export class HomePage implements AfterViewInit {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;
         }
+
+        let availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
+        let currentLangIdx = availableLangs.indexOf(this.translocoService.getActiveLang());
+        let nextLangIdx = (currentLangIdx % availableLangs.length);
+        this.otherLang = availableLangs[++nextLangIdx % availableLangs.length];
 
 
     }
@@ -111,10 +117,11 @@ export class HomePage implements AfterViewInit {
 
         //load connectivity imgs
         let connectivity = await d3.xml('assets/imgs/svg/connectivity/connectivity.svg');
-        connectivity.documentElement.setAttribute('width', 'auto');
-        connectivity.documentElement.setAttribute('height', 'auto');
+        // connectivity.documentElement.setAttribute('width', 'auto');
+        // connectivity.documentElement.setAttribute('height', 'auto');
 
         d3.select(connectivity.documentElement).style('height', '100%');
+        d3.select(connectivity.documentElement).style('width', '100%');
 
         (riverConnectivities.select('#connectivity_image').node() as any).append(connectivity.documentElement);
 
@@ -248,7 +255,7 @@ export class HomePage implements AfterViewInit {
         let handleStepEnterHealthyRivers = (response: any) => {
             if (this.isFullscreen) { return; }
             // response = { element, direction, index }
-            console.log('handleStepEnterHealthyRivers : ', response);
+            // console.log('handleStepEnterHealthyRivers : ', response);
             // add color to current step only
             healthyRiversStep.classed("is-active", function (d, i) {
                 return i === response.index;
@@ -499,8 +506,8 @@ export class HomePage implements AfterViewInit {
         (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement)
 
         let freshwater_detail = await d3.xml('assets/imgs/svg/eu_fishes_danger/02_eu_fishes_danger_all.svg');
-        freshwater_detail.documentElement.setAttribute('width', 'auto');
-        freshwater_detail.documentElement.setAttribute('height', 'auto');
+        // freshwater_detail.documentElement.setAttribute('width', 'auto');
+        // freshwater_detail.documentElement.setAttribute('height', 'auto');
         d3.select(freshwater_detail.documentElement).style('height', '100%');
         (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart_all').node() as any).append(freshwater_detail.documentElement)
 
@@ -535,20 +542,20 @@ export class HomePage implements AfterViewInit {
         let hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
         let page = this;
 
-        dams.documentElement.setAttribute('width', 'auto');
-        dams.documentElement.setAttribute('height', 'auto');
-        ramps.documentElement.setAttribute('width', 'auto');
-        ramps.documentElement.setAttribute('height', 'auto');
-        weirs.documentElement.setAttribute('width', 'auto');
-        weirs.documentElement.setAttribute('height', 'auto');
-        culverts.documentElement.setAttribute('width', 'auto');
-        culverts.documentElement.setAttribute('height', 'auto');
-        sluices.documentElement.setAttribute('width', 'auto');
-        sluices.documentElement.setAttribute('height', 'auto');
-        others.documentElement.setAttribute('width', 'auto');
-        others.documentElement.setAttribute('height', 'auto');
-        hexbins.documentElement.setAttribute('width', 'auto');
-        hexbins.documentElement.setAttribute('height', 'auto');
+        // dams.documentElement.setAttribute('width', 'auto');
+        // dams.documentElement.setAttribute('height', 'auto');
+        // ramps.documentElement.setAttribute('width', 'auto');
+        // ramps.documentElement.setAttribute('height', 'auto');
+        // weirs.documentElement.setAttribute('width', 'auto');
+        // weirs.documentElement.setAttribute('height', 'auto');
+        // culverts.documentElement.setAttribute('width', 'auto');
+        // culverts.documentElement.setAttribute('height', 'auto');
+        // sluices.documentElement.setAttribute('width', 'auto');
+        // sluices.documentElement.setAttribute('height', 'auto');
+        // others.documentElement.setAttribute('width', 'auto');
+        // others.documentElement.setAttribute('height', 'auto');
+        // hexbins.documentElement.setAttribute('width', 'auto');
+        // hexbins.documentElement.setAttribute('height', 'auto');
 
         d3.select(dams.documentElement).style('height', '100%');
         d3.select(ramps.documentElement).style('height', '100%');
@@ -622,8 +629,8 @@ export class HomePage implements AfterViewInit {
         // append the svg object to the body of the page
         let svg = d3.select(this.freshwater_index_chart_container.nativeElement)
             .append("svg")
-            .attr("width", "auto")
-            .attr("height", "auto")
+            // .attr("width", "auto")
+            // .attr("height", "auto")
             .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
             .append("g")
             .attr("transform",
@@ -790,8 +797,8 @@ export class HomePage implements AfterViewInit {
         // append the svg object to the body of the page
         let svg = d3.select(this.barrier_removal_projects_chart_container.nativeElement)
             .append("svg")
-            .attr("width", "auto")
-            .attr("height", "auto")
+            // .attr("width", "auto")
+            // .attr("height", "auto")
             .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
             .append("g")
             .attr("transform",
@@ -953,22 +960,22 @@ export class HomePage implements AfterViewInit {
         // append the svg object to the body of the page
         this.smallDamsChart = d3.select(this.possible_futures_viz_chart_small_dams_container.nativeElement)
             .append("svg")
-            .attr("width", "auto")
-            .attr("height", "auto")
+            // .attr("width", "auto")
+            // .attr("height", "auto")
             .attr("viewBox", `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
         this.protectedDamsChart = d3.select(this.possible_futures_viz_chart_protected_dams_container.nativeElement)
             .append("svg")
-            .attr("width", "auto")
-            .attr("height", "auto")
+            // .attr("width", "auto")
+            // .attr("height", "auto")
             .attr("viewBox", `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
         this.balkansDamsChart = d3.select(this.possible_futures_viz_chart_balkans_dams_container.nativeElement)
             .append("svg")
-            .attr("width", "auto")
-            .attr("height", "auto")
+            // .attr("width", "auto")
+            // .attr("height", "auto")
             .attr("viewBox", `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
@@ -1139,7 +1146,7 @@ export class HomePage implements AfterViewInit {
     }
 
     public setToFullscreen(sectionId: string) {
-        this[sectionId].nativeElement.requestFullscreen();
+        this[sectionId].nativeElement.requestFullscreen ? this[sectionId].nativeElement.requestFullscreen() : this[sectionId].nativeElement.webkitRequestFullScreen();
     }
     public disposeHovercard() {
         d3.select('#hovercard')
@@ -1150,6 +1157,9 @@ export class HomePage implements AfterViewInit {
 
             document.exitFullscreen();
         }
+        if ((document as any).webkitCancelFullScreen !== null) {
+            (document as any).webkitCancelFullScreen();
+        }
     }
 
     public async switchLang() {
@@ -1158,5 +1168,6 @@ export class HomePage implements AfterViewInit {
         let currentLangIdx = availableLangs.indexOf(currentLang);
         let nextLangIdx = (++currentLangIdx % availableLangs.length);
         this.translocoService.setActiveLang(availableLangs[nextLangIdx]);
+        this.otherLang = availableLangs[++nextLangIdx % availableLangs.length];
     }
 }
