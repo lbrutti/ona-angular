@@ -276,7 +276,7 @@ section {
         border-bottom: 1rem solid var(--ion-color-base);
     }
 
-    #anthropogenic_threats_hex_bin svg{
+    #anthropogenic_threats_hex_bin svg {
         transform: scale(0.95);
     }
 
@@ -475,7 +475,8 @@ section {
     // background-color: var(--ion-header-background-transparent);
     background: linear-gradient(180deg, rgba(233, 228, 216, 0.17) 0%, rgba(0, 0, 0, 0.84) 100%);
     // padding: 0;
-
+    // background-image: url('/assets/imgs/jpg/fiume_sfondo.jpeg');
+    // background-size: cover;
     color: var(--ion-section-background-color);
 
     #subtitleCredits {
@@ -586,7 +587,7 @@ main.mobile {
         }
 
         article ::ng-deep ion-text {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
         }
 
         .step {
@@ -636,7 +637,7 @@ main.mobile {
 
         #intro_title {
             font-size: 2.5rem;
-            
+
         }
 
 
@@ -648,7 +649,7 @@ main.mobile {
 
 ion-content.mobile {
     #video_fixed {
-        left: 0;
+        margin-left: 0;
 
         video {
             width: 100vw;

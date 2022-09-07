@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
+<ion-content [fullscreen]="true" [ngClass]="{'mobile': isMobile}">
     <div id="container">
         <div id="hovercard" (click)="disposeHovercard()">
             <ion-grid>
@@ -18,11 +18,11 @@
         <!-- sticky side -->
         <div id="video_fixed">
             <video autoplay loop muted id="anthropogenic_threats_dam_background"
-                class="stacked_img anthropogenic_threats">
+                class="stacked_img">
                 <source src="assets/video/video1.mp4" />
             </video>
         </div>
-        <main [ngClass]="{'mobile': this.platform.is('mobile') && this.platform.isPortrait()}">
+        <main [ngClass]="{'mobile': isMobile}">
             <section id="header">
                 <div id="langSelector">
                     <ion-button (click)="switchLang()" color="medium" size="small" expand="block" class="ion-no-margin">
@@ -486,8 +486,8 @@
                             <source src="assets/video/video4.mp4" type="video/mp4">
                             <source src="assets/video/video4.webm" type="video/webm">
                         </video>
-                        <figcaption>{{'ecosystemImpacts.ecosystem_impacts_text.video4_caption'|transloco}}</figcaption>
                     </figure>
+                    <figcaption>{{'ecosystemImpacts.ecosystem_impacts_text.video4_caption'|transloco}}</figcaption>
                     <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p5b'|transloco | safehtml: 'html'">
                     </p>
                     <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p6'|transloco | safehtml: 'html'">
