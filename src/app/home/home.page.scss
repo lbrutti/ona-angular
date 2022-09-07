@@ -276,7 +276,7 @@ section {
         border-bottom: 1rem solid var(--ion-color-base);
     }
 
-    #anthropogenic_threats_hex_bin svg {
+    #anthropogenic_threats_hex_bin ::ng-deep svg {
         transform: scale(0.95);
     }
 
