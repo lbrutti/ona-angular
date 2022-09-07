@@ -17,13 +17,13 @@
         </div>
         <!-- sticky side -->
         <div id="video_fixed">
-            <video autoplay loop muted id="anthropogenic_threats_dam_background"
-                class="stacked_img">
-                <source src="assets/video/video1.mp4" />
-            </video>
+
         </div>
         <main [ngClass]="{'mobile': isMobile}">
             <section id="header">
+                <video autoplay loop muted id="anthropogenic_threats_dam_background" class="stacked_img">
+                    <source src="assets/video/video1.mp4" />
+                </video>
                 <div id="langSelector">
                     <ion-button (click)="switchLang()" color="medium" size="small" expand="block" class="ion-no-margin">
                         {{otherLang}}
