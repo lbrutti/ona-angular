@@ -500,9 +500,9 @@ section {
 }
 
 #video_fixed {
-    position: fixed;
+    // position: fixed;
     object-fit: cover;
-    left: 20vw;
+    margin-left: 20vw;
 
     video {
         width: 58.9vw;
