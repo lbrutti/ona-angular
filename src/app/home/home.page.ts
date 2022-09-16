@@ -168,17 +168,23 @@ export class HomePage implements AfterViewInit {
         let handleResize = () => {
             // 1. update height of step elements
             let stepH = Math.floor(window.innerHeight * 0.5);
+            let riverConnectivitiesH = Math.floor(window.innerHeight / 3);
+            let riverConnectivitiesFigureH = Math.floor(window.innerHeight / 2);
             healthyRiversStep.style("height", stepH + "px");
-            riverConnectivitiesStep.style("height", stepH + "px");
+
+            riverConnectivitiesStep.style("height", this.isMobile ? stepH : riverConnectivitiesH + "px");
+
             threatsStep.style("height", stepH + "px");
+
             ecosystemImpactsStep.style("height", stepH + "px");
+
             possibleFuturesStep.style("height", stepH + "px");
 
             let figureHeight = window.innerHeight / (this.isMobile ? 2 : 1);
             let figureMarginTop = 36;// (window.innerHeight - figureHeight) / 2;
 
             riverConnectivitiesFigure
-                .style("height", figureHeight + "px")
+                .style("height", this.isMobile ? figureHeight : riverConnectivitiesFigureH + "px")
                 .style("top", figureMarginTop + "px");
 
             riverConnectivities.select(".step:last-child")
