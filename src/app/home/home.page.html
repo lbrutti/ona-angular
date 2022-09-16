@@ -17,8 +17,9 @@
         </div>
         <main [ngClass]="{'mobile': isMobile}">
             <section id="header">
-                <video autoplay autoPlay muted loop playsinline id="anthropogenic_threats_dam_background" class="stacked_img">
-                    <source src="assets/video/video1.mp4" type="video/mp4"/>
+                <video autoplay autoPlay muted loop playsinline id="anthropogenic_threats_dam_background"
+                    class="stacked_img">
+                    <source src="assets/video/video1.mp4" type="video/mp4" />
                 </video>
                 <div id="langSelector">
                     <ion-button (click)="switchLang()" color="medium" size="small" expand="block" class="ion-no-margin">
@@ -80,6 +81,8 @@
                         class="stacked_img map_global_rivers" data-step='2,7' />
                     <img src="assets/imgs/svg/map_global_rivers/1.map_global_rivers_ffr.svg" id="map_global_rivers_ffr"
                         class="stacked_img map_global_rivers" data-step='3,4,5,6,7' />
+                    <figcaption *ngIf="!isMobile" id="healthy_rivers_caption">{{'healthyRivers.caption'|transloco}}
+                    </figcaption>
                 </figure>
                 <!-- foreground master content -->
                 <article>
@@ -102,6 +105,8 @@
                     </div>
                     <div class="step" data-step="6">
                         <div [innerHTML]="'healthyRivers.step-6'|transloco | safehtml: 'html'"></div>
+                        <div *ngIf="isMobile" [innerHTML]="'healthyRivers.caption'|transloco | safehtml: 'html'"
+                            class="step-footer"></div>
                     </div>
                     <div class="step separator" data-step="7">
                         <div [innerHTML]="'healthyRivers.step-7'|transloco | safehtml: 'html'"></div>
@@ -110,7 +115,6 @@
                 </article>
             </section>
             <section>
-                <figcaption id="healthy_rivers_caption">{{'healthyRivers.caption'|transloco}}</figcaption>
             </section>
 
             <!-- non scrolly content -->
@@ -229,7 +233,9 @@
                             <h5 #barrierCounter>{{barrierCount | number:'':'en-US'}}</h5>
                         </div>
                     </div>
-
+                    <figcaption *ngIf="!isMobile" id="anthropogenic_threats_caption">
+                        {{'anthropogenicThreats.caption'|transloco}}
+                    </figcaption>
                 </figure>
 
                 <!-- foreground master content -->
@@ -284,13 +290,13 @@
                     </div>
                     <div class="step" data-step="17">
                         <div [innerHTML]="'anthropogenicThreats.step-17'|transloco | safehtml:'html'"></div>
+                        <div *ngIf="isMobile" [innerHTML]="'anthropogenicThreats.caption'|transloco | safehtml: 'html'"
+                            class="step-footer"></div>
                     </div>
                 </article>
 
             </section>
             <section>
-                <figcaption id="anthropogenic_threats_caption">{{'anthropogenicThreats.caption'|transloco}}
-                </figcaption>
             </section>
             <section id="anthropogenic_threats_text" class="centered_text_block">
                 <div id="glossary_container">

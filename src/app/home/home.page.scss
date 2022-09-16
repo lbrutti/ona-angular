@@ -558,6 +558,13 @@ figcaption {
     margin-top: 1.3rem;
 }
 
+#healthy_rivers_caption {
+    position: absolute;
+    top: calc(100% - 20vh);
+}
+
+#anthropogenic_threats_caption {}
+
 main.mobile {
 
     --ion-color-primary-contrast: #e9e4d8;
@@ -574,25 +581,40 @@ main.mobile {
     margin-left: 0;
     margin-right: 0;
 
+    .step-footer {
+        margin-top: 15px !important;
+    }
+
+    .step {
+        margin: 0 auto 2rem auto;
+        font-size: 22px;
+        background-color: transparent;
+        text-align: left;
+    }
+
     section,
     #breadcrumb {
         background-color: var(--ion-section-background-color);
     }
 
+    #healthy_rivers_caption {
+        display: none;
+    }
 
     #river_connectivities {
-        .river_connectivity_animation {
-            margin-top: 2vh;
+        .step {
+            font-size: 20px;
         }
 
-        .step {
-            font-size: 1.25rem;
+        .river_connectivity_animation {
+            margin-top: 2vh;
         }
 
         #connectivities_step1 {
             margin-top: unset;
         }
-        #connectivity_image{
+
+        #connectivity_image {
             height: 70%;
             margin-top: 0;
         }
@@ -604,14 +626,23 @@ main.mobile {
         }
 
         article ::ng-deep ion-text {
-            font-size: 2.5rem;
+            font-size: 26px;
+            text-align: center;
         }
 
-        .step {
-            text-align: center;
+        #anthropogenic_threats_article {
+            .step {
 
-            &[data-step="17"].active {
-                ::ng-deep div {
+                &[data-step="4"],
+                &[data-step="6"],
+                &[data-step="8"],
+                &[data-step="10"],
+                &[data-step="12"],
+                &[data-step="14"] {
+                    text-align: center;
+                }
+
+                &[data-step="17"].is-active {
                     background-color: var(--ion-section-background-color);
                 }
             }
@@ -631,6 +662,12 @@ main.mobile {
     }
 
     #possible_futures_viz {
+
+        #possible_futures_viz_figure {
+            top: 0 !important;
+            right: 5px;
+        }
+
         .possible_futures_viz {
             display: unset;
             flex-direction: unset;
@@ -638,16 +675,11 @@ main.mobile {
         }
 
         .step {
-            font-size: 1.25rem;
+            font-size: 18px;
         }
     }
 
-    .step {
-        margin: 0 auto 2rem auto;
-        font-size: 2rem;
-        background-color: transparent;
-        text-align: left;
-    }
+
 
     #header {
         // background-color: var(--ion-section-background-color);
