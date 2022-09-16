@@ -74,10 +74,13 @@ export class HomePage implements AfterViewInit {
     possibleFuturesScroller: any;
     otherLang: string;
 
+    public isIPhone: boolean = false;
     constructor(public platform: Platform, public translocoService: TranslocoService) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
         this.isMobile = this.platform.is('mobile');
+        this.isIPhone = this.platform.is('iphone');
+
         if (this.isMobile) {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;

@@ -63,7 +63,7 @@
                         <ion-col size="10" class="ion-no-margin">
                             <h1 id="healthy_rivers_title">{{'healthyRivers.section_title'|transloco}}</h1>
                         </ion-col>
-                        <ion-col size="2" class="ion-no-margin">
+                        <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
                             <ion-button (click)="setToFullscreen('healthy_rivers_figure')" size="small" fill="outline"
                                 expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>
@@ -182,7 +182,7 @@
                                 {{'anthropogenicThreats.section_title_mobile'| transloco}}
                             </h1>
                         </ion-col>
-                        <ion-col size="2" class="ion-no-margin">
+                        <ion-col size="2" class="ion-no-margin"  *ngIf="!isIPhone">
                             <ion-button (click)="setToFullscreen('anthropogenic_threats_figure')" size="small"
                                 fill="outline" expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>
@@ -289,9 +289,14 @@
                         <div [innerHTML]="'anthropogenicThreats.step-16'|transloco | safehtml:'html'"></div>
                     </div>
                     <div class="step" data-step="17">
-                        <div [innerHTML]="'anthropogenicThreats.step-17'|transloco | safehtml:'html'"></div>
-                        <div *ngIf="isMobile" [innerHTML]="'anthropogenicThreats.caption'|transloco | safehtml: 'html'"
-                            class="step-footer"></div>
+                        <div *ngIf="isMobile" class="step_content_wrapper">
+                            <div [innerHTML]="'anthropogenicThreats.step-17'|transloco | safehtml:'html'"></div>
+
+                            <div [innerHTML]="'anthropogenicThreats.caption'|transloco | safehtml: 'html'"
+                                class="step-footer"></div>
+                        </div>
+                        <div *ngIf="!isMobile" [innerHTML]="'anthropogenicThreats.step-17'|transloco | safehtml:'html'">
+                        </div>
                     </div>
                 </article>
 
@@ -505,7 +510,7 @@
                             <h1 id="freshwater_species_title">
                                 {{'ecosystemImpacts.ecosystem_impacts_text.freshwater_species_title' | transloco}}</h1>
                         </ion-col>
-                        <ion-col size="2" class="ion-no-margin">
+                        <ion-col size="2" class="ion-no-margin"  *ngIf="!isIPhone">
                             <ion-button (click)="setToFullscreen('ecosystem_impacts_viz_figure')" size="small"
                                 fill="outline" expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>

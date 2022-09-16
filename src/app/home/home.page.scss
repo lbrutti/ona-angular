@@ -643,7 +643,9 @@ main.mobile {
                 }
 
                 &[data-step="17"].is-active {
-                    background-color: var(--ion-section-background-color);
+                    .step_content_wrapper {
+                        background-color: var(--ion-section-background-color);
+                    }
                 }
             }
         }
