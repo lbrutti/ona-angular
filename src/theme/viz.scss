@@ -119,3 +119,12 @@
         }
     }
 }
+
+::ng-deep #ecosystem_impacts_viz_figure_chart_all,
+::ng-deep #freshwater_only {
+    #labels {
+        text {
+            fill: var(--ion-text-color) !important;
+        }
+    }
+}

@@ -123,7 +123,7 @@ section {
     .step {
         margin: 0 auto 2rem auto;
         color: var(--ion-color-text-color-standard);
-        font-size: 3rem;
+        font-size: 1.3rem;
         text-align: center;
         opacity: 0;
         transition-duration: 500ms;
@@ -219,9 +219,16 @@ section {
 
 }
 
-
+#healty_rivers_caption,
+#anthropogenic_threats_caption,
+#ecosystem_impacts_viz_figure_chart_caption {
+    position: absolute;
+    top: calc(100% - 10vh);
+}
 
 #healthy_rivers {
+
+
     .map_global_rivers {
         top: 10vh;
         height: calc(100% - 20vh);
@@ -269,8 +276,17 @@ section {
         border-bottom: 1rem solid var(--ion-color-base);
     }
 
-    #anthropogenic_threats_hex_bin {
+    #anthropogenic_threats_hex_bin ::ng-deep svg {
         transform: scale(0.95);
+    }
+
+    #anthropogenic_threats_article {
+
+        .step[data-step="17"].is-active {
+            div {
+                background-color: var(--ion-section-background-color);
+            }
+        }
     }
 
     .anthropogenic_threats {
@@ -280,6 +296,7 @@ section {
         height: calc(100% - 20vh);
         opacity: 0;
         // transition-duration: 500ms;
+
 
         ::ng-deep svg {
             width: 100%;
@@ -362,6 +379,19 @@ section {
 
 #ecosystem_impacts_viz_article {
 
+    [data-step="6"].is-active,
+    [data-step="7"].is-active,
+    [data-step="8"].is-active,
+    [data-step="9"].is-active {
+        div {
+            height: auto;
+            background-color: var(--ion-section-background-color);
+        }
+    }
+}
+
+#ecosystem_impacts_viz_article {
+
     ::ng-deep ion-text {
 
         &[highlight-color="danger-dark"] {
@@ -432,9 +462,9 @@ section {
     }
 }
 
-.section_title {
-    text-transform: capitalize;
-}
+// .section_title {
+//     text-transform: capitalize;
+// }
 
 
 #header {
@@ -442,8 +472,29 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: var(--ion-header-background-transparent);
-    padding: 0;
+    // background-color: var(--ion-header-background-transparent);
+    background: linear-gradient(180deg, rgba(233, 228, 216, 0.17) 0%, rgba(0, 0, 0, 0.84) 100%);
+    // padding: 0;
+    // background-image: url('/assets/imgs/jpg/fiume_sfondo.jpeg');
+    // background-size: cover;
+    color: var(--ion-section-background-color);
+    overflow: hidden;
+
+    video {
+        margin: 0;
+        padding: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        background-size: cover;
+    }
+
+    #subtitleCredits {
+        margin-top: 15px
+    }
 
     .centered_text_block {
         margin-top: auto;
@@ -458,25 +509,54 @@ section {
         font-size: 4rem;
         font-family: var(--ion-font-family-bold);
         font-weight: bolder;
-        color: var(--ion-background-color)
+        // color: var(--ion-background-color)
     }
 }
 
 #video_fixed {
-    position: fixed;
-
-    left: 20vw;
+    // position: fixed;
+    object-fit: cover;
+    margin-left: 20vw;
 
     video {
-        width: 59vw;
+        width: 58.9vw;
     }
 }
 
 figcaption {
-    font-size: x-small;
+    font-size: small;
+}
+
+#langSelector {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+
+    ion-button {
+        text-transform: uppercase;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bold;
+    }
 }
 
 //mobile overloads
+.lillipop_title {
+    flex-grow: 0 !important;
+
+    h4 {
+        text-transform: uppercase;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bolder;
+        font-size: small;
+    }
+}
+
+#methodology {
+    margin-bottom: 2rem;
+    margin-top: 1.3rem;
+}
 
 main.mobile {
 
@@ -491,19 +571,14 @@ main.mobile {
 
 
 
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin-left: 0;
+    margin-right: 0;
 
     section,
     #breadcrumb {
         background-color: var(--ion-section-background-color);
     }
 
-    // #healthy_rivers {
-    //     // .map_global_rivers {
-    //     //     // top: 2.5vh;
-    //     // }
-    // }
 
     #river_connectivities {
         .river_connectivity_animation {
@@ -525,11 +600,17 @@ main.mobile {
         }
 
         article ::ng-deep ion-text {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
         }
 
         .step {
             text-align: center;
+
+            &[data-step="17"].active {
+                ::ng-deep div {
+                    background-color: var(--ion-section-background-color);
+                }
+            }
         }
     }
 
@@ -565,15 +646,34 @@ main.mobile {
     }
 
     #header {
-        background-color: var(--ion-section-background-color);
+        // background-color: var(--ion-section-background-color);
 
         #intro_title {
-            font-size: 3rem;
+            font-size: 2.5rem;
+
+        }
+
+
+
+    }
+
+
+}
+
+
+ion-content.mobile {
+    #video_fixed {
+        margin-left: 0;
+
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
         }
     }
 }
 
-#colophon{
+#colophon {
     width: 100%;
     text-align: center;
     font-size: x-small;
