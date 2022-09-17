@@ -3,6 +3,7 @@
 @import '../../theme/viz.scss';
 
 @import '../../theme/variables.scss';
+@import "../../theme/scrollbar-width-mixin.scss";
 
 #container strong {
     font-size: 20px;
@@ -50,6 +51,7 @@ main {
 }
 
 #breadcrumb {
+    @include hideScrollbar();
     background-color: var(--ion-section-background-color);
     position: sticky;
     font-size: small !important;
@@ -62,16 +64,15 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
 
-    div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: nowrap;
-
+    ion-breadcrumb {
         span {
-            display: inline-block;
-            font-size: small;
-            margin: auto;
+            // display: inline-block;
+            // margin: auto;
+
+            // max-width: calc(60vw / 5);
+            // white-space: nowrap;
+            // text-overflow: ellipsis;
+            // overflow-x: hidden;
         }
     }
 }
@@ -608,6 +609,15 @@ main.mobile {
 
     section,
     #breadcrumb {
+
+        ion-breadcrumb {
+            span {
+                max-width: unset;
+                white-space: unset;
+                text-overflow: unset;
+            }
+        }
+
         background-color: var(--ion-section-background-color);
     }
 

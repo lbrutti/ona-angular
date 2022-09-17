@@ -53,7 +53,7 @@
                 </ion-breadcrumb>
                 <ion-breadcrumb *ngFor="let item of breadcrumbItems" (click)="onBreadCrumbClick($event, item)"
                     [active]="item.active" href="{{item.href}}">
-                    <span>{{item.text | transloco}}</span>
+                    <span [title]="item.text | transloco">{{item.text | transloco}}</span>
                     <span slot="separator"></span>
                 </ion-breadcrumb>
             </ion-breadcrumbs>

@@ -104,8 +104,8 @@
     },
     "possibleFutures": {
         "possible_futures_text": {
-            "section_title": "Il futuro dei fiumi europei ",
-            "breadcrumb_title": "Scenari futuri",
+            "section_title": "Futuro dei fiumi europei",
+            "breadcrumb_title": "Futuro dei fiumi europei",
             "dams_text": "Dighe di dimensioni medio-grandi e piccole <ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">esistenti</ion-text> e <ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">pianificate/in costruzione</ion-text> nella regione dei Balcani e del Mediterraneo Orientale",
             "balkans_caption": "Dati: Hydropower pressure on European rivers: The story in numbers by WWF, RiverWatch, EuroNatur,GEOTA",
             "barrier_removal_projects_chart_caption": "Dati: Dam removal Europe",

@@ -103,8 +103,8 @@
     },
     "possibleFutures": {
         "possible_futures_text": {
-            "section_title": "The future for European rivers",
-            "breadcrumb_title": "Possible futures",
+            "section_title": "Future for European rivers",
+            "breadcrumb_title": "Future for European rivers",
             "dams_text": "<ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">Existing</ion-text>,<ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">planned / in construction </ion-text> medium-large and small hydropower dams in the Balkans and Eastern Mediterranean Region",
             "balkans_caption": "Data source: Hydropower pressure on European rivers: The story in numbers by WWF, RiverWatch, EuroNatur,GEOTA",
             "barrier_removal_projects_chart_caption": "Data source: Dam removal Europe",
