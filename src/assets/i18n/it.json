@@ -30,7 +30,8 @@
     },
     "free_flowing_rivers_text": {
         "p1": "I fiumi che scorrono liberamente (<ion-text class=\"font-bold\">\"free-flowing\"</ion-text>) sono quelli in cui sono garantiti tutti e quattro i tipi di connettività. Esistono tuttavia molte minacce potenziali al mantenimento di uno stato di libero deflusso dalle sorgenti alla foce. ",
-        "p2": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune."
+        "p2": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune.",
+        "foto1_caption":"iStock/Nome dell'autore"
     },
     "anthropogenicThreats": {
         "breadcrumb_title": "Minacce alla connettività",

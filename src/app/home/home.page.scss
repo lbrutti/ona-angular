@@ -268,6 +268,11 @@ section {
 
 }
 
+
+#free_flowing_rivers_text {
+    font-size: 20px;
+}
+
 #anthropogenic_threats {
     article ::ng-deep ion-text {
         font-size: 5rem;
@@ -563,7 +568,6 @@ figcaption {
     top: calc(100% - 20vh);
 }
 
-#anthropogenic_threats_caption {}
 
 main.mobile {
 
@@ -603,7 +607,7 @@ main.mobile {
 
     #river_connectivities {
         .step {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .river_connectivity_animation {
@@ -618,6 +622,10 @@ main.mobile {
             height: 70%;
             margin-top: 0;
         }
+    }
+
+    #free_flowing_rivers_text {
+        font-size: 18px;
     }
 
     #anthropogenic_threats {

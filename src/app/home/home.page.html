@@ -150,10 +150,10 @@
 
             </section>
 
-            <section id="free_flowing_rivers_text" class="centered_text_block">
+            <section id="free_flowing_rivers_text" class="_centered_text_block">
                 <ion-grid>
                     <ion-row>
-                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
+                        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6" class="ion-no-padding-top ion-no-margin-top">
                             <p [innerHTML]="'free_flowing_rivers_text.p1'|transloco | safehtml: 'html'">
                             </p>
                             <p [innerHTML]="'free_flowing_rivers_text.p2'|transloco | safehtml: 'html'">
@@ -162,7 +162,9 @@
                         <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6">
                             <figure>
                                 <img src="assets/imgs/jpg/foto1.jpeg" />
+                                <figcaption>{{'free_flowing_rivers_text.foto1_caption' | transloco}}</figcaption>
                             </figure>
+
                         </ion-col>
                     </ion-row>
                 </ion-grid>
@@ -182,7 +184,7 @@
                                 {{'anthropogenicThreats.section_title_mobile'| transloco}}
                             </h1>
                         </ion-col>
-                        <ion-col size="2" class="ion-no-margin"  *ngIf="!isIPhone">
+                        <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
                             <ion-button (click)="setToFullscreen('anthropogenic_threats_figure')" size="small"
                                 fill="outline" expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>
@@ -510,7 +512,7 @@
                             <h1 id="freshwater_species_title">
                                 {{'ecosystemImpacts.ecosystem_impacts_text.freshwater_species_title' | transloco}}</h1>
                         </ion-col>
-                        <ion-col size="2" class="ion-no-margin"  *ngIf="!isIPhone">
+                        <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
                             <ion-button (click)="setToFullscreen('ecosystem_impacts_viz_figure')" size="small"
                                 fill="outline" expand="block" class="ion-no-margin" color="light">
                                 <ion-icon slot="icon-only" name="search-outline"></ion-icon>
