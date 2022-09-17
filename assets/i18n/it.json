@@ -15,7 +15,7 @@
         "step-2": "La maggior parte di essi  <ion-text color=\"danger\">non scorre liberamente...</ion-text>",
         "step-3": "... solo alcuni rimangono <ion-text color=\"success\">\"free-flowing”</ion-text>.",
         "step-4": "Concentrati in poche aree,",
-        "step-5": "Artico, Amazzonia e Congo. ",
+        "step-5": "come Artico, Amazzonia e Congo.",
         "step-6": "Nel resto del mondo, i grandi fiumi che  <ion-text color=\"success\">scorrono ancora liberi</ion-text> sono rarissimi, se non del tutto assenti.",
         "step-7": "&nbsp",
         "caption": "Dati: Grill, G., Lehner, B., Thieme, M. et al. Mapping the world’s free-flowing rivers. Nature 569, 215-221 (2019)."
@@ -24,12 +24,14 @@
         "step-1": "Per essere in salute, un fiume ha bisogno di muoversi liberamente nelle quattro dimensioni: longitudinale, laterale, verticale e temporale.",
         "step-2": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività longitudinale</ion-text> permette alla fauna di muoversi da monte a valle e viceversa, ai sedimenti e ai nutrienti di fluire liberamente dalle sorgenti al mare. Barriere artificiali come dighe, briglie e tombamenti possono limitare o interrompere del tutto questa connettività. ",
         "step-3": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività laterale</ion-text> indica che i fiumi, con l’eccezione dei tratti montani naturalmente confinati, si muovono lateralmente e inondano periodicamente la pianura circostante, in uno scambio di acqua, sedimenti, nutrienti e materia organica, dal fiume alla pianura alluvionale e viceversa. ",
-        "step-4": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività verticale</ion-text> riguarda le naturali connessioni tra atmosfera, superficie del corso d’acqua e acque sotterranee. L'acqua che scorre sotto il letto del fiume è importante quanto il deflusso superficiale, sebbene questo sia ben più visibile: è un habitat chiave per molti invertebrati, regola la temperatura del fiume, contribuisce alla ricarica delle acque sotterranee e molto altro.",
+        "step-4":"La <ion-text class=\"font-bold\" color=\"secondary\">connettività verticale</ion-text> riguarda le connessioni tra atmosfera, superficie del corso d’acqua e acque sotterranee. L'acqua che scorre sotto l'alveo è importante quanto il deflusso superficiale. È un habitat chiave per molti invertebrati, regola la temperatura del fiume, contribuisce alla ricarica delle acque sotterranee e molto altro.",
+        "step-4_": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività verticale</ion-text> riguarda le naturali connessioni tra atmosfera, superficie del corso d’acqua e acque sotterranee. L'acqua che scorre sotto il letto del fiume è importante quanto il deflusso superficiale, sebbene questo sia ben più visibile: è un habitat chiave per molti invertebrati, regola la temperatura del fiume, contribuisce alla ricarica delle acque sotterranee e molto altro.",
         "step-5": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività temporale</ion-text> fa riferimento alla possibilità dei processi fluviali, connessi in particolare al regime delle portate idriche, di svolgersi seguendo la naturale alternanza nel tempo tipica di un certo corso d’acqua. Questo a diverse scale temporali: mesi, anni o decenni. "
     },
     "free_flowing_rivers_text": {
         "p1": "I fiumi che scorrono liberamente (<ion-text class=\"font-bold\">\"free-flowing\"</ion-text>) sono quelli in cui sono garantiti tutti e quattro i tipi di connettività. Esistono tuttavia molte minacce potenziali al mantenimento di uno stato di libero deflusso dalle sorgenti alla foce. ",
-        "p2": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune."
+        "p2": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune.",
+        "foto1_caption":"iStock/Nome dell'autore"
     },
     "anthropogenicThreats": {
         "breadcrumb_title": "Minacce alla connettività",
@@ -53,7 +55,7 @@
         "step-15": "&nbsp",
         "step-16": "&nbsp",
         "step-17": "Con un numero così elevato di barriere, non sorprende che l'Europa abbia i fiumi più frammentati del mondo",
-        "caption": "Dati: AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European database of artificial instream barriers. Version 1.0 June 29th 2020.",
+        "caption": "Dati: AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European database of artificial instream barriers. Version 1.0 June 29th 2020. Nella mappa sono rappresentati gli ostacoli censiti durante il progetto AMBER, ma in alcune aree (inclusa buona parte dell'Italia) i dati sono ancora molto parziali e si stima che in Europa gli ostacoli siano ben oltre 1 milione",
         "anthropogenic_threats_text": {
             "p1": "Queste barriere hanno per lo più un impatto sulla <ion-text class=\"font-bold\" color=\"secondary\">connettività longitudinale</ion-text>, bloccando o limitando il passaggio di pesci e sedimenti. ",
             "p2": "Alcuni ostacoli, come le dighe, hanno anche un impatto sulla <ion-text class=\"font-bold\" color=\"secondary\">connettività temporale</ion-text>, in quanto regolano il flusso dell'acqua e dei sedimenti in base alle esigenze umane, anziché permettere al fiume di seguire il suo naturale andamento stagionale. ",
@@ -65,7 +67,7 @@
             "p5": "Gli ostacoli laterali sono spesso meno visibili e profondamente radicati nel paesaggio antropizzato, ma possono essere ancora più estesi e diffusi degli ostacoli longitudinali.",
             "dredging_caption": "Dragaggio di sedimenti in alveo",
             "p6": "Infine, diversi interventi umani riducono la <ion-text class=\"font-bold\" color=\"secondary\">connettività verticale</ion-text>. La pavimentazione degli alvei, il dragaggio o attività come gli svasi che portano all'intasamento del fondo con sedimenti fini limitano lo scambio tra acque superficiali e sotterranee.",
-            "fisk_caption": "A destra la confluenza dei fiumi Mississippi e Ohio (USA) nella mappa di Harold Fisk (1944), dove secoli di cambiamenti e migrazione dei meandri sono rappresentati con colori diversi, a sinistra la stessa area oggi (mappa Google Earth). L'alveo del fiume si è spostato poco rispetto al 1944 e la migrazione dei meandri è quasi totalmente ostacolata dalle opere di canalizzazione. Crediti: Eli Lazarus, Laboratorio di Dinamica Ambientale"
+            "fisk_caption": "A destra la confluenza dei fiumi Mississippi e Ohio (USA) nella mappa di Harold Fisk (1944), dove secoli di cambiamenti e migrazione dei meandri sono rappresentati con colori diversi, a sinistra la stessa area oggi (mappa Google Earth). L'alveo del fiume si è spostato poco rispetto al 1944 e la migrazione dei meandri è quasi totalmente ostacolata dalle opere di canalizzazione. Crediti: Eli Lazarus, The Environmental Dynamics Lab"
         }
     },
     "ecosystemImpacts": {
@@ -84,7 +86,7 @@
             "video4_caption": "credits: Francesco Comiti",
             "p6": "Le barriere laterali, come argini e protezioni spondali, determinano il degrado degli habitat delle pianure alluvionali e causano la perdita di zone umide, impediscono la ridistribuzione dei sedimenti e le inondazioni naturali, riducendo lo scambio con le acque sotterranee.",
             "p7": "Gli uccelli migratori si trovano ad affrontare sfide crescenti, poiché perdono l'accesso alle zone umide, che offrono cibo e habitat sicuri durante i loro viaggi. Gli habitat critici per la nidificazione, come i banchi di ghiaia e le isole, possono scomparire a causa dell'alterazione di forme e processi fluviali.",
-            "freshwater_species_title": "Specie d'acqua dolce",
+            "freshwater_species_title": "Impatti sulle specie d'acqua dolce",
             "p8": "L'intrappolamento dei sedimenti da parte delle barriere lungo il corso dei fiumi non altera solo gli habitat ripariali. Senza ostacoli, i sedimenti in tempi più o meno lunghi raggiungono la foce, controbilanciando l'erosione costiera e la perdita dei delta dei fiumi. Le aree ricche di sedimenti sono spesso anche ricche di biodiversità, poiché forniscono nutrienti al suolo. <br> Si stima che il delta del Nilo stia perdendo il <a href=\"https://www.forbes.com/sites/jeffopperman/2019/09/27/worlds-major-deltas-threatened-by-climate-change-and-also-by-how-we-develop-power-systems/?sh=c8de97a60e1f\" target=\"_blank\">98% </a>dell’apporto di sedimenti a causa di dighe e bacini artificiali a monte.",
             "p9": "L'intrappolamento dei sedimenti e l'erosione a valle minacciano la vita e le attività economiche di milioni di persone che appartengono a comunità insediate lungo i delta dei fiumi e le coste.",
             "p10": "L'erosione rende questi ambienti sempre più soggetti a forti inondazioni, un rischio aggravato dall'innalzamento del livello del mare.",
@@ -102,8 +104,8 @@
     },
     "possibleFutures": {
         "possible_futures_text": {
-            "section_title": "Il futuro dei fiumi europei ",
-            "breadcrumb_title": "Scenari futuri",
+            "section_title": "Futuro dei fiumi europei",
+            "breadcrumb_title": "Futuro dei fiumi europei",
             "dams_text": "Dighe di dimensioni medio-grandi e piccole <ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">esistenti</ion-text> e <ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">pianificate/in costruzione</ion-text> nella regione dei Balcani e del Mediterraneo Orientale",
             "balkans_caption": "Dati: Hydropower pressure on European rivers: The story in numbers by WWF, RiverWatch, EuroNatur,GEOTA",
             "barrier_removal_projects_chart_caption": "Dati: Dam removal Europe",

@@ -29,7 +29,8 @@
     },
     "free_flowing_rivers_text": {
         "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>",
-        "p2": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few."
+        "p2": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few.",
+        "foto1_caption": "iStock/Author's name"
     },
     "anthropogenicThreats": {
         "section_title": "The main threats to river connectivity",
@@ -53,7 +54,7 @@
         "step-15": "&nbsp;",
         "step-16": "&nbsp;",
         "step-17": "With such an enormous number of barriers, it is no surprise that Europe has the most fragmented rivers in the world",
-        "caption": "Data source: AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European database of artificial instream barriers. Version 1.0 June 29th 2020.",
+        "caption": "Data source: AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European database of artificial instream barriers. Version 1.0 June 29th 2020. The map shows the obstacles surveyed during the AMBER project, but in some areas (including much of Italy) the data is still very partial and it is estimated that there are over 1 million obstacles in Europe",
         "anthropogenic_threats_text": {
             "p1": "These barriers mostly impact <ion-text class=\"font-bold\" color=\"secondary\">longitudinal connectivity </ion-text>, blocking or limiting the passage of fish and sediments.",
             "p2": "Some obstacles, like dams, also impact <ion-text class=\"font-bold\" color=\"secondary\">temporal connectivity</ion-text>, as they regulate the flow of water and sediments according to human needs rather than allowing the river to follow its natural seasonal patterns.",
@@ -84,7 +85,7 @@
             "video4_caption": "credits: Francesco Comiti",
             "p6": "Lateral barriers such as bank protection works have an impact on floodplain habitats and cause the loss of wetlands by preventing natural-occurring inundations and sediment redistribution and reducing the exchange with the groundwater.",
             "p7": "Migratory birds face growing challenges as they lose access to wetlands, which offer safe havens of food and habitat throughout their journeys. Critical nesting habitat such as gravel bed bars and islands can disappear due to altered river flows.",
-            "freshwater_species_title": "Freshwater Species",
+            "freshwater_species_title": "Impacts on freshwater species",
             "p8": " The trapping of sediments by barriers doesn’t only alter riparian habitats. Without obstacles sediments would eventually reach the coastal zone, preventing coastal erosion and the loss of river deltas. Areas rich in sediments are often also rich in biodiversity since they supplement the soil with nutrients. It is estimated that the Nile river delta is losing <a href=\"https://www.forbes.com/sites/jeffopperman/2019/09/27/worlds-major-deltas-threatened-by-climate-change-and-also-by-how-we-develop-power-systems/?sh=c8de97a60e1f\" target=\"_blank\">98%</a> of its sediment supply because of upstream dams and reservoirs.",
             "p9": " Sediment trapping and downstream erosion threaten the lives and economic activities of the millions of people who belong to communities settled along river deltas and coasts.",
             "p10": "Erosion makes these environments increasingly susceptible to heavy floods, a risk aggravated by rising sea levels.",
@@ -102,8 +103,8 @@
     },
     "possibleFutures": {
         "possible_futures_text": {
-            "section_title": "The future for European rivers",
-            "breadcrumb_title": "Possible futures",
+            "section_title": "Future for European rivers",
+            "breadcrumb_title": "Future for European rivers",
             "dams_text": "<ion-text class=\"font-bold\" style=\"color:var(--ion-color-warning-dark)\">Existing</ion-text>,<ion-text class=\"font-bold\" style=\"color:var(--ion-color-danger-dark)\">planned / in construction </ion-text> medium-large and small hydropower dams in the Balkans and Eastern Mediterranean Region",
             "balkans_caption": "Data source: Hydropower pressure on European rivers: The story in numbers by WWF, RiverWatch, EuroNatur,GEOTA",
             "barrier_removal_projects_chart_caption": "Data source: Dam removal Europe",
