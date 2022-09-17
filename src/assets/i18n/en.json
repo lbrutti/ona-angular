@@ -54,7 +54,7 @@
         "step-15": "&nbsp;",
         "step-16": "&nbsp;",
         "step-17": "With such an enormous number of barriers, it is no surprise that Europe has the most fragmented rivers in the world",
-        "caption": "Data source: AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European database of artificial instream barriers. Version 1.0 June 29th 2020.",
+        "caption": "Data source: AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European database of artificial instream barriers. Version 1.0 June 29th 2020. The map shows the obstacles surveyed during the AMBER project, but in some areas (including much of Italy) the data is still very partial and it is estimated that there are over 1 million obstacles in Europe",
         "anthropogenic_threats_text": {
             "p1": "These barriers mostly impact <ion-text class=\"font-bold\" color=\"secondary\">longitudinal connectivity </ion-text>, blocking or limiting the passage of fish and sediments.",
             "p2": "Some obstacles, like dams, also impact <ion-text class=\"font-bold\" color=\"secondary\">temporal connectivity</ion-text>, as they regulate the flow of water and sediments according to human needs rather than allowing the river to follow its natural seasonal patterns.",
