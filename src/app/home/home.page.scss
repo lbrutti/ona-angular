@@ -530,6 +530,14 @@ section {
     }
 }
 
+.video_container {
+    display: block !important;
+
+    video {
+        width: 100%;
+    }
+}
+
 figcaption {
     font-size: small;
 }
