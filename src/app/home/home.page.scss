@@ -287,6 +287,8 @@ section {
 
     #anthropogenic_threats_article {
 
+        .step[data-step="1"].is-active,
+        .step[data-step="2"].is-active,
         .step[data-step="17"].is-active {
             div {
                 background-color: var(--ion-section-background-color);
