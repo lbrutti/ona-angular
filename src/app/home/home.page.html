@@ -531,7 +531,10 @@
                     <div id="ecosystem_impacts_viz_figure_chart_all" class="stacked_img ecosystem_impacts_viz"
                         data-step='6,7,8,9'>
                     </div>
-
+                    <figcaption *ngIf="!isMobile" id="ecosystem_impacts_viz_figure_chart_caption">
+                        {{'ecosystemImpacts.ecosystem_impacts_text.ecosystem_impacts_viz_figure_chart_caption'|transloco
+                        }}
+                    </figcaption>
                 </figure>
 
                 <!-- foreground master content -->
@@ -568,16 +571,17 @@
                     </div>
                     <div class="step smaller-font quick-transition" data-step="9"
                         attr.data-offset="{{ecosystem_viz_drill_offset}}">
-                        <div [innerHTML]="'ecosystemImpacts.step-9'|transloco | safehtml: 'html'">
+                        <div *ngIf="isMobile" class="step_content_wrapper">
+                            <div [innerHTML]="'ecosystemImpacts.step-9'|transloco | safehtml:'html'"></div>
+
+                            <div [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.ecosystem_impacts_viz_figure_chart_caption'|transloco | safehtml: 'html'"
+                                class="step-footer"></div>
+                        </div>
+                        <div *ngIf="!isMobile" [innerHTML]="'ecosystemImpacts.step-9'|transloco | safehtml: 'html'">
 
                         </div>
                     </div>
                 </article>
-            </section>
-            <section>
-                <figcaption id="ecosystem_impacts_viz_figure_chart_caption">
-                    {{'ecosystemImpacts.ecosystem_impacts_text.ecosystem_impacts_viz_figure_chart_caption'|transloco }}
-                </figcaption>
             </section>
             <section id="ecosystem_impacts_sediment_text" class="centered_text_block">
                 <div>
