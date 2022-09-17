@@ -172,7 +172,7 @@ export class HomePage implements AfterViewInit {
             let riverConnectivitiesFigureH = Math.floor(window.innerHeight / 2);
             healthyRiversStep.style("height", stepH + "px");
 
-            riverConnectivitiesStep.style("height", this.isMobile ? stepH : riverConnectivitiesH + "px");
+            riverConnectivitiesStep.style("height", (this.isMobile ? stepH : riverConnectivitiesH) + "px");
 
             threatsStep.style("height", stepH + "px");
 
@@ -184,7 +184,7 @@ export class HomePage implements AfterViewInit {
             let figureMarginTop = 36;// (window.innerHeight - figureHeight) / 2;
 
             riverConnectivitiesFigure
-                .style("height", this.isMobile ? figureHeight : riverConnectivitiesFigureH + "px")
+                .style("height", (this.isMobile ? figureHeight : riverConnectivitiesFigureH) + "px")
                 .style("top", figureMarginTop + "px");
 
             riverConnectivities.select(".step:last-child")
