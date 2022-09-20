@@ -1002,7 +1002,7 @@ export class HomePage implements AfterViewInit {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
-            .range([0, this.futureDamsWidth]);
+            .range([0, this.futureDamsWidth - 5]);
 
         // Add Y axis
         var y = d3.scaleBand()
@@ -1064,7 +1064,7 @@ export class HomePage implements AfterViewInit {
             .attr('data-type', (d: any) => d.type)
             .style("fill", (d: any) => colors[d.type])
             .text(d => `0%`)
-            .attr('x', () => x(100) - 10)
+            .attr('x', () => x(100) - 15)
             .attr('y', (d: any) => y(d.type) + 3.5)
             .attr('class', 'lollipop_value_label');
 
@@ -1085,6 +1085,18 @@ export class HomePage implements AfterViewInit {
                 .attr("fill", "none")
                 .attr("stroke", "darkred")
                 .attr("stroke-width", 7);
+
+            g.selectAll(".lollipop_value_label_small_of_planned")
+                .data([small_of_planned])
+                .enter()
+                .append("text")
+                .attr('data-type', (d: any) => d.type)
+                .style("fill", "darkred")
+                .text(d => `90%`)
+                .attr('x', () => x(44.1))
+                .attr('y', (d: any) => y("planned") + 22)
+                .attr('class', 'lollipop_value_label_small_of_planned');
+
         }
 
     }
@@ -1093,7 +1105,7 @@ export class HomePage implements AfterViewInit {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
-            .range([0, this.futureDamsWidth]);
+            .range([0, this.futureDamsWidth - 5]);
 
         let g = d3.select(chartContainer);
         // Change the X coordinates of line and circle
@@ -1108,7 +1120,7 @@ export class HomePage implements AfterViewInit {
             });
 
         g.selectAll(".lollipop_circle")
-            .each(function (d) {
+            .each(function () {
                 if ((this as HTMLElement).dataset.type == type) {
                     d3.select(this)
                         .transition()
@@ -1143,13 +1155,17 @@ export class HomePage implements AfterViewInit {
 
     private addFutureDamsBar(chartContainer: HTMLElement) {
         // Add X axis --> it is a date format
+        d3.select('.lollipop_value_label_small_of_planned').classed('active', false);
         var x = d3.scaleLinear()
             .domain([0, 100])
-            .range([0, this.futureDamsWidth]);
+            .range([0, this.futureDamsWidth - 5]);
 
         let g = d3.select(chartContainer);
         g.selectAll(".lollipop_line_small_of_planned")
             .transition()
+            .on('end', () => {
+                d3.select('.lollipop_value_label_small_of_planned').classed('active', true);
+            })
             .duration(2000)
             .attr("x2", (d: any) => x(d.value));
     }
