@@ -17,7 +17,7 @@
         </div>
         <main [ngClass]="{'mobile': isMobile}">
             <section id="header">
-                <video autoplay autoPlay muted loop playsinline id="anthropogenic_threats_dam_background"
+                <video autoplay autoPlay muted loop playsinline defaultmuted id="anthropogenic_threats_dam_background"
                     class="stacked_img">
                     <source src="assets/video/video1.mp4" type="video/mp4" />
                 </video>
@@ -502,7 +502,7 @@
 
                     </p>
                     <figure>
-                        <img src="assets/imgs/jpg/foto18.jpg" />
+                        <img src="assets/imgs/jpg/foto18_resize.jpg" />
                     </figure>
                     <p [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p7'|transloco | safehtml: 'html'">
 
