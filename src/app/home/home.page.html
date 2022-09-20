@@ -5,14 +5,6 @@
                 <ion-row>
                     <span>{{hovercardData.title | number:'':'en-US'}} {{hovercardData.definition | transloco}}</span>
                 </ion-row>
-                <!-- <ion-row>
-                    <ion-col>
-                        <img src="{{hovercardData.imgSrc}}" alt="{{hovercardData.imgAlt}}">
-                    </ion-col>
-                    <ion-col>
-                        <span [innerText]="hovercardData.content"></span>
-                    </ion-col>
-                </ion-row> -->
             </ion-grid>
         </div>
         <main [ngClass]="{'mobile': isMobile}">
@@ -151,8 +143,8 @@
             <section id="free_flowing_rivers_text">
                 <ion-grid>
                     <ion-row>
-                        <ion-col id="free_flowing_rivers_text_text_container" size-xs="12" size-sm="12" size-md="12" size-lg="12" size-xl="6"
-                            class="ion-no-padding-top ion-no-margin-top">
+                        <ion-col id="free_flowing_rivers_text_text_container" size-xs="12" size-sm="12" size-md="12"
+                            size-lg="12" size-xl="6" class="ion-no-padding-top ion-no-margin-top">
                             <p [innerHTML]="'free_flowing_rivers_text.p1'|transloco | safehtml: 'html'">
                             </p>
                             <p [innerHTML]="'free_flowing_rivers_text.p2'|transloco | safehtml: 'html'">
@@ -902,6 +894,16 @@
 
             </section>
             <section>
+                <ion-grid id="life_colophon">
+                    <ion-row>
+                        <ion-col id="logo_col">
+                            <img src="assets/imgs/jpg/LOGO_life.jpg" id="life_logo" />
+                        </ion-col>
+                        <ion-col id="life_disclaimer" size="12">
+                            {{'life_disclaimer' | transloco}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
                 <div id="colophon"><a target="_blank" href="https://www.cirf.org/it/home/">{{'colophon'|transloco}}</a>
                 </div>
             </section>
