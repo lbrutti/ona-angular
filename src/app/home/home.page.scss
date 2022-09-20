@@ -220,7 +220,7 @@ section {
 
 }
 
-#healty_rivers_caption,
+#healthy_rivers_caption,
 #anthropogenic_threats_caption,
 #ecosystem_impacts_viz_figure_chart_caption {
     position: absolute;
@@ -622,6 +622,13 @@ main.mobile {
         }
 
         background-color: var(--ion-section-background-color);
+    }
+
+    #healthy_rivers {
+        .map_global_rivers {
+            top: 2vh;
+            height: 100%;
+        }
     }
 
     #healthy_rivers_caption {
