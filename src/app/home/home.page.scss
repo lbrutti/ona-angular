@@ -281,7 +281,7 @@ section {
     article ::ng-deep ion-text {
         font-size: 5rem;
         font-weight: 700;
-        color: var(--ion-background-color, #3c372f);
+        color: var(--ion-dark-brown, #3c372f);
         border-bottom: 1rem solid var(--ion-color-base);
     }
 
@@ -526,7 +526,6 @@ section {
         font-size: 4rem;
         font-family: var(--ion-font-family-bold);
         font-weight: bolder;
-        // color: var(--ion-background-color)
     }
 }
 
