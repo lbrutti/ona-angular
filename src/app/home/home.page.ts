@@ -1094,7 +1094,7 @@ export class HomePage implements AfterViewInit {
                 .style("fill", "darkred")
                 .text(d => `90%`)
                 .attr('x', () => x(44.1))
-                .attr('y', (d: any) => y("planned") + 22)
+                .attr('y', (d: any) => y("planned") + 25)
                 .attr('class', 'lollipop_value_label_small_of_planned');
 
         }
