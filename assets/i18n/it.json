@@ -31,7 +31,7 @@
     "free_flowing_rivers_text": {
         "p1": "I fiumi che scorrono liberamente (<ion-text class=\"font-bold\">\"free-flowing\"</ion-text>) sono quelli in cui sono garantiti tutti e quattro i tipi di connettività. Esistono tuttavia molte minacce potenziali al mantenimento di uno stato di libero deflusso dalle sorgenti alla foce. ",
         "p2": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune.",
-        "foto1_caption": "iStock/Nome dell'autore"
+        "foto1_caption": "Credits: iStock/Sebastian Saldarriaga Torres"
     },
     "anthropogenicThreats": {
         "breadcrumb_title": "Minacce alla connettività",
@@ -60,12 +60,12 @@
             "p1": "Queste barriere hanno per lo più un impatto sulla <ion-text class=\"font-bold\" color=\"secondary\">connettività longitudinale</ion-text>, bloccando o limitando il passaggio di pesci e sedimenti. ",
             "p2": "Alcuni ostacoli, come le dighe, hanno anche un impatto sulla <ion-text class=\"font-bold\" color=\"secondary\">connettività temporale</ion-text>, in quanto regolano il flusso dell'acqua e dei sedimenti in base alle esigenze umane, anziché permettere al fiume di seguire il suo naturale andamento stagionale. ",
             "p3": "Altri tipi di interventi umani esercitano una pressione sulla <ion-text class=\"font-bold\" color=\"secondary\">connettività laterale</ion-text>, ad esempio gli argini e le opere di protezione delle sponde. Queste barriere sono costruite nelle pianure alluvionali, parallelamente alle sponde del fiume. Gli argini sono utilizzati per impedire all'acqua di inondare i terreni vicini. Le opere di protezione spondale, invece, sono realizzate per impedire all’alveo del fiume di spostarsi lateralmente, ma non impediscono necessariamente le inondazioni.",
-            "embankments_caption": "Argini",
+            "embankments_caption": "Argini. Credits:iStock",
             "bank_protection_caption": "Opere di protezione spondale. Credits: Andrea Goltara",
             "p4": "I fiumi artificialmente confinati lateralmente si canalizzano, perdendo il loro carattere di elementi vivi che si intrecciano con l'ambiente e cambiano forma nel tempo. Ciò aumenta il rischio di inondazioni a valle e in caso di eventi che superano gli argini, o di loro cedimento, può determinare alluvioni catastrofiche anche in territori che apparivano \"protetti”.",
             "reno_caption": "Fiume Reno (Regione Emilia Romagna) nel 1954 e nel 2022. Credits: Volo IGMI GAI 1954 e Bing Maps. ",
             "p5": "Gli ostacoli laterali sono spesso meno visibili e profondamente radicati nel paesaggio antropizzato, ma possono essere ancora più estesi e diffusi degli ostacoli longitudinali.",
-            "dredging_caption": "Dragaggio di sedimenti in alveo",
+            "dredging_caption": "Dragaggio di sedimenti in alveo. Credits:iStock",
             "p6": "Infine, diversi interventi umani riducono la <ion-text class=\"font-bold\" color=\"secondary\">connettività verticale</ion-text>. La pavimentazione degli alvei, il dragaggio o attività come gli svasi che portano all'intasamento del fondo con sedimenti fini limitano lo scambio tra acque superficiali e sotterranee.",
             "fisk_caption": "A destra la confluenza dei fiumi Mississippi e Ohio (USA) nella mappa di Harold Fisk (1944), dove secoli di cambiamenti e migrazione dei meandri sono rappresentati con colori diversi, a sinistra la stessa area oggi (mappa Google Earth). L'alveo del fiume si è spostato poco rispetto al 1944 e la migrazione dei meandri è quasi totalmente ostacolata dalle opere di canalizzazione. Crediti: Eli Lazarus, The Environmental Dynamics Lab"
         }
