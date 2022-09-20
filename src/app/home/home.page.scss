@@ -292,6 +292,12 @@ section {
     #anthropogenic_threats_article {
 
         .step[data-step="1"].is-active,
+        .step[data-step="2"].is-active {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .step[data-step="1"].is-active,
         .step[data-step="2"].is-active,
         .step[data-step="17"].is-active {
             div {
@@ -656,6 +662,12 @@ main.mobile {
 
     #free_flowing_rivers_text {
         font-size: 18px;
+
+        #free_flowing_rivers_text_text_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
     }
 
     #anthropogenic_threats {
