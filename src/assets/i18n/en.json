@@ -30,7 +30,7 @@
     "free_flowing_rivers_text": {
         "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>",
         "p2": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few.",
-        "foto1_caption": "iStock/Author's name"
+        "foto1_caption": "iStock/Sebastian Saldarriaga Torres"
     },
     "anthropogenicThreats": {
         "section_title": "The main threats to river connectivity",
@@ -59,7 +59,7 @@
             "p1": "These barriers mostly impact <ion-text class=\"font-bold\" color=\"secondary\">longitudinal connectivity </ion-text>, blocking or limiting the passage of fish and sediments.",
             "p2": "Some obstacles, like dams, also impact <ion-text class=\"font-bold\" color=\"secondary\">temporal connectivity</ion-text>, as they regulate the flow of water and sediments according to human needs rather than allowing the river to follow its natural seasonal patterns.",
             "p3": " Other types of human interventions put pressure on <ion-text class=\"font-bold\" color=\"secondary\"> lateral connectivity</ion-text>, for example artificial levees and bank protection works. Such barriers are built in the floodplains and run parallel to the river. Levees are used to stop water from flooding the nearby land. Bank protection works, on the other hand, are made specifically to prevent the river channel from shifting its path sideways, although they don’t necessarily block the river’s waters from reaching the floodplains.",
-            "embankments_caption": "Embankments",
+            "embankments_caption": "Embankments. Credits:iStock",
             "bank_protection_caption": "Bank protection works. Credits: Andrea Goltara",
             "p4": "Rivers with lateral barriers quickly become channels that follow a strict path, rather than live elements that weave in the environment and change shape over time. This can cause catastrophic floods when rivers overflow embankments and also increases flood risk further downstream.",
             "reno_caption": "River Reno (Regione Emilia Romagna, Italy) in 1954 and 2022. Credits: Flight IGMI GAI 1954 and Bing Maps.",
