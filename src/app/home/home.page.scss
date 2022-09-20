@@ -224,11 +224,14 @@ section {
 #anthropogenic_threats_caption,
 #ecosystem_impacts_viz_figure_chart_caption {
     position: absolute;
-    top: calc(100% - 10vh);
+    top: calc(100% - 8vh);
 }
 
 #healthy_rivers {
 
+    article {
+        font-family: Century-Gothic-Bold;
+    }
 
     .map_global_rivers {
         top: 10vh;
