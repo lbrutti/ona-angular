@@ -763,7 +763,7 @@
 
             <section id="about_credits" class="centered_text_block">
                 <h1 class="section_title" id="about_title">About</h1>
-                <div id="methodology">{{'about.methodology' | transloco}}</div>
+                <div id="methodology" [innerHTML]="'about.methodology' | transloco | safehtml:'html'"></div>
                 <h4>{{'about.credits' | transloco}}</h4>
                 <p>
                     <ion-label class="font-bold">{{'about.financed_by_label' | transloco}}</ion-label>

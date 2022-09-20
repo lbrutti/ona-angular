@@ -151,7 +151,7 @@
     },
     "about": {
         "breadcrumb_title": "About",
-        "methodology": "This website has been created to make research and data accessible to a wide public. River connectivity, the ways its loss impacts ecosystems, and the difficulties involved in its restoration, are complex issues. CIRF and Wetlands International Europe have chosen data visualization as a tool to shed light on this complexity without oversimplifying it. Visualizing data, through charts and visual metaphors, helps humans recognize patterns by leveraging visual strategies that guide cognition. Combined with text, data visualization makes complexity accessible, explorable, and memorable in a way that text alone doesn’t.",
+        "methodology": "This website has been created to make research and data accessible to a wide public. River connectivity, the ways its loss impacts ecosystems, and the difficulties involved in its restoration, are complex issues. <br/>CIRF and Wetlands International Europe have chosen data visualization as a tool to shed light on this complexity without oversimplifying it. <br/>Visualizing data, through charts and visual metaphors, helps humans recognize patterns by leveraging visual strategies that guide cognition. <br/>Combined with text, data visualization makes complexity accessible, explorable, and memorable in a way that text alone doesn’t.",
         "credits": "Credits:",
         "financed_by_label": "Project financed by:",
         "financed_by": "CIRF, Wetlands International Europe, LIFE Programme, Fondazione Cariplo",
