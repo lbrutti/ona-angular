@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     constructor(private http: HttpClient) {
-        this.http.get('/assets/version.json').subscribe((res: any) => {
+        this.http.get('assets/version.json').subscribe((res: any) => {
             (window as any).FREE_FLOWING_RIVERS = { VERSION: res.SemVer };
         });
     }
