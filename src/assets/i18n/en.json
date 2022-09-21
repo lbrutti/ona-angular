@@ -30,7 +30,7 @@
     "free_flowing_rivers_text": {
         "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>",
         "p2": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few.",
-        "foto1_caption": "iStock/Sebastian Saldarriaga Torres"
+        "foto1_caption": "(iStock/Sebastian Saldarriaga Torres)"
     },
     "anthropogenicThreats": {
         "section_title": "The main threats to river connectivity",
@@ -59,14 +59,14 @@
             "p1": "These barriers mostly impact <ion-text class=\"font-bold\" color=\"secondary\">longitudinal connectivity </ion-text>, blocking or limiting the passage of fish and sediments.",
             "p2": "Some obstacles, like dams, also impact <ion-text class=\"font-bold\" color=\"secondary\">temporal connectivity</ion-text>, as they regulate the flow of water and sediments according to human needs rather than allowing the river to follow its natural seasonal patterns.",
             "p3": " Other types of human interventions put pressure on <ion-text class=\"font-bold\" color=\"secondary\"> lateral connectivity</ion-text>, for example artificial levees and bank protection works. Such barriers are built in the floodplains and run parallel to the river. Levees are used to stop water from flooding the nearby land. Bank protection works, on the other hand, are made specifically to prevent the river channel from shifting its path sideways, although they don’t necessarily block the river’s waters from reaching the floodplains.",
-            "embankments_caption": "Embankments. Credits:iStock",
-            "bank_protection_caption": "Bank protection works. Credits: Andrea Goltara",
+            "embankments_caption": "Embankments. (iStock/GrahamMoore999)",
+            "bank_protection_caption": "Bank protection works. (Andrea Goltara)",
             "p4": "Rivers with lateral barriers quickly become channels that follow a strict path, rather than live elements that weave in the environment and change shape over time. This can cause catastrophic floods when rivers overflow embankments and also increases flood risk further downstream.",
-            "reno_caption": "River Reno (Regione Emilia Romagna, Italy) in 1954 and 2022. Credits: Flight IGMI GAI 1954 and Bing Maps.",
+            "reno_caption": "River Reno (Regione Emilia Romagna, Italy) in 1954 and 2022. (Flight IGMI GAI 1954; Bing Maps)",
             "p5": "Lateral obstacles are less likely to be noticed as they are deeply ingrained in the anthropized landscape, but they can be even more widespread than the shocking number of longitudinal obstacles like dams, weirs, ramps, and sluices.",
-            "dredging_caption": "Riverbed dredging",
+            "dredging_caption": "Riverbed dredging (iStock/roman023)",
             "p6": "Lastly, human interventions hinder the <ion-text class=\"font-bold\" color=\"secondary\"> vertical connectivity</ion-text> of the riverbed. Paving, dredging, or clogging with fine sediments limit the exchange between surface and groundwater.",
-            "fisk_caption": "On the right the confluence of the Mississippi and Ohio rivers (USA) in the Harold Fisk map (1944), where centuries of changes and migration of meanders are represented with different colours, on the left the same area now (Google Earth map). The riverbed shows limited changes with respect to 1944 and the migration of meanders is almost totally hindered due to channelisation works. Credits: Eli Lazarus, The Environmental Dynamics Lab"
+            "fisk_caption": "On the right the confluence of the Mississippi and Ohio rivers (USA) in the Harold Fisk map (1944), where centuries of changes and migration of meanders are represented with different colours, on the left the same area now (Google Earth map). The riverbed shows limited changes with respect to 1944 and the migration of meanders is almost totally hindered due to channelisation works. (Eli Lazarus, The Environmental Dynamics Lab)"
         }
     },
     "ecosystemImpacts": {
@@ -82,14 +82,14 @@
             "p4": "Fish get caught in dam turbines as they move downstream, or get stuck and disoriented as they move upstream and in reservoirs. In short, the negative impact of river fragmentation on the survival of fish species is great, and has been <a href=\"https://onlinelibrary.wiley.com/doi/full/10.1002/rra.3386#rra3386-sec-0006-title\" target=\"_blank\">documented and quantified</a>.",
             "p5a": "Barriers also transform the physical and chemical characteristics of rivers and negatively impact a wide range of freshwater species. Sediments of different sizes, especially the coarser ones, get trapped, leading to riverbed erosion.",
             "p5b": "The latter, together with the altered water flows due to barriers, is linked to more salty water from the sea penetrating the river. Such change in salinity affects species’ distribution, behavior, and limits the reproduction rate.",
-            "video4_caption": "credits: Francesco Comiti",
+            "video4_caption": "(Francesco Comiti)",
             "p6": "Lateral barriers such as bank protection works have an impact on floodplain habitats and cause the loss of wetlands by preventing natural-occurring inundations and sediment redistribution and reducing the exchange with the groundwater.",
             "p7": "Migratory birds face growing challenges as they lose access to wetlands, which offer safe havens of food and habitat throughout their journeys. Critical nesting habitat such as gravel bed bars and islands can disappear due to altered river flows.",
             "freshwater_species_title": "Impacts on freshwater species",
             "p8": " The trapping of sediments by barriers doesn’t only alter riparian habitats. Without obstacles sediments would eventually reach the coastal zone, preventing coastal erosion and the loss of river deltas. Areas rich in sediments are often also rich in biodiversity since they supplement the soil with nutrients. It is estimated that the Nile river delta is losing <a href=\"https://www.forbes.com/sites/jeffopperman/2019/09/27/worlds-major-deltas-threatened-by-climate-change-and-also-by-how-we-develop-power-systems/?sh=c8de97a60e1f\" target=\"_blank\">98%</a> of its sediment supply because of upstream dams and reservoirs.",
             "p9": " Sediment trapping and downstream erosion threaten the lives and economic activities of the millions of people who belong to communities settled along river deltas and coasts.",
             "p10": "Erosion makes these environments increasingly susceptible to heavy floods, a risk aggravated by rising sea levels.",
-            "caption_puglia": "Coastline of Puglia (Italy) near the Ofanto mouth in 1954 and in 2022 showing a maximum withdrawal of 600 m. (Flight IGMI GAI 1954 e Bing Maps.)"
+            "caption_puglia": "Coastline of Puglia (Italy) near the Ofanto mouth in 1954 and in 2022 showing a maximum withdrawal of 600 m. (Flight IGMI GAI 1954; Bing Maps.)"
         },
         "step-1": "The International Union for Conservation of Nature (IUCN) assessed the status of freshwater species in Europe",
         "step-2": "1% of them are <ion-text highlight-color=\"danger-dark\" class=\"font-bold\">extinct, either globally or regionally</ion-text>.",
@@ -116,12 +116,12 @@
             "p5": "Small and obsolete barriers in particular cause significant harm while providing little benefits - or even representing an economic burden in maintenance costs and safety risks.",
             "p6": "It is on this basis that movements all over the world are organizing to restore global free-flowing rivers by removing the infrastructure that inhibits their free flows. In Europe, Dam Removal Europe has <a href=\"https://damremoval.eu/about/\" target=\"_blank\">documented</a> the removal of at least 4,984 longitudinal barriers, and the <a href=\"https://restorerivers.eu/wiki/index.php?title=Main_Page\" target=\"_blank\">RiverWiki: Restoring Europe’s rivers</a> has collected over 1,400 case studies. These case studies portray the complexity of what river restoration can mean in different contexts: not only the demolition of obsolete dams and longitudinal barriers, but also the dismantling of riverbank protections to allow lateral movements, and the mitigation of the impacts, for example through sediment reinjection, when removal is not possible.",
             "p7": "These numbers capture only a fraction of the overall removed barriers, but there are likely more. Yet, even a small number of strategic  removals can have a significant positive impact: the <a href=\"https://openrivers.eu/open-rivers-programme-supports-19-new-dam-removal-projects-opening-up-386-km-of-river/\" target=\"_blank\">Open Rivers Programme</a>, for example, claims that by removing just 19 specific dams the programme-supported projects will free 386 km of rivers.",
-            "restored_video_caption": "Restored reach of the river Drac (France). Credits: Bruno Boz",
+            "restored_video_caption": "Restored reach of the river Drac (France). (Bruno Boz)",
             "p8": "Associations and grassroots movements for the restoration of rivers might finally have found strong institutional support for their actions, with the European Commission presenting the proposal for a <a href=\"https://ec.europa.eu/commission/presscorner/detail/en/ip_22_3746\" target=\"_blank\">\"Nature Restoration Law\"</a> in June 2022.",
             "p9": " If approved, the legislation would bind EU Member States to restore rivers and wetlands, along with other natural habitats experiencing degradation and biodiversity loss. In particular, the Nature Restoration Law requires an inventory of barriers and plans for removals, with an ambition for the restoration of at least 25,000 km of free-flowing rivers by 2030.",
             "p10": "The existing experiences of barrier removals and the potential support of the EU legislation show that restoring rivers is not only possible, but can be spectacularly impactful for humans, biodiversity, and landscapes.",
             "p11": "The strategic removal of existing obstacles, the mitigation of the impacts of those that cannot be removed, together with the conservation of existing free-flowing river reaches, and a critical assessment of future hydropower dam developments, are much-needed actions to counter the loss of river connectivity in Europe.",
-            "bank_protection_removal_caption": "Bank protection removal in the river Sangro (Italy). Credits: Andrea Goltara"
+            "bank_protection_removal_caption": "Bank protection removal in the river Sangro (Italy). (Andrea Goltara)"
         },
         "possible_futures_viz_figure_title": "Hydropower dams",
         "possible_futures_viz_figure_smaller_than_10MW": "smaller than 10MW",
@@ -172,5 +172,7 @@
         "barriers": "barriers"
     },
     "life_disclaimer": "The Wetlands International-European Association and CIRF gratefully acknowledge financial support from the European Commission. The contents of this website are the sole responsibility of Wetlands International-European Association and CIRF and can in no way be taken to reflect the views of the European Commission.",
-    "colophon": "Copyright © CIRF - 2022"
+    "colophon": "Copyright © CIRF - 2022",
+    "video3_credits": "(iStock/Dragan Ristic)",
+    "foto18_credits": "(graphixel)"
 }
