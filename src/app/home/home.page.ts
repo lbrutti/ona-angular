@@ -74,10 +74,13 @@ export class HomePage implements AfterViewInit {
     possibleFuturesScroller: any;
     otherLang: string;
 
+    public isIPhone: boolean = false;
     constructor(public platform: Platform, public translocoService: TranslocoService) {
         this.sliderDirection = this.platform.is('mobile') ? 'vertical' : 'horizontal';
         this.maxBreadcrumbItems = this.platform.is('mobile') ? 3 : 5;
         this.isMobile = this.platform.is('mobile');
+        this.isIPhone = this.platform.is('iphone');
+
         if (this.isMobile) {
             this.futureDamsMargin.left = 10;
             this.futureDamsMargin.right = 15;
@@ -165,17 +168,23 @@ export class HomePage implements AfterViewInit {
         let handleResize = () => {
             // 1. update height of step elements
             let stepH = Math.floor(window.innerHeight * 0.5);
+            let riverConnectivitiesH = Math.floor(window.innerHeight / 3);
+            let riverConnectivitiesFigureH = Math.floor(window.innerHeight / 2);
             healthyRiversStep.style("height", stepH + "px");
-            riverConnectivitiesStep.style("height", stepH + "px");
+
+            riverConnectivitiesStep.style("height", (this.isMobile ? stepH : riverConnectivitiesH) + "px");
+
             threatsStep.style("height", stepH + "px");
+
             ecosystemImpactsStep.style("height", stepH + "px");
+
             possibleFuturesStep.style("height", stepH + "px");
 
             let figureHeight = window.innerHeight / (this.isMobile ? 2 : 1);
             let figureMarginTop = 36;// (window.innerHeight - figureHeight) / 2;
 
             riverConnectivitiesFigure
-                .style("height", figureHeight + "px")
+                .style("height", (this.isMobile ? figureHeight : riverConnectivitiesFigureH) + "px")
                 .style("top", figureMarginTop + "px");
 
             riverConnectivities.select(".step:last-child")
@@ -993,7 +1002,7 @@ export class HomePage implements AfterViewInit {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
-            .range([0, this.futureDamsWidth]);
+            .range([0, this.futureDamsWidth - 5]);
 
         // Add Y axis
         var y = d3.scaleBand()
@@ -1042,10 +1051,11 @@ export class HomePage implements AfterViewInit {
             .data(data)
             .enter()
             .append("text")
-            .text((d: any) => d.type)
+            .text((d: any) => this.translocoService.translate(d.type))
             .style("fill", (d: any) => colors[d.type])
             .attr('x', 5)
             .attr('y', (d: any) => y(d.type) - 10)
+            .attr('class','lollipop_type_label font-bold');
 
 
         g.selectAll(".lollipop_value_label")
@@ -1054,8 +1064,8 @@ export class HomePage implements AfterViewInit {
             .append("text")
             .attr('data-type', (d: any) => d.type)
             .style("fill", (d: any) => colors[d.type])
-            .text(d => `0%`)
-            .attr('x', () => x(100) - 10)
+            .text(`0%`)
+            .attr('x', () => x(100) - 15)
             .attr('y', (d: any) => y(d.type) + 3.5)
             .attr('class', 'lollipop_value_label');
 
@@ -1076,6 +1086,18 @@ export class HomePage implements AfterViewInit {
                 .attr("fill", "none")
                 .attr("stroke", "darkred")
                 .attr("stroke-width", 7);
+
+            g.selectAll(".lollipop_value_label_small_of_planned")
+                .data([small_of_planned])
+                .enter()
+                .append("text")
+                .attr('data-type', (d: any) => d.type)
+                .style("fill", "darkred")
+                .text(d => `${this.translocoService.translate('small_of_planned')}: 90%`)
+                .attr('x',0)
+                .attr('y', (d: any) => y("planned") + 25)
+                .attr('class', 'lollipop_value_label_small_of_planned');
+
         }
 
     }
@@ -1084,7 +1106,7 @@ export class HomePage implements AfterViewInit {
         // Add X axis --> it is a date format
         var x = d3.scaleLinear()
             .domain([0, 100])
-            .range([0, this.futureDamsWidth]);
+            .range([0, this.futureDamsWidth - 5]);
 
         let g = d3.select(chartContainer);
         // Change the X coordinates of line and circle
@@ -1099,7 +1121,7 @@ export class HomePage implements AfterViewInit {
             });
 
         g.selectAll(".lollipop_circle")
-            .each(function (d) {
+            .each(function () {
                 if ((this as HTMLElement).dataset.type == type) {
                     d3.select(this)
                         .transition()
@@ -1134,13 +1156,17 @@ export class HomePage implements AfterViewInit {
 
     private addFutureDamsBar(chartContainer: HTMLElement) {
         // Add X axis --> it is a date format
+        d3.select('.lollipop_value_label_small_of_planned').classed('active', false);
         var x = d3.scaleLinear()
             .domain([0, 100])
-            .range([0, this.futureDamsWidth]);
+            .range([0, this.futureDamsWidth - 5]);
 
         let g = d3.select(chartContainer);
         g.selectAll(".lollipop_line_small_of_planned")
             .transition()
+            .on('end', () => {
+                d3.select('.lollipop_value_label_small_of_planned').classed('active', true);
+            })
             .duration(2000)
             .attr("x2", (d: any) => x(d.value));
     }
