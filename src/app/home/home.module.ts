@@ -7,7 +7,6 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslocoModule } from '@ngneat/transloco';
 import 'img-comparison-slider';
-import { SafehtmlPipe } from '../utils/pipes/safepipe/safehtml.pipe';
 import { SafehtmlPipeModule } from '../utils/pipes/safepipe/safehtml.pipe.module';
 
 @NgModule({
