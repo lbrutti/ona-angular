@@ -275,6 +275,12 @@ section {
 
 #free_flowing_rivers_text {
     font-size: 20px;
+
+    #free_flowing_rivers_text_text_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
 #anthropogenic_threats {
@@ -661,12 +667,6 @@ main.mobile {
 
     #free_flowing_rivers_text {
         font-size: 18px;
-
-        #free_flowing_rivers_text_text_container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
     }
 
     #anthropogenic_threats {

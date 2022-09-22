@@ -1051,10 +1051,11 @@ export class HomePage implements AfterViewInit {
             .data(data)
             .enter()
             .append("text")
-            .text((d: any) => d.type)
+            .text((d: any) => this.translocoService.translate(d.type))
             .style("fill", (d: any) => colors[d.type])
             .attr('x', 5)
             .attr('y', (d: any) => y(d.type) - 10)
+            .attr('class','lollipop_type_label font-bold');
 
 
         g.selectAll(".lollipop_value_label")
@@ -1063,7 +1064,7 @@ export class HomePage implements AfterViewInit {
             .append("text")
             .attr('data-type', (d: any) => d.type)
             .style("fill", (d: any) => colors[d.type])
-            .text(d => `0%`)
+            .text(`0%`)
             .attr('x', () => x(100) - 15)
             .attr('y', (d: any) => y(d.type) + 3.5)
             .attr('class', 'lollipop_value_label');
@@ -1092,8 +1093,8 @@ export class HomePage implements AfterViewInit {
                 .append("text")
                 .attr('data-type', (d: any) => d.type)
                 .style("fill", "darkred")
-                .text(d => `90%`)
-                .attr('x', () => x(44.1))
+                .text(d => `${this.translocoService.translate('small_of_planned')}: 90%`)
+                .attr('x',0)
                 .attr('y', (d: any) => y("planned") + 25)
                 .attr('class', 'lollipop_value_label_small_of_planned');
 
