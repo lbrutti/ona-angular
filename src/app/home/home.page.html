@@ -26,7 +26,8 @@
                         [innerHTML]="'intro.introSubtitle'|transloco | safehtml: 'html'"></h1>
                 </div>
                 <div id="subtitleCredits">
-                    {{'intro.subtitleCredits' | transloco}}
+                    <span>{{'intro.subtitleCredits' | transloco}}</span>
+                    <span id="videoCredits">{{'intro.subtitleVideoCredits' | transloco}}</span>
                 </div>
             </section>
 
