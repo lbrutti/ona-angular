@@ -10,11 +10,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
-    declarations: [AppComponent],
-    entryComponents: [],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, TranslocoRootModule],
-    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [AppComponent],
+  entryComponents: [],
+  imports: [BrowserModule, IonicModule.forRoot({
+    platform: {
+      /** The default `desktop` function returns false for devices with a touchscreen.
+          This is not always wanted, so this function tests the User Agent instead.
+       **/
+      desktop: (win) => {
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
+        return !isMobile;
+      }
+    },
+  }), AppRoutingModule, HttpClientModule, TranslocoRootModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

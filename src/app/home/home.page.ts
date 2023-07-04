@@ -88,8 +88,6 @@ export class HomePage implements AfterViewInit {
     } else if ('msMaxTouchPoints' in navigator) {
       hasTouchScreen = (navigator as any).msMaxTouchPoints > 0;
     }
-
-
     const goodDevice = this.platform.is('desktop') || this.platform.is('tablet') || !hasTouchScreen;
     this.isMobile = !goodDevice;
 
