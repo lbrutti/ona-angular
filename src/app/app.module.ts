@@ -20,7 +20,13 @@ import { TranslocoRootModule } from './transloco-root.module';
       desktop: (win) => {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
         return !isMobile;
-      }
+      },
+      mobile: (win) => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
+      },
+      iphone: (win) => {
+        return /iPhone/i.test(win.navigator.userAgent);
+      },
     },
   }), AppRoutingModule, HttpClientModule, TranslocoRootModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
