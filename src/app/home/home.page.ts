@@ -130,8 +130,6 @@ export class HomePage implements AfterViewInit {
 
     //load connectivity imgs
     const connectivity = await d3.xml('assets/imgs/svg/connectivity/connectivity.svg');
-    // connectivity.documentElement.setAttribute('width', 'auto');
-    // connectivity.documentElement.setAttribute('height', 'auto');
 
     d3.select(connectivity.documentElement).style('height', '100%');
     d3.select(connectivity.documentElement).style('width', '100%');
@@ -182,7 +180,8 @@ export class HomePage implements AfterViewInit {
       const riverConnectivitiesFigureH = Math.floor(window.innerHeight / 2);
       healthyRiversStep.style('height', stepH + 'px');
 
-      riverConnectivitiesStep.style('height', (this.isMobile ? stepH : riverConnectivitiesH) + 'px');
+      // riverConnectivitiesStep.style('height', (this.isMobile ? stepH : riverConnectivitiesH) + 'px');
+      riverConnectivitiesStep.style('height', stepH + 'px');
 
       threatsStep.style('height', stepH + 'px');
 
@@ -197,8 +196,8 @@ export class HomePage implements AfterViewInit {
         .style('height', (this.isMobile ? figureHeight : riverConnectivitiesFigureH) + 'px')
         .style('top', figureMarginTop + 'px');
 
-      riverConnectivities.select('.step:last-child')
-        .style('height', 2 * stepH + 'px');
+      // riverConnectivities.select('.step:last-child')
+      //   .style('height', 2 * stepH + 'px');
 
       healthyRiversFigure
         .style('height', figureHeight + 'px')
