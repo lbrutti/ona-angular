@@ -279,7 +279,8 @@ section {
   #free_flowing_rivers_text_text_container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    //TODO: decommentare per ripristinare spazio fra paragrafi
+    //    justify-content: space-between;
   }
 }
 
@@ -509,7 +510,21 @@ section {
   }
 
   #intro_subtitle {
-    background: darkred;
+    // prima opzione
+    // color: var(--ion-text-color, #000);
+    // background: var(--ion-section-background-color);
+
+    // seconda opzione
+    // background: #7593ce;
+    // color: #e9e4d8;
+
+    //terza opzione
+    // background: #d7d0c0;
+    // color: #60615b;
+
+    //quarta opzione
+    background: #75938d;
+    color: #e9e4d8;
   }
 
   #subtitleCredits {
