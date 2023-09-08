@@ -11,7 +11,7 @@
     "healthyRivers": {
         "section_title": "Fiumi in salute",
         "four_dimensions_title": "Le quattro dimensioni della connettività",
-        "step-1": "Questi sono i fiumi <ion-text color=\"secondary\">più lunghi*</ion-text> del mondo ",
+        "step-1": "Questi sono i fiumi <ion-text color=\"secondary\">più lunghi*</ion-text> del mondo",
         "step-1-subtitle": "*definiti come fiumi di lunghezza superiore a 1.000 km",
         "step-2": "La maggior parte di essi  <ion-text color=\"danger\">non scorre liberamente...</ion-text>",
         "step-3": "... solo alcuni rimangono <ion-text color=\"success\">\"free-flowing”</ion-text>.",
@@ -30,8 +30,9 @@
         "step-5": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività temporale</ion-text> fa riferimento alla possibilità dei processi fluviali, connessi in particolare al regime delle portate idriche, di svolgersi seguendo la naturale alternanza nel tempo tipica di un certo corso d’acqua. Questo a diverse scale temporali: mesi, anni o decenni."
     },
     "free_flowing_rivers_text": {
-        "p1": "I fiumi che scorrono liberamente (<ion-text class=\"font-bold\">\"free-flowing\"</ion-text>) sono quelli in cui sono garantiti tutti e quattro i tipi di connettività. Esistono tuttavia molte minacce potenziali al mantenimento di uno stato di libero deflusso dalle sorgenti alla foce. ",
-        "p2": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune.",
+        "p1": "I fiumi che scorrono liberamente (<ion-text class=\"font-bold\">\"free-flowing\"</ion-text>) sono quelli in cui sono garantiti tutti e quattro i tipi di connettività. ",
+        "p2": "Esistono tuttavia molte minacce potenziali al mantenimento di uno stato di libero deflusso dalle sorgenti alla foce. ",
+        "p3": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune.",
         "foto1_caption": "(iStock/Sebastian Saldarriaga Torres)"
     },
     "anthropogenicThreats": {
