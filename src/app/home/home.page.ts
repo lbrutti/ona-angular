@@ -236,11 +236,11 @@ export class HomePage implements AfterViewInit {
     };
 
     // scrollama event handlers
-    function handleStepEnterConntectivities(response: any) {
+    function handleStepEnterConnectivities(response: any) {
       // response = { element, direction, index }
 
       // add color to current step only
-      riverConnectivitiesStep.classed('is-active', (d, i) => i === response.index);
+      // riverConnectivitiesStep.classed('is-active', (d, i) => i === response.index);
 
       // update graphic based on step
       const connectivityAnimations = riverConnectivitiesFigure.selectAll('.river_connectivity_animation');
@@ -470,9 +470,9 @@ export class HomePage implements AfterViewInit {
       riverConnectivityScroller
         .setup({
           step: '#river_connectivities article .step',
-          offset: 0.75
+          offset: this.isMobile ? 0.75 : 0.25
         })
-        .onStepEnter(handleStepEnterConntectivities)
+        .onStepEnter(handleStepEnterConnectivities)
         .onStepExit(handleStepExit);
 
 
