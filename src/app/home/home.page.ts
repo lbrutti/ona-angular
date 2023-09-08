@@ -429,7 +429,7 @@ export class HomePage implements AfterViewInit {
 
     }
     function handleStepExit(response: any) {
-      response.element.classList.remove('is-active');
+      //response.element.classList.remove('is-active');
     }
 
     const handleStepExitThreats = (response: any) => {
@@ -500,7 +500,7 @@ export class HomePage implements AfterViewInit {
         .onStepEnter(handleStepEnterPossibleFutures.bind(this))
         .onStepExit(handleStepExit);
       return Promise.resolve();
-    }
+    };
     this.renderFreshWaterIndexChart();
     this.renderDamRemovalProjectsChart();
     this.renderPossibleFuturesLollipopsChart();

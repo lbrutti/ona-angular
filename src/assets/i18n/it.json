@@ -11,7 +11,7 @@
     "healthyRivers": {
         "section_title": "Fiumi in salute",
         "four_dimensions_title": "Le quattro dimensioni della connettività",
-        "step-1": "Questi sono i fiumi <ion-text color=\"secondary\">più lunghi*</ion-text> del mondo ",
+        "step-1": "Questi sono i fiumi <ion-text color=\"secondary\">più lunghi*</ion-text> del mondo",
         "step-1-subtitle": "*definiti come fiumi di lunghezza superiore a 1.000 km",
         "step-2": "La maggior parte di essi  <ion-text color=\"danger\">non scorre liberamente...</ion-text>",
         "step-3": "... solo alcuni rimangono <ion-text color=\"success\">\"free-flowing”</ion-text>.",

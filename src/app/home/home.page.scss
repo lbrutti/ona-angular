@@ -169,6 +169,10 @@ section {
   flex-direction: column;
 }
 
+#healthyRivers_step-1-subtitle {
+  font-family: 'Century-Gothic';
+}
+
 .step-footer {
   font-size: medium;
 }
@@ -507,6 +511,7 @@ section {
     height: auto;
     z-index: -100;
     background-size: cover;
+    transform: scaleX(-1);
   }
 
   #intro_subtitle {
