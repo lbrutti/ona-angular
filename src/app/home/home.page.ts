@@ -236,30 +236,32 @@ export class HomePage implements AfterViewInit {
     };
 
     // scrollama event handlers
-    function handleStepEnterConnectivities(response: any) {
+    const handleStepEnterConnectivities = (response: any) => {
       // response = { element, direction, index }
 
-      // add color to current step only
-      // riverConnectivitiesStep.classed('is-active', (d, i) => i === response.index);
+        // add color to current step only
+        if (this.isMobile) {
+            riverConnectivitiesStep.classed('is-active', (d, i) => i === response.index);
+        }
 
       // update graphic based on step
       const connectivityAnimations = riverConnectivitiesFigure.selectAll('.river_connectivity_animation');
       const svg = d3.select('#connectivity_image svg');
       const currentStep = response.index + 1;
       //step 1: solo base image visibile
-      svg.select('#base').classed('active', () => currentStep == 1);
+      svg.select('#base').classed('active', () => currentStep === 1);
       //step 2: solo Longitudinal image visibile
-      svg.select('#longitudinal1').classed('active', () => currentStep == 2);
-      svg.select('#longitudinal2').classed('active', () => currentStep == 2);
+      svg.select('#longitudinal1').classed('active', () => currentStep === 2);
+      svg.select('#longitudinal2').classed('active', () => currentStep === 2);
       //step 3: solo Lateral image visibile
-      svg.select('#lateral1').classed('active', () => currentStep == 3);
-      svg.select('#lateral2').classed('active', () => currentStep == 3);
+      svg.select('#lateral1').classed('active', () => currentStep === 3);
+      svg.select('#lateral2').classed('active', () => currentStep === 3);
       //step 4: solo Vertical image visibile
-      svg.select('#vertical1').classed('active', () => currentStep == 4);
-      svg.select('#vertical2').classed('active', () => currentStep == 4);
+      svg.select('#vertical1').classed('active', () => currentStep === 4);
+      svg.select('#vertical2').classed('active', () => currentStep === 4);
       //step 5: solo Temporal image visibile
-      svg.select('#temporal1').classed('active', () => currentStep == 5);
-      svg.select('#temporal2').classed('active', () => currentStep == 5);
+      svg.select('#temporal1').classed('active', () => currentStep === 5);
+      svg.select('#temporal2').classed('active', () => currentStep === 5);
       connectivityAnimations.each(function () {
         const imgStep = (this as any).dataset.step.split(',');
         const isActive = imgStep['0'] === 'all' || imgStep.includes('' + currentStep);
@@ -298,7 +300,7 @@ export class HomePage implements AfterViewInit {
         const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
         //al 16° step la mappa torna tutta rossa
         const isTranstioned = (currentStep !== 16) && (currentStep >= +transitionStep);
-        const isForeground = (this as any).dataset.foregroundStep == currentStep;
+        const isForeground = (this as any).dataset.foregroundStep === currentStep;
         (this as any).classList.toggle('active', isActive);
         (this as any).classList.toggle('transitioned', isTranstioned);
         if (isForeground && isActive) {
@@ -317,27 +319,27 @@ export class HomePage implements AfterViewInit {
 
       });
 
-      if (currentStep == 4) {
+      if (currentStep === 4) {
         this.barrierCount = increments[0];
       }
-      if (currentStep == 6) {
+      if (currentStep === 6) {
         this.barrierCount = increments[1] + increments[0];
       }
-      if (currentStep == 8) {
+      if (currentStep === 8) {
         this.barrierCount = increments[2] + increments[1] + increments[0];
       }
-      if (currentStep == 10) {
+      if (currentStep === 10) {
         this.barrierCount = increments[3] + increments[2] + increments[1] + increments[0];
       }
-      if (currentStep == 12) {
+      if (currentStep === 12) {
         this.barrierCount = increments[4] + increments[3] + increments[2] + increments[1] + increments[0];
       }
-      if (currentStep == 14) {
+      if (currentStep === 14) {
         this.barrierCount = increments[5] + increments[4] + increments[3] + increments[2] + increments[1] + increments[0];
       }
 
 
-    }
+    };
 
 
     function handleStepEnterEcosystemImpacts(response: any) {
@@ -425,16 +427,21 @@ export class HomePage implements AfterViewInit {
       }
 
 
-    }
-    function handleStepExit(response: any) {
-      //response.element.classList.remove('is-active');
-    }
+      }
+      const handleStepExit = (response: any) => {
+          //response.element.classList.remove('is-active');
+      };
 
+      const handleStepExitConnectivities = (response: any) => {
+          if (this.isMobile) {
+              response.element.classList.remove('is-active');
+          }
+      };
     const handleStepExitThreats = (response: any) => {
       handleStepExit(response);
       const currentStep = response.index + 1;
 
-      if (currentStep == 17) {
+      if (currentStep === 17) {
         d3.select('#hovercard')
           .classed('active', false);
       }
@@ -471,7 +478,7 @@ export class HomePage implements AfterViewInit {
           offset: this.isMobile ? 0.75 : 0.25
         })
         .onStepEnter(handleStepEnterConnectivities)
-        .onStepExit(handleStepExit);
+        .onStepExit(handleStepExitConnectivities);
 
 
       threatsScroller
@@ -1113,7 +1120,7 @@ export class HomePage implements AfterViewInit {
     // Change the X coordinates of line and circle
     g.selectAll('.lollipop_line')
       .each(function (d) {
-        if ((this as HTMLElement).dataset.type == type) {
+        if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
             .duration(2000)
@@ -1123,7 +1130,7 @@ export class HomePage implements AfterViewInit {
 
     g.selectAll('.lollipop_circle')
       .each(function () {
-        if ((this as HTMLElement).dataset.type == type) {
+        if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
             .duration(2000)
@@ -1134,7 +1141,7 @@ export class HomePage implements AfterViewInit {
 
     g.selectAll('.lollipop_value_label')
       .each(function (d) {
-        if ((this as HTMLElement).dataset.type == type) {
+        if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
             .duration(2000)

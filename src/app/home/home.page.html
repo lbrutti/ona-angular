@@ -203,22 +203,23 @@
             class="step connectivities_step"
             data-step="1"
             id="connectivities_step1"
+            [ngClass]="{'is-active': true}"
           >
             <div
               [innerHTML]="'connectivity.step-1'|transloco | safehtml: 'html'"
             ></div>
           </div>
-          <div class="step connectivities_step is-active" data-step="2">
+          <div class="step connectivities_step"  [ngClass]="{'is-active': !this.isMobile}" data-step="2">
             <div
               [innerHTML]="'connectivity.step-2'|transloco | safehtml: 'html'"
             ></div>
           </div>
-          <div class="step connectivities_step is-active" data-step="3">
+          <div class="step connectivities_step" [ngClass]="{'is-active': !this.isMobile}" data-step="3">
             <div
               [innerHTML]="'connectivity.step-3'|transloco | safehtml: 'html'"
             ></div>
           </div>
-          <div class="step connectivities_step is-active" data-step="4">
+          <div class="step connectivities_step" [ngClass]="{'is-active': !this.isMobile}" data-step="4">
             <div
               [innerHTML]="'connectivity.step-4'|transloco | safehtml: 'html'"
             ></div>
