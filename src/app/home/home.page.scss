@@ -92,7 +92,8 @@ main {
     position: sticky;
     top: 0;
     z-index: 1;
-    height: calc(10vh + 36px);
+    padding-bottom: 5px;
+    height: auto;
 }
 
 .stacked_img {
