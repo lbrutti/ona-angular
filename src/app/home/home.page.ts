@@ -341,7 +341,7 @@ export class HomePage implements AfterViewInit {
 
 
     function handleStepEnterEcosystemImpacts(response: any) {
-        ecosystemImpactsStep.classed('is-active', (_d, i) => i === response.index);
+        // ecosystemImpactsStep.classed('is-active', (_d, i) => i === response.index);
 
       const waffles = ecosystemImpactsFigure.selectAll('.ecosystem_impacts_viz');
       const currentStep = response.index + 1;
