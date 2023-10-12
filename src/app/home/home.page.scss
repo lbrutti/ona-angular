@@ -6,466 +6,472 @@
 @import "../../theme/scrollbar-width-mixin.scss";
 
 #container strong {
-  font-size: 20px;
-  line-height: 26px;
+    font-size: 20px;
+    line-height: 26px;
 }
 
 
 #container a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 main {
-  margin-left: 20vw;
-  margin-right: 20vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
 }
 
 .centered_text_block {
 
 
-  p {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
+    p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 
-  figure {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+    figure {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 #hovercard {
-  position: fixed;
-  opacity: 0;
-  display: none;
+    position: fixed;
+    opacity: 0;
+    display: none;
 
-  &.active {
-    display: block;
-    opacity: 1;
-    z-index: 5000;
-    background-color: var(--ion-color-primary-contrast);
-  }
+    &.active {
+        display: block;
+        opacity: 1;
+        z-index: 5000;
+        background-color: var(--ion-color-primary-contrast);
+    }
 }
 
 #breadcrumb {
-  @include hideScrollbar();
-  background-color: var(--ion-section-background-color);
-  position: sticky;
-  font-size: small !important;
-  top: 0;
-  z-index: 2000;
-  width: auto;
-  overflow-x: auto;
-  height: 36px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+    @include hideScrollbar();
+    background-color: var(--ion-section-background-color);
+    position: sticky;
+    font-size: small !important;
+    top: 0;
+    z-index: 2000;
+    width: auto;
+    overflow-x: auto;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
-  ion-breadcrumb {
-    span {
-      // display: inline-block;
-      // margin: auto;
+    ion-breadcrumb {
+        span {
+            // display: inline-block;
+            // margin: auto;
 
-      // max-width: calc(60vw / 5);
-      // white-space: nowrap;
-      // text-overflow: ellipsis;
-      // overflow-x: hidden;
+            // max-width: calc(60vw / 5);
+            // white-space: nowrap;
+            // text-overflow: ellipsis;
+            // overflow-x: hidden;
+        }
     }
-  }
 }
 
 .section_title {
-  padding-top: 36px;
-  background-color: var(--ion-section-background-color);
+    padding-top: 36px;
+    background-color: var(--ion-section-background-color);
 }
 
 #ecosystem_impacts_title {
-  .section_title {
-    padding-top: 0;
-  }
+    .section_title {
+        padding-top: 0;
+    }
 }
 
 .sticky_section_title {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: calc(10vh + 36px);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: calc(10vh + 36px);
 }
 
 .stacked_img {
-  position: absolute;
+    position: absolute;
 }
 
 //shared rules among sticky side and overlay
 section {
-  position: relative;
-  background-color: var(--ion-section-background-color);
-  padding: 1rem;
-
-  article {
     position: relative;
-    max-width: 80vw;
-  }
-
-  figure {
-    position: -webkit-sticky;
-    position: sticky;
-    margin: auto;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    z-index: 0;
     background-color: var(--ion-section-background-color);
-  }
+    padding: 1rem;
 
-  .step {
-    margin: 0 auto 2rem auto;
-    color: var(--ion-color-text-color-standard);
-    font-size: 1.3rem;
-    text-align: center;
-    opacity: 0;
-    transition-duration: 500ms;
-    transition-property: opacity;
-    background-color: rgba(var(--ion-section-background-color), 0.5);
-
-    &.quick-transition {
-      transition-duration: 0ms;
+    article {
+        position: relative;
+        max-width: 80vw;
     }
 
-    // display: flex;
-    &.smaller-font {
-      font-size: 1.25rem;
+    figure {
+        position: -webkit-sticky;
+        position: sticky;
+        margin: auto;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        z-index: 0;
+        background-color: var(--ion-section-background-color);
     }
 
-    &.separator {
-      background-color: transparent;
-    }
+    .step {
+        margin: 0 auto 2rem auto;
+        color: var(--ion-color-text-color-standard);
+        font-size: 1.3rem;
+        text-align: center;
+        opacity: 0;
+        transition-duration: 500ms;
+        transition-property: opacity;
+        background-color: rgba(var(--ion-section-background-color), 0.5);
 
-    div {
-      margin: auto
-    }
+        &.quick-transition {
+            transition-duration: 0ms;
+        }
 
-    &.is-active {
-      opacity: 1;
-    }
+        // display: flex;
+        &.smaller-font {
+            font-size: 1.25rem;
+        }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+        &.separator {
+            background-color: transparent;
+        }
 
-    p {
-      text-align: center;
-      padding: 1rem;
-      font-size: 1.3rem;
+        div {
+            margin: auto
+        }
+
+        &.is-active {
+            opacity: 1;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        p {
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.3rem;
+        }
     }
-  }
 }
 
 .flex-step {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 #healthyRivers_step-1-subtitle {
-  font-family: 'Century-Gothic';
+    font-family: 'Century-Gothic';
 }
 
 .step-footer {
-  font-size: medium;
+    font-size: medium;
 }
 
 .scrolly-sticky-side {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-
-  figure {
-    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 
-  .step {
-    font-size: 1.3rem;
-    text-align: left;
-  }
+    figure {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-  * {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-  }
+    .step {
+        font-size: 1.3rem;
+        text-align: left;
+    }
 
-  article {
-    padding: 0 1rem;
-  }
+    * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+
+    article {
+        padding: 0 1rem;
+    }
 
 }
 
 .scrolly-overlay {
-  article {
-    padding: 0;
-    margin: 0 auto;
-  }
-
-  figure {
-    left: 0;
-  }
-
-  .step {
-    p {
-      background-color: #3b3b3b;
+    article {
+        padding: 0;
+        margin: 0 auto;
     }
-  }
+
+    figure {
+        left: 0;
+    }
+
+    .step {
+        p {
+            background-color: #3b3b3b;
+        }
+    }
 
 }
 
 #healthy_rivers_caption,
 #anthropogenic_threats_caption,
 #ecosystem_impacts_viz_figure_chart_caption {
-  position: absolute;
-  top: calc(100% - 8vh);
+    position: absolute;
+    top: calc(100% - 8vh);
 }
 
 #healthy_rivers {
 
-  article {
-    font-family: Century-Gothic-Bold;
-  }
-
-  .map_global_rivers {
-    top: 10vh;
-    height: calc(100% - 20vh);
-    width: 100%;
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: 500ms;
-
-    &.active {
-      opacity: 1;
+    article {
+        font-family: Century-Gothic-Bold;
     }
 
+    .map_global_rivers {
+        top: 10vh;
+        height: calc(100% - 20vh);
+        width: 100%;
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 500ms;
 
-  }
+        &.active {
+            opacity: 1;
+        }
+
+
+    }
 }
 
 #river_connectivities {
-  .river_connectivity_animation {
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: 500ms;
-    display: flex;
+    .river_connectivity_animation {
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 500ms;
+        display: flex;
 
-    &.active {
-      opacity: 1;
+        &.active {
+            opacity: 1;
+        }
+
     }
 
-  }
+    .step:last-child {
+        height: 744px;
+    }
 
-  .step:last-child {
-    height: 744px;
-  }
-
-  #connectivities_step1 {
-    margin-top: 50%;
-  }
+    #connectivities_step1 {
+        margin-top: 50%;
+    }
 
 }
 
 
 #free_flowing_rivers_text {
-  font-size: 20px;
+    font-size: 20px;
 
-  #free_flowing_rivers_text_text_container {
-    display: flex;
-    flex-direction: column;
-    //TODO: decommentare per ripristinare spazio fra paragrafi
-    // justify-content: space-between;
-  }
+    #free_flowing_rivers_text_text_container {
+        display: flex;
+        flex-direction: column;
+        //TODO: decommentare per ripristinare spazio fra paragrafi
+        // justify-content: space-between;
+    }
 }
 
 #anthropogenic_threats {
-  article ::ng-deep ion-text {
-    font-size: 5rem;
-    font-weight: 700;
-    color: var(--ion-dark-brown, #3c372f);
-    border-bottom: 1rem solid var(--ion-color-base);
-  }
-
-  #anthropogenic_threats_hex_bin ::ng-deep svg {
-    transform: scale(0.95);
-  }
-
-  #anthropogenic_threats_article {
-
-    .step[data-step="1"].is-active,
-    .step[data-step="2"].is-active {
-      padding-left: 5px;
-      padding-right: 5px;
+    article ::ng-deep ion-text {
+        font-size: 5rem;
+        font-weight: 700;
+        color: var(--ion-dark-brown, #3c372f);
+        border-bottom: 1rem solid var(--ion-color-base);
     }
 
-    .step[data-step="1"].is-active,
-    .step[data-step="2"].is-active,
-    .step[data-step="17"].is-active {
-      div {
-        background-color: var(--ion-section-background-color);
-      }
-    }
-  }
-
-  .anthropogenic_threats {
-
-    top: 10vh;
-    width: 100%;
-    height: calc(100% - 20vh);
-    opacity: 0;
-    // transition-duration: 500ms;
-
-
-    ::ng-deep svg {
-      width: 100%;
+    #anthropogenic_threats_hex_bin ::ng-deep svg {
+        transform: scale(0.95);
     }
 
-    &.active {
-      opacity: 1;
+    #anthropogenic_threats_article {
 
-      &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
-        fill: #db7870;
-        transition: fill 500ms;
-      }
+        .step[data-step="1"].is-active,
+        .step[data-step="2"].is-active {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
 
-      &#anthropogenic_threats_hex_bin::ng-deep svg path.focused {
-        stroke: black !important;
-        stroke-width: 1px !important;
-      }
+        .step[data-step="1"].is-active,
+        .step[data-step="2"].is-active,
+        .step[data-step="17"].is-active {
+            div {
+                background-color: var(--ion-section-background-color);
+            }
+        }
     }
 
-    svg {
-      height: 100%;
+    .anthropogenic_threats {
+
+        top: 10vh;
+        width: 100%;
+        height: calc(100% - 20vh);
+        opacity: 0;
+        // transition-duration: 500ms;
+
+
+        ::ng-deep svg {
+            width: 100%;
+        }
+
+        &.active {
+            opacity: 1;
+
+            &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
+                fill: #db7870;
+                transition: fill 500ms;
+            }
+
+            &#anthropogenic_threats_hex_bin::ng-deep svg path.focused {
+                stroke: black !important;
+                stroke-width: 1px !important;
+            }
+        }
+
+        svg {
+            height: 100%;
+        }
+
+        &.transitioned {
+
+            &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
+                fill: rgb(30, 14, 4);
+                fill-opacity: 0.30;
+
+            }
+        }
+
+
     }
 
-    &.transitioned {
-
-      &:not(#anthropogenic_threats_hex_bin)::ng-deep svg path {
-        fill: rgb(30, 14, 4);
-        fill-opacity: 0.30;
-
-      }
+    #barrier_counter {
+        position: absolute;
+        top: 88%;
+        background-color: transparent;
+        color: var(--ion-color-danger);
+        z-index: 20;
     }
-
-
-  }
-
-  #barrier_counter {
-    position: absolute;
-    top: 88%;
-    background-color: transparent;
-    color: var(--ion-color-danger);
-    z-index: 20;
-  }
 }
 
 #freshwater_species_title {
-  height: 36px;
+    height: 36px;
 }
 
 #ecosystem_impacts_viz {
 
 
-  .ecosystem_impacts_viz {
+    .ecosystem_impacts_viz {
 
-    top: calc(10vh + 36px);
-    height: calc(100% - 20vh);
-    width: 100%;
-    opacity: 0;
-    transition-duration: 500ms;
+        top: calc(10vh + 36px);
+        height: calc(100% - 20vh);
+        width: 100%;
+        opacity: 0;
+        transition-duration: 500ms;
 
-    ::ng-deep svg {
-      width: 100%;
+        ::ng-deep svg {
+            width: 100%;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+        svg {
+            height: 100%;
+        }
+
+
     }
 
-    &.active {
-      opacity: 1;
+    #ecosystem_impacts_viz_figure_chart_all {
+        // top: unset;
+        height: unset;
     }
-
-    svg {
-      height: 100%;
-    }
-
-
-  }
-
-  #ecosystem_impacts_viz_figure_chart_all {
-    // top: unset;
-    height: unset;
-  }
 }
 
 #ecosystem_impacts_viz_article {
 
-  [data-step="6"].is-active,
-  [data-step="7"].is-active,
-  [data-step="8"].is-active,
-  [data-step="9"].is-active {
-    div {
-      height: auto;
-      background-color: var(--ion-section-background-color);
-    }
-  }
-}
-
-#ecosystem_impacts_viz_article {
-
-  ::ng-deep ion-text {
-
-    &[highlight-color="danger-dark"] {
-      border-bottom: solid 0.75rem var(--ion-color-danger-dark)
+    [data-step="6"].is-active,
+    [data-step="7"].is-active,
+    [data-step="8"].is-active,
+    [data-step="9"].is-active {
+        div {
+            height: auto;
+            background-color: var(--ion-section-background-color);
+        }
     }
 
-    &[highlight-color="danger"] {
-      border-bottom: solid 0.75rem var(--ion-color-danger)
+    .step {
+        ::ng-deep span {
+            display: inline-block;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: var(--ion-section-background-color);
+        }
     }
 
-    &[highlight-color="least-concern"] {
-      border-bottom: solid 0.75rem var(--ion-color-warning-low-risk)
-    }
+    ::ng-deep ion-text {
 
-    &[highlight-color="no-data"] {
-      border-bottom: solid 0.75rem var(--ion-color-no-data)
+        &[highlight-color="danger-dark"] {
+            border-bottom: solid 0.75rem var(--ion-color-danger-dark)
+        }
+
+        &[highlight-color="danger"] {
+            border-bottom: solid 0.75rem var(--ion-color-danger)
+        }
+
+        &[highlight-color="least-concern"] {
+            border-bottom: solid 0.75rem var(--ion-color-warning-low-risk)
+        }
+
+        &[highlight-color="no-data"] {
+            border-bottom: solid 0.75rem var(--ion-color-no-data)
+        }
     }
-  }
 }
 
 
 #possible_futures_viz {
-  .possible_futures_viz {
+    .possible_futures_viz {
 
-    top: 10vh;
-    width: 100%;
-    height: calc(100% - 20vh);
-    opacity: 0;
-    transition-duration: 500ms;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+        top: 10vh;
+        width: 100%;
+        height: calc(100% - 20vh);
+        opacity: 0;
+        transition-duration: 500ms;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-    ::ng-deep svg {
-      width: 100%;
+        ::ng-deep svg {
+            width: 100%;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+        svg {
+            height: 100%;
+        }
+
     }
-
-    &.active {
-      opacity: 1;
-    }
-
-    svg {
-      height: 100%;
-    }
-
-  }
 }
 
 
@@ -473,354 +479,354 @@ section {
 
 
 #glossary_container {
-  margin-bottom: 2rem;
-  margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 #glossary {
-  ion-row {
-    justify-content: space-between;
-  }
+    ion-row {
+        justify-content: space-between;
+    }
 
-  font-size: small;
+    font-size: small;
 
-  ion-col {
-    display: flex;
-    align-content: flex-end;
-  }
+    ion-col {
+        display: flex;
+        align-content: flex-end;
+    }
 }
 
 #header {
-  height: 65vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  //background: linear-gradient(180deg, rgba(233, 228, 216, 0.17) 40%, rgba(83, 83, 83, 0.84) 100%);
-  background: transparent;
-  color: var(--ion-section-background-color);
-  overflow: hidden;
-  padding-bottom: 0;
-
-  video {
-    margin: 0;
-    padding: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    background-size: cover;
-    transform: scaleX(-1);
-  }
-
-  #intro_subtitle {
-    // prima opzione
-    // color: var(--ion-text-color, #000);
-    // background: var(--ion-section-background-color);
-
-    // seconda opzione
-    // background: #7593ce;
-    // color: #e9e4d8;
-
-    //terza opzione
-    // background: #d7d0c0;
-    // color: #60615b;
-
-    //quarta opzione
-    background: #75938d;
-    color: #e9e4d8;
-  }
-
-  #subtitleCredits {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-
-    span {
-      display: inline-block;
-      background: var(--ion-section-background-color);
-      color: var(--ion-text-color, #000);
-      margin-bottom: 3px;
-
-      &#videoCredits {
-        margin: auto;
-        margin-right: 0;
-        font-size: x-small;
-        background: unset;
-        color: unset;
-      }
-    }
-  }
-
-  .centered_text_block {
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 100%;
+    height: 65vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
+    justify-content: flex-end;
+    //background: linear-gradient(180deg, rgba(233, 228, 216, 0.17) 40%, rgba(83, 83, 83, 0.84) 100%);
+    background: transparent;
+    color: var(--ion-section-background-color);
+    overflow: hidden;
+    padding-bottom: 0;
 
-  #intro_title {
-    font-size: 4rem;
-    font-family: var(--ion-font-family-bold);
-    font-weight: bolder;
-  }
+    video {
+        margin: 0;
+        padding: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        background-size: cover;
+        transform: scaleX(-1);
+    }
+
+    #intro_subtitle {
+        // prima opzione
+        // color: var(--ion-text-color, #000);
+        // background: var(--ion-section-background-color);
+
+        // seconda opzione
+        // background: #7593ce;
+        // color: #e9e4d8;
+
+        //terza opzione
+        // background: #d7d0c0;
+        // color: #60615b;
+
+        //quarta opzione
+        background: #75938d;
+        color: #e9e4d8;
+    }
+
+    #subtitleCredits {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+
+        span {
+            display: inline-block;
+            background: var(--ion-section-background-color);
+            color: var(--ion-text-color, #000);
+            margin-bottom: 3px;
+
+            &#videoCredits {
+                margin: auto;
+                margin-right: 0;
+                font-size: x-small;
+                background: unset;
+                color: unset;
+            }
+        }
+    }
+
+    .centered_text_block {
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #intro_title {
+        font-size: 4rem;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bolder;
+    }
 }
 
 #video_fixed {
-  // position: fixed;
-  object-fit: cover;
-  margin-left: 20vw;
+    // position: fixed;
+    object-fit: cover;
+    margin-left: 20vw;
 
-  video {
-    width: 58.9vw;
-  }
+    video {
+        width: 58.9vw;
+    }
 }
 
 .video_container {
-  display: block !important;
+    display: block !important;
 
-  video {
-    width: 100%;
-  }
+    video {
+        width: 100%;
+    }
 }
 
 figcaption {
-  font-size: small;
+    font-size: small;
 }
 
 #langSelector {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 36px;
-  height: 36px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
 
-  ion-button {
-    text-transform: uppercase;
-    font-family: var(--ion-font-family-bold);
-    font-weight: bold;
-  }
+    ion-button {
+        text-transform: uppercase;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bold;
+    }
 }
 
 //mobile overloads
 .lillipop_title {
-  flex-grow: 0 !important;
+    flex-grow: 0 !important;
 
-  h4 {
-    text-transform: uppercase;
-    font-family: var(--ion-font-family-bold);
-    font-weight: bolder;
-    font-size: small;
-  }
+    h4 {
+        text-transform: uppercase;
+        font-family: var(--ion-font-family-bold);
+        font-weight: bolder;
+        font-size: small;
+    }
 }
 
 #methodology {
-  margin-bottom: 2rem;
-  margin-top: 1.3rem;
+    margin-bottom: 2rem;
+    margin-top: 1.3rem;
 }
 
 #healthy_rivers_caption {
-  position: absolute;
-  top: calc(100% - 20vh);
+    position: absolute;
+    top: calc(100% - 20vh);
 }
 
 
 main.mobile {
 
-  --ion-color-primary-contrast: #e9e4d8;
-  --ion-color-secondary-contrast: #e9e4d8;
-  --ion-color-tertiary-contrast: #e9e4d8;
-  --ion-color-success-contrast: #e9e4d8;
-  --ion-color-warning-contrast: #e9e4d8;
-  --ion-color-danger-contrast: #e9e4d8;
-  --ion-color-medium-contrast: #e9e4d8;
-  --ion-color-light-contrast: #e9e4d8;
+    --ion-color-primary-contrast: #e9e4d8;
+    --ion-color-secondary-contrast: #e9e4d8;
+    --ion-color-tertiary-contrast: #e9e4d8;
+    --ion-color-success-contrast: #e9e4d8;
+    --ion-color-warning-contrast: #e9e4d8;
+    --ion-color-danger-contrast: #e9e4d8;
+    --ion-color-medium-contrast: #e9e4d8;
+    --ion-color-light-contrast: #e9e4d8;
 
 
 
-  margin-left: 0;
-  margin-right: 0;
+    margin-left: 0;
+    margin-right: 0;
 
-  .step-footer {
-    margin-top: 15px !important;
-  }
-
-  .step {
-    margin: 0 auto 2rem auto;
-    font-size: 22px;
-    background-color: transparent;
-    text-align: left;
-  }
-
-  section,
-  #breadcrumb {
-
-    ion-breadcrumb {
-      span {
-        max-width: unset;
-        white-space: unset;
-        text-overflow: unset;
-      }
+    .step-footer {
+        margin-top: 15px !important;
     }
 
-    background-color: var(--ion-section-background-color);
-  }
-
-  #healthy_rivers {
-    .map_global_rivers {
-      top: 2vh;
-      height: 100%;
-    }
-  }
-
-  #healthy_rivers_caption {
-    display: none;
-  }
-
-  #river_connectivities {
     .step {
-      font-size: 18px;
+        margin: 0 auto 2rem auto;
+        font-size: 22px;
+        background-color: transparent;
+        text-align: left;
     }
 
-    .river_connectivity_animation {
-      margin-top: 2vh;
-    }
+    section,
+    #breadcrumb {
 
-    #connectivities_step1 {
-      margin-top: unset;
-    }
-
-    #connectivity_image {
-      height: 70%;
-      margin-top: 0;
-    }
-  }
-
-  #free_flowing_rivers_text {
-    font-size: 18px;
-  }
-
-  #anthropogenic_threats {
-    .anthropogenic_threats {
-      height: unset;
-    }
-
-    article ::ng-deep ion-text {
-      font-size: 26px;
-      text-align: center;
-    }
-
-    #anthropogenic_threats_article {
-      .step {
-
-        &[data-step="4"],
-        &[data-step="6"],
-        &[data-step="8"],
-        &[data-step="10"],
-        &[data-step="12"],
-        &[data-step="14"] {
-          text-align: center;
+        ion-breadcrumb {
+            span {
+                max-width: unset;
+                white-space: unset;
+                text-overflow: unset;
+            }
         }
 
-        &[data-step="17"].is-active {
-          .step_content_wrapper {
-            background-color: var(--ion-section-background-color);
-          }
+        background-color: var(--ion-section-background-color);
+    }
+
+    #healthy_rivers {
+        .map_global_rivers {
+            top: 2vh;
+            height: 100%;
         }
-      }
-    }
-  }
-
-  #ecosystem_impacts_viz {
-    .ecosystem_impacts_viz {
-
-      // top: unset;
-      height: unset;
     }
 
-    .step {
-      font-size: 1.25rem;
-    }
-  }
-
-  #possible_futures_viz {
-
-    #possible_futures_viz_figure {
-      top: 0 !important;
-      right: 5px;
+    #healthy_rivers_caption {
+        display: none;
     }
 
-    .possible_futures_viz {
-      display: unset;
-      flex-direction: unset;
-      justify-content: unset;
+    #river_connectivities {
+        .step {
+            font-size: 18px;
+        }
+
+        .river_connectivity_animation {
+            margin-top: 2vh;
+        }
+
+        #connectivities_step1 {
+            margin-top: unset;
+        }
+
+        #connectivity_image {
+            height: 70%;
+            margin-top: 0;
+        }
     }
 
-    .step {
-      font-size: 18px;
-    }
-  }
-
-
-
-  #header {
-    // background-color: var(--ion-section-background-color);
-
-    #intro_title {
-      font-size: 2.5rem;
-
+    #free_flowing_rivers_text {
+        font-size: 18px;
     }
 
+    #anthropogenic_threats {
+        .anthropogenic_threats {
+            height: unset;
+        }
+
+        article ::ng-deep ion-text {
+            font-size: 26px;
+            text-align: center;
+        }
+
+        #anthropogenic_threats_article {
+            .step {
+
+                &[data-step="4"],
+                &[data-step="6"],
+                &[data-step="8"],
+                &[data-step="10"],
+                &[data-step="12"],
+                &[data-step="14"] {
+                    text-align: center;
+                }
+
+                &[data-step="17"].is-active {
+                    .step_content_wrapper {
+                        background-color: var(--ion-section-background-color);
+                    }
+                }
+            }
+        }
+    }
+
+    #ecosystem_impacts_viz {
+        .ecosystem_impacts_viz {
+
+            // top: unset;
+            height: unset;
+        }
+
+        .step {
+            font-size: 1.25rem;
+        }
+    }
+
+    #possible_futures_viz {
+
+        #possible_futures_viz_figure {
+            top: 0 !important;
+            right: 5px;
+        }
+
+        .possible_futures_viz {
+            display: unset;
+            flex-direction: unset;
+            justify-content: unset;
+        }
+
+        .step {
+            font-size: 18px;
+        }
+    }
 
 
-  }
+
+    #header {
+        // background-color: var(--ion-section-background-color);
+
+        #intro_title {
+            font-size: 2.5rem;
+
+        }
+
+
+
+    }
 
 
 }
 
 
 ion-content.mobile {
-  #video_fixed {
-    margin-left: 0;
+    #video_fixed {
+        margin-left: 0;
 
-    video {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
+        video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
     }
-  }
 }
 
 #colophon {
-  width: 100%;
-  text-align: center;
-  font-size: x-small;
-  margin-top: 4rem;
+    width: 100%;
+    text-align: center;
+    font-size: x-small;
+    margin-top: 4rem;
 }
 
 #life_colophon {
-  width: 80%;
+    width: 80%;
 }
 
 #life_disclaimer {
-  font-size: small;
-  margin-top: 5px;
+    font-size: small;
+    margin-top: 5px;
 }
 
 #logo_col {
-  display: flex;
+    display: flex;
 
 }
 
 #life_logo {
-  max-width: 125px;
-  height: auto;
-  align-self: center;
-  width: 100%;
-  margin: auto;
+    max-width: 125px;
+    height: auto;
+    align-self: center;
+    width: 100%;
+    margin: auto;
 
 }
