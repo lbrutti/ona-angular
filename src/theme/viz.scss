@@ -128,3 +128,13 @@
         }
     }
 }
+
+::ng-deep .lollipop_value_label_small_of_planned {
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 500ms;
+
+    &.active {
+        opacity: 1;
+    }
+}
