@@ -3,6 +3,7 @@
     "intro": {
         "introTitle": "La connettività fluviale",
         "subtitleCredits": "Un progetto di CIRF e Wetlands International Europe",
+        "subtitleVideoCredits": "video di Ivan Mazzon",
         "introSubtitle": "La salute dei fiumi del mondo è <ion-text class=\"font-bold\">gravemente minacciata</ion-text>.<br> Ma c'è ancora speranza se agiamo ora.",
         "p1": "I fiumi sono sistemi complessi le cui dinamiche plasmano la vita sulla Terra così come la conosciamo. Ospitano un'ampia gamma di specie d'acqua dolce, e trasportano sedimenti e nutrienti. Formano zone umide, delta e pianure alluvionali che nutrono la flora, la fauna e le comunità umane e ci proteggono da inondazioni, siccità e altri disastri naturali. Raccolgono l'acqua dall'atmosfera e dal suolo e rimpinguano le falde acquifere, che sono fondamentali per la nostra sopravvivenza. ",
         "p2": "Per fornire questi servizi ecosistemici essenziali, i fiumi devono poter scorrere liberamente, muovendosi senza ostacoli in più direzioni. Tuttavia, solo una piccola parte dei fiumi del mondo può ancora farlo: una miriade di opere costruite dall'uomo frammentano, deviano, restringono e regolano il flusso dei fiumi, con un impatto drammatico sulle funzioni naturali e sugli ecosistemi circostanti."
@@ -10,7 +11,7 @@
     "healthyRivers": {
         "section_title": "Fiumi in salute",
         "four_dimensions_title": "Le quattro dimensioni della connettività",
-        "step-1": "Questi sono i fiumi <ion-text color=\"secondary\">più lunghi*</ion-text> del mondo ",
+        "step-1": "Questi sono i fiumi <ion-text color=\"secondary\">più lunghi*</ion-text> del mondo",
         "step-1-subtitle": "*definiti come fiumi di lunghezza superiore a 1.000 km",
         "step-2": "La maggior parte di essi  <ion-text color=\"danger\">non scorre liberamente...</ion-text>",
         "step-3": "... solo alcuni rimangono <ion-text color=\"success\">\"free-flowing”</ion-text>.",
@@ -29,8 +30,9 @@
         "step-5": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività temporale</ion-text> fa riferimento alla possibilità dei processi fluviali, connessi in particolare al regime delle portate idriche, di svolgersi seguendo la naturale alternanza nel tempo tipica di un certo corso d’acqua. Questo a diverse scale temporali: mesi, anni o decenni."
     },
     "free_flowing_rivers_text": {
-        "p1": "I fiumi che scorrono liberamente (<ion-text class=\"font-bold\">\"free-flowing\"</ion-text>) sono quelli in cui sono garantiti tutti e quattro i tipi di connettività. Esistono tuttavia molte minacce potenziali al mantenimento di uno stato di libero deflusso dalle sorgenti alla foce. ",
-        "p2": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune.",
+        "p1": "I fiumi che scorrono liberamente (<ion-text class=\"font-bold\">\"free-flowing\"</ion-text>) sono quelli in cui sono garantiti tutti e quattro i tipi di connettività. ",
+        "p2": "Esistono tuttavia molte minacce potenziali al mantenimento di uno stato di libero deflusso dalle sorgenti alla foce. ",
+        "p3": "Le pressioni umane che influenzano la dinamica fluviale sono molteplici, spesso legate all'urbanizzazione, all'agricoltura, alla viabilità e alle diverse infrastrutture costruite nelle aree ripariali, all'estrazione dell'acqua e alla produzione di energia, solo per citarne alcune.",
         "foto1_caption": "(iStock/Sebastian Saldarriaga Torres)"
     },
     "anthropogenicThreats": {
@@ -92,15 +94,15 @@
             "p10": "L'erosione rende questi ambienti sempre più soggetti a forti inondazioni, un rischio aggravato dall'innalzamento del livello del mare.",
             "caption_puglia": "Arretramento della costa della Puglia presso la foce dell'Ofanto nel 1954 e nel 2022: è visibile un'erosione massima di 600 m. (Volo IGMI GAI 1954;Bing Maps)"
         },
-        "step-1": "L'Unione Internazionale per la Conservazione della Natura (IUCN) ha valutato lo stato delle specie d'acqua dolce in Europa.",
-        "step-2": "1% di esse è <ion-text highlight-color=\"danger-dark\" class=\"font-bold\">estinto</ion-text>, a livello globale o regionale.",
-        "step-3": "Il 34% è <ion-text highlight-color=\"danger\" class=\"font-bold\">in pericolo critico, in pericolo, quasi minacciato o vulnerabile</ion-text>.",
-        "step-4": "Solo il 55% è classificato come <ion-text highlight-color=\"least-concern\" class=\"font-bold\">a basso rischio o meno preoccupante</ion-text>.",
-        "step-5": "E per il 10% di essi <ion-text highlight-color=\"no-data\" class=\"font-bold\">non ci sono dati sufficienti</ion-text>.",
-        "step-6": "Se si suddividono questi numeri complessivi per tipo di specie d'acqua dolce europea",
-        "step-7": "molte specie ittiche sono a rischio",
-        "step-8": "Il 38% delle specie di pesci d'acqua dolce è classificato come estinto, in pericolo (critico), quasi minacciato o vulnerabile.",
-        "step-9": "I pesci sono secondi solo agli invertebrati in termini di numero di specie vulnerabili all'estinzione."
+        "step-1": "<span>L'Unione Internazionale per la Conservazione della Natura (IUCN) ha valutato lo stato delle specie d'acqua dolce in Europa.</span>",
+        "step-2": "<span>1% di esse è <ion-text highlight-color=\"danger-dark\" class=\"font-bold\">estinto</ion-text>, a livello globale o regionale.</span>",
+        "step-3": "<span>Il 34% è <ion-text highlight-color=\"danger\" class=\"font-bold\">in pericolo critico, in pericolo, quasi minacciato o vulnerabile</ion-text>.</span>",
+        "step-4": "<span>Solo il 55% è classificato come <ion-text highlight-color=\"least-concern\" class=\"font-bold\">a basso rischio o meno preoccupante</span></ion-text>.",
+        "step-5": "<span>E per il 10% di essi <ion-text highlight-color=\"no-data\" class=\"font-bold\">non ci sono dati sufficienti</ion-text>.</span>",
+        "step-6": "<span>Se si suddividono questi numeri complessivi per tipo di specie d'acqua dolce europea</span>",
+        "step-7": "<span>molte specie ittiche sono a rischio</span>",
+        "step-8": "<span>Il 38% delle specie di pesci d'acqua dolce è classificato come estinto, in pericolo (critico), quasi minacciato o vulnerabile.</span>",
+        "step-9": "<span>I pesci sono secondi solo agli invertebrati in termini di numero di specie vulnerabili all'estinzione.</span>"
     },
     "possibleFutures": {
         "possible_futures_text": {
@@ -175,7 +177,7 @@
     "colophon": "Copyright © CIRF - 2022",
     "video3_credits": "(iStock/Dragan Ristic)",
     "foto18_credits": "(graphixel)",
-    "existing":"esistenti",
-    "planned":"pianificate",
-    "small_of_planned":"di cui piccole"
+    "existing": "esistenti",
+    "planned": "pianificate",
+    "small_of_planned": "di cui piccole"
 }
