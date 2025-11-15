@@ -34,7 +34,10 @@
     font-family: Century-Gothic-Bold;
     src: url('assets/fonts/CenturyGothic-Bold.woff');
 }
-
+@font-face {
+  font-family: Aller;
+  src: url('assets/fonts/aller-bold.woff2');
+}
 
 .font-bold {
     font-family: var(--ion-font-family-bold);
