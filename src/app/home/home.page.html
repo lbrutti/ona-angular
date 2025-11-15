@@ -4,8 +4,8 @@
       <ion-grid>
         <ion-row>
           <span
-            >{{hovercardData.title | number:'':'en-US'}}
-            {{hovercardData.definition | transloco}}</span
+          >{{ hovercardData.title | number:'':'en-US' }}
+            {{ hovercardData.definition | transloco }}</span
           >
         </ion-row>
       </ion-grid>
@@ -20,7 +20,7 @@
           id="header_video"
           class="stacked_img"
         >
-          <source src="assets/video/video1.mp4" type="video/mp4" />
+          <source src="assets/video/video1.mp4" type="video/mp4"/>
         </video>
         <div id="langSelector">
           <ion-button
@@ -30,19 +30,19 @@
             expand="block"
             class="ion-no-margin"
           >
-            {{otherLang}}
+            {{ otherLang }}
           </ion-button>
         </div>
         <div class="centered_text_block font-bold">
           <h1 class="intro__hed" id="intro_title">
-            {{'intro.introTitle'|transloco }}
+            {{ 'intro.introTitle'|transloco }}
           </h1>
         </div>
 
         <div id="subtitleCredits">
-          <span>{{'intro.subtitleCredits' | transloco}}</span>
+          <span>{{ 'intro.subtitleCredits' | transloco }}</span>
           <span id="videoCredits"
-            >{{'intro.subtitleVideoCredits' | transloco}}</span
+          >{{ 'intro.subtitleVideoCredits' | transloco }}</span
           >
         </div>
       </section>
@@ -70,7 +70,7 @@
           [active]="item.active"
           href="{{item.href}}"
         >
-          <span [title]="item.text | transloco">{{item.text | transloco}}</span>
+          <span [title]="item.text | transloco">{{ item.text | transloco }}</span>
           <span slot="separator"></span>
         </ion-breadcrumb>
       </ion-breadcrumbs>
@@ -79,7 +79,7 @@
           <ion-row class="ion-no-margin">
             <ion-col size="10" class="ion-no-margin">
               <h1 id="healthy_rivers_title">
-                {{'healthyRivers.section_title'|transloco}}
+                {{ 'healthyRivers.section_title'|transloco }}
               </h1>
             </ion-col>
             <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
@@ -123,7 +123,7 @@
             data-step="3,4,5,6,7"
           />
           <figcaption *ngIf="!isMobile" id="healthy_rivers_caption">
-            {{'healthyRivers.caption'|transloco}}
+            {{ 'healthyRivers.caption'|transloco }}
           </figcaption>
         </figure>
         <!-- foreground master content -->
@@ -179,7 +179,7 @@
       <!-- non scrolly content -->
       <section>
         <h1 class="section_title">
-          {{'healthyRivers.four_dimensions_title'|transloco}}
+          {{ 'healthyRivers.four_dimensions_title'|transloco }}
         </h1>
       </section>
       <section
@@ -188,7 +188,7 @@
         [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}"
       >
         <!-- stick figure -->
-        <figure>
+        <figure style="z-index: 1000!important;">
           <div
             id="connectivity_image"
             class="stacked_img river_connectivity_animation"
@@ -207,7 +207,7 @@
               [innerHTML]="'connectivity.step-1'|transloco | safehtml: 'html'"
             ></div>
           </div>
-          <div class="step connectivities_step"  [ngClass]="{'is-active': !this.isMobile}" data-step="2">
+          <div class="step connectivities_step" [ngClass]="{'is-active': !this.isMobile}" data-step="2">
             <div
               [innerHTML]="'connectivity.step-2'|transloco | safehtml: 'html'"
             ></div>
@@ -260,9 +260,9 @@
               size-xl="6"
             >
               <figure>
-                <img src="assets/imgs/jpg/foto1_desaturata_square.jpeg" />
+                <img src="assets/imgs/jpg/foto1_desaturata_square.jpeg"/>
                 <figcaption>
-                  {{'free_flowing_rivers_text.foto1_caption' | transloco}}
+                  {{ 'free_flowing_rivers_text.foto1_caption' | transloco }}
                 </figcaption>
               </figure>
             </ion-col>
@@ -276,10 +276,10 @@
           <ion-row class="ion-no-margin">
             <ion-col size="10" class="ion-no-margin">
               <h1 *ngIf="!isMobile" id="anthropogenic_threats-title">
-                {{'anthropogenicThreats.section_title'| transloco}}
+                {{ 'anthropogenicThreats.section_title'| transloco }}
               </h1>
               <h1 *ngIf="isMobile" id="anthropogenic_threats-title">
-                {{'anthropogenicThreats.section_title_mobile'| transloco}}
+                {{ 'anthropogenicThreats.section_title_mobile'| transloco }}
               </h1>
             </ion-col>
             <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
@@ -363,9 +363,9 @@
           >
             <div id="barrier_counter">
               <h5>
-                {{'anthropogenicThreats.barrierCounterTitle' | transloco}}
+                {{ 'anthropogenicThreats.barrierCounterTitle' | transloco }}
               </h5>
-              <h5 #barrierCounter>{{barrierCount | number:'':'en-US'}}</h5>
+              <h5 #barrierCounter>{{ barrierCount | number:'':'en-US' }}</h5>
             </div>
           </div>
 
@@ -378,13 +378,13 @@
           >
             <div id="barrier_counter">
               <h5>
-                {{'anthropogenicThreats.barrierCounterTitle' | transloco}}
+                {{ 'anthropogenicThreats.barrierCounterTitle' | transloco }}
               </h5>
-              <h5 #barrierCounter>{{barrierCount | number:'':'en-US'}}</h5>
+              <h5 #barrierCounter>{{ barrierCount | number:'':'en-US' }}</h5>
             </div>
           </div>
           <figcaption *ngIf="!isMobile" id="anthropogenic_threats_caption">
-            {{'anthropogenicThreats.caption'|transloco}}
+            {{ 'anthropogenicThreats.caption'|transloco }}
           </figcaption>
         </figure>
 
@@ -502,9 +502,9 @@
                 class=""
               >
                 <figure>
-                  <img src="assets/imgs/jpg/foto2.jpg" />
+                  <img src="assets/imgs/jpg/foto2.jpg"/>
                   <figcaption>
-                    <ion-label>{{'glossary.dam_title' | transloco}}</ion-label>
+                    <ion-label>{{ 'glossary.dam_title' | transloco }}</ion-label>
                   </figcaption>
                 </figure>
               </ion-col>
@@ -518,9 +518,9 @@
                 class=""
               >
                 <figure>
-                  <img src="assets/imgs/jpg/ramp.jpg" />
+                  <img src="assets/imgs/jpg/ramp.jpg"/>
                   <figcaption>
-                    <ion-label>{{'glossary.ramp_title' | transloco}}</ion-label>
+                    <ion-label>{{ 'glossary.ramp_title' | transloco }}</ion-label>
                   </figcaption>
                 </figure>
               </ion-col>
@@ -533,9 +533,9 @@
                 class=""
               >
                 <figure>
-                  <img src="assets/imgs/jpg/foto4.jpg" />
+                  <img src="assets/imgs/jpg/foto4.jpg"/>
                   <figcaption>
-                    <ion-label>{{'glossary.weir_title' | transloco}}</ion-label>
+                    <ion-label>{{ 'glossary.weir_title' | transloco }}</ion-label>
                   </figcaption>
                 </figure>
               </ion-col>
@@ -548,10 +548,10 @@
                 class=""
               >
                 <figure>
-                  <img src="assets/imgs/png/foto_tombamento.png" />
+                  <img src="assets/imgs/png/foto_tombamento.png"/>
                   <figcaption>
                     <ion-label
-                      >{{'glossary.culvert_title' | transloco}}
+                    >{{ 'glossary.culvert_title' | transloco }}
                     </ion-label>
                   </figcaption>
                 </figure>
@@ -565,10 +565,11 @@
                 class=""
               >
                 <figure>
-                  <img src="assets/imgs/jpg/foto6.jpeg" />
+                  <img src="assets/imgs/jpg/foto6.jpeg"/>
                   <figcaption>
                     <ion-label
-                      >{{'glossary.sluice_title' | transloco}}</ion-label
+                    >{{ 'glossary.sluice_title' | transloco }}
+                    </ion-label
                     >
                   </figcaption>
                 </figure>
@@ -583,10 +584,12 @@
           [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p2'|transloco | safehtml: 'html'"
         ></p>
         <figure>
-          <img src="assets/imgs/jpg/google_fisk.jpg" />
+          <img src="assets/imgs/jpg/google_fisk.jpg"/>
           <figcaption>
-            {{'anthropogenicThreats.anthropogenic_threats_text.fisk_caption' |
-            transloco}}
+            {{
+              'anthropogenicThreats.anthropogenic_threats_text.fisk_caption' |
+                transloco
+            }}
           </figcaption>
         </figure>
         <p
@@ -602,9 +605,9 @@
               size-xl="6"
             >
               <figure>
-                <img src="assets/imgs/jpg/foto15_desaturata.jpeg" />
+                <img src="assets/imgs/jpg/foto15_desaturata.jpeg"/>
                 <figcaption>
-                  {{'anthropogenicThreats.anthropogenic_threats_text.embankments_caption'|transloco}}
+                  {{ 'anthropogenicThreats.anthropogenic_threats_text.embankments_caption'|transloco }}
                 </figcaption>
               </figure>
             </ion-col>
@@ -616,9 +619,9 @@
               size-xl="6"
             >
               <figure>
-                <img src="assets/imgs/jpg/foto16.jpeg" />
+                <img src="assets/imgs/jpg/foto16.jpeg"/>
                 <figcaption>
-                  {{'anthropogenicThreats.anthropogenic_threats_text.bank_protection_caption'|transloco}}
+                  {{ 'anthropogenicThreats.anthropogenic_threats_text.bank_protection_caption'|transloco }}
                 </figcaption>
               </figure>
             </ion-col>
@@ -635,8 +638,8 @@
             direction="vertical"
             *ngIf="platform.is('mobile')"
           >
-            <img slot="first" src="assets/imgs/png/foto9.png" />
-            <img slot="second" src="assets/imgs/png/foto10.png" />
+            <img slot="first" src="assets/imgs/png/foto9.png"/>
+            <img slot="second" src="assets/imgs/png/foto10.png"/>
             <svg
               slot="handle"
               xmlns="http://www.w3.org/2000/svg"
@@ -657,8 +660,8 @@
             direction="horizontal"
             *ngIf="platform.is('desktop')"
           >
-            <img slot="first" src="assets/imgs/png/foto9.png" />
-            <img slot="second" src="assets/imgs/png/foto10.png" />
+            <img slot="first" src="assets/imgs/png/foto9.png"/>
+            <img slot="second" src="assets/imgs/png/foto10.png"/>
             <svg
               slot="handle"
               xmlns="http://www.w3.org/2000/svg"
@@ -675,8 +678,10 @@
             </svg>
           </img-comparison-slider>
           <figcaption>
-            {{'anthropogenicThreats.anthropogenic_threats_text.reno_caption' |
-            transloco}}
+            {{
+              'anthropogenicThreats.anthropogenic_threats_text.reno_caption' |
+                transloco
+            }}
           </figcaption>
         </figure>
         <div>
@@ -708,10 +713,12 @@
               class="ion-no-margin ion-no-padding"
             >
               <figure>
-                <img src="assets/imgs/jpg/foto11_desaturata.jpeg" />
+                <img src="assets/imgs/jpg/foto11_desaturata.jpeg"/>
                 <figcaption>
-                  {{'anthropogenicThreats.anthropogenic_threats_text.dredging_caption'
-                  | transloco}}
+                  {{
+                    'anthropogenicThreats.anthropogenic_threats_text.dredging_caption'
+                      | transloco
+                  }}
                 </figcaption>
               </figure>
             </ion-col>
@@ -733,10 +740,10 @@
           <ion-row class="ion-no-margin ion-no-padding">
             <ion-col size="12" class="ion-no-margin ion-no-padding">
               <h1 class="section_title ion-no-padding-top" *ngIf="!isMobile">
-                {{'ecosystemImpacts.ecosystem_impacts_text.section_title'|transloco}}
+                {{ 'ecosystemImpacts.ecosystem_impacts_text.section_title'|transloco }}
               </h1>
               <h1 class="section_title ion-no-padding-top" *ngIf="isMobile">
-                {{'ecosystemImpacts.ecosystem_impacts_text.section_title_mobile'|transloco}}
+                {{ 'ecosystemImpacts.ecosystem_impacts_text.section_title_mobile'|transloco }}
               </h1>
             </ion-col>
           </ion-row>
@@ -754,7 +761,7 @@
               id="freshwater_index_chart_container"
             ></div>
             <figcaption id="freshwater_index_chart_caption">
-              {{'ecosystemImpacts.ecosystem_impacts_text.freshwater_index_chart_caption'|transloco}}
+              {{ 'ecosystemImpacts.ecosystem_impacts_text.freshwater_index_chart_caption'|transloco }}
             </figcaption>
           </figure>
           <p
@@ -762,10 +769,10 @@
           ></p>
           <figure class="video_container">
             <video autoplay autoplay muted loop playsinline controls>
-              <source src="assets/video/video3.mp4" type="video/mp4" />
-              <source src="assets/video/video3.webm" type="video/webm" />
+              <source src="assets/video/video3.mp4" type="video/mp4"/>
+              <source src="assets/video/video3.webm" type="video/webm"/>
             </video>
-            <figcaption>{{'video3_credits' | transloco}}</figcaption>
+            <figcaption>{{ 'video3_credits' | transloco }}</figcaption>
           </figure>
           <p
             [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p4'|transloco | safehtml: 'html'"
@@ -776,12 +783,12 @@
           ></p>
           <figure class="video_container">
             <video autoplay autoplay muted loop playsinline controls>
-              <source src="assets/video/video4.mp4" type="video/mp4" />
-              <source src="assets/video/video4.webm" type="video/webm" />
+              <source src="assets/video/video4.mp4" type="video/mp4"/>
+              <source src="assets/video/video4.webm" type="video/webm"/>
             </video>
           </figure>
           <figcaption>
-            {{'ecosystemImpacts.ecosystem_impacts_text.video4_caption'|transloco}}
+            {{ 'ecosystemImpacts.ecosystem_impacts_text.video4_caption'|transloco }}
           </figcaption>
           <p
             [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p5b'|transloco | safehtml: 'html'"
@@ -790,8 +797,8 @@
             [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p6'|transloco | safehtml: 'html'"
           ></p>
           <figure>
-            <img src="assets/imgs/jpg/foto18_resize.jpg" />
-            <figcaption>{{'foto18_credits'|transloco}}</figcaption>
+            <img src="assets/imgs/jpg/foto18_resize.jpg"/>
+            <figcaption>{{ 'foto18_credits'|transloco }}</figcaption>
           </figure>
           <p
             [innerHTML]="'ecosystemImpacts.ecosystem_impacts_text.p7'|transloco | safehtml: 'html'"
@@ -808,8 +815,10 @@
           <ion-row class="ion-no-margin">
             <ion-col size="10" class="ion-no-margin">
               <h1 id="freshwater_species_title">
-                {{'ecosystemImpacts.ecosystem_impacts_text.freshwater_species_title'
-                | transloco}}
+                {{
+                  'ecosystemImpacts.ecosystem_impacts_text.freshwater_species_title'
+                    | transloco
+                }}
               </h1>
             </ion-col>
             <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
@@ -846,7 +855,8 @@
             *ngIf="!isMobile"
             id="ecosystem_impacts_viz_figure_chart_caption"
           >
-            {{'ecosystemImpacts.ecosystem_impacts_text.ecosystem_impacts_viz_figure_chart_caption'|transloco
+            {{
+              'ecosystemImpacts.ecosystem_impacts_text.ecosystem_impacts_viz_figure_chart_caption'|transloco
             }}
           </figcaption>
         </figure>
@@ -946,8 +956,8 @@
               direction="vertical"
               *ngIf="platform.is('mobile')"
             >
-              <img slot="first" src="assets/imgs/png/foto12.png" />
-              <img slot="second" src="assets/imgs/png/foto13.png" />
+              <img slot="first" src="assets/imgs/png/foto12.png"/>
+              <img slot="second" src="assets/imgs/png/foto13.png"/>
               <svg
                 slot="handle"
                 xmlns="http://www.w3.org/2000/svg"
@@ -968,8 +978,8 @@
               direction="horizontal"
               *ngIf="platform.is('desktop')"
             >
-              <img slot="first" src="assets/imgs/png/foto12.png" />
-              <img slot="second" src="assets/imgs/png/foto13.png" />
+              <img slot="first" src="assets/imgs/png/foto12.png"/>
+              <img slot="second" src="assets/imgs/png/foto13.png"/>
               <svg
                 slot="handle"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1026,12 +1036,16 @@
           >
             <div class="lillipop_title">
               <h3>
-                {{'possibleFutures.possible_futures_viz_figure_title' |
-                transloco}}
+                {{
+                  'possibleFutures.possible_futures_viz_figure_title' |
+                    transloco
+                }}
               </h3>
               <h4>
-                {{'possibleFutures.possible_futures_viz_figure_smaller_than_10MW'
-                | transloco}}
+                {{
+                  'possibleFutures.possible_futures_viz_figure_smaller_than_10MW'
+                    | transloco
+                }}
               </h4>
             </div>
           </div>
@@ -1044,12 +1058,16 @@
           >
             <div class="lillipop_title">
               <h3>
-                {{'possibleFutures.possible_futures_viz_figure_title' |
-                transloco}}
+                {{
+                  'possibleFutures.possible_futures_viz_figure_title' |
+                    transloco
+                }}
               </h3>
               <h4>
-                {{'possibleFutures.possible_futures_viz_figure_in_protected_areas_subtitle'
-                | transloco}}
+                {{
+                  'possibleFutures.possible_futures_viz_figure_in_protected_areas_subtitle'
+                    | transloco
+                }}
               </h4>
             </div>
           </div>
@@ -1062,12 +1080,16 @@
           >
             <div class="lillipop_title">
               <h3>
-                {{'possibleFutures.possible_futures_viz_figure_title' |
-                transloco}}
+                {{
+                  'possibleFutures.possible_futures_viz_figure_title' |
+                    transloco
+                }}
               </h3>
               <h4>
-                {{'possibleFutures.possible_futures_viz_figure_balkans_subtitle'
-                | transloco}}
+                {{
+                  'possibleFutures.possible_futures_viz_figure_balkans_subtitle'
+                    | transloco
+                }}
               </h4>
             </div>
           </div>
@@ -1122,8 +1144,8 @@
             direction="vertical"
             *ngIf="platform.is('mobile')"
           >
-            <img slot="first" src="assets/imgs/png/balkans_existing_wbg.png" />
-            <img slot="second" src="assets/imgs/png/balkans_all_wbg.png" />
+            <img slot="first" src="assets/imgs/png/balkans_existing_wbg.png"/>
+            <img slot="second" src="assets/imgs/png/balkans_all_wbg.png"/>
             <svg
               slot="handle"
               xmlns="http://www.w3.org/2000/svg"
@@ -1144,8 +1166,8 @@
             direction="horizontal"
             *ngIf="platform.is('desktop')"
           >
-            <img slot="first" src="assets/imgs/png/balkans_existing_wbg.png" />
-            <img slot="second" src="assets/imgs/png/balkans_all_wbg.png" />
+            <img slot="first" src="assets/imgs/png/balkans_existing_wbg.png"/>
+            <img slot="second" src="assets/imgs/png/balkans_all_wbg.png"/>
             <svg
               slot="handle"
               xmlns="http://www.w3.org/2000/svg"
@@ -1162,8 +1184,10 @@
             </svg>
           </img-comparison-slider>
           <figcaption id="possible_futures_balkans_map_caption">
-            {{'possibleFutures.possible_futures_text.balkans_caption' |
-            transloco}}
+            {{
+              'possibleFutures.possible_futures_text.balkans_caption' |
+                transloco
+            }}
           </figcaption>
         </figure>
       </section>
@@ -1173,7 +1197,7 @@
       >
         <div>
           <h4>
-            {{'possibleFutures.possible_futures_text.dam_removal' | transloco}}
+            {{ 'possibleFutures.possible_futures_text.dam_removal' | transloco }}
           </h4>
 
           <p
@@ -1191,7 +1215,7 @@
               id="barrier_removal_projects_chart_container"
             ></div>
             <figcaption id="barrier_removal_projects_chart_caption">
-              {{'possibleFutures.possible_futures_text.barrier_removal_projects_chart_caption'|transloco}}
+              {{ 'possibleFutures.possible_futures_text.barrier_removal_projects_chart_caption'|transloco }}
             </figcaption>
           </div>
           <p
@@ -1202,8 +1226,8 @@
           ></p>
           <figure class="video_container">
             <video autoplay autoplay muted loop playsinline controls>
-              <source src="assets/video/video5.mp4" type="video/mp4" />
-              <source src="assets/video/video5.webm" type="video/webm" />
+              <source src="assets/video/video5.mp4" type="video/mp4"/>
+              <source src="assets/video/video5.webm" type="video/webm"/>
             </video>
             <figcaption
               [innerHTML]="'possibleFutures.possible_futures_text.restored_video_caption'|transloco | safehtml:'html'"
@@ -1219,7 +1243,7 @@
             [innerHTML]="'possibleFutures.possible_futures_text.p11'|transloco | safehtml:'html'"
           ></p>
           <figure>
-            <img src="assets/imgs/jpg/foto14.jpeg" />
+            <img src="assets/imgs/jpg/foto14.jpeg"/>
             <figcaption
               [innerHTML]="'possibleFutures.possible_futures_text.bank_protection_removal_caption'|transloco | safehtml:'html'"
             ></figcaption>
@@ -1235,46 +1259,52 @@
           id="methodology"
           [innerHTML]="'about.methodology' | transloco | safehtml:'html'"
         ></div>
-        <h4>{{'about.credits' | transloco}}</h4>
+        <h4>{{ 'about.credits' | transloco }}</h4>
         <p>
           <ion-label class="font-bold"
-            >{{'about.financed_by_label' | transloco}}</ion-label
+          >{{ 'about.financed_by_label' | transloco }}
+          </ion-label
           >
-          {{'about.financed_by' | transloco}}
+          {{ 'about.financed_by' | transloco }}
         </p>
         <p>
           <ion-label class="font-bold"
-            >{{'about.scientific_supervision_label' | transloco}}</ion-label
+          >{{ 'about.scientific_supervision_label' | transloco }}
+          </ion-label
           >
-          {{'about.scientific_supervision' | transloco}}
+          {{ 'about.scientific_supervision' | transloco }}
         </p>
         <p>
           <ion-label class="font-bold"
-            >{{'about.science_communication_label' | transloco}}</ion-label
+          >{{ 'about.science_communication_label' | transloco }}
+          </ion-label
           >
-          {{'about.science_communication' | transloco}}
+          {{ 'about.science_communication' | transloco }}
         </p>
         <p>
           <ion-label class="font-bold"
-            >{{'about.content_label' | transloco}}</ion-label
-          >{{'about.content' | transloco}}
+          >{{ 'about.content_label' | transloco }}
+          </ion-label
+          >
+          {{ 'about.content' | transloco }}
         </p>
         <p>
           <ion-label class="font-bold"
-            >{{'about.dev_label' | transloco}}</ion-label
+          >{{ 'about.dev_label' | transloco }}
+          </ion-label
           >
-          {{'about.dev' | transloco}}
+          {{ 'about.dev' | transloco }}
         </p>
 
-        <h4>{{'about.contacts' | transloco}}</h4>
+        <h4>{{ 'about.contacts' | transloco }}</h4>
         <p [innerHTML]="'about.cirf'|transloco | safehtml:'html'"></p>
         <p [innerHTML]="'about.wetlands'|transloco | safehtml:'html'"></p>
 
-        <h4>{{'about.data_sources'|transloco}}</h4>
+        <h4>{{ 'about.data_sources'|transloco }}</h4>
         <p>
           Grill, G., Lehner, B., Thieme, M. et al. Mapping the world’s
           free-flowing rivers. Nature 569, 215-221 (2019).
-          <br />
+          <br/>
           <a href="https://doi.org/10.1038/s41586-019-1111-9" target="_blank">
             https://doi.org/10.1038/s41586-019-1111-9</a
           >
@@ -1282,7 +1312,7 @@
         <p>
           AMBER Consortium (2020). The AMBER Barrier Atlas. A Pan-European
           database of artificial instream barriers. Version 1.0 June 29th 2020.
-          <br />
+          <br/>
           <a
             href="https://amber.international/european-barrier-atlas/"
             target="_blank"
@@ -1293,7 +1323,7 @@
         <p>
           Hydropower pressure on European rivers: The story in numbers by WWF,
           RiverWatch, EuroNatur,GEOTA
-          <br />
+          <br/>
           <a
             href="https://wwfeu.awsassets.panda.org/downloads/hydropower_pressure_on_european_rivers_the_story_in_numbers_web.pdf"
             target="_blank"
@@ -1304,21 +1334,21 @@
 
         <p>
           LPI 2016. Living Planet Index database. 2016.
-          <br />
+          <br/>
           <a href="https://www.livingplanetindex.org" target="_blank">
             https://www.livingplanetindex.org</a
           >
-          <br />
+          <br/>
           Downloaded on 24 July 2022
         </p>
 
         <p>
           IUCN. 2022. The IUCN Red List of Threatened Species. Version 2022-1.
-          <br />
+          <br/>
           <a href="https://www.iucnredlist.org" target="_blank">
             https://www.iucnredlist.org</a
           >
-          <br />
+          <br/>
           Accessed on 24 July 2022.
         </p>
 
@@ -1335,16 +1365,16 @@
         <ion-grid id="life_colophon">
           <ion-row>
             <ion-col id="logo_col">
-              <img src="assets/imgs/jpg/LOGO_life.jpg" id="life_logo" />
+              <img src="assets/imgs/jpg/LOGO_life.jpg" id="life_logo"/>
             </ion-col>
             <ion-col id="life_disclaimer" size="12">
-              {{'life_disclaimer' | transloco}}
+              {{ 'life_disclaimer' | transloco }}
             </ion-col>
           </ion-row>
         </ion-grid>
         <div id="colophon">
           <a target="_blank" href="https://www.cirf.org/it/home/"
-            >{{'colophon'|transloco}}</a
+          >{{ 'colophon'|transloco }}</a
           >
         </div>
       </section>
