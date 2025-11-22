@@ -488,6 +488,22 @@ section {
 #glossary_container {
   margin-bottom: 2rem;
   margin-top: 1rem;
+
+  figure {
+    cursor: zoom-in;
+
+    &.fullscreen {
+      cursor: zoom-out;
+
+      figcaption {
+        position: absolute;
+        bottom: 0;
+        background: #ffffff;
+        width: 100%;
+        font-size: xx-large;
+      }
+    }
+  }
 }
 
 #glossary {

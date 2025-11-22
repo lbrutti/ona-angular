@@ -1,23 +1,27 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {IonicModule} from '@ionic/angular';
+import {FormsModule} from '@angular/forms';
+import {HomePage} from './home.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
-import { TranslocoModule } from '@ngneat/transloco';
+import {HomePageRoutingModule} from './home-routing.module';
+import {TranslocoModule} from '@ngneat/transloco';
 import 'img-comparison-slider';
-import { SafehtmlPipeModule } from '../utils/pipes/safepipe/safehtml.pipe.module';
+import {SafehtmlPipeModule} from '../utils/pipes/safepipe/safehtml.pipe.module';
+import {ImageModalModule} from '../utils/image-modal/image-modal.module';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        HomePageRoutingModule,
-        TranslocoModule,
-        SafehtmlPipeModule],
-    declarations: [HomePage],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    HomePageRoutingModule,
+    TranslocoModule,
+    SafehtmlPipeModule,
+    ImageModalModule
+    ],
+  declarations: [HomePage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomePageModule { }
+export class HomePageModule {
+}
