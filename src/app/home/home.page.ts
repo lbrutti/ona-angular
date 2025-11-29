@@ -85,7 +85,7 @@ export class HomePage implements AfterViewInit {
   isIPhone = false;
 
 
-  constructor(private platform: Platform, private translocoService: TranslocoService, private modalCtrl: ModalController) {
+  constructor(public platform: Platform, public translocoService: TranslocoService, private modalCtrl: ModalController) {
     this.platform = platform;
     this.translocoService = translocoService;
     let hasTouchScreen = false;

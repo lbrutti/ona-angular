@@ -34,15 +34,59 @@
           </ion-button>
         </div>
         <div class="centered_text_block font-bold">
-          <h1 class="intro__hed" id="intro_title">
-            {{ 'intro.introTitle'|transloco }}
-          </h1>
+          <div style="position: absolute;
+    pointer-events: none;
+    bottom: 0;
+    width: 100%;
+    left: 0;">
+            <!-- Variant 5: semi-opaque dark overlay -->
+            <!--            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="none"-->
+            <!--                 style="width:100%; height:30vh; display:block;">-->
+            <!--              <path d="M0,110 C200,80 400,70 600,85 C800,100 1000,130 1200,120 L1200,300 L0,300 Z"-->
+            <!--                    fill="#062A3B" fill-opacity="0.66"/>-->
+            <!--              <path d="M0,125 C200,97 400,90 600,105 C800,120 1000,150 1200,140 L1200,300 L0,300 Z"-->
+            <!--                    fill="#ffffff" opacity="0.03"/>-->
+            <!--            </svg>-->
+
+            <!-- Variant 1: wide subtle band -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="none"
+                 style="width: 100%;
+                         height: 256px;
+                         display: block;">
+              <defs>
+                <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.12"/>
+                </filter>
+              </defs>
+              <path d="M0,120 C200,80 400,60 600,80 C800,100 1000,140 1200,130 L1200,300 L0,300 Z"
+                    fill="#0B66A0" filter="url(#softShadow)"/>
+              <!-- optional darker bar for contrast -->
+              <path d="M0,140 C200,105 400,90 600,110 C800,130 1000,165 1200,160 L1200,300 L0,300 Z"
+                    fill="#084f78" opacity="0.12"/>
+            </svg>
+
+            <h1 class="intro__hed" id="intro_title"
+                style="
+                    position: absolute;
+                    left: 5%;
+                    top: 50%;
+                    margin: 0;
+                    font-size: clamp(28px, 6vw, 64px);
+                    line-height: 1;
+                    color: white !important;
+                    z-index: 10;
+                    pointer-events: auto;
+                    font-weight: 700;
+                    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);">
+              {{ 'intro.introTitle'|transloco }}
+            </h1>
+          </div>
         </div>
 
-        <div id="subtitleCredits">
+        <div id=" subtitleCredits" style="z-index: 10;
+                                          display: flex;">
           <span>{{ 'intro.subtitleCredits' | transloco }}</span>
-          <span id="videoCredits"
-          >{{ 'intro.subtitleVideoCredits' | transloco }}</span
+          <span id="videoCredits" style="margin-left:auto">{{ 'intro.subtitleVideoCredits' | transloco }}</span
           >
         </div>
       </section>
@@ -547,7 +591,8 @@
                 size-xl="2"
                 class=""
               >
-                <figure (click)="goFullScreen({imgPath:'assets/imgs/png/foto_tombamento.png', name:'glossary.culvert_title'})">
+                <figure
+                  (click)="goFullScreen({imgPath:'assets/imgs/png/foto_tombamento.png', name:'glossary.culvert_title'})">
                   <img src="assets/imgs/png/foto_tombamento.png"/>
                   <figcaption>
                     <ion-label
@@ -1225,7 +1270,7 @@
             [innerHTML]="'possibleFutures.possible_futures_text.p8'|transloco | safehtml:'html'"
           ></p>
           <figure class="video_container">
-            <video autoplay autoplay muted loop playsinline controls>
+            <video autoplay muted loop playsinline controls>
               <source src="assets/video/video5.mp4" type="video/mp4"/>
               <source src="assets/video/video5.webm" type="video/webm"/>
             </video>
