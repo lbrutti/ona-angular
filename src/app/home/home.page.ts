@@ -5,7 +5,8 @@ import * as d3 from 'd3';
 import {ModalController, Platform} from '@ionic/angular';
 import * as _ from 'lodash';
 import {TranslocoService} from '@ngneat/transloco';
-import {ImageModalComponent} from "../utils/image-modal/image-modal.component";
+import {ImageModalComponent} from '../utils/image-modal/image-modal.component';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -85,9 +86,20 @@ export class HomePage implements AfterViewInit {
   isIPhone = false;
 
 
-  constructor(public platform: Platform, public translocoService: TranslocoService, private modalCtrl: ModalController) {
-    this.platform = platform;
-    this.translocoService = translocoService;
+  constructor(public platform: Platform,
+              public translocoService: TranslocoService,
+              private modalCtrl: ModalController,
+              private route: ActivatedRoute) {
+
+    this.route.queryParams.subscribe(params => {
+      const requestedLang = params.lang ?? 'it';
+      this.translocoService.setActiveLang(requestedLang);
+      this.currentLang = requestedLang;
+      const availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
+      let currentLangIdx = availableLangs.indexOf(this.currentLang);
+      const nextLangIdx = (++currentLangIdx % availableLangs.length);
+      this.otherLang = availableLangs[nextLangIdx % availableLangs.length];
+    });
     let hasTouchScreen = false;
     if ('maxTouchPoints' in navigator) {
       hasTouchScreen = navigator.maxTouchPoints > 0;
@@ -105,11 +117,6 @@ export class HomePage implements AfterViewInit {
       this.futureDamsMargin.left = 10;
       this.futureDamsMargin.right = 15;
     }
-
-    const availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
-    const currentLangIdx = availableLangs.indexOf(this.translocoService.getActiveLang());
-    let nextLangIdx = (currentLangIdx % availableLangs.length);
-    this.otherLang = availableLangs[++nextLangIdx % availableLangs.length];
 
 
   }
@@ -267,7 +274,7 @@ export class HomePage implements AfterViewInit {
       //step 5: solo Temporal image visibile
       svg.select('#temporal1').classed('active', () => currentStep === 5);
       svg.select('#temporal2').classed('active', () => currentStep === 5);
-      connectivityAnimations.each(function () {
+      connectivityAnimations.each(function() {
         const imgStep = (this as any).dataset.step.split(',');
         const isActive = imgStep['0'] === 'all' || imgStep.includes('' + currentStep);
         (this as any).classList.toggle('active', isActive);
@@ -287,7 +294,7 @@ export class HomePage implements AfterViewInit {
       // update graphic based on step
       const maps = healthyRiversFigure.selectAll('img');
       const currentStep = response.index + 1;
-      maps.each(function () {
+      maps.each(function() {
         const imgStep = (this as any).dataset.step.split(',');
         const isActive = imgStep['0'] === 'all' || imgStep.includes('' + currentStep);
         (this as any).classList.toggle('active', isActive);
@@ -301,7 +308,7 @@ export class HomePage implements AfterViewInit {
       // update graphic based on step
       const maps = threatsFigure.selectAll('.anthropogenic_threats');
       const currentStep = response.index + 1;
-      maps.each(function () {
+      maps.each(function() {
         const activeSteps = (this as any).dataset.step.split(',');
         const transitionStep = (this as any).dataset.transitionStep || Infinity;
         const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
@@ -354,7 +361,7 @@ export class HomePage implements AfterViewInit {
 
       const waffles = ecosystemImpactsFigure.selectAll('.ecosystem_impacts_viz');
       const currentStep = response.index + 1;
-      waffles.each(function () {
+      waffles.each(function() {
         const waffle = (this as any);
         const activeSteps = waffle.dataset.step.split(',');
         const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
@@ -389,7 +396,7 @@ export class HomePage implements AfterViewInit {
       const damsCharts = possibleFuturesFigure.selectAll('.possible_futures_viz');
       const currentStep = response.index + 1;
       try {
-        damsCharts.each(function () {
+        damsCharts.each(function() {
           const damChart = (this as any);
           const activeSteps = damChart.dataset.step.split(',');
           const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
@@ -562,9 +569,9 @@ export class HomePage implements AfterViewInit {
     const currentLang = this.translocoService.getActiveLang();
     const availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
     let currentLangIdx = availableLangs.indexOf(currentLang);
-    let nextLangIdx = (++currentLangIdx % availableLangs.length);
-    this.translocoService.setActiveLang(availableLangs[nextLangIdx]);
-    this.otherLang = availableLangs[++nextLangIdx % availableLangs.length];
+    const nextLangIdx = (++currentLangIdx % availableLangs.length);
+    const requestedLang = availableLangs[nextLangIdx];
+    window.location.search = `lang=${requestedLang}`;
   }
 
   async goFullScreen(data: any): Promise<any> {
@@ -582,7 +589,7 @@ export class HomePage implements AfterViewInit {
 
     (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement);
 
-    const freshwaterDetail = await d3.xml('assets/imgs/svg/eu_fishes_danger/02_eu_fishes_danger_all.svg');
+    const freshwaterDetail = await d3.xml(`assets/imgs/svg/eu_fishes_danger/02_eu_fishes_danger_all_${this.currentLang}.svg`);
     // freshwater_detail.documentElement.setAttribute('width', 'auto');
     // freshwater_detail.documentElement.setAttribute('height', 'auto');
     d3.select(freshwaterDetail.documentElement).style('height', '100%');
@@ -619,21 +626,6 @@ export class HomePage implements AfterViewInit {
     const hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
     const page = this;
 
-    // dams.documentElement.setAttribute('width', 'auto');
-    // dams.documentElement.setAttribute('height', 'auto');
-    // ramps.documentElement.setAttribute('width', 'auto');
-    // ramps.documentElement.setAttribute('height', 'auto');
-    // weirs.documentElement.setAttribute('width', 'auto');
-    // weirs.documentElement.setAttribute('height', 'auto');
-    // culverts.documentElement.setAttribute('width', 'auto');
-    // culverts.documentElement.setAttribute('height', 'auto');
-    // sluices.documentElement.setAttribute('width', 'auto');
-    // sluices.documentElement.setAttribute('height', 'auto');
-    // others.documentElement.setAttribute('width', 'auto');
-    // others.documentElement.setAttribute('height', 'auto');
-    // hexbins.documentElement.setAttribute('width', 'auto');
-    // hexbins.documentElement.setAttribute('height', 'auto');
-
     d3.select(dams.documentElement).style('height', '100%');
     d3.select(ramps.documentElement).style('height', '100%');
     d3.select(weirs.documentElement).style('height', '100%');
@@ -652,8 +644,8 @@ export class HomePage implements AfterViewInit {
     const hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
     //this works only if paths are in foreground
     if (!this.isMobile) {
-      hexbinsPaths.each(function () {
-        d3.select(this).on('click', function (e) {
+      hexbinsPaths.each(function() {
+        d3.select(this).on('click', function(e) {
           const points = (this as any).dataset.points;
           const x = (this as any).getBoundingClientRect().x;
           const y = (this as any).getBoundingClientRect().y;
@@ -1042,13 +1034,13 @@ export class HomePage implements AfterViewInit {
     d3.json('assets/data/future_dams.json')
       .then((data: any) => {
         this.futureDamsdata = data;
-        this.createFutureDamsLillipop(data.small, this.chartSmallDamsContainer.nativeElement.querySelector('svg'), 'smallDamsChart', false);
-        this.createFutureDamsLillipop(data.protected, this.chartProtectedDamsContainer.nativeElement.querySelector('svg'), 'protectedDamsChart', false);
-        this.createFutureDamsLillipop(data.balkans, this.chartBalkansDamsContainer.nativeElement.querySelector('svg'), 'balkansDamsChart', true);
+        this.createFutureDamslollipop(data.small, this.chartSmallDamsContainer.nativeElement.querySelector('svg'), 'smallDamsChart', false);
+        this.createFutureDamslollipop(data.protected, this.chartProtectedDamsContainer.nativeElement.querySelector('svg'), 'protectedDamsChart', false);
+        this.createFutureDamslollipop(data.balkans, this.chartBalkansDamsContainer.nativeElement.querySelector('svg'), 'balkansDamsChart', true);
       });
   }
 
-  private createFutureDamsLillipop(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
+  private createFutureDamslollipop(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
     const colors = {existing: 'var(--ion-color-warning)', planned: 'var(--ion-color-danger)'};
     // Add X axis --> it is a date format
     const x = d3.scaleLinear()
@@ -1162,7 +1154,7 @@ export class HomePage implements AfterViewInit {
     const g = d3.select(chartContainer);
     // Change the X coordinates of line and circle
     g.selectAll('.lollipop_line')
-      .each(function (d) {
+      .each(function(d) {
         if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
@@ -1172,7 +1164,7 @@ export class HomePage implements AfterViewInit {
       });
 
     g.selectAll('.lollipop_circle')
-      .each(function () {
+      .each(function() {
         if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
@@ -1183,17 +1175,17 @@ export class HomePage implements AfterViewInit {
 
 
     g.selectAll('.lollipop_value_label')
-      .each(function (d) {
+      .each(function(d) {
         if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
             .duration(2000)
-            .textTween(function (d1: any) {
+            .textTween(function(d1: any) {
               if (!(this as any)._current) {
                 (this as any)._current = 0;
               }
               const i = d3.interpolate((this as any)._current, d1.value);
-              return function (t) {
+              return function(t) {
                 const value: any = d3.format('.2')((this as any)._current = i(t));
                 return `${Math.floor(value)}%`;
               };
