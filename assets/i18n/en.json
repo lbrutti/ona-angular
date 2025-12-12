@@ -141,15 +141,15 @@
     "glossary": {
         "title": "Barriers glossary",
         "dam_title": "Dam",
-        "dam_definition": "&nbsp",
+        "dam_definition": "Dams are transversal structures that usually span over the entire riverbed and in many cases beyond the bankfull channel. Dams block the flow of water and raise the water level, forming a reservoir or an impounded river segment upstream. Sediments can be completely or partially blocked, depending on the dam structure and management.\nDams can be of many forms and types, e.g.: gravity dams, arch dams, buttress dams.\n",
         "ramp_title": "Ramp",
-        "ramp_definition": "&nbsp",
+        "ramp_definition": "Ramps are local riverbed stabilisation structures, located within the channel, made with rocks of different sizes, loose or cemented with concrete. These are generally low-head structures not protruding significantly outside of the riverbed, but extending longitudinally. Their  impact on connectivity needs to be assessed case by case; they can also be built downstream to or as replacement of sills or weirs as a mitigation measure to improve connectivity for fish.",
         "sluice_title": "Sluice",
-        "sluice_definition": "&nbsp",
+        "sluice_definition": "Sluices are barriers with one or more movable gates, allowing it to regulate the water level upstream and/or the flow of water in a channel. If the aim is to allow ships/boats to navigate obstructions that create uneven levels of water along rivers and waterways, it is usually called “lock” (or lock gate). Abstraction weir and sluice are often used as synonyms.",
         "weir_title": "Weir",
-        "weir_definition": "&nbsp",
+        "weir_definition": "Weirs are a broad range of transversal barriers, generally of smaller size than dams, and where water often flows freely over the top or through the structure. Some types of weirs can cause a ponding effect.\nDepending on the type, weirs serve different purposes, including: reduction of the channel slope for stabilizing the channel bed (consolidation weirs), interception of sediment and wood (retention weirs, or check-dams).\n",
         "culvert_title": "Culvert",
-        "culvert_definition": "&nbsp"
+        "culvert_definition": "A culvert is a structure aimed at carrying a stream or river under an obstruction (often roads, forest tracks or other transport infrastructure). It varies in form from round and elliptical to box-shaped."
     },
     "about": {
         "breadcrumb_title": "About",
