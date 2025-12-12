@@ -545,10 +545,17 @@
                 size-xl="2"
                 class=""
               >
-                <figure (click)="goFullScreen({imgPath:'assets/imgs/jpg/foto2.jpg', name:'glossary.dam_title'})">
+                <figure (click)="goFullScreen({
+                imgPath:'assets/imgs/jpg/foto2.jpg',
+                name:'glossary.dam_title',
+                definition:'glossary.dam_definition'
+                })">
                   <img src="assets/imgs/jpg/foto2.jpg"/>
                   <figcaption>
-                    <ion-label>{{ 'glossary.dam_title' | transloco }}</ion-label>
+                    <ion-label class="font-w-bold">{{ 'glossary.dam_title' | transloco }}</ion-label>
+                    <p *ngIf="isMobile">
+                      <ion-text class="caption-definition">{{ 'glossary.dam_definition' | transloco }}</ion-text>
+                    </p>
                   </figcaption>
                 </figure>
               </ion-col>
@@ -561,10 +568,14 @@
                 size-xl="2"
                 class=""
               >
-                <figure (click)="goFullScreen({imgPath:'assets/imgs/jpg/ramp.jpg', name:'glossary.ramp_title'})">
+                <figure (click)="goFullScreen({imgPath:'assets/imgs/jpg/ramp.jpg', name:'glossary.ramp_title',
+                definition:'glossary.ramp_definition'})">
                   <img src="assets/imgs/jpg/ramp.jpg"/>
                   <figcaption>
-                    <ion-label>{{ 'glossary.ramp_title' | transloco }}</ion-label>
+                    <ion-label class="font-w-bold">{{ 'glossary.ramp_title' | transloco }}</ion-label>
+                    <p *ngIf="isMobile">
+                      <ion-text class="caption-definition">{{ 'glossary.ramp_definition' | transloco }}</ion-text>
+                    </p>
                   </figcaption>
                 </figure>
               </ion-col>
@@ -576,10 +587,14 @@
                 size-xl="2"
                 class=""
               >
-                <figure (click)="goFullScreen({imgPath:'assets/imgs/jpg/foto4.jpg', name:'glossary.weir_title'})">
+                <figure (click)="goFullScreen({imgPath:'assets/imgs/jpg/foto4.jpg', name:'glossary.weir_title',
+                definition:'glossary.weir_definition'})">
                   <img src="assets/imgs/jpg/foto4.jpg"/>
                   <figcaption>
-                    <ion-label>{{ 'glossary.weir_title' | transloco }}</ion-label>
+                    <ion-label class="font-w-bold">{{ 'glossary.weir_title' | transloco }}</ion-label>
+                    <p *ngIf="isMobile">
+                      <ion-text class="caption-definition">{{ 'glossary.weir_definition' | transloco }}</ion-text>
+                    </p>
                   </figcaption>
                 </figure>
               </ion-col>
@@ -592,12 +607,16 @@
                 class=""
               >
                 <figure
-                  (click)="goFullScreen({imgPath:'assets/imgs/png/foto_tombamento.png', name:'glossary.culvert_title'})">
+                  (click)="goFullScreen({imgPath:'assets/imgs/png/foto_tombamento.png', name:'glossary.culvert_title',
+                  definition:'glossary.culvert_definition'})">
                   <img src="assets/imgs/png/foto_tombamento.png"/>
                   <figcaption>
-                    <ion-label
-                    >{{ 'glossary.culvert_title' | transloco }}
+                    <ion-label class="font-w-bold">
+                      {{ 'glossary.culvert_title' | transloco }}
                     </ion-label>
+                    <p *ngIf="isMobile">
+                      <ion-text class="caption-definition">{{ 'glossary.culvert_definition' | transloco }}</ion-text>
+                    </p>
                   </figcaption>
                 </figure>
               </ion-col>
@@ -609,13 +628,15 @@
                 size-xl="2"
                 class=""
               >
-                <figure (click)="goFullScreen({imgPath:'assets/imgs/jpg/foto6.jpeg', name:'glossary.sluice_title'})">
+                <figure (click)="goFullScreen({imgPath:'assets/imgs/jpg/foto6.jpeg', name:'glossary.sluice_title',
+                definition:'glossary.sluice_definition'})">
                   <img src="assets/imgs/jpg/foto6.jpeg"/>
                   <figcaption>
-                    <ion-label
-                    >{{ 'glossary.sluice_title' | transloco }}
-                    </ion-label
-                    >
+                    <ion-label class="font-w-bold">{{ 'glossary.sluice_title' | transloco }}
+                    </ion-label>
+                    <p *ngIf="isMobile">
+                      <ion-text class="caption-definition">{{ 'glossary.sluice_definition' | transloco }}</ion-text>
+                    </p>
                   </figcaption>
                 </figure>
               </ion-col>

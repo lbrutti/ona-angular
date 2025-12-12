@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {ModalController} from "@ionic/angular";
+import {Component} from '@angular/core';
+import {ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-image-modal',
@@ -9,6 +9,7 @@ import {ModalController} from "@ionic/angular";
 export class ImageModalComponent {
   name: string;
   imgPath: string;
+  definition: string;
 
   constructor(private readonly modalCtrl: ModalController) {
   }

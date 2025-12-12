@@ -23,7 +23,7 @@
     },
     "connectivity": {
         "step-1": "Per essere in salute, un fiume ha bisogno di muoversi liberamente nelle quattro dimensioni: longitudinale, laterale, verticale e temporale.",
-        "step-2": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività longitudinale</ion-text> permette alla fauna di muoversi da monte a valle e viceversa, ai sedimenti e ai nutrienti di fluire liberamente dalle sorgenti al mare. Barriere artificiali come dighe, briglie e tombamenti possono limitare o interrompere del tutto questa connettività. ",
+        "step-2": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività longitudinale</ion-text> permette alla fauna di muoversi da monte a valle e viceversa, ai sedimenti e ai nutrienti di fluire liberamente dalle sorgenti al mare. Barriere artificiali come dighe, briglie e tombinamenti possono limitare o interrompere del tutto questa connettività. ",
         "step-3": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività laterale</ion-text> indica che i fiumi, con l’eccezione dei tratti montani naturalmente confinati, si muovono lateralmente e inondano periodicamente la pianura circostante, in uno scambio di acqua, sedimenti, nutrienti e materia organica, dal fiume alla pianura alluvionale e viceversa. ",
         "step-4": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività verticale</ion-text> riguarda le connessioni tra atmosfera, superficie del corso d’acqua e acque sotterranee. L'acqua che scorre sotto l'alveo è importante quanto il deflusso superficiale. È un habitat chiave per molti invertebrati, regola la temperatura del fiume, contribuisce alla ricarica delle acque sotterranee e molto altro.",
         "step-4_": "La <ion-text class=\"font-bold\" color=\"secondary\">connettività verticale</ion-text> riguarda le naturali connessioni tra atmosfera, superficie del corso d’acqua e acque sotterranee. L'acqua che scorre sotto il letto del fiume è importante quanto il deflusso superficiale, sebbene questo sia ben più visibile: è un habitat chiave per molti invertebrati, regola la temperatura del fiume, contribuisce alla ricarica delle acque sotterranee e molto altro.",
@@ -49,7 +49,7 @@
         "step-7": "&nbsp",
         "step-8": "<ion-text color=\"danger\">197,752 briglie</ion-text>  ",
         "step-9": "&nbsp",
-        "step-10": "<ion-text color=\"danger\">112,898 tombamenti</ion-text>  ",
+        "step-10": "<ion-text color=\"danger\">112,898 tombinamenti</ion-text>  ",
         "step-11": "&nbsp",
         "step-12": "<ion-text color=\"danger\">8,528 chiuse</ion-text>  ",
         "step-13": "&nbsp",
@@ -141,15 +141,15 @@
     "glossary": {
         "title": "Glossario degli ostacoli",
         "dam_title": "Diga",
-        "dam_definition": "&nbsp",
+        "dam_definition": "Le dighe sono strutture trasversali che di norma attraversano l’intero alveo del fiume e, in molti casi, si estendono oltre l’alveo di piena ordinaria. Le dighe bloccano il flusso dell’acqua e ne innalzano il livello, formando a monte un invaso artificiale o comunque un tratto di fiume bacinizzato. I sedimenti possono essere completamente o parzialmente trattenuti, a seconda della struttura della diga e delle modalità di gestione. Le dighe possono avere forme e tipologie molto diverse, ad esempio: dighe a gravità, dighe ad arco, dighe a contrafforti.\n",
         "ramp_title": "Rampa",
-        "ramp_definition": "&nbsp",
+        "ramp_definition": "Le rampe sono strutture locali di stabilizzazione dell’alveo, realizzate con massi di diverse dimensioni, sciolti oppure cementati con calcestruzzo. Si tratta in genere di opere che determinano un salto limitato, che non sporgono in modo significativo al di fuori dell’alveo, ma si sviluppano in senso longitudinale.\nIl loro impatto sulla connettività va valutato caso per caso. Possono anche essere realizzate a valle o in sostituzione di soglie o traverse come misura di mitigazione per migliorare la connettività per i pesci.\n",
         "sluice_title": "Chiusa",
-        "sluice_definition": "&nbsp",
+        "sluice_definition": "Le chiuse sono barriere dotate di una o più paratie mobili, che consentono di regolare il livello dell’acqua a monte e/o il flusso d’acqua in un canale. Se l’obiettivo è permettere a navi o imbarcazioni di superare ostacoli che creano dislivelli lungo fiumi e vie d’acqua, si parla di chiusa o conca di navigazione.",
         "weir_title": "Briglia",
-        "weir_definition": "&nbsp",
-        "culvert_title": "Tombamento",
-        "culvert_definition": "&nbsp"
+        "weir_definition": "Le briglie sono un’ampia categoria di barriere trasversali generalmente di dimensioni inferiori rispetto alle dighe, nelle quali l’acqua spesso defluisce liberamente sopra o attraverso la struttura. Alcuni tipi di briglie possono determinare un tratto bacinizzato a monte. A seconda della tipologia possono svolgere funzioni diverse, tra cui: riduzione della pendenza dell’alveo per stabilizzare il fondo del canale (briglie di consolidamento), intercettazione di sedimenti e legname (briglie di trattenuta).",
+        "culvert_title": "Tombinamento",
+        "culvert_definition": "Un tombinamento è una struttura progettata per convogliare un corso d’acqua al di sotto di un ostacolo (spesso strade, piste forestali o altre infrastrutture viarie). Può assumere forme diverse: da sezioni circolari ed ellittiche fino a sezioni più squadrate."
     },
     "about": {
         "methodology": "Questo sito web è stato creato per rendere accessibile a un vasto pubblico la ricerca e i dati sulla connettività fluviale. La connettività fluviale, il modo in cui la sua perdita ha un impatto sugli ecosistemi, e le difficoltà legate al suo ripristino sono questioni complesse. <br/>CIRF e Wetlands International Europe hanno scelto la visualizzazione dei dati come strumento per far luce su questa complessità, senza però semplificarla in maniera riduttiva. <br/>La visualizzazione dei dati, attraverso grafici e metafore visive, aiuta le perosne a individuare ciò che i dati raccontano, facendo leva sulle strategie visive che guidano i nostri processi cognitivi. <br/>Combinata con il testo, la visualizzazione dei dati rende la complessità accessibile, esplorabile e memorabile in un modo in cui il testo da solo spesso non lo riesce a fare.",

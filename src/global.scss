@@ -52,6 +52,10 @@ h1, h2, h3, h4, h5 {
   font-family: var(--ion-font-family-bold);
 }
 
+.font-w-bold {
+  font-weight: bold;
+}
+
 [color=danger-dark] {
   color: var(--ion-color-danger-dark);
 }
@@ -63,3 +67,12 @@ h1, h2, h3, h4, h5 {
 .ion-no-margin-top {
   margin-top: 0 !important;
 }
+
+
+ion-modal.auto-height::part(content) {
+  position: relative;
+  display: block;
+  contain: content;
+  height: 790px
+}
+

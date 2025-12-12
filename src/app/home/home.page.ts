@@ -274,7 +274,7 @@ export class HomePage implements AfterViewInit {
       //step 5: solo Temporal image visibile
       svg.select('#temporal1').classed('active', () => currentStep === 5);
       svg.select('#temporal2').classed('active', () => currentStep === 5);
-      connectivityAnimations.each(function() {
+      connectivityAnimations.each(function () {
         const imgStep = (this as any).dataset.step.split(',');
         const isActive = imgStep['0'] === 'all' || imgStep.includes('' + currentStep);
         (this as any).classList.toggle('active', isActive);
@@ -294,7 +294,7 @@ export class HomePage implements AfterViewInit {
       // update graphic based on step
       const maps = healthyRiversFigure.selectAll('img');
       const currentStep = response.index + 1;
-      maps.each(function() {
+      maps.each(function () {
         const imgStep = (this as any).dataset.step.split(',');
         const isActive = imgStep['0'] === 'all' || imgStep.includes('' + currentStep);
         (this as any).classList.toggle('active', isActive);
@@ -308,7 +308,7 @@ export class HomePage implements AfterViewInit {
       // update graphic based on step
       const maps = threatsFigure.selectAll('.anthropogenic_threats');
       const currentStep = response.index + 1;
-      maps.each(function() {
+      maps.each(function () {
         const activeSteps = (this as any).dataset.step.split(',');
         const transitionStep = (this as any).dataset.transitionStep || Infinity;
         const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
@@ -361,7 +361,7 @@ export class HomePage implements AfterViewInit {
 
       const waffles = ecosystemImpactsFigure.selectAll('.ecosystem_impacts_viz');
       const currentStep = response.index + 1;
-      waffles.each(function() {
+      waffles.each(function () {
         const waffle = (this as any);
         const activeSteps = waffle.dataset.step.split(',');
         const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
@@ -396,7 +396,7 @@ export class HomePage implements AfterViewInit {
       const damsCharts = possibleFuturesFigure.selectAll('.possible_futures_viz');
       const currentStep = response.index + 1;
       try {
-        damsCharts.each(function() {
+        damsCharts.each(function () {
           const damChart = (this as any);
           const activeSteps = damChart.dataset.step.split(',');
           const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
@@ -575,11 +575,14 @@ export class HomePage implements AfterViewInit {
   }
 
   async goFullScreen(data: any): Promise<any> {
-    const modal = await this.modalCtrl.create({
-      component: ImageModalComponent,
-      componentProps: data
-    });
-    modal.present();
+    if (!this.isMobile) {
+      const modal = await this.modalCtrl.create({
+        component: ImageModalComponent,
+        componentProps: data,
+        cssClass: 'auto-height'
+      });
+      modal.present();
+    }
   }
 
   private async loadEcosystemImpactsCharts(ecosystemImpacts: d3.Selection<d3.BaseType, unknown, HTMLElement, any>) {
@@ -644,8 +647,8 @@ export class HomePage implements AfterViewInit {
     const hexbinsPaths = threats.selectAll('#anthropogenic_threats_hex_bin #eu_barrier_count .hex');
     //this works only if paths are in foreground
     if (!this.isMobile) {
-      hexbinsPaths.each(function() {
-        d3.select(this).on('click', function(e) {
+      hexbinsPaths.each(function () {
+        d3.select(this).on('click', function (e) {
           const points = (this as any).dataset.points;
           const x = (this as any).getBoundingClientRect().x;
           const y = (this as any).getBoundingClientRect().y;
@@ -1154,7 +1157,7 @@ export class HomePage implements AfterViewInit {
     const g = d3.select(chartContainer);
     // Change the X coordinates of line and circle
     g.selectAll('.lollipop_line')
-      .each(function(d) {
+      .each(function (d) {
         if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
@@ -1164,7 +1167,7 @@ export class HomePage implements AfterViewInit {
       });
 
     g.selectAll('.lollipop_circle')
-      .each(function() {
+      .each(function () {
         if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
@@ -1175,17 +1178,17 @@ export class HomePage implements AfterViewInit {
 
 
     g.selectAll('.lollipop_value_label')
-      .each(function(d) {
+      .each(function (d) {
         if ((this as HTMLElement).dataset.type === type) {
           d3.select(this)
             .transition()
             .duration(2000)
-            .textTween(function(d1: any) {
+            .textTween(function (d1: any) {
               if (!(this as any)._current) {
                 (this as any)._current = 0;
               }
               const i = d3.interpolate((this as any)._current, d1.value);
-              return function(t) {
+              return function (t) {
                 const value: any = d3.format('.2')((this as any)._current = i(t));
                 return `${Math.floor(value)}%`;
               };
