@@ -1017,6 +1017,7 @@ export class HomePage implements AfterViewInit {
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
+      .style('background-color', '#fff')
       .attr('viewBox', `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
@@ -1024,6 +1025,7 @@ export class HomePage implements AfterViewInit {
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
+      .style('background-color', '#fff')
       .attr('viewBox', `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
@@ -1031,6 +1033,7 @@ export class HomePage implements AfterViewInit {
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
+      .style('background-color', '#fff')
       .attr('viewBox', `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
