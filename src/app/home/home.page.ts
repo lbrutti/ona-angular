@@ -31,7 +31,7 @@ export class HomePage implements AfterViewInit {
   @ViewChild('ecosystem_impacts_viz_figure') ecosystemImpactsVizFigure: ElementRef;
 
   currentLang = 'it';
-
+  currentYear = 2020;
   breadcrumbItems: any[] = [{
     href: '#healthy_rivers_title',
     text: 'healthyRivers.section_title',
@@ -118,7 +118,7 @@ export class HomePage implements AfterViewInit {
       this.futureDamsMargin.right = 15;
     }
 
-
+    this.currentYear = (new Date()).getFullYear();
   }
 
 
