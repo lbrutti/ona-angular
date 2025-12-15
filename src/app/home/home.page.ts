@@ -868,7 +868,7 @@ export class HomePage implements AfterViewInit {
 
       // Add X axis --> it is a date format
       const x = d3.scaleLinear()
-        .domain([1940, 2020])
+        .domain([1940, 2025])
         .range([0, width]);
 
       const xAxis = (d3 as any)
@@ -886,7 +886,7 @@ export class HomePage implements AfterViewInit {
 
       // Add Y axis
       const y = d3.scaleLinear()
-        .domain([429, 4984])
+        .domain([429, 9000])
         .range([height, 0]);
 
       const yAxis = (d3 as any).axisLeft().scale(y).ticks(5).tickFormat(d => Math.floor(d))
@@ -928,20 +928,6 @@ export class HomePage implements AfterViewInit {
           .y((d: any) => y(d.cumulative))
         );
 
-      // Add the line
-      // let dots = svg
-      //     .append('g')
-      //     .selectAll('.dot')
-      //     .data(data)
-      //     .enter()
-      //     .append("circle")
-      //     .attr('class', 'dot')
-      //     .style("fill", "var(--ion-color-secondary-shade)")
-      //     .attr('r', 4)
-      //     .attr("cx", (d: any) => x(d.year))
-      //     .attr("cy", (d: any) => y(d.cumulative));
-
-      //append upper axis
 
       // Create the circle that travels along the curve of chart
       const focus = svg
