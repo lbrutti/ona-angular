@@ -55,6 +55,10 @@ export class HomePage implements AfterViewInit {
       text: 'possibleFutures.possible_futures_text.breadcrumb_title',
       active: false
     }, {
+      href: '#nrr',
+      text: 'nrr.breadcrumb_title',
+      active: false
+    }, {
       href: '#about_title',
       text: 'about.breadcrumb_title',
       active: false
