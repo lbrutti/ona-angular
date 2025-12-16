@@ -32,6 +32,11 @@ export class HomePage implements AfterViewInit {
 
   currentLang = 'it';
   currentYear = 2020;
+  homeItem = {
+    href: '#container',
+    text: 'home',
+    active: false
+  };
   breadcrumbItems: any[] = [{
     href: '#healthy_rivers_title',
     text: 'healthyRivers.section_title',

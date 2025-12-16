@@ -52,6 +52,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="none"
                  style="width: 100%;
                          height: 256px;
+                         opacity: 0.5;
                          display: block;">
               <defs>
                 <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
@@ -106,6 +107,16 @@
       <ion-breadcrumbs id="breadcrumb" #breadcrumb>
         <!-- item invisibile per evitare active inizializzato a true su about -->
         <ion-breadcrumb active="true" style="display: none">
+          <span slot="separator"></span>
+        </ion-breadcrumb>
+        <ion-breadcrumb
+          (click)="onBreadCrumbClick($event, homeItem)"
+          [active]="homeItem.active"
+          href="{{homeItem.href}}"
+        >
+
+          <ion-icon [title]="homeItem.text | transloco" name="home-outline"></ion-icon>
+          <!--          <span [title]="homeItem.text | transloco">{{ homeItem.text | transloco }}</span>-->
           <span slot="separator"></span>
         </ion-breadcrumb>
         <ion-breadcrumb
@@ -296,20 +307,20 @@
                 [innerHTML]="'free_flowing_rivers_text.p3'|transloco | safehtml: 'html'"
               ></p>
             </ion-col>
-<!--            <ion-col-->
-<!--              size-xs="12"-->
-<!--              size-sm="12"-->
-<!--              size-md="12"-->
-<!--              size-lg="12"-->
-<!--              size-xl="6"-->
-<!--            >-->
-<!--              <figure>-->
-<!--                <img src="assets/imgs/jpg/foto1_desaturata_square.jpeg"/>-->
-<!--                <figcaption>-->
-<!--                  {{ 'free_flowing_rivers_text.foto1_caption' | transloco }}-->
-<!--                </figcaption>-->
-<!--              </figure>-->
-<!--            </ion-col>-->
+            <!--            <ion-col-->
+            <!--              size-xs="12"-->
+            <!--              size-sm="12"-->
+            <!--              size-md="12"-->
+            <!--              size-lg="12"-->
+            <!--              size-xl="6"-->
+            <!--            >-->
+            <!--              <figure>-->
+            <!--                <img src="assets/imgs/jpg/foto1_desaturata_square.jpeg"/>-->
+            <!--                <figcaption>-->
+            <!--                  {{ 'free_flowing_rivers_text.foto1_caption' | transloco }}-->
+            <!--                </figcaption>-->
+            <!--              </figure>-->
+            <!--            </ion-col>-->
           </ion-row>
         </ion-grid>
       </section>
@@ -1210,8 +1221,8 @@
             direction="vertical"
             *ngIf="platform.is('mobile')"
           >
-            <img slot="first" src="assets/imgs/png/balkans_existing_wbg.png"/>
-            <img slot="second" src="assets/imgs/png/balkans_all_wbg.png"/>
+            <img slot="first" src="assets/imgs/png/balkans_existing_no_bg.png"/>
+            <img slot="second" src="assets/imgs/png/balkans_all_no_bg.png"/>
             <svg
               slot="handle"
               xmlns="http://www.w3.org/2000/svg"
@@ -1219,7 +1230,7 @@
               viewBox="-8 -3 16 6"
             >
               <path
-                stroke="#fff"
+                stroke="#595959"
                 d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2"
                 stroke-width="1"
                 fill="#fff"
@@ -1232,8 +1243,8 @@
             direction="horizontal"
             *ngIf="platform.is('desktop')"
           >
-            <img slot="first" src="assets/imgs/png/balkans_existing_wbg.png"/>
-            <img slot="second" src="assets/imgs/png/balkans_all_wbg.png"/>
+            <img slot="first" src="assets/imgs/png/balkans_existing_no_bg.png"/>
+            <img slot="second" src="assets/imgs/png/balkans_all_no_bg.png"/>
             <svg
               slot="handle"
               xmlns="http://www.w3.org/2000/svg"
@@ -1244,7 +1255,7 @@
                 stroke="#fff"
                 d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2"
                 stroke-width="1"
-                fill="#fff"
+                fill="#595959"
                 vector-effect="non-scaling-stroke"
               ></path>
             </svg>
@@ -1305,15 +1316,15 @@
           <p
             [innerHTML]="'possibleFutures.possible_futures_text.p10'|transloco | safehtml:'html'"
           ></p>
-          <p
-            [innerHTML]="'possibleFutures.possible_futures_text.p11'|transloco | safehtml:'html'"
-          ></p>
           <figure>
             <img src="assets/imgs/jpg/foto14.jpeg"/>
             <figcaption
               [innerHTML]="'possibleFutures.possible_futures_text.bank_protection_removal_caption'|transloco | safehtml:'html'"
             ></figcaption>
           </figure>
+          <p
+            [innerHTML]="'possibleFutures.possible_futures_text.p11'|transloco | safehtml:'html'"
+          ></p>
         </div>
       </section>
 
