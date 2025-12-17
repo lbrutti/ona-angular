@@ -5,7 +5,9 @@
     "introTitle": "La connettività fluviale",
     "subtitleCredits": "Un progetto di CIRF e Wetlands International Europe",
     "subtitleVideoCredits": "video di Ivan Mazzon",
-    "introSubtitle": "La salute dei fiumi del mondo è <ion-text class=\"font-bold\">gravemente minacciata</ion-text>.<br> Ma c'è ancora speranza se agiamo ora.",
+    "introSubtitle": "La salute dei fiumi del mondo è gravemente minacciata.",
+    "introSubSubtitle": "Ma c'è ancora speranza se agiamo ora.",
+
     "p1": "I fiumi sono sistemi complessi le cui dinamiche plasmano la vita sulla Terra così come la conosciamo. Ospitano un'ampia gamma di specie d'acqua dolce, e trasportano sedimenti e nutrienti. Formano zone umide, delta e pianure alluvionali che nutrono la flora, la fauna e le comunità umane e ci proteggono da inondazioni, siccità e altri disastri naturali. Raccolgono l'acqua dall'atmosfera e dal suolo e rimpinguano le falde acquifere, che sono fondamentali per la nostra sopravvivenza. ",
     "p2": "Per fornire questi servizi ecosistemici essenziali, i fiumi devono poter scorrere liberamente, muovendosi senza ostacoli in più direzioni. Tuttavia, solo una piccola parte dei fiumi del mondo può ancora farlo: una miriade di opere costruite dall'uomo frammentano, deviano, restringono e regolano il flusso dei fiumi, con un impatto drammatico sulle funzioni naturali e sugli ecosistemi circostanti."
   },
@@ -142,9 +144,9 @@
   "glossary": {
     "title": "Glossario degli ostacoli",
     "dam_title": "Diga",
-    "dam_definition": "Le dighe sono strutture trasversali che di norma attraversano l’intero alveo del fiume e, in molti casi, si estendono oltre l’alveo di piena ordinaria. Le dighe bloccano il flusso dell’acqua e ne innalzano il livello, formando a monte un invaso artificiale o comunque un tratto di fiume bacinizzato. I sedimenti possono essere completamente o parzialmente trattenuti, a seconda della struttura della diga e delle modalità di gestione. Le dighe possono avere forme e tipologie molto diverse, ad esempio: dighe a gravità, dighe ad arco, dighe a contrafforti.<br>",
+    "dam_definition": "Le dighe sono strutture trasversali che di norma attraversano l’intero alveo del fiume e, in molti casi, si estendono oltre l’alveo di piena ordinaria. Le dighe bloccano il flusso dell’acqua e ne innalzano il livello, formando a monte un invaso artificiale o comunque un tratto di fiume bacinizzato. I sedimenti possono essere completamente o parzialmente trattenuti, a seconda della struttura della diga e delle modalità di gestione. Le dighe possono avere forme e tipologie molto diverse, ad esempio: dighe a gravità, dighe ad arco, dighe a contrafforti.",
     "ramp_title": "Rampa",
-    "ramp_definition": "Le rampe sono strutture locali di stabilizzazione dell’alveo, realizzate con massi di diverse dimensioni, sciolti oppure cementati con calcestruzzo. Si tratta in genere di opere che determinano un salto limitato, che non sporgono in modo significativo al di fuori dell’alveo, ma si sviluppano in senso longitudinale.<br>Il loro impatto sulla connettività va valutato caso per caso. Possono anche essere realizzate a valle o in sostituzione di soglie o traverse come misura di mitigazione per migliorare la connettività per i pesci.<br>",
+    "ramp_definition": "Le rampe sono strutture locali di stabilizzazione dell’alveo, realizzate con massi di diverse dimensioni, sciolti oppure cementati con calcestruzzo. Si tratta in genere di opere che determinano un salto limitato, che non sporgono in modo significativo al di fuori dell’alveo, ma si sviluppano in senso longitudinale.<br>Il loro impatto sulla connettività va valutato caso per caso. Possono anche essere realizzate a valle o in sostituzione di soglie o traverse come misura di mitigazione per migliorare la connettività per i pesci.",
     "sluice_title": "Chiusa",
     "sluice_definition": "Le chiuse sono barriere dotate di una o più paratie mobili, che consentono di regolare il livello dell’acqua a monte e/o il flusso d’acqua in un canale. Se l’obiettivo è permettere a navi o imbarcazioni di superare ostacoli che creano dislivelli lungo fiumi e vie d’acqua, si parla di chiusa o conca di navigazione.",
     "weir_title": "Briglia",
