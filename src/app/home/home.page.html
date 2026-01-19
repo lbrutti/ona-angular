@@ -75,11 +75,10 @@
           </div>
         </div>
 
-        <div id=" subtitleCredits" style="z-index: 10;
+        <div id="subtitleCredits" style="z-index: 10;
                                           display: flex;">
-          <span>{{ 'intro.subtitleCredits' | transloco }}</span>
-          <span id="videoCredits" style="margin-left:auto">{{ 'intro.subtitleVideoCredits' | transloco }}</span
-          >
+          <!--          <span>{{ 'intro.subtitleCredits' | transloco }}</span>-->
+          <span id="videoCredits" style="margin-left:auto">{{ 'intro.subtitleVideoCredits' | transloco }}</span>
         </div>
       </section>
 
@@ -88,9 +87,7 @@
           <h1
             class="intro__hed"
             id="intro_subtitle"
-          >
-            {{ 'intro.introSubtitle'|transloco }} <br>
-            {{ 'intro.introSubSubtitle'|transloco }}</h1>
+          >{{ 'intro.introSubtitle'|transloco }}</h1>
         </div>
         <p [innerHTML]="'intro.p1'|transloco | safehtml: 'html'"></p>
         <p [innerHTML]="'intro.p2'|transloco | safehtml: 'html'"></p>
@@ -122,7 +119,7 @@
         </ion-breadcrumb>
       </ion-breadcrumbs>
       <section id="healthy_rivers" class="scrolly scrolly-overlay">
-        <ion-grid class="sticky_section_title section_title ion-no-margin">
+        <ion-grid class="sticky_section_title section_title ion-no-margin ion-no-padding">
           <ion-row class="ion-no-margin">
             <ion-col size="10" class="ion-no-margin">
               <h1 id="healthy_rivers_title">
@@ -131,7 +128,7 @@
             </ion-col>
             <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
               <ion-button
-                (click)="setToFullscreen('healthy_rivers_figure')"
+                (click)="setToFullscreen('healthyRiversFigure')"
                 size="small"
                 fill="outline"
                 expand="block"
@@ -319,7 +316,7 @@
 
       <section id="anthropogenic_threats" class="scrolly scrolly-overlay">
         <!-- background content -->
-        <ion-grid class="sticky_section_title section_title ion-no-margin">
+        <ion-grid class="sticky_section_title section_title ion-no-margin ion-no-padding">
           <ion-row class="ion-no-margin">
             <ion-col size="10" class="ion-no-margin">
               <h1 *ngIf="!isMobile" id="anthropogenic_threats-title">
@@ -331,7 +328,7 @@
             </ion-col>
             <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
               <ion-button
-                (click)="setToFullscreen('anthropogenic_threats_figure')"
+                (click)="setToFullscreen('anthropogenicThreatsFigure')"
                 size="small"
                 fill="outline"
                 expand="block"
@@ -629,7 +626,7 @@
         <p
           [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p3'|transloco | safehtml: 'html'"
         ></p>
-        <ion-grid>
+        <ion-grid class="ion-no-margin ion-no-padding">
           <ion-row>
             <ion-col
               size-xs="12"
@@ -723,7 +720,7 @@
             [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p5'|transloco | safehtml: 'html'"
           ></p>
         </div>
-        <ion-grid class="ion-no-margin">
+        <ion-grid class="ion-no-margin ion-no-padding">
           <ion-row class="ion-no-margin">
             <ion-col
               size-xs="12"
@@ -845,7 +842,7 @@
         #ecosystem_impacts_viz
         class="scrolly scrolly-overlay"
       >
-        <ion-grid class="sticky_section_title section_title ion-no-margin">
+        <ion-grid class="sticky_section_title section_title ion-no-margin ion-no-padding">
           <ion-row class="ion-no-margin">
             <ion-col size="10" class="ion-no-margin">
               <h1 id="freshwater_species_title">
@@ -857,7 +854,7 @@
             </ion-col>
             <ion-col size="2" class="ion-no-margin" *ngIf="!isIPhone">
               <ion-button
-                (click)="setToFullscreen('ecosystem_impacts_viz_figure')"
+                (click)="setToFullscreen('ecosystemImpactsVizFigure')"
                 size="small"
                 fill="outline"
                 expand="block"

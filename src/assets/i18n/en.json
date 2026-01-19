@@ -3,8 +3,7 @@
   "home": "Home",
   "intro": {
     "introTitle": "River Connectivity",
-    "introSubtitle": "The health of the world’s rivers is severely threatened.",
-    "introSubSubtitle": "But there is still hope if we take action.",
+    "introSubtitle": "The health of the world’s rivers is severely threatened, but there is still hope if we take action.",
     "subtitleCredits": "A project by CIRF and Wetlands International Europe",
     "subtitleVideoCredits": "video by Ivan Mazzon",
     "p1": " Rivers are complex systems whose dynamics shape life on Earth as we know it. They are home to a wide range of freshwater species. They transport sediments and nutrients. They form wetlands, deltas, and floodplains which nurture flora, fauna, and human communities and protect us from floods, droughts, and other natural disasters. They collect water from the atmosphere and land and replenish groundwater systems, which are key for our survival.",
@@ -31,14 +30,14 @@
     "step-5": "<ion-text class=\"font-bold\" color=\"secondary\">Temporal connectivity</ion-text> refers to the flow dynamics and patterns that develop over time. This can happen at intervals of months, years, or decades."
   },
   "free_flowing_rivers_text": {
-    "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present. <br> There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>",
+    "p1": "<ion-text class=\"font-bold\">Free-flowing rivers</ion-text> are those in which all four types of connectivity are present.",
     "p2": "There are, however, many potential threats to maintaining a free-flowing status from the headwaters to the outlet. <br>",
     "p3": "The human pressures that impact a river’s flow and dynamics are multiple, often linked to urbanization, agriculture, roads and infrastructure built in riparian areas, water abstraction and energy production - to name a few.",
     "foto1_caption": "(iStock/Sebastian Saldarriaga Torres)"
   },
   "anthropogenicThreats": {
     "section_title": "The main threats to river connectivity",
-    "section_title_mobile": "The main threats to connectivity",
+    "section_title_mobile": "The main threats to river connectivity",
     "breadcrumb_title": "Anthropogenic threats",
     "barrierCounterTitle": "Barrier counter",
     "step-1": "Dams and other barriers are the most evident example of built infrastructure that hinder river connectivity.",
@@ -77,7 +76,7 @@
     "ecosystem_impacts_text": {
       "section_title": "The ecological impacts of the loss of connectivity",
       "breadcrumb_title": "Ecological impacts",
-      "section_title_mobile": "The ecological impacts",
+      "section_title_mobile": "The ecological impacts of the loss of connectivity",
       "freshwater_index_chart_caption": "Data source: LPI 2016. Living Planet Index database. 2016.",
       "ecosystem_impacts_viz_figure_chart_caption": "Data source: IUCN. 2022. The IUCN Red List of Threatened Species. Version 2022-1",
       "p1": "As rivers encounter man-made barriers to their free flow, the complex habitats they sustain are degraded or lost and animal species become increasingly vulnerable. Freshwater biodiversity is taking the hardest hit, declining at a faster rate than that of oceans and forests, according to WWF’s <a href=\"https://livingplanet.panda.org/freshwater\" target=\"_blank\">Living Planet Index.</a>",
