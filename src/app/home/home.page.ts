@@ -700,11 +700,12 @@ export class HomePage implements AfterViewInit {
       .then(csv => createMap(csv));
 
     const createMap = (data: any) => {
-
-
       // Add X axis --> it is a date format
       const x = d3.scaleLinear()
-        .domain([1970, 2017])
+        .domain([
+          Math.min(...data.map(d => +d.year))
+          , Math.max(...data.map(d => +d.year))
+        ])
         .range([0, width]);
 
       const xAxis = (d3 as any)
