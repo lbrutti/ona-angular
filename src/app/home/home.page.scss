@@ -671,7 +671,8 @@ main.mobile {
 
   .step {
     margin: 0 auto 2rem auto;
-    font-size: 22px;
+    //size originale
+    //font-size: 22px;
     background-color: transparent;
     text-align: left;
   }
@@ -702,9 +703,9 @@ main.mobile {
   }
 
   #river_connectivities {
-    .step {
-      font-size: 18px;
-    }
+    //.step {
+    //  font-size: 18px;
+    //}
 
     .river_connectivity_animation {
       margin-top: 2vh;
@@ -730,7 +731,9 @@ main.mobile {
     }
 
     article ::ng-deep ion-text {
-      font-size: 26px;
+      //original size
+      //font-size: 26px;
+      font-size: 24px;
       text-align: center;
     }
 
@@ -801,6 +804,32 @@ main.mobile {
 
 
   }
+  #ecosystem_impacts_viz_article {
+
+
+
+
+
+    ::ng-deep ion-text {
+
+      &[highlight-color="danger-dark"] {
+        border-bottom: solid 0.25rem var(--ion-color-danger-dark)
+      }
+
+      &[highlight-color="danger"] {
+        border-bottom: solid 0.25rem var(--ion-color-danger)
+      }
+
+      &[highlight-color="least-concern"] {
+        border-bottom: solid 0.25rem var(--ion-color-warning-low-risk)
+      }
+
+      &[highlight-color="no-data"] {
+        border-bottom: solid 0.25rem var(--ion-color-no-data)
+      }
+    }
+  }
+
 
 
 }
