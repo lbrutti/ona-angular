@@ -1054,9 +1054,10 @@
       </section>
       <section
         id="possible_futures_viz"
-        class="scrolly"
-        [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}"
+        class="scrolly scrolly-overlay"
+
       >
+<!--        [ngClass]="{'scrolly-sticky-side': platform.is('desktop'), 'scrolly-overlay': platform.is('mobile')}"-->
         <figure id="possible_futures_viz_figure">
           <div
             #possible_futures_viz_chart_small_dams

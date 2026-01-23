@@ -370,7 +370,7 @@ export class HomePage implements AfterViewInit {
 
       const waffles = ecosystemImpactsFigure.selectAll('.ecosystem_impacts_viz');
       const currentStep = response.index + 1;
-      waffles.each(function() {
+      waffles.each(function () {
         const waffle = (this as any);
         const activeSteps = waffle.dataset.step.split(',');
         const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);
@@ -1059,7 +1059,8 @@ export class HomePage implements AfterViewInit {
       .append('g')
       .attr('id', groupId);
     g.attr('transform',
-      'translate(' + this.futureDamsMargin.left + ',' + this.futureDamsMargin.top + ')');
+      // 'translate(' + this.futureDamsMargin.left + ',' + this.futureDamsMargin.top + ')');
+      'translate(' + 10 + ',' + this.futureDamsMargin.top + ')');
 
     // Add the lines
     g
@@ -1098,6 +1099,7 @@ export class HomePage implements AfterViewInit {
       .append('text')
       .text((d: any) => this.translocoService.translate(d.type))
       .style('fill', (d: any) => colors[d.type])
+      .attr('font-size', '15px')
       .attr('x', 5)
       .attr('y', (d: any) => y(d.type) - 10)
       .attr('class', 'lollipop_type_label font-bold');

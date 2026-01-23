@@ -482,6 +482,12 @@ section {
     svg {
       height: 100%;
     }
+    #possible_futures_viz_figure {
+      z-index: 1000;
+      top: 0 !important;
+      right: 5px;
+    }
+
 
   }
 }
@@ -773,6 +779,9 @@ main.mobile {
   #possible_futures_viz {
     .possible_futures_viz {
       top: 48px;
+      display: unset;
+      flex-direction: unset;
+      justify-content: unset;
     }
 
     #possible_futures_viz_figure {
@@ -782,11 +791,6 @@ main.mobile {
       right: 5px;
     }
 
-    .possible_futures_viz {
-      display: unset;
-      flex-direction: unset;
-      justify-content: unset;
-    }
 
     .step {
       font-size: 18px;
@@ -804,12 +808,8 @@ main.mobile {
 
 
   }
+
   #ecosystem_impacts_viz_article {
-
-
-
-
-
     ::ng-deep ion-text {
 
       &[highlight-color="danger-dark"] {
@@ -829,7 +829,6 @@ main.mobile {
       }
     }
   }
-
 
 
 }
