@@ -474,6 +474,7 @@ section {
     ::ng-deep svg {
       width: 100%;
     }
+
     &.active {
       opacity: 1;
     }
@@ -845,4 +846,8 @@ ion-content.mobile {
   width: 100%;
   margin: auto;
 
+}
+
+.h500 {
+  height: 500px !important;
 }

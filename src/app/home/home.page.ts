@@ -370,7 +370,7 @@ export class HomePage implements AfterViewInit {
 
       const waffles = ecosystemImpactsFigure.selectAll('.ecosystem_impacts_viz');
       const currentStep = response.index + 1;
-      waffles.each(function () {
+      waffles.each(function() {
         const waffle = (this as any);
         const activeSteps = waffle.dataset.step.split(',');
         const isActive = activeSteps['0'] === 'all' || activeSteps.includes('' + currentStep);

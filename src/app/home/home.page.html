@@ -664,7 +664,7 @@
             [innerHTML]="'anthropogenicThreats.anthropogenic_threats_text.p4'|transloco | safehtml: 'html'"
           ></p>
         </div>
-        <figure>
+        <figure [ngClass]="{'h500':!isMobile}">
           <img-comparison-slider
             direction="vertical"
             *ngIf="platform.is('mobile')"
