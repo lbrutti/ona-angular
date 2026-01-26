@@ -11,7 +11,7 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "publish-gh": "ionic build --prod -- --base-href https://lbrutti.github.io/ona-angular/ && npx angular-cli-ghpages --dir=www",
-        "publish": "ionic build --prod -- --base-href https://www.freeflowingrivers.eu/  --outputPath=prod",
+        "publish": "ionic build --prod -- --base-href https://www.freeflowingrivers.eu/  --outputPath=prod && bash scripts/append_timestamp.sh prod/index.html",
         "hotfix:create": "git checkout main && git pull && git flow hotfix start $(gitversion /showvariable Major).$(gitversion /showvariable Minor).$(($(gitversion /showvariable Patch)+1)) && git flow hotfix publish $(gitversion /showvariable Major).$(gitversion /showvariable Minor).$(($(gitversion /showvariable Patch)+1))",
         "hotfix:version": "bash scripts/hotfix_version.sh",
         "release:version": "bash scripts/release_version.sh",
