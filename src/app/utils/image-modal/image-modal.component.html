@@ -1,0 +1,19 @@
+<!--
+Source - https://stackoverflow.com/a/72953083
+Posted by Gustavo Daniel, modified by community. See post 'Timeline' for change history
+Retrieved 2025-11-23, License - CC BY-SA 4.0
+-->
+
+<ion-content class="ion-no-padding">
+  <figure (click)="dispose()">
+    <img alt="{{ name | transloco }} {{ definition | transloco }}" src="{{imgPath}}"/>
+    <figcaption>
+      <p>
+        <ion-label class="caption-name">{{ name | transloco }}</ion-label>
+      </p>
+      <p>
+        <ion-text class="caption-definition">{{ definition | transloco }}</ion-text>
+      </p>
+    </figcaption>
+  </figure>
+</ion-content>

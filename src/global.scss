@@ -26,28 +26,53 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 @font-face {
-    font-family: Century-Gothic;
-    src: url('assets/fonts/CenturyGothic.woff2');
+  font-family: Century-Gothic;
+  src: url('assets/fonts/CenturyGothic.woff2');
 }
 
 @font-face {
-    font-family: Century-Gothic-Bold;
-    src: url('assets/fonts/CenturyGothic-Bold.woff');
+  font-family: Century-Gothic-Bold;
+  src: url('assets/fonts/CenturyGothic-Bold.woff');
 }
 
+@font-face {
+  font-family: Aller;
+  src: url('assets/fonts/aller-bold.woff2');
+}
+
+body {
+  font-family: var(--ion-font-family);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--ion-font-family-bold);
+}
 
 .font-bold {
-    font-family: var(--ion-font-family-bold);
+  font-family: var(--ion-font-family-bold);
+}
+
+.font-w-bold {
+  font-weight: bold;
 }
 
 [color=danger-dark] {
-    color: var(--ion-color-danger-dark);
+  color: var(--ion-color-danger-dark);
 }
 
 .ion-no-padding-top {
-    padding-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .ion-no-margin-top {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
+
+
+ion-modal.auto-height::part(content) {
+  position: relative;
+  display: block;
+  contain: content;
+  height: 790px
+}
+

@@ -1,9 +1,13 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+/* eslint-disable no-underscore-dangle,max-len */
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import * as scrollama from 'scrollama';
 import * as d3 from 'd3';
-import { Platform } from '@ionic/angular';
+import {ModalController, Platform} from '@ionic/angular';
 import * as _ from 'lodash';
-import { TranslocoService } from '@ngneat/transloco';
+import {TranslocoService} from '@ngneat/transloco';
+import {ImageModalComponent} from '../utils/image-modal/image-modal.component';
+import {ActivatedRoute} from '@angular/router';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,62 +15,71 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class HomePage implements AfterViewInit {
   @ViewChild('popover') popover: ElementRef;
-  @ViewChild('freshwater_index_chart_container') freshwater_index_chart_container: ElementRef;
-  @ViewChild('possible_futures_viz_chart_small_dams') possible_futures_viz_chart_small_dams_container: ElementRef;
-  @ViewChild('possible_futures_viz_chart_protected_dams') possible_futures_viz_chart_protected_dams_container: ElementRef;
-  @ViewChild('possible_futures_viz_chart_balkans_dams') possible_futures_viz_chart_balkans_dams_container: ElementRef;
-  @ViewChild('barrier_removal_projects_chart_container') barrier_removal_projects_chart_container: ElementRef;
+  @ViewChild('freshwater_index_chart_container') freshwaterIndexChartContainer: ElementRef;
+  @ViewChild('possible_futures_viz_chart_small_dams') chartSmallDamsContainer: ElementRef;
+  @ViewChild('possible_futures_viz_chart_protected_dams') chartProtectedDamsContainer: ElementRef;
+  @ViewChild('possible_futures_viz_chart_balkans_dams') chartBalkansDamsContainer: ElementRef;
+  @ViewChild('barrier_removal_projects_chart_container') barrierRemovalProjectsChartContainer: ElementRef;
   @ViewChild('barrierCounter') barrierCounter: ElementRef;
   @ViewChild('breadcrumb') breadcrumb: ElementRef;
   @ViewChild('breadcrumbMobile') breadcrumbMobile: ElementRef;
 
-  @ViewChild('ecosystem_impacts_title') ecosystem_impacts_title: ElementRef;
-  @ViewChild('ecosystem_impacts_viz') ecosystem_impacts_viz: ElementRef;
-  @ViewChild('healthy_rivers_figure') healthy_rivers_figure: ElementRef;
-  @ViewChild('anthropogenic_threats_figure') anthropogenic_threats_figure: ElementRef;
-  @ViewChild('ecosystem_impacts_viz_figure') ecosystem_impacts_viz_figure: ElementRef;
+  @ViewChild('ecosystem_impacts_title') ecosystemImpactsTitle: ElementRef;
+  @ViewChild('ecosystem_impacts_viz') ecosystemImpactsViz: ElementRef;
+  @ViewChild('healthy_rivers_figure') healthyRiversFigure: ElementRef;
+  @ViewChild('anthropogenic_threats_figure') anthropogenicThreatsFigure: ElementRef;
+  @ViewChild('ecosystem_impacts_viz_figure') ecosystemImpactsVizFigure: ElementRef;
 
-  public currentLang = 'it';
-
-  public breadcrumbItems: any[] = [{
+  currentLang = 'it';
+  currentYear = 2020;
+  homeItem = {
+    href: '#container',
+    text: 'home',
+    active: false
+  };
+  breadcrumbItems: any[] = [{
     href: '#healthy_rivers_title',
     text: 'healthyRivers.section_title',
     active: false
   },
-  {
-    href: '#anthropogenic_threats-title',
-    text: 'anthropogenicThreats.breadcrumb_title',
-    active: false
-  }, {
-    href: '#ecosystem_impacts_title',
-    text: 'ecosystemImpacts.ecosystem_impacts_text.breadcrumb_title',
-    active: false
-  }, {
-    href: '#possible_futures_title',
-    text: 'possibleFutures.possible_futures_text.breadcrumb_title',
-    active: false
-  }, {
-    href: '#about_title',
-    text: 'about.breadcrumb_title',
-    active: false
-  }];
-  public hovercardData: any = {
+    {
+      href: '#anthropogenic_threats-title',
+      text: 'anthropogenicThreats.breadcrumb_title',
+      active: false
+    }, {
+      href: '#ecosystem_impacts_title',
+      text: 'ecosystemImpacts.ecosystem_impacts_text.breadcrumb_title',
+      active: false
+    }, {
+      href: '#possible_futures_title',
+      text: 'possibleFutures.possible_futures_text.breadcrumb_title',
+      active: false
+    }, {
+      href: '#nrr',
+      text: 'nrr.breadcrumb_title',
+      active: false
+    }, {
+      href: '#about_title',
+      text: 'about.breadcrumb_title',
+      active: false
+    }];
+  hovercardData: any = {
     title: 0,
     imgSrc: '',
     imgAlt: '',
     definition: ''
   };
 
-  public sliderDirection = 'horizontal';
-  public maxBreadcrumbItems = 1;
+  sliderDirection = 'horizontal';
+  maxBreadcrumbItems = 1;
   balkansDamsChart: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
   smallDamsChart: d3.Selection<SVGGElement, unknown, null, undefined>;
   protectedDamsChart: d3.Selection<SVGGElement, unknown, null, undefined>;
   futureDamsdata: any;
   isMobile = false;
-  futureDamsMargin = { top: 10, right: 30, bottom: 10, left: 60 };
-  public ecosystem_viz_drill_offset = 1;
-  public isFullscreen = false;
+  futureDamsMargin = {top: 10, right: 30, bottom: 10, left: 60};
+  ecosystemVizDrillOffset = 1;
+  isFullscreen = false;
   healthyRiversScroller: any;
   riverConnectivityScroller: any;
   threatsScroller: any;
@@ -79,9 +92,23 @@ export class HomePage implements AfterViewInit {
   isOpen = false;
   collapsedBreadcrumbs: HTMLIonBreadcrumbElement[] = [];
   barrierCount = 0;
-  public isIPhone = false;
-  constructor(public platform: Platform, public translocoService: TranslocoService) {
+  isIPhone = false;
 
+
+  constructor(public platform: Platform,
+              public translocoService: TranslocoService,
+              private modalCtrl: ModalController,
+              private route: ActivatedRoute) {
+
+    this.route.queryParams.subscribe(params => {
+      const requestedLang = params.lang ?? 'it';
+      this.translocoService.setActiveLang(requestedLang);
+      this.currentLang = requestedLang;
+      const availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
+      let currentLangIdx = availableLangs.indexOf(this.currentLang);
+      const nextLangIdx = (++currentLangIdx % availableLangs.length);
+      this.otherLang = availableLangs[nextLangIdx % availableLangs.length];
+    });
     let hasTouchScreen = false;
     if ('maxTouchPoints' in navigator) {
       hasTouchScreen = navigator.maxTouchPoints > 0;
@@ -93,7 +120,6 @@ export class HomePage implements AfterViewInit {
 
     this.sliderDirection = this.isMobile ? 'vertical' : 'horizontal';
     this.maxBreadcrumbItems = this.isMobile ? 3 : 5;
-    this.isMobile = this.isMobile;
     this.isIPhone = this.isMobile && this.platform.is('iphone');
 
     if (this.isMobile) {
@@ -101,12 +127,7 @@ export class HomePage implements AfterViewInit {
       this.futureDamsMargin.right = 15;
     }
 
-    const availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
-    const currentLangIdx = availableLangs.indexOf(this.translocoService.getActiveLang());
-    let nextLangIdx = (currentLangIdx % availableLangs.length);
-    this.otherLang = availableLangs[++nextLangIdx % availableLangs.length];
-
-
+    this.currentYear = (new Date()).getFullYear();
   }
 
 
@@ -239,10 +260,10 @@ export class HomePage implements AfterViewInit {
     const handleStepEnterConnectivities = (response: any) => {
       // response = { element, direction, index }
 
-        // add color to current step only
-        if (this.isMobile) {
-            riverConnectivitiesStep.classed('is-active', (d, i) => i === response.index);
-        }
+      // add color to current step only
+      if (this.isMobile) {
+        riverConnectivitiesStep.classed('is-active', (d, i) => i === response.index);
+      }
 
       // update graphic based on step
       const connectivityAnimations = riverConnectivitiesFigure.selectAll('.river_connectivity_animation');
@@ -267,11 +288,13 @@ export class HomePage implements AfterViewInit {
         const isActive = imgStep['0'] === 'all' || imgStep.includes('' + currentStep);
         (this as any).classList.toggle('active', isActive);
       });
-    }
+    };
 
     // scrollama event handlers
     const handleStepEnterHealthyRivers = (response: any) => {
-      if (this.isFullscreen) { return; }
+      if (this.isFullscreen) {
+        return;
+      }
       // response = { element, direction, index }
       // console.log('handleStepEnterHealthyRivers : ', response);
       // add color to current step only
@@ -308,11 +331,11 @@ export class HomePage implements AfterViewInit {
           d3.select('#anthropogenic_threats ion-grid').style('z-index', 1200);
         } else {
           threatsFigure.style('z-index', 0);
-          d3.select('#anthropogenic_threats ion-grid').style('z-index', 1)
+          d3.select('#anthropogenic_threats ion-grid').style('z-index', 1);
 
         }
 
-        if (currentStep != 16) {
+        if (currentStep !== 16) {
           d3.select('#hovercard')
             .classed('active', false);
         }
@@ -343,7 +366,7 @@ export class HomePage implements AfterViewInit {
 
 
     function handleStepEnterEcosystemImpacts(response: any) {
-        // ecosystemImpactsStep.classed('is-active', (_d, i) => i === response.index);
+      // ecosystemImpactsStep.classed('is-active', (_d, i) => i === response.index);
 
       const waffles = ecosystemImpactsFigure.selectAll('.ecosystem_impacts_viz');
       const currentStep = response.index + 1;
@@ -377,9 +400,7 @@ export class HomePage implements AfterViewInit {
     }
 
     function handleStepEnterPossibleFutures(response: any) {
-      possibleFuturesStep.classed('is-active', function (d, i) {
-        return i === response.index;
-      });
+      possibleFuturesStep.classed('is-active', (_d, i) => i === response.index);
       const page: HomePage = this;
       const damsCharts = possibleFuturesFigure.selectAll('.possible_futures_viz');
       const currentStep = response.index + 1;
@@ -427,16 +448,17 @@ export class HomePage implements AfterViewInit {
       }
 
 
-      }
-      const handleStepExit = (response: any) => {
-          //response.element.classList.remove('is-active');
-      };
+    }
 
-      const handleStepExitConnectivities = (response: any) => {
-          if (this.isMobile) {
-              response.element.classList.remove('is-active');
-          }
-      };
+    const handleStepExit = (response: any) => {
+      //response.element.classList.remove('is-active');
+    };
+
+    const handleStepExitConnectivities = (response: any) => {
+      if (this.isMobile) {
+        response.element.classList.remove('is-active');
+      }
+    };
     const handleStepExitThreats = (response: any) => {
       handleStepExit(response);
       const currentStep = response.index + 1;
@@ -515,13 +537,14 @@ export class HomePage implements AfterViewInit {
     return init();
   }
 
-  public onBreadCrumbClick(e: Event, item: any) {
+  onBreadCrumbClick(e: Event, item: any) {
     e.preventDefault();
     this.breadcrumbItems.map(i => i.active = i.href === item.href);
     const breadcrumbH = (this.breadcrumb as any).el.getBoundingClientRect().height;
     this.scrollSectionIntoView(item.href, breadcrumbH);
   }
-  public onBreadCrumbPopoverClick(e: Event) {
+
+  onBreadCrumbPopoverClick(e: Event) {
     e.preventDefault();
     const section = (e.target as any).parentElement.dataset.href;
     this.isOpen = false;
@@ -531,18 +554,58 @@ export class HomePage implements AfterViewInit {
   }
 
 
+  setToFullscreen(sectionId: string) {
+    // eslint-disable-next-line max-len,@typescript-eslint/no-unused-expressions
+    this[sectionId].nativeElement.requestFullscreen ? this[sectionId].nativeElement.requestFullscreen() : this[sectionId].nativeElement.webkitRequestFullScreen();
+  }
+
+  disposeHovercard() {
+    d3.select('#hovercard')
+      .classed('active', false);
+  }
+
+  exitFullScreen() {
+    if (document.fullscreenElement !== null) {
+
+      document.exitFullscreen();
+    }
+    if ((document as any).webkitCancelFullScreen !== null) {
+      (document as any).webkitCancelFullScreen();
+    }
+  }
+
+  async switchLang() {
+    const currentLang = this.translocoService.getActiveLang();
+    const availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
+    let currentLangIdx = availableLangs.indexOf(currentLang);
+    const nextLangIdx = (++currentLangIdx % availableLangs.length);
+    const requestedLang = availableLangs[nextLangIdx];
+    window.location.search = `lang=${requestedLang}`;
+  }
+
+  async goFullScreen(data: any): Promise<any> {
+    if (!this.isMobile) {
+      const modal = await this.modalCtrl.create({
+        component: ImageModalComponent,
+        componentProps: data,
+        cssClass: 'auto-height'
+      });
+      modal.present();
+    }
+  }
+
   private async loadEcosystemImpactsCharts(ecosystemImpacts: d3.Selection<d3.BaseType, unknown, HTMLElement, any>) {
     const freshwater = await d3.xml('assets/imgs/svg/eu_fishes_danger/01_eu_fishes_danger_freshwater.svg');
 
     d3.select(freshwater.documentElement).style('height', '100%');
 
-    (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement)
+    (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart').node() as any).append(freshwater.documentElement);
 
-    const freshwater_detail = await d3.xml('assets/imgs/svg/eu_fishes_danger/02_eu_fishes_danger_all.svg');
+    const freshwaterDetail = await d3.xml(`assets/imgs/svg/eu_fishes_danger/02_eu_fishes_danger_all_${this.currentLang}.svg`);
     // freshwater_detail.documentElement.setAttribute('width', 'auto');
     // freshwater_detail.documentElement.setAttribute('height', 'auto');
-    d3.select(freshwater_detail.documentElement).style('height', '100%');
-    (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart_all').node() as any).append(freshwater_detail.documentElement)
+    d3.select(freshwaterDetail.documentElement).style('height', '100%');
+    (ecosystemImpacts.select('#ecosystem_impacts_viz_figure_chart_all').node() as any).append(freshwaterDetail.documentElement);
 
     document.addEventListener('fullscreenchange', (e) => {
       this.isFullscreen = document.fullscreenElement !== null;
@@ -574,21 +637,6 @@ export class HomePage implements AfterViewInit {
     const others = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_fords_other.svg');
     const hexbins = await d3.xml('assets/imgs/svg/map_eu/2.map_eu_count_wgs84_more_data.svg');
     const page = this;
-
-    // dams.documentElement.setAttribute('width', 'auto');
-    // dams.documentElement.setAttribute('height', 'auto');
-    // ramps.documentElement.setAttribute('width', 'auto');
-    // ramps.documentElement.setAttribute('height', 'auto');
-    // weirs.documentElement.setAttribute('width', 'auto');
-    // weirs.documentElement.setAttribute('height', 'auto');
-    // culverts.documentElement.setAttribute('width', 'auto');
-    // culverts.documentElement.setAttribute('height', 'auto');
-    // sluices.documentElement.setAttribute('width', 'auto');
-    // sluices.documentElement.setAttribute('height', 'auto');
-    // others.documentElement.setAttribute('width', 'auto');
-    // others.documentElement.setAttribute('height', 'auto');
-    // hexbins.documentElement.setAttribute('width', 'auto');
-    // hexbins.documentElement.setAttribute('height', 'auto');
 
     d3.select(dams.documentElement).style('height', '100%');
     d3.select(ramps.documentElement).style('height', '100%');
@@ -624,27 +672,22 @@ export class HomePage implements AfterViewInit {
       });
     }
   }
-  async presentPopover(e: Event) {
-    this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
-    (this.popover as any).el.event = e;
-    this.isOpen = true;
-  }
 
   private scrollSectionIntoView(sectionSelector: string, offset: number = 0) {
     const destination = document.querySelector(sectionSelector);
     if (!_.isNil(destination)) {
-      destination.scrollIntoView({ behavior: 'smooth' });
-      destination.scrollBy({ top: -(2 * offset) });
+      destination.scrollIntoView({behavior: 'smooth'});
+      destination.scrollBy({top: -(2 * offset)});
     }
   }
 
   private renderFreshWaterIndexChart() {
-    const margin = { top: 30, right: 120, bottom: 30, left: 60 },
-      width = 700 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+    const margin = {top: 30, right: 120, bottom: 30, left: 60};
+    const width = 700 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    const svg = d3.select(this.freshwater_index_chart_container.nativeElement)
+    const svg = d3.select(this.freshwaterIndexChartContainer.nativeElement)
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
@@ -656,19 +699,20 @@ export class HomePage implements AfterViewInit {
     d3.csv('assets/data/linechart_fish_simple.csv')
       .then(csv => createMap(csv));
 
-    function createMap(data: any) {
-
-
+    const createMap = (data: any) => {
       // Add X axis --> it is a date format
       const x = d3.scaleLinear()
-        .domain([1970, 2017])
+        .domain([
+          Math.min(...data.map(d => +d.year))
+          , Math.max(...data.map(d => +d.year))
+        ])
         .range([0, width]);
 
       const xAxis = (d3 as any)
         .axisBottom()
         .scale(x)
         .ticks(10)
-        .tickFormat(function (d) { return Math.floor(d) })
+        .tickFormat(d => Math.floor(d))
         .tickSizeInner(0)
         .tickSizeOuter(0);
 
@@ -678,13 +722,16 @@ export class HomePage implements AfterViewInit {
         .attr('fill', 'var(--ion-color-text-color-standard)');
 
 
-
       // Add Y axis
       const y = d3.scaleLinear()
         .domain([0, 100])
         .range([height, 0]);
 
-      const yAxis = (d3 as any).axisLeft().scale(y).ticks(3).tickFormat(function (d) { return Math.floor(d) + '%' }).tickSizeInner(0)
+      const yAxis = (d3 as any).axisLeft()
+        .scale(y)
+        .ticks(3)
+        .tickFormat(d => Math.floor(d) + '%')
+        .tickSizeInner(0)
         .tickSizeOuter(0);
       svg.append('g')
         .call(yAxis)
@@ -692,9 +739,8 @@ export class HomePage implements AfterViewInit {
         .attr('opacity', 0);
 
 
-
       // This allows to find the closest X index of the mouse:
-      const bisect = d3.bisector(function (d: any) { return d.year; }).left;
+      const bisect = d3.bisector((d: any) => d.year).left;
 
       // Show confidence interval
       const CI = svg.append('path')
@@ -705,9 +751,9 @@ export class HomePage implements AfterViewInit {
         .attr('stroke', 'rgba(117, 147, 206, 0.37')
         .attr('d', d3.area()
           .curve(d3.curveBasis)
-          .x(function (d: any) { return x(d.year) })
-          .y0(function (d: any) { return y(d.Freshwater_upper) })
-          .y1(function (d: any) { return y(d.Freshwater_lower) })
+          .x((d: any) => x(d.year))
+          .y0((d: any) => y(d.Freshwater_upper))
+          .y1((d: any) => y(d.Freshwater_lower))
         );
 
       // Add the line
@@ -720,8 +766,8 @@ export class HomePage implements AfterViewInit {
         .attr('d', d3.line()
           .curve(d3.curveBasis)
 
-          .x(function (d: any) { return x(d.year) })
-          .y(function (d: any) { return y(d.Freshwater_index) })
+          .x((d: any) => x(d.year))
+          .y((d: any) => y(d.Freshwater_index))
         );
 
       //append upper axis
@@ -740,14 +786,14 @@ export class HomePage implements AfterViewInit {
         .attr('class', 'upper_axis_text_left')
         .text('1970')
         .attr('x', x(2016))
-        .attr('y', d => y(100))
+        .attr('y', d => y(100));
       // Create the circle that travels along the curve of chart
       const focus = svg
         .append('g')
         .append('circle')
         .style('fill', '#7593ce')
         .attr('r', 4)
-        .style('opacity', 0)
+        .style('opacity', 0);
 
       // Create the text that travels along the curve of chart
       const focusText = svg
@@ -756,8 +802,45 @@ export class HomePage implements AfterViewInit {
         .attr('class', 'focus_text')
         .style('opacity', 0)
         .attr('fill', '#7593ce')
-        .attr('alignment-baseline', 'middle')
+        .attr('alignment-baseline', 'middle');
       // Create a rect on top of the svg area: this rectangle recovers mouse position
+      // What happens when the mouse move -> show the annotations at the right positions.
+      const mouseover = () => {
+        focus.style('opacity', 1);
+        focusText.style('opacity', 1);
+      };
+
+      const mousemove = (e) => {
+        // recover coordinate we need
+        const x0 = x.invert(d3.pointer(e)[0]);
+        if (isNaN(x0)) {
+          return;
+        }
+        const i = bisect(data, x0, 1);
+        const selectedData = data[i];
+        if (selectedData) {
+
+          focus
+            .attr('cx', x(selectedData.year))
+            .attr('cy', y(selectedData.Freshwater_index));
+
+          focusText
+            .attr('text-anchor', 'left')
+            .html(() => {
+              const year = selectedData.year;
+              const value = d3.format('.2f')(selectedData.Freshwater_index);
+              return `${year}:${value}%`;
+            })
+            .attr('x', x(selectedData.year) + 15)
+            .attr('y', y(selectedData.Freshwater_index));
+        }
+
+      };
+
+      const mouseout = () => {
+        focus.style('opacity', 0);
+        focusText.style('opacity', 0);
+      };
       svg
         .append('rect')
         .style('fill', 'none')
@@ -768,51 +851,17 @@ export class HomePage implements AfterViewInit {
         .on('mousemove', mousemove)
         .on('mouseout', mouseout);
 
-      // What happens when the mouse move -> show the annotations at the right positions.
-      function mouseover() {
-        focus.style('opacity', 1)
-        focusText.style('opacity', 1)
-      }
-      function mousemove(e) {
-        // recover coordinate we need
-        let x0 = x.invert(d3.pointer(e)[0]);
-        if (isNaN(x0)) {
-          return;
-        }
-        let i = bisect(data, x0, 1);
-        let selectedData = data[i]
-        if (selectedData) {
 
-          focus
-            .attr('cx', x(selectedData.year))
-            .attr('cy', y(selectedData.Freshwater_index));
-
-          focusText
-            .attr('text-anchor', 'left')
-            .html(() => {
-              let year = selectedData.year;
-              let value = d3.format('.2f')(selectedData.Freshwater_index);
-              return `${year}:${value}%`;
-            })
-            .attr('x', x(selectedData.year) + 15)
-            .attr('y', y(selectedData.Freshwater_index))
-        }
-
-      }
-      function mouseout() {
-        focus.style('opacity', 0)
-        focusText.style('opacity', 0)
-      }
-    }
+    };
   }
 
   private renderDamRemovalProjectsChart() {
-    let margin = { top: 30, right: 120, bottom: 30, left: 60 },
-      width = 700 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+    const margin = {top: 30, right: 120, bottom: 30, left: 60};
+    const width = 700 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    let svg = d3.select(this.barrier_removal_projects_chart_container.nativeElement)
+    const svg = d3.select(this.barrierRemovalProjectsChartContainer.nativeElement)
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
@@ -824,19 +873,19 @@ export class HomePage implements AfterViewInit {
     d3.csv('assets/data/dam_removal_projects.csv')
       .then(csv => createMap(csv));
 
-    function createMap(data: any) {
+    const createMap = (data: any) => {
 
 
       // Add X axis --> it is a date format
-      let x = d3.scaleLinear()
-        .domain([1940, 2020])
+      const x = d3.scaleLinear()
+        .domain([1940, 2025])
         .range([0, width]);
 
-      let xAxis = (d3 as any)
+      const xAxis = (d3 as any)
         .axisBottom()
         .scale(x)
         .ticks(10)
-        .tickFormat(function (d) { return Math.floor(d) })
+        .tickFormat((d) => Math.floor(d))
         .tickSizeInner(0)
         .tickSizeOuter(0);
 
@@ -845,13 +894,13 @@ export class HomePage implements AfterViewInit {
         .call(xAxis);
 
 
-
       // Add Y axis
-      let y = d3.scaleLinear()
-        .domain([429, 4984])
+      const y = d3.scaleLinear()
+        .domain([429, 9000])
         .range([height, 0]);
 
-      let yAxis = (d3 as any).axisLeft().scale(y).ticks(5).tickFormat(function (d) { return Math.floor(d) }).tickSizeInner(0)
+      const yAxis = (d3 as any).axisLeft().scale(y).ticks(5).tickFormat(d => Math.floor(d))
+        .tickSizeInner(0)
         .tickSizeOuter(0);
       svg.append('g')
         .call(yAxis)
@@ -859,12 +908,11 @@ export class HomePage implements AfterViewInit {
         .attr('opacity', 0);
 
 
-
       // This allows to find the closest X index of the mouse:
-      let bisect = d3.bisector(function (d: any) { return d.year; }).left;
+      const bisect = d3.bisector((d: any) => d.year).left;
 
       // Show confidence interval
-      let CI = svg.append('path')
+      const CI = svg.append('path')
         .datum(data)
         .transition()
         .duration(2500)
@@ -872,13 +920,13 @@ export class HomePage implements AfterViewInit {
         .attr('stroke', 'none')
         .attr('d', d3.area()
           .curve(d3.curveLinear)
-          .x(function (d: any) { return x(d.year) })
-          .y0(function (d: any) { return y(d.cumulative) })
-          .y1(function (d: any) { return y(429); })
+          .x((d: any) => x(d.year))
+          .y0((d: any) => y(d.cumulative))
+          .y1(() => y(429))
         );
 
       // Add the line
-      let lineChart = svg
+      const lineChart = svg
         .append('path')
         .datum(data)
         .attr('fill', 'none')
@@ -886,41 +934,64 @@ export class HomePage implements AfterViewInit {
         .attr('stroke-width', 1.5)
         .attr('d', d3.line()
           .curve(d3.curveLinear)
-          .x(function (d: any) { return x(d.year) })
-          .y(function (d: any) { return y(d.cumulative) })
+          .x((d: any) => x(d.year))
+          .y((d: any) => y(d.cumulative))
         );
 
-      // Add the line
-      // let dots = svg
-      //     .append('g')
-      //     .selectAll('.dot')
-      //     .data(data)
-      //     .enter()
-      //     .append("circle")
-      //     .attr('class', 'dot')
-      //     .style("fill", "var(--ion-color-secondary-shade)")
-      //     .attr('r', 4)
-      //     .attr("cx", (d: any) => x(d.year))
-      //     .attr("cy", (d: any) => y(d.cumulative));
-
-      //append upper axis
 
       // Create the circle that travels along the curve of chart
-      let focus = svg
+      const focus = svg
         .append('g')
         .append('circle')
         .style('fill', 'var(--ion-color-secondary-shade)')
         .attr('r', 4)
-        .style('opacity', 0)
+        .style('opacity', 0);
 
       // Create the text that travels along the curve of chart
-      let focusText = svg
+      const focusText = svg
         .append('g')
         .append('text')
         .attr('class', 'focus_text')
         .style('opacity', 0)
         .attr('fill', 'var(--ion-color-secondary-shade)')
-        .attr('alignment-baseline', 'middle')
+        .attr('alignment-baseline', 'middle');
+      // What happens when the mouse move -> show the annotations at the right positions.
+      const mouseover = () => {
+        focus.style('opacity', 1);
+        focusText.style('opacity', 1);
+      };
+
+      const mousemove = (e) => {
+        // recover coordinate we need
+        const x0 = x.invert(d3.pointer(e)[0]);
+        if (isNaN(x0)) {
+          return;
+        }
+        const i = bisect(data, x0, 1);
+        const selectedData = data[i];
+        if (selectedData) {
+
+          focus
+            .attr('cx', x(selectedData.year))
+            .attr('cy', y(selectedData.cumulative));
+
+          focusText
+            .attr('text-anchor', 'left')
+            .html(() => {
+              const year = selectedData.year;
+              const value = d3.format('.0f')(selectedData.abs);
+              return `${year}:${value}`;
+            })
+            .attr('x', x(selectedData.year) + 15)
+            .attr('y', y(selectedData.cumulative));
+        }
+
+      };
+
+      const mouseout = () => {
+        focus.style('opacity', 0);
+        focusText.style('opacity', 0);
+      };
       // Create a rect on top of the svg area: this rectangle recovers mouse position
       svg
         .append('rect')
@@ -931,98 +1002,65 @@ export class HomePage implements AfterViewInit {
         .on('mouseover', mouseover)
         .on('mousemove', mousemove)
         .on('mouseout', mouseout);
-
-      // What happens when the mouse move -> show the annotations at the right positions.
-      function mouseover() {
-        focus.style('opacity', 1)
-        focusText.style('opacity', 1)
-      }
-      function mousemove(e) {
-        // recover coordinate we need
-        let x0 = x.invert(d3.pointer(e)[0]);
-        if (isNaN(x0)) {
-          return;
-        }
-        let i = bisect(data, x0, 1);
-        let selectedData = data[i]
-        if (selectedData) {
-
-          focus
-            .attr('cx', x(selectedData.year))
-            .attr('cy', y(selectedData.cumulative));
-
-          focusText
-            .attr('text-anchor', 'left')
-            .html(() => {
-              let year = selectedData.year;
-              let value = d3.format('.0f')(selectedData.abs);
-              return `${year}:${value}`;
-            })
-            .attr('x', x(selectedData.year) + 15)
-            .attr('y', y(selectedData.cumulative))
-        }
-
-      }
-      function mouseout() {
-        focus.style('opacity', 0)
-        focusText.style('opacity', 0)
-      }
-    }
+    };
   }
 
   private renderPossibleFuturesLollipopsChart() {
 
 
-
     // append the svg object to the body of the page
-    this.smallDamsChart = d3.select(this.possible_futures_viz_chart_small_dams_container.nativeElement)
+    this.smallDamsChart = d3.select(this.chartSmallDamsContainer.nativeElement)
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
+      .style('background-color', '#fff')
       .attr('viewBox', `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
-    this.protectedDamsChart = d3.select(this.possible_futures_viz_chart_protected_dams_container.nativeElement)
+    this.protectedDamsChart = d3.select(this.chartProtectedDamsContainer.nativeElement)
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
+      .style('background-color', '#fff')
       .attr('viewBox', `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
-    this.balkansDamsChart = d3.select(this.possible_futures_viz_chart_balkans_dams_container.nativeElement)
+    this.balkansDamsChart = d3.select(this.chartBalkansDamsContainer.nativeElement)
       .append('svg')
       // .attr("width", "auto")
       // .attr("height", "auto")
+      .style('background-color', '#fff')
       .attr('viewBox', `0 0 ${this.futureDamsWidth + this.futureDamsMargin.left + this.futureDamsMargin.right} ${this.futureDamsHeight + this.futureDamsMargin.top + this.futureDamsMargin.bottom}`);
 
 
     d3.json('assets/data/future_dams.json')
       .then((data: any) => {
         this.futureDamsdata = data;
-        this.createFutureDamsLillipop(data.small, this.possible_futures_viz_chart_small_dams_container.nativeElement.querySelector('svg'), 'smallDamsChart', false);
-        this.createFutureDamsLillipop(data.protected, this.possible_futures_viz_chart_protected_dams_container.nativeElement.querySelector('svg'), 'protectedDamsChart', false);
-        this.createFutureDamsLillipop(data.balkans, this.possible_futures_viz_chart_balkans_dams_container.nativeElement.querySelector('svg'), 'balkansDamsChart', true);
+        this.createFutureDamslollipop(data.small, this.chartSmallDamsContainer.nativeElement.querySelector('svg'), 'smallDamsChart', false);
+        this.createFutureDamslollipop(data.protected, this.chartProtectedDamsContainer.nativeElement.querySelector('svg'), 'protectedDamsChart', false);
+        this.createFutureDamslollipop(data.balkans, this.chartBalkansDamsContainer.nativeElement.querySelector('svg'), 'balkansDamsChart', true);
       });
   }
 
-  private createFutureDamsLillipop(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
-    let colors = { 'existing': 'var(--ion-color-warning)', 'planned': 'var(--ion-color-danger)' }
+  private createFutureDamslollipop(data: any, svgSelector: HTMLElement, groupId: string, addBar: boolean = false) {
+    const colors = {existing: 'var(--ion-color-warning)', planned: 'var(--ion-color-danger)'};
     // Add X axis --> it is a date format
-    var x = d3.scaleLinear()
+    const x = d3.scaleLinear()
       .domain([0, 100])
       .range([0, this.futureDamsWidth - 5]);
 
     // Add Y axis
-    var y = d3.scaleBand()
+    const y = d3.scaleBand()
       .range([0, this.futureDamsHeight])
       .domain(data.map((d) => d.type))
       .padding(1);
 
-    let g = d3.select(svgSelector)
+    const g = d3.select(svgSelector)
       .append('g')
       .attr('id', groupId);
     g.attr('transform',
-      'translate(' + this.futureDamsMargin.left + ',' + this.futureDamsMargin.top + ')');
+      // 'translate(' + this.futureDamsMargin.left + ',' + this.futureDamsMargin.top + ')');
+      'translate(' + 10 + ',' + this.futureDamsMargin.top + ')');
 
     // Add the lines
     g
@@ -1061,6 +1099,7 @@ export class HomePage implements AfterViewInit {
       .append('text')
       .text((d: any) => this.translocoService.translate(d.type))
       .style('fill', (d: any) => colors[d.type])
+      .attr('font-size', '15px')
       .attr('x', 5)
       .attr('y', (d: any) => y(d.type) - 10)
       .attr('class', 'lollipop_type_label font-bold');
@@ -1078,11 +1117,11 @@ export class HomePage implements AfterViewInit {
       .attr('class', 'lollipop_value_label');
 
     if (addBar) {
-      let small_of_planned = data[1].small_of_planned;
+      const smallOfPlanned = data[1].small_of_planned;
 
-      //small_of_planned bar
+      //smallOfPlanned bar
       g.selectAll('.lollipop_line_small_of_planned')
-        .data([small_of_planned])
+        .data([smallOfPlanned])
         .enter()
         .append('line')
         .attr('class', 'lollipop_line_small_of_planned')
@@ -1096,7 +1135,7 @@ export class HomePage implements AfterViewInit {
         .attr('stroke-width', 7);
 
       g.selectAll('.lollipop_value_label_small_of_planned')
-        .data([small_of_planned])
+        .data([smallOfPlanned])
         .enter()
         .append('text')
         .attr('data-type', (d: any) => d.type)
@@ -1112,11 +1151,11 @@ export class HomePage implements AfterViewInit {
 
   private updateFutureDamsLollipopCharts(chartContainer: HTMLElement, type: string) {
     // Add X axis --> it is a date format
-    var x = d3.scaleLinear()
+    const x = d3.scaleLinear()
       .domain([0, 100])
       .range([0, this.futureDamsWidth - 5]);
 
-    let g = d3.select(chartContainer);
+    const g = d3.select(chartContainer);
     // Change the X coordinates of line and circle
     g.selectAll('.lollipop_line')
       .each(function (d) {
@@ -1124,7 +1163,7 @@ export class HomePage implements AfterViewInit {
           d3.select(this)
             .transition()
             .duration(2000)
-            .attr('x2', (d: any) => x(d.value));
+            .attr('x2', (d1: any) => x(d1.value));
         }
       });
 
@@ -1134,7 +1173,7 @@ export class HomePage implements AfterViewInit {
           d3.select(this)
             .transition()
             .duration(2000)
-            .attr('cx', (d: any) => x(d.value))
+            .attr('cx', (d: any) => x(d.value));
         }
       });
 
@@ -1145,31 +1184,31 @@ export class HomePage implements AfterViewInit {
           d3.select(this)
             .transition()
             .duration(2000)
-            .textTween(function (d: any) {
+            .textTween(function (d1: any) {
               if (!(this as any)._current) {
                 (this as any)._current = 0;
               }
-              const i = d3.interpolate((this as any)._current, d.value);
+              const i = d3.interpolate((this as any)._current, d1.value);
               return function (t) {
-                let value: any = d3.format('.2')((this as any)._current = i(t));
+                const value: any = d3.format('.2')((this as any)._current = i(t));
                 return `${Math.floor(value)}%`;
               };
-            })
+            });
 
         }
       });
 
-    return Promise.resolve()
+    return Promise.resolve();
   }
 
   private addFutureDamsBar(chartContainer: HTMLElement) {
     // Add X axis --> it is a date format
     d3.select('.lollipop_value_label_small_of_planned').classed('active', false);
-    var x = d3.scaleLinear()
+    const x = d3.scaleLinear()
       .domain([0, 100])
       .range([0, this.futureDamsWidth - 5]);
 
-    let g = d3.select(chartContainer);
+    const g = d3.select(chartContainer);
     g.selectAll('.lollipop_line_small_of_planned')
       .transition()
       .on('end', () => {
@@ -1179,29 +1218,5 @@ export class HomePage implements AfterViewInit {
       .attr('x2', (d: any) => x(d.value));
   }
 
-  public setToFullscreen(sectionId: string) {
-    this[sectionId].nativeElement.requestFullscreen ? this[sectionId].nativeElement.requestFullscreen() : this[sectionId].nativeElement.webkitRequestFullScreen();
-  }
-  public disposeHovercard() {
-    d3.select('#hovercard')
-      .classed('active', false);
-  }
-  public exitFullScreen() {
-    if (document.fullscreenElement !== null) {
 
-      document.exitFullscreen();
-    }
-    if ((document as any).webkitCancelFullScreen !== null) {
-      (document as any).webkitCancelFullScreen();
-    }
-  }
-
-  public async switchLang() {
-    let currentLang = this.translocoService.getActiveLang();
-    let availableLangs: string[] = (this.translocoService.getAvailableLangs() as any[]).map((l: any) => (l as any).id || (l as string));
-    let currentLangIdx = availableLangs.indexOf(currentLang);
-    let nextLangIdx = (++currentLangIdx % availableLangs.length);
-    this.translocoService.setActiveLang(availableLangs[nextLangIdx]);
-    this.otherLang = availableLangs[++nextLangIdx % availableLangs.length];
-  }
 }
