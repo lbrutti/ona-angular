@@ -1236,8 +1236,8 @@
           <p
             [innerHTML]="'possibleFutures.possible_futures_text.p4'|transloco | safehtml:'html'"
           ></p>
-          <p
-            [innerHTML]="'possibleFutures.possible_futures_text.p5'|transloco | safehtml:'html'"
+          <p *ngIf="currentLang==='en'"
+             [innerHTML]="'possibleFutures.possible_futures_text.p5'|transloco | safehtml:'html'"
           ></p>
           <p
             [innerHTML]="'possibleFutures.possible_futures_text.p6'|transloco | safehtml:'html'"
@@ -1364,7 +1364,8 @@
             https://doi.org/10.1038/s41586-019-1111-9</a>
         </p>
         <p>
-          International Union for Conservation of Nature (IUCN). (2022). The IUCN Red List of Threatened Species (Version 2022-1).
+          International Union for Conservation of Nature (IUCN). (2022). The IUCN Red List of Threatened Species
+          (Version 2022-1).
           <a href="https://www.iucnredlist.org" target="_blank">https://www.iucnredlist.org/</a>
         </p>
         <p>
